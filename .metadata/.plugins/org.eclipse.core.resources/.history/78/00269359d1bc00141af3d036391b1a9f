@@ -1,0 +1,20 @@
+grammar com.thoughtworks.gauge.Eclipse with org.eclipse.xtext.common.Terminals
+
+generate eclipse "http://www.thoughtworks.com/gauge/Eclipse"
+
+Spec:
+	('# ' name=ANY_OTHER | name=ANY_OTHER
+		('=')*
+	)
+	scenarios+=Scenario*
+	step+=Step*
+;
+
+Scenario:
+	'## ' name=ANY_OTHER
+	steps+=Step*
+;
+
+Step:
+	'* ' name=ANY_OTHER
+;

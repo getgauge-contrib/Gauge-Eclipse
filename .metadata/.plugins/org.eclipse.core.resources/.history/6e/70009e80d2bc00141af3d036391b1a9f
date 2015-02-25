@@ -1,0 +1,130 @@
+/**
+ */
+package com.thoughtworks.gauge.eclipse.impl;
+
+import com.thoughtworks.gauge.eclipse.*;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class EclipseFactoryImpl extends EFactoryImpl implements EclipseFactory
+{
+  /**
+   * Creates the default factory implementation.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public static EclipseFactory init()
+  {
+    try
+    {
+      EclipseFactory theEclipseFactory = (EclipseFactory)EPackage.Registry.INSTANCE.getEFactory(EclipsePackage.eNS_URI);
+      if (theEclipseFactory != null)
+      {
+        return theEclipseFactory;
+      }
+    }
+    catch (Exception exception)
+    {
+      EcorePlugin.INSTANCE.log(exception);
+    }
+    return new EclipseFactoryImpl();
+  }
+
+  /**
+   * Creates an instance of the factory.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EclipseFactoryImpl()
+  {
+    super();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EObject create(EClass eClass)
+  {
+    switch (eClass.getClassifierID())
+    {
+      case EclipsePackage.SPEC: return createSpec();
+      case EclipsePackage.SCENARIO: return createScenario();
+      case EclipsePackage.STEP: return createStep();
+      default:
+        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Spec createSpec()
+  {
+    SpecImpl spec = new SpecImpl();
+    return spec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Scenario createScenario()
+  {
+    ScenarioImpl scenario = new ScenarioImpl();
+    return scenario;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Step createStep()
+  {
+    StepImpl step = new StepImpl();
+    return step;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EclipsePackage getEclipsePackage()
+  {
+    return (EclipsePackage)getEPackage();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @deprecated
+   * @generated
+   */
+  @Deprecated
+  public static EclipsePackage getPackage()
+  {
+    return EclipsePackage.eINSTANCE;
+  }
+
+} //EclipseFactoryImpl

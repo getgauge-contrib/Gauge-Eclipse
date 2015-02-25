@@ -1,0 +1,21 @@
+grammar com.thoughtworks.gauge.Eclipse with org.eclipse.xtext.common.Terminals
+
+generate eclipse "http://www.thoughtworks.com/gauge/Eclipse"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
+
+Step:
+	'* ' name=ID;
+Scenario:
+	steps+=Step*
+	'## ' name=ID
+;
+
+Spec:
+	scenarios+=Scenario*
+	'# ' name=ID;
+	

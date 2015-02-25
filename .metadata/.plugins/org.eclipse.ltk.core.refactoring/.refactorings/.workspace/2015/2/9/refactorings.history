@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/com.thoughtworks.gauge.eclipse" element2="/com.thoughtworks.gauge.eclipse.sdk" element3="/com.thoughtworks.gauge.eclipse.tests" element4="/com.thoughtworks.gauge.eclipse.ui" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1424858135102"/>
+</session>

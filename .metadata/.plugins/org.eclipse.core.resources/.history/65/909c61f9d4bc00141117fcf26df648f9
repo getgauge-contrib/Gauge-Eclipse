@@ -1,0 +1,9 @@
+grammar io.getgauge.Spec with org.eclipse.xtext.common.Terminals
+
+generate spec "http://www.getgauge.io/Spec"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

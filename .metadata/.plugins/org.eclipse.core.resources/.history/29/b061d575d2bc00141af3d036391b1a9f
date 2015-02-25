@@ -1,0 +1,2161 @@
+package com.thoughtworks.gauge.ui.contentassist.antlr.internal; 
+
+import java.io.InputStream;
+import org.eclipse.xtext.*;
+import org.eclipse.xtext.parser.*;
+import org.eclipse.xtext.parser.impl.*;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
+import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
+import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.DFA;
+import com.thoughtworks.gauge.services.EclipseGrammarAccess;
+
+
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
+
+@SuppressWarnings("all")
+public class InternalEclipseParser extends AbstractInternalContentAssistParser {
+    public static final String[] tokenNames = new String[] {
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ANY_OTHER", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'# '", "'='", "'## '", "'-'", "'*'"
+    };
+    public static final int RULE_ID=5;
+    public static final int RULE_WS=10;
+    public static final int RULE_STRING=7;
+    public static final int RULE_ANY_OTHER=4;
+    public static final int RULE_SL_COMMENT=9;
+    public static final int T__15=15;
+    public static final int RULE_INT=6;
+    public static final int T__11=11;
+    public static final int RULE_ML_COMMENT=8;
+    public static final int T__12=12;
+    public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int EOF=-1;
+
+    // delegates
+    // delegators
+
+
+        public InternalEclipseParser(TokenStream input) {
+            this(input, new RecognizerSharedState());
+        }
+        public InternalEclipseParser(TokenStream input, RecognizerSharedState state) {
+            super(input, state);
+             
+        }
+        
+
+    public String[] getTokenNames() { return InternalEclipseParser.tokenNames; }
+    public String getGrammarFileName() { return "../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g"; }
+
+
+     
+     	private EclipseGrammarAccess grammarAccess;
+     	
+        public void setGrammarAccess(EclipseGrammarAccess grammarAccess) {
+        	this.grammarAccess = grammarAccess;
+        }
+        
+        @Override
+        protected Grammar getGrammar() {
+        	return grammarAccess.getGrammar();
+        }
+        
+        @Override
+        protected String getValueForTokenName(String tokenName) {
+        	return tokenName;
+        }
+
+
+
+
+    // $ANTLR start "entryRuleSpec"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:60:1: entryRuleSpec : ruleSpec EOF ;
+    public final void entryRuleSpec() throws RecognitionException {
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:61:1: ( ruleSpec EOF )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:62:1: ruleSpec EOF
+            {
+             before(grammarAccess.getSpecRule()); 
+            pushFollow(FOLLOW_ruleSpec_in_entryRuleSpec61);
+            ruleSpec();
+
+            state._fsp--;
+
+             after(grammarAccess.getSpecRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpec68); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleSpec"
+
+
+    // $ANTLR start "ruleSpec"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:69:1: ruleSpec : ( ( rule__Spec__Group__0 ) ) ;
+    public final void ruleSpec() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:73:2: ( ( ( rule__Spec__Group__0 ) ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:74:1: ( ( rule__Spec__Group__0 ) )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:74:1: ( ( rule__Spec__Group__0 ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:75:1: ( rule__Spec__Group__0 )
+            {
+             before(grammarAccess.getSpecAccess().getGroup()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:76:1: ( rule__Spec__Group__0 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:76:2: rule__Spec__Group__0
+            {
+            pushFollow(FOLLOW_rule__Spec__Group__0_in_ruleSpec94);
+            rule__Spec__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSpecAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleSpec"
+
+
+    // $ANTLR start "entryRuleScenario"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:88:1: entryRuleScenario : ruleScenario EOF ;
+    public final void entryRuleScenario() throws RecognitionException {
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:89:1: ( ruleScenario EOF )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:90:1: ruleScenario EOF
+            {
+             before(grammarAccess.getScenarioRule()); 
+            pushFollow(FOLLOW_ruleScenario_in_entryRuleScenario121);
+            ruleScenario();
+
+            state._fsp--;
+
+             after(grammarAccess.getScenarioRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleScenario128); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleScenario"
+
+
+    // $ANTLR start "ruleScenario"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:97:1: ruleScenario : ( ( rule__Scenario__Group__0 ) ) ;
+    public final void ruleScenario() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:101:2: ( ( ( rule__Scenario__Group__0 ) ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:102:1: ( ( rule__Scenario__Group__0 ) )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:102:1: ( ( rule__Scenario__Group__0 ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:103:1: ( rule__Scenario__Group__0 )
+            {
+             before(grammarAccess.getScenarioAccess().getGroup()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:104:1: ( rule__Scenario__Group__0 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:104:2: rule__Scenario__Group__0
+            {
+            pushFollow(FOLLOW_rule__Scenario__Group__0_in_ruleScenario154);
+            rule__Scenario__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getScenarioAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleScenario"
+
+
+    // $ANTLR start "entryRuleStep"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:116:1: entryRuleStep : ruleStep EOF ;
+    public final void entryRuleStep() throws RecognitionException {
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:117:1: ( ruleStep EOF )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:118:1: ruleStep EOF
+            {
+             before(grammarAccess.getStepRule()); 
+            pushFollow(FOLLOW_ruleStep_in_entryRuleStep181);
+            ruleStep();
+
+            state._fsp--;
+
+             after(grammarAccess.getStepRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStep188); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleStep"
+
+
+    // $ANTLR start "ruleStep"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:125:1: ruleStep : ( ( rule__Step__Group__0 ) ) ;
+    public final void ruleStep() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:129:2: ( ( ( rule__Step__Group__0 ) ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:130:1: ( ( rule__Step__Group__0 ) )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:130:1: ( ( rule__Step__Group__0 ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:131:1: ( rule__Step__Group__0 )
+            {
+             before(grammarAccess.getStepAccess().getGroup()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:132:1: ( rule__Step__Group__0 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:132:2: rule__Step__Group__0
+            {
+            pushFollow(FOLLOW_rule__Step__Group__0_in_ruleStep214);
+            rule__Step__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getStepAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleStep"
+
+
+    // $ANTLR start "rule__Spec__Alternatives_0"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:144:1: rule__Spec__Alternatives_0 : ( ( ( rule__Spec__Group_0_0__0 ) ) | ( ( rule__Spec__Group_0_1__0 ) ) );
+    public final void rule__Spec__Alternatives_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:148:1: ( ( ( rule__Spec__Group_0_0__0 ) ) | ( ( rule__Spec__Group_0_1__0 ) ) )
+            int alt1=2;
+            int LA1_0 = input.LA(1);
+
+            if ( (LA1_0==11) ) {
+                alt1=1;
+            }
+            else if ( (LA1_0==RULE_ANY_OTHER) ) {
+                alt1=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 1, 0, input);
+
+                throw nvae;
+            }
+            switch (alt1) {
+                case 1 :
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:149:1: ( ( rule__Spec__Group_0_0__0 ) )
+                    {
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:149:1: ( ( rule__Spec__Group_0_0__0 ) )
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:150:1: ( rule__Spec__Group_0_0__0 )
+                    {
+                     before(grammarAccess.getSpecAccess().getGroup_0_0()); 
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:151:1: ( rule__Spec__Group_0_0__0 )
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:151:2: rule__Spec__Group_0_0__0
+                    {
+                    pushFollow(FOLLOW_rule__Spec__Group_0_0__0_in_rule__Spec__Alternatives_0250);
+                    rule__Spec__Group_0_0__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getSpecAccess().getGroup_0_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:155:6: ( ( rule__Spec__Group_0_1__0 ) )
+                    {
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:155:6: ( ( rule__Spec__Group_0_1__0 ) )
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:156:1: ( rule__Spec__Group_0_1__0 )
+                    {
+                     before(grammarAccess.getSpecAccess().getGroup_0_1()); 
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:157:1: ( rule__Spec__Group_0_1__0 )
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:157:2: rule__Spec__Group_0_1__0
+                    {
+                    pushFollow(FOLLOW_rule__Spec__Group_0_1__0_in_rule__Spec__Alternatives_0268);
+                    rule__Spec__Group_0_1__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getSpecAccess().getGroup_0_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Alternatives_0"
+
+
+    // $ANTLR start "rule__Scenario__Alternatives_0"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:166:1: rule__Scenario__Alternatives_0 : ( ( ( rule__Scenario__Group_0_0__0 ) ) | ( ( rule__Scenario__Group_0_1__0 ) ) );
+    public final void rule__Scenario__Alternatives_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:170:1: ( ( ( rule__Scenario__Group_0_0__0 ) ) | ( ( rule__Scenario__Group_0_1__0 ) ) )
+            int alt2=2;
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==13) ) {
+                alt2=1;
+            }
+            else if ( (LA2_0==RULE_ANY_OTHER) ) {
+                alt2=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 2, 0, input);
+
+                throw nvae;
+            }
+            switch (alt2) {
+                case 1 :
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:171:1: ( ( rule__Scenario__Group_0_0__0 ) )
+                    {
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:171:1: ( ( rule__Scenario__Group_0_0__0 ) )
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:172:1: ( rule__Scenario__Group_0_0__0 )
+                    {
+                     before(grammarAccess.getScenarioAccess().getGroup_0_0()); 
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:173:1: ( rule__Scenario__Group_0_0__0 )
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:173:2: rule__Scenario__Group_0_0__0
+                    {
+                    pushFollow(FOLLOW_rule__Scenario__Group_0_0__0_in_rule__Scenario__Alternatives_0301);
+                    rule__Scenario__Group_0_0__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getScenarioAccess().getGroup_0_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:177:6: ( ( rule__Scenario__Group_0_1__0 ) )
+                    {
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:177:6: ( ( rule__Scenario__Group_0_1__0 ) )
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:178:1: ( rule__Scenario__Group_0_1__0 )
+                    {
+                     before(grammarAccess.getScenarioAccess().getGroup_0_1()); 
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:179:1: ( rule__Scenario__Group_0_1__0 )
+                    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:179:2: rule__Scenario__Group_0_1__0
+                    {
+                    pushFollow(FOLLOW_rule__Scenario__Group_0_1__0_in_rule__Scenario__Alternatives_0319);
+                    rule__Scenario__Group_0_1__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getScenarioAccess().getGroup_0_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Alternatives_0"
+
+
+    // $ANTLR start "rule__Spec__Group__0"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:190:1: rule__Spec__Group__0 : rule__Spec__Group__0__Impl rule__Spec__Group__1 ;
+    public final void rule__Spec__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:194:1: ( rule__Spec__Group__0__Impl rule__Spec__Group__1 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:195:2: rule__Spec__Group__0__Impl rule__Spec__Group__1
+            {
+            pushFollow(FOLLOW_rule__Spec__Group__0__Impl_in_rule__Spec__Group__0350);
+            rule__Spec__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Spec__Group__1_in_rule__Spec__Group__0353);
+            rule__Spec__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group__0"
+
+
+    // $ANTLR start "rule__Spec__Group__0__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:202:1: rule__Spec__Group__0__Impl : ( ( rule__Spec__Alternatives_0 ) ) ;
+    public final void rule__Spec__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:206:1: ( ( ( rule__Spec__Alternatives_0 ) ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:207:1: ( ( rule__Spec__Alternatives_0 ) )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:207:1: ( ( rule__Spec__Alternatives_0 ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:208:1: ( rule__Spec__Alternatives_0 )
+            {
+             before(grammarAccess.getSpecAccess().getAlternatives_0()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:209:1: ( rule__Spec__Alternatives_0 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:209:2: rule__Spec__Alternatives_0
+            {
+            pushFollow(FOLLOW_rule__Spec__Alternatives_0_in_rule__Spec__Group__0__Impl380);
+            rule__Spec__Alternatives_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSpecAccess().getAlternatives_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Spec__Group__1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:219:1: rule__Spec__Group__1 : rule__Spec__Group__1__Impl rule__Spec__Group__2 ;
+    public final void rule__Spec__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:223:1: ( rule__Spec__Group__1__Impl rule__Spec__Group__2 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:224:2: rule__Spec__Group__1__Impl rule__Spec__Group__2
+            {
+            pushFollow(FOLLOW_rule__Spec__Group__1__Impl_in_rule__Spec__Group__1410);
+            rule__Spec__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Spec__Group__2_in_rule__Spec__Group__1413);
+            rule__Spec__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group__1"
+
+
+    // $ANTLR start "rule__Spec__Group__1__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:231:1: rule__Spec__Group__1__Impl : ( ( rule__Spec__ScenariosAssignment_1 )* ) ;
+    public final void rule__Spec__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:235:1: ( ( ( rule__Spec__ScenariosAssignment_1 )* ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:236:1: ( ( rule__Spec__ScenariosAssignment_1 )* )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:236:1: ( ( rule__Spec__ScenariosAssignment_1 )* )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:237:1: ( rule__Spec__ScenariosAssignment_1 )*
+            {
+             before(grammarAccess.getSpecAccess().getScenariosAssignment_1()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:238:1: ( rule__Spec__ScenariosAssignment_1 )*
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
+
+                if ( (LA3_0==RULE_ANY_OTHER||LA3_0==13) ) {
+                    alt3=1;
+                }
+
+
+                switch (alt3) {
+            	case 1 :
+            	    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:238:2: rule__Spec__ScenariosAssignment_1
+            	    {
+            	    pushFollow(FOLLOW_rule__Spec__ScenariosAssignment_1_in_rule__Spec__Group__1__Impl440);
+            	    rule__Spec__ScenariosAssignment_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop3;
+                }
+            } while (true);
+
+             after(grammarAccess.getSpecAccess().getScenariosAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Spec__Group__2"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:248:1: rule__Spec__Group__2 : rule__Spec__Group__2__Impl ;
+    public final void rule__Spec__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:252:1: ( rule__Spec__Group__2__Impl )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:253:2: rule__Spec__Group__2__Impl
+            {
+            pushFollow(FOLLOW_rule__Spec__Group__2__Impl_in_rule__Spec__Group__2471);
+            rule__Spec__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group__2"
+
+
+    // $ANTLR start "rule__Spec__Group__2__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:259:1: rule__Spec__Group__2__Impl : ( ( rule__Spec__StepAssignment_2 )* ) ;
+    public final void rule__Spec__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:263:1: ( ( ( rule__Spec__StepAssignment_2 )* ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:264:1: ( ( rule__Spec__StepAssignment_2 )* )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:264:1: ( ( rule__Spec__StepAssignment_2 )* )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:265:1: ( rule__Spec__StepAssignment_2 )*
+            {
+             before(grammarAccess.getSpecAccess().getStepAssignment_2()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:266:1: ( rule__Spec__StepAssignment_2 )*
+            loop4:
+            do {
+                int alt4=2;
+                int LA4_0 = input.LA(1);
+
+                if ( (LA4_0==15) ) {
+                    alt4=1;
+                }
+
+
+                switch (alt4) {
+            	case 1 :
+            	    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:266:2: rule__Spec__StepAssignment_2
+            	    {
+            	    pushFollow(FOLLOW_rule__Spec__StepAssignment_2_in_rule__Spec__Group__2__Impl498);
+            	    rule__Spec__StepAssignment_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop4;
+                }
+            } while (true);
+
+             after(grammarAccess.getSpecAccess().getStepAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Spec__Group_0_0__0"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:282:1: rule__Spec__Group_0_0__0 : rule__Spec__Group_0_0__0__Impl rule__Spec__Group_0_0__1 ;
+    public final void rule__Spec__Group_0_0__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:286:1: ( rule__Spec__Group_0_0__0__Impl rule__Spec__Group_0_0__1 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:287:2: rule__Spec__Group_0_0__0__Impl rule__Spec__Group_0_0__1
+            {
+            pushFollow(FOLLOW_rule__Spec__Group_0_0__0__Impl_in_rule__Spec__Group_0_0__0535);
+            rule__Spec__Group_0_0__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Spec__Group_0_0__1_in_rule__Spec__Group_0_0__0538);
+            rule__Spec__Group_0_0__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group_0_0__0"
+
+
+    // $ANTLR start "rule__Spec__Group_0_0__0__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:294:1: rule__Spec__Group_0_0__0__Impl : ( '# ' ) ;
+    public final void rule__Spec__Group_0_0__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:298:1: ( ( '# ' ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:299:1: ( '# ' )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:299:1: ( '# ' )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:300:1: '# '
+            {
+             before(grammarAccess.getSpecAccess().getNumberSignSpaceKeyword_0_0_0()); 
+            match(input,11,FOLLOW_11_in_rule__Spec__Group_0_0__0__Impl566); 
+             after(grammarAccess.getSpecAccess().getNumberSignSpaceKeyword_0_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group_0_0__0__Impl"
+
+
+    // $ANTLR start "rule__Spec__Group_0_0__1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:313:1: rule__Spec__Group_0_0__1 : rule__Spec__Group_0_0__1__Impl ;
+    public final void rule__Spec__Group_0_0__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:317:1: ( rule__Spec__Group_0_0__1__Impl )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:318:2: rule__Spec__Group_0_0__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Spec__Group_0_0__1__Impl_in_rule__Spec__Group_0_0__1597);
+            rule__Spec__Group_0_0__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group_0_0__1"
+
+
+    // $ANTLR start "rule__Spec__Group_0_0__1__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:324:1: rule__Spec__Group_0_0__1__Impl : ( ( rule__Spec__NameAssignment_0_0_1 ) ) ;
+    public final void rule__Spec__Group_0_0__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:328:1: ( ( ( rule__Spec__NameAssignment_0_0_1 ) ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:329:1: ( ( rule__Spec__NameAssignment_0_0_1 ) )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:329:1: ( ( rule__Spec__NameAssignment_0_0_1 ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:330:1: ( rule__Spec__NameAssignment_0_0_1 )
+            {
+             before(grammarAccess.getSpecAccess().getNameAssignment_0_0_1()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:331:1: ( rule__Spec__NameAssignment_0_0_1 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:331:2: rule__Spec__NameAssignment_0_0_1
+            {
+            pushFollow(FOLLOW_rule__Spec__NameAssignment_0_0_1_in_rule__Spec__Group_0_0__1__Impl624);
+            rule__Spec__NameAssignment_0_0_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSpecAccess().getNameAssignment_0_0_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group_0_0__1__Impl"
+
+
+    // $ANTLR start "rule__Spec__Group_0_1__0"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:345:1: rule__Spec__Group_0_1__0 : rule__Spec__Group_0_1__0__Impl rule__Spec__Group_0_1__1 ;
+    public final void rule__Spec__Group_0_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:349:1: ( rule__Spec__Group_0_1__0__Impl rule__Spec__Group_0_1__1 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:350:2: rule__Spec__Group_0_1__0__Impl rule__Spec__Group_0_1__1
+            {
+            pushFollow(FOLLOW_rule__Spec__Group_0_1__0__Impl_in_rule__Spec__Group_0_1__0658);
+            rule__Spec__Group_0_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Spec__Group_0_1__1_in_rule__Spec__Group_0_1__0661);
+            rule__Spec__Group_0_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group_0_1__0"
+
+
+    // $ANTLR start "rule__Spec__Group_0_1__0__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:357:1: rule__Spec__Group_0_1__0__Impl : ( ( rule__Spec__NameAssignment_0_1_0 ) ) ;
+    public final void rule__Spec__Group_0_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:361:1: ( ( ( rule__Spec__NameAssignment_0_1_0 ) ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:362:1: ( ( rule__Spec__NameAssignment_0_1_0 ) )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:362:1: ( ( rule__Spec__NameAssignment_0_1_0 ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:363:1: ( rule__Spec__NameAssignment_0_1_0 )
+            {
+             before(grammarAccess.getSpecAccess().getNameAssignment_0_1_0()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:364:1: ( rule__Spec__NameAssignment_0_1_0 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:364:2: rule__Spec__NameAssignment_0_1_0
+            {
+            pushFollow(FOLLOW_rule__Spec__NameAssignment_0_1_0_in_rule__Spec__Group_0_1__0__Impl688);
+            rule__Spec__NameAssignment_0_1_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSpecAccess().getNameAssignment_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group_0_1__0__Impl"
+
+
+    // $ANTLR start "rule__Spec__Group_0_1__1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:374:1: rule__Spec__Group_0_1__1 : rule__Spec__Group_0_1__1__Impl ;
+    public final void rule__Spec__Group_0_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:378:1: ( rule__Spec__Group_0_1__1__Impl )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:379:2: rule__Spec__Group_0_1__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Spec__Group_0_1__1__Impl_in_rule__Spec__Group_0_1__1718);
+            rule__Spec__Group_0_1__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group_0_1__1"
+
+
+    // $ANTLR start "rule__Spec__Group_0_1__1__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:385:1: rule__Spec__Group_0_1__1__Impl : ( ( '=' )* ) ;
+    public final void rule__Spec__Group_0_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:389:1: ( ( ( '=' )* ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:390:1: ( ( '=' )* )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:390:1: ( ( '=' )* )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:391:1: ( '=' )*
+            {
+             before(grammarAccess.getSpecAccess().getEqualsSignKeyword_0_1_1()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:392:1: ( '=' )*
+            loop5:
+            do {
+                int alt5=2;
+                int LA5_0 = input.LA(1);
+
+                if ( (LA5_0==12) ) {
+                    alt5=1;
+                }
+
+
+                switch (alt5) {
+            	case 1 :
+            	    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:393:2: '='
+            	    {
+            	    match(input,12,FOLLOW_12_in_rule__Spec__Group_0_1__1__Impl747); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop5;
+                }
+            } while (true);
+
+             after(grammarAccess.getSpecAccess().getEqualsSignKeyword_0_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__Group_0_1__1__Impl"
+
+
+    // $ANTLR start "rule__Scenario__Group__0"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:408:1: rule__Scenario__Group__0 : rule__Scenario__Group__0__Impl rule__Scenario__Group__1 ;
+    public final void rule__Scenario__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:412:1: ( rule__Scenario__Group__0__Impl rule__Scenario__Group__1 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:413:2: rule__Scenario__Group__0__Impl rule__Scenario__Group__1
+            {
+            pushFollow(FOLLOW_rule__Scenario__Group__0__Impl_in_rule__Scenario__Group__0784);
+            rule__Scenario__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Scenario__Group__1_in_rule__Scenario__Group__0787);
+            rule__Scenario__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group__0"
+
+
+    // $ANTLR start "rule__Scenario__Group__0__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:420:1: rule__Scenario__Group__0__Impl : ( ( rule__Scenario__Alternatives_0 ) ) ;
+    public final void rule__Scenario__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:424:1: ( ( ( rule__Scenario__Alternatives_0 ) ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:425:1: ( ( rule__Scenario__Alternatives_0 ) )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:425:1: ( ( rule__Scenario__Alternatives_0 ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:426:1: ( rule__Scenario__Alternatives_0 )
+            {
+             before(grammarAccess.getScenarioAccess().getAlternatives_0()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:427:1: ( rule__Scenario__Alternatives_0 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:427:2: rule__Scenario__Alternatives_0
+            {
+            pushFollow(FOLLOW_rule__Scenario__Alternatives_0_in_rule__Scenario__Group__0__Impl814);
+            rule__Scenario__Alternatives_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getScenarioAccess().getAlternatives_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Scenario__Group__1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:437:1: rule__Scenario__Group__1 : rule__Scenario__Group__1__Impl ;
+    public final void rule__Scenario__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:441:1: ( rule__Scenario__Group__1__Impl )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:442:2: rule__Scenario__Group__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Scenario__Group__1__Impl_in_rule__Scenario__Group__1844);
+            rule__Scenario__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group__1"
+
+
+    // $ANTLR start "rule__Scenario__Group__1__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:448:1: rule__Scenario__Group__1__Impl : ( ( rule__Scenario__StepsAssignment_1 )* ) ;
+    public final void rule__Scenario__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:452:1: ( ( ( rule__Scenario__StepsAssignment_1 )* ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:453:1: ( ( rule__Scenario__StepsAssignment_1 )* )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:453:1: ( ( rule__Scenario__StepsAssignment_1 )* )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:454:1: ( rule__Scenario__StepsAssignment_1 )*
+            {
+             before(grammarAccess.getScenarioAccess().getStepsAssignment_1()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:455:1: ( rule__Scenario__StepsAssignment_1 )*
+            loop6:
+            do {
+                int alt6=2;
+                int LA6_0 = input.LA(1);
+
+                if ( (LA6_0==15) ) {
+                    int LA6_2 = input.LA(2);
+
+                    if ( (LA6_2==RULE_ANY_OTHER) ) {
+                        alt6=1;
+                    }
+
+
+                }
+
+
+                switch (alt6) {
+            	case 1 :
+            	    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:455:2: rule__Scenario__StepsAssignment_1
+            	    {
+            	    pushFollow(FOLLOW_rule__Scenario__StepsAssignment_1_in_rule__Scenario__Group__1__Impl871);
+            	    rule__Scenario__StepsAssignment_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop6;
+                }
+            } while (true);
+
+             after(grammarAccess.getScenarioAccess().getStepsAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Scenario__Group_0_0__0"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:469:1: rule__Scenario__Group_0_0__0 : rule__Scenario__Group_0_0__0__Impl rule__Scenario__Group_0_0__1 ;
+    public final void rule__Scenario__Group_0_0__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:473:1: ( rule__Scenario__Group_0_0__0__Impl rule__Scenario__Group_0_0__1 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:474:2: rule__Scenario__Group_0_0__0__Impl rule__Scenario__Group_0_0__1
+            {
+            pushFollow(FOLLOW_rule__Scenario__Group_0_0__0__Impl_in_rule__Scenario__Group_0_0__0906);
+            rule__Scenario__Group_0_0__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Scenario__Group_0_0__1_in_rule__Scenario__Group_0_0__0909);
+            rule__Scenario__Group_0_0__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group_0_0__0"
+
+
+    // $ANTLR start "rule__Scenario__Group_0_0__0__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:481:1: rule__Scenario__Group_0_0__0__Impl : ( '## ' ) ;
+    public final void rule__Scenario__Group_0_0__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:485:1: ( ( '## ' ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:486:1: ( '## ' )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:486:1: ( '## ' )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:487:1: '## '
+            {
+             before(grammarAccess.getScenarioAccess().getNumberSignNumberSignSpaceKeyword_0_0_0()); 
+            match(input,13,FOLLOW_13_in_rule__Scenario__Group_0_0__0__Impl937); 
+             after(grammarAccess.getScenarioAccess().getNumberSignNumberSignSpaceKeyword_0_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group_0_0__0__Impl"
+
+
+    // $ANTLR start "rule__Scenario__Group_0_0__1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:500:1: rule__Scenario__Group_0_0__1 : rule__Scenario__Group_0_0__1__Impl ;
+    public final void rule__Scenario__Group_0_0__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:504:1: ( rule__Scenario__Group_0_0__1__Impl )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:505:2: rule__Scenario__Group_0_0__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Scenario__Group_0_0__1__Impl_in_rule__Scenario__Group_0_0__1968);
+            rule__Scenario__Group_0_0__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group_0_0__1"
+
+
+    // $ANTLR start "rule__Scenario__Group_0_0__1__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:511:1: rule__Scenario__Group_0_0__1__Impl : ( ( rule__Scenario__NameAssignment_0_0_1 ) ) ;
+    public final void rule__Scenario__Group_0_0__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:515:1: ( ( ( rule__Scenario__NameAssignment_0_0_1 ) ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:516:1: ( ( rule__Scenario__NameAssignment_0_0_1 ) )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:516:1: ( ( rule__Scenario__NameAssignment_0_0_1 ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:517:1: ( rule__Scenario__NameAssignment_0_0_1 )
+            {
+             before(grammarAccess.getScenarioAccess().getNameAssignment_0_0_1()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:518:1: ( rule__Scenario__NameAssignment_0_0_1 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:518:2: rule__Scenario__NameAssignment_0_0_1
+            {
+            pushFollow(FOLLOW_rule__Scenario__NameAssignment_0_0_1_in_rule__Scenario__Group_0_0__1__Impl995);
+            rule__Scenario__NameAssignment_0_0_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getScenarioAccess().getNameAssignment_0_0_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group_0_0__1__Impl"
+
+
+    // $ANTLR start "rule__Scenario__Group_0_1__0"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:532:1: rule__Scenario__Group_0_1__0 : rule__Scenario__Group_0_1__0__Impl rule__Scenario__Group_0_1__1 ;
+    public final void rule__Scenario__Group_0_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:536:1: ( rule__Scenario__Group_0_1__0__Impl rule__Scenario__Group_0_1__1 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:537:2: rule__Scenario__Group_0_1__0__Impl rule__Scenario__Group_0_1__1
+            {
+            pushFollow(FOLLOW_rule__Scenario__Group_0_1__0__Impl_in_rule__Scenario__Group_0_1__01029);
+            rule__Scenario__Group_0_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Scenario__Group_0_1__1_in_rule__Scenario__Group_0_1__01032);
+            rule__Scenario__Group_0_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group_0_1__0"
+
+
+    // $ANTLR start "rule__Scenario__Group_0_1__0__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:544:1: rule__Scenario__Group_0_1__0__Impl : ( ( rule__Scenario__NameAssignment_0_1_0 ) ) ;
+    public final void rule__Scenario__Group_0_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:548:1: ( ( ( rule__Scenario__NameAssignment_0_1_0 ) ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:549:1: ( ( rule__Scenario__NameAssignment_0_1_0 ) )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:549:1: ( ( rule__Scenario__NameAssignment_0_1_0 ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:550:1: ( rule__Scenario__NameAssignment_0_1_0 )
+            {
+             before(grammarAccess.getScenarioAccess().getNameAssignment_0_1_0()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:551:1: ( rule__Scenario__NameAssignment_0_1_0 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:551:2: rule__Scenario__NameAssignment_0_1_0
+            {
+            pushFollow(FOLLOW_rule__Scenario__NameAssignment_0_1_0_in_rule__Scenario__Group_0_1__0__Impl1059);
+            rule__Scenario__NameAssignment_0_1_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getScenarioAccess().getNameAssignment_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group_0_1__0__Impl"
+
+
+    // $ANTLR start "rule__Scenario__Group_0_1__1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:561:1: rule__Scenario__Group_0_1__1 : rule__Scenario__Group_0_1__1__Impl ;
+    public final void rule__Scenario__Group_0_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:565:1: ( rule__Scenario__Group_0_1__1__Impl )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:566:2: rule__Scenario__Group_0_1__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Scenario__Group_0_1__1__Impl_in_rule__Scenario__Group_0_1__11089);
+            rule__Scenario__Group_0_1__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group_0_1__1"
+
+
+    // $ANTLR start "rule__Scenario__Group_0_1__1__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:572:1: rule__Scenario__Group_0_1__1__Impl : ( ( '-' )* ) ;
+    public final void rule__Scenario__Group_0_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:576:1: ( ( ( '-' )* ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:577:1: ( ( '-' )* )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:577:1: ( ( '-' )* )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:578:1: ( '-' )*
+            {
+             before(grammarAccess.getScenarioAccess().getHyphenMinusKeyword_0_1_1()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:579:1: ( '-' )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( (LA7_0==14) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:580:2: '-'
+            	    {
+            	    match(input,14,FOLLOW_14_in_rule__Scenario__Group_0_1__1__Impl1118); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+             after(grammarAccess.getScenarioAccess().getHyphenMinusKeyword_0_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__Group_0_1__1__Impl"
+
+
+    // $ANTLR start "rule__Step__Group__0"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:595:1: rule__Step__Group__0 : rule__Step__Group__0__Impl rule__Step__Group__1 ;
+    public final void rule__Step__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:599:1: ( rule__Step__Group__0__Impl rule__Step__Group__1 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:600:2: rule__Step__Group__0__Impl rule__Step__Group__1
+            {
+            pushFollow(FOLLOW_rule__Step__Group__0__Impl_in_rule__Step__Group__01155);
+            rule__Step__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Step__Group__1_in_rule__Step__Group__01158);
+            rule__Step__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Step__Group__0"
+
+
+    // $ANTLR start "rule__Step__Group__0__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:607:1: rule__Step__Group__0__Impl : ( '*' ) ;
+    public final void rule__Step__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:611:1: ( ( '*' ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:612:1: ( '*' )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:612:1: ( '*' )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:613:1: '*'
+            {
+             before(grammarAccess.getStepAccess().getAsteriskKeyword_0()); 
+            match(input,15,FOLLOW_15_in_rule__Step__Group__0__Impl1186); 
+             after(grammarAccess.getStepAccess().getAsteriskKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Step__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Step__Group__1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:626:1: rule__Step__Group__1 : rule__Step__Group__1__Impl ;
+    public final void rule__Step__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:630:1: ( rule__Step__Group__1__Impl )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:631:2: rule__Step__Group__1__Impl
+            {
+            pushFollow(FOLLOW_rule__Step__Group__1__Impl_in_rule__Step__Group__11217);
+            rule__Step__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Step__Group__1"
+
+
+    // $ANTLR start "rule__Step__Group__1__Impl"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:637:1: rule__Step__Group__1__Impl : ( ( rule__Step__NameAssignment_1 ) ) ;
+    public final void rule__Step__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:641:1: ( ( ( rule__Step__NameAssignment_1 ) ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:642:1: ( ( rule__Step__NameAssignment_1 ) )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:642:1: ( ( rule__Step__NameAssignment_1 ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:643:1: ( rule__Step__NameAssignment_1 )
+            {
+             before(grammarAccess.getStepAccess().getNameAssignment_1()); 
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:644:1: ( rule__Step__NameAssignment_1 )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:644:2: rule__Step__NameAssignment_1
+            {
+            pushFollow(FOLLOW_rule__Step__NameAssignment_1_in_rule__Step__Group__1__Impl1244);
+            rule__Step__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getStepAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Step__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Spec__NameAssignment_0_0_1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:659:1: rule__Spec__NameAssignment_0_0_1 : ( RULE_ANY_OTHER ) ;
+    public final void rule__Spec__NameAssignment_0_0_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:663:1: ( ( RULE_ANY_OTHER ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:664:1: ( RULE_ANY_OTHER )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:664:1: ( RULE_ANY_OTHER )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:665:1: RULE_ANY_OTHER
+            {
+             before(grammarAccess.getSpecAccess().getNameANY_OTHERTerminalRuleCall_0_0_1_0()); 
+            match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_rule__Spec__NameAssignment_0_0_11283); 
+             after(grammarAccess.getSpecAccess().getNameANY_OTHERTerminalRuleCall_0_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__NameAssignment_0_0_1"
+
+
+    // $ANTLR start "rule__Spec__NameAssignment_0_1_0"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:674:1: rule__Spec__NameAssignment_0_1_0 : ( RULE_ANY_OTHER ) ;
+    public final void rule__Spec__NameAssignment_0_1_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:678:1: ( ( RULE_ANY_OTHER ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:679:1: ( RULE_ANY_OTHER )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:679:1: ( RULE_ANY_OTHER )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:680:1: RULE_ANY_OTHER
+            {
+             before(grammarAccess.getSpecAccess().getNameANY_OTHERTerminalRuleCall_0_1_0_0()); 
+            match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_rule__Spec__NameAssignment_0_1_01314); 
+             after(grammarAccess.getSpecAccess().getNameANY_OTHERTerminalRuleCall_0_1_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__NameAssignment_0_1_0"
+
+
+    // $ANTLR start "rule__Spec__ScenariosAssignment_1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:689:1: rule__Spec__ScenariosAssignment_1 : ( ruleScenario ) ;
+    public final void rule__Spec__ScenariosAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:693:1: ( ( ruleScenario ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:694:1: ( ruleScenario )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:694:1: ( ruleScenario )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:695:1: ruleScenario
+            {
+             before(grammarAccess.getSpecAccess().getScenariosScenarioParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleScenario_in_rule__Spec__ScenariosAssignment_11345);
+            ruleScenario();
+
+            state._fsp--;
+
+             after(grammarAccess.getSpecAccess().getScenariosScenarioParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__ScenariosAssignment_1"
+
+
+    // $ANTLR start "rule__Spec__StepAssignment_2"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:704:1: rule__Spec__StepAssignment_2 : ( ruleStep ) ;
+    public final void rule__Spec__StepAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:708:1: ( ( ruleStep ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:709:1: ( ruleStep )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:709:1: ( ruleStep )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:710:1: ruleStep
+            {
+             before(grammarAccess.getSpecAccess().getStepStepParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_ruleStep_in_rule__Spec__StepAssignment_21376);
+            ruleStep();
+
+            state._fsp--;
+
+             after(grammarAccess.getSpecAccess().getStepStepParserRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Spec__StepAssignment_2"
+
+
+    // $ANTLR start "rule__Scenario__NameAssignment_0_0_1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:719:1: rule__Scenario__NameAssignment_0_0_1 : ( RULE_ANY_OTHER ) ;
+    public final void rule__Scenario__NameAssignment_0_0_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:723:1: ( ( RULE_ANY_OTHER ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:724:1: ( RULE_ANY_OTHER )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:724:1: ( RULE_ANY_OTHER )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:725:1: RULE_ANY_OTHER
+            {
+             before(grammarAccess.getScenarioAccess().getNameANY_OTHERTerminalRuleCall_0_0_1_0()); 
+            match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_rule__Scenario__NameAssignment_0_0_11407); 
+             after(grammarAccess.getScenarioAccess().getNameANY_OTHERTerminalRuleCall_0_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__NameAssignment_0_0_1"
+
+
+    // $ANTLR start "rule__Scenario__NameAssignment_0_1_0"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:734:1: rule__Scenario__NameAssignment_0_1_0 : ( RULE_ANY_OTHER ) ;
+    public final void rule__Scenario__NameAssignment_0_1_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:738:1: ( ( RULE_ANY_OTHER ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:739:1: ( RULE_ANY_OTHER )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:739:1: ( RULE_ANY_OTHER )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:740:1: RULE_ANY_OTHER
+            {
+             before(grammarAccess.getScenarioAccess().getNameANY_OTHERTerminalRuleCall_0_1_0_0()); 
+            match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_rule__Scenario__NameAssignment_0_1_01438); 
+             after(grammarAccess.getScenarioAccess().getNameANY_OTHERTerminalRuleCall_0_1_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__NameAssignment_0_1_0"
+
+
+    // $ANTLR start "rule__Scenario__StepsAssignment_1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:749:1: rule__Scenario__StepsAssignment_1 : ( ruleStep ) ;
+    public final void rule__Scenario__StepsAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:753:1: ( ( ruleStep ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:754:1: ( ruleStep )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:754:1: ( ruleStep )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:755:1: ruleStep
+            {
+             before(grammarAccess.getScenarioAccess().getStepsStepParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleStep_in_rule__Scenario__StepsAssignment_11469);
+            ruleStep();
+
+            state._fsp--;
+
+             after(grammarAccess.getScenarioAccess().getStepsStepParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Scenario__StepsAssignment_1"
+
+
+    // $ANTLR start "rule__Step__NameAssignment_1"
+    // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:764:1: rule__Step__NameAssignment_1 : ( RULE_ANY_OTHER ) ;
+    public final void rule__Step__NameAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:768:1: ( ( RULE_ANY_OTHER ) )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:769:1: ( RULE_ANY_OTHER )
+            {
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:769:1: ( RULE_ANY_OTHER )
+            // ../com.thoughtworks.gauge.eclipse.ui/src-gen/com/thoughtworks/gauge/ui/contentassist/antlr/internal/InternalEclipse.g:770:1: RULE_ANY_OTHER
+            {
+             before(grammarAccess.getStepAccess().getNameANY_OTHERTerminalRuleCall_1_0()); 
+            match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_rule__Step__NameAssignment_11500); 
+             after(grammarAccess.getStepAccess().getNameANY_OTHERTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Step__NameAssignment_1"
+
+    // Delegated rules
+
+
+ 
+
+    public static final BitSet FOLLOW_ruleSpec_in_entryRuleSpec61 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpec68 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group__0_in_ruleSpec94 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleScenario_in_entryRuleScenario121 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleScenario128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group__0_in_ruleScenario154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStep_in_entryRuleStep181 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStep188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__Group__0_in_ruleStep214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0_0__0_in_rule__Spec__Alternatives_0250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0_1__0_in_rule__Spec__Alternatives_0268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0_0__0_in_rule__Scenario__Alternatives_0301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0_1__0_in_rule__Scenario__Alternatives_0319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group__0__Impl_in_rule__Spec__Group__0350 = new BitSet(new long[]{0x000000000000A010L});
+    public static final BitSet FOLLOW_rule__Spec__Group__1_in_rule__Spec__Group__0353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Alternatives_0_in_rule__Spec__Group__0__Impl380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group__1__Impl_in_rule__Spec__Group__1410 = new BitSet(new long[]{0x000000000000A010L});
+    public static final BitSet FOLLOW_rule__Spec__Group__2_in_rule__Spec__Group__1413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__ScenariosAssignment_1_in_rule__Spec__Group__1__Impl440 = new BitSet(new long[]{0x0000000000002012L});
+    public static final BitSet FOLLOW_rule__Spec__Group__2__Impl_in_rule__Spec__Group__2471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__StepAssignment_2_in_rule__Spec__Group__2__Impl498 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0_0__0__Impl_in_rule__Spec__Group_0_0__0535 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0_0__1_in_rule__Spec__Group_0_0__0538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__Spec__Group_0_0__0__Impl566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0_0__1__Impl_in_rule__Spec__Group_0_0__1597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__NameAssignment_0_0_1_in_rule__Spec__Group_0_0__1__Impl624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0_1__0__Impl_in_rule__Spec__Group_0_1__0658 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0_1__1_in_rule__Spec__Group_0_1__0661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__NameAssignment_0_1_0_in_rule__Spec__Group_0_1__0__Impl688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0_1__1__Impl_in_rule__Spec__Group_0_1__1718 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Spec__Group_0_1__1__Impl747 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group__0__Impl_in_rule__Scenario__Group__0784 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Scenario__Group__1_in_rule__Scenario__Group__0787 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Alternatives_0_in_rule__Scenario__Group__0__Impl814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group__1__Impl_in_rule__Scenario__Group__1844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__StepsAssignment_1_in_rule__Scenario__Group__1__Impl871 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0_0__0__Impl_in_rule__Scenario__Group_0_0__0906 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0_0__1_in_rule__Scenario__Group_0_0__0909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Scenario__Group_0_0__0__Impl937 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0_0__1__Impl_in_rule__Scenario__Group_0_0__1968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__NameAssignment_0_0_1_in_rule__Scenario__Group_0_0__1__Impl995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0_1__0__Impl_in_rule__Scenario__Group_0_1__01029 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0_1__1_in_rule__Scenario__Group_0_1__01032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__NameAssignment_0_1_0_in_rule__Scenario__Group_0_1__0__Impl1059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0_1__1__Impl_in_rule__Scenario__Group_0_1__11089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Scenario__Group_0_1__1__Impl1118 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_rule__Step__Group__0__Impl_in_rule__Step__Group__01155 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Step__Group__1_in_rule__Step__Group__01158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Step__Group__0__Impl1186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__Group__1__Impl_in_rule__Step__Group__11217 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__NameAssignment_1_in_rule__Step__Group__1__Impl1244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__Spec__NameAssignment_0_0_11283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__Spec__NameAssignment_0_1_01314 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleScenario_in_rule__Spec__ScenariosAssignment_11345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStep_in_rule__Spec__StepAssignment_21376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__Scenario__NameAssignment_0_0_11407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__Scenario__NameAssignment_0_1_01438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStep_in_rule__Scenario__StepsAssignment_11469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_rule__Step__NameAssignment_11500 = new BitSet(new long[]{0x0000000000000002L});
+
+}

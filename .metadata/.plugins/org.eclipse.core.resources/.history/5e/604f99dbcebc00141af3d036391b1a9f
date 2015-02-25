@@ -1,0 +1,17 @@
+grammar com.thoughtworks.gauge.Eclipse with org.eclipse.xtext.common.Terminals
+
+generate spec "http://www.thoughtworks.com/gauge/Eclipse"
+
+Spec:
+	(scenarios+=Scenario)*
+	'# ' name=ID
+;
+
+Scenario:
+	steps+=Step*
+	'## ' name=ID
+;
+
+Step:
+	'* ' name=ID
+;
