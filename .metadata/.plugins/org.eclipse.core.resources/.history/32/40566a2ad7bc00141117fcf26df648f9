@@ -1,0 +1,25 @@
+grammar io.getgauge.Spec with org.eclipse.xtext.common.Terminals
+
+generate spec "http://www.getgauge.io/Spec"
+
+Spec:
+	name=SPEC_DEF	
+	entities+=Entity*
+;
+
+Entity:
+	Scenario | Step
+;
+
+Scenario:
+	name=SCENARIO_DEF
+	steps+=Step*
+;
+
+Step:
+	name=STEP_DEF
+;
+
+terminal SPEC_DEF : '#' (ID| ' ')* ('\r'? '\n')?;
+terminal SCENARIO_DEF : '##'!('\n'|'\r')* ('\r'? '\n')?;
+terminal STEP_DEF : '*'!('\n'|'\r')* ('\r'? '\n')?;

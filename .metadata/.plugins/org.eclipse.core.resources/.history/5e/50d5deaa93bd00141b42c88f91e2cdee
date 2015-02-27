@@ -1,0 +1,28 @@
+grammar io.getgauge.Spec
+
+generate spec "http://www.getgauge.io/Spec"
+
+Spec:
+	'# ' name=ID
+	entities+=Entity*
+;
+
+Entity:
+	Scenario | Step
+;
+
+Scenario:
+	'## ' name=ID
+	steps+=Step*
+;
+
+Step:
+	name='* '
+;
+
+terminal WORD  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal SENTENCE : (WORD (' '|'\t')?)*;
+
+//terminal STEP_DEF : ('* ' .+) ('\r'? '\n');
+//terminal SPEC_DEF : '# ' (ID (' '|'\t')?)+('\r'? '\n');
+//terminal SCENARIO_DEF : '## ' (ID (' '|'\t')?)+('\r'? '\n')?;

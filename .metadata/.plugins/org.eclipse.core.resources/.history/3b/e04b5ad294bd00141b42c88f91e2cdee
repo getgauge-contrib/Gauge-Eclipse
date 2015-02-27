@@ -1,0 +1,25 @@
+grammar io.getgauge.Spec
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate spec "http://www.getgauge.io/Spec"
+
+//Spec:
+//	'# ' name=SL_SENTENCE
+//	(scenarios+=Scenario+)
+//	(steps+=Step*)
+//;
+//
+//Scenario:
+//	'## ' name=SL_SENTENCE
+//	(steps+=Step+)
+//;
+
+Step:
+	'* ' name=SL_SENTENCE
+;
+
+terminal SL_SENTENCE : !('\n'|'\r')* ('\r'? '\n');
+
+//terminal STEP_DEF : ('* ' .+) ('\r'? '\n');
+//terminal SPEC_DEF : '# ' (ID (' '|'\t')?)+('\r'? '\n');
+//terminal SCENARIO_DEF : '## ' (ID (' '|'\t')?)+('\r'? '\n')?;

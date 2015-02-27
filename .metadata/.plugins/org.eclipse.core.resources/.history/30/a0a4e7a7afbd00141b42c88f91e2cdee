@@ -1,0 +1,14 @@
+package io.getgauge.ui;
+
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfigurationAcceptor;
+
+public class SpecHighlightingConfiguration implements IHighlightingConfiguration{
+
+	@Override
+	public void configure(IHighlightingConfigurationAcceptor acceptor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

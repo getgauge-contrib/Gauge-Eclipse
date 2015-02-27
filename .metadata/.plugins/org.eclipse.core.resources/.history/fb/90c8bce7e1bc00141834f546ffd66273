@@ -1,0 +1,22 @@
+grammar io.getgauge.Spec 
+generate spec "http://www.getgauge.io/Spec"
+
+Spec:
+	'#' name=SENTENCE
+	entities+=Entity*
+;
+
+Entity:
+	Scenario | Step
+;
+
+Scenario:
+	'##' name=SENTENCE
+	steps+=Step*
+;
+
+Step:
+	'*' name=SENTENCE
+;
+
+terminal SENTENCE : (ID | ' ')*;

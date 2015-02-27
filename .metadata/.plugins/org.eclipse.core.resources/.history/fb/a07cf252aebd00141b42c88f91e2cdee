@@ -1,0 +1,5 @@
+package io.getgauge.ui;
+
+public class SpecHighlightingConfiguration {
+
+}

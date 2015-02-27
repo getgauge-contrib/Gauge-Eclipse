@@ -1,0 +1,19 @@
+package io.getgauge.ui;
+
+import org.eclipse.xtext.nodemodel.BidiTreeIterable;
+import org.eclipse.xtext.nodemodel.INode;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
+
+public class SpecHighlightingCalculator implements ISemanticHighlightingCalculator {
+
+	@Override
+	public void provideHighlightingFor(XtextResource resource,
+			IHighlightedPositionAcceptor acceptor) {
+		BidiTreeIterable<INode> allNodes=resource.getParseResult().getRootNode().getAsTreeIterable();
+		for (  INode node : allNodes) {
+			acceptor.addPosition(node.getOffset(), node.getLength(), SpecHighlightingConfiguration.SPEC);
+		}
+	}
+}

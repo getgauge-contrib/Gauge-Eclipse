@@ -1,0 +1,23 @@
+grammar io.getgauge.Spec with org.eclipse.xtext.common.Terminals
+
+generate spec "http://www.getgauge.io/Spec"
+
+Spec:
+	'#' name=SPEC_ID
+	entities+=Entity*
+;
+
+Entity:
+	Scenario | Step
+;
+
+Scenario:
+	'##' name=SPEC_IDd
+	steps+=Step*
+;
+
+Step:
+	'* ' nam=SPEC_IDId
+;
+
+terminal SPEC_ID: (ID|WS)*;

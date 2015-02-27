@@ -1,0 +1,7 @@
+package io.getgauge.ui;
+
+import ISemanticHighlightingCalculator;
+
+public class SpecHighlightingCalculator extends ISemanticHighlightingCalculator {
+
+}
