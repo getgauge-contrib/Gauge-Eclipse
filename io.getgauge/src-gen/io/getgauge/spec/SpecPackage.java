@@ -57,6 +57,53 @@ public interface SpecPackage extends EPackage
   SpecPackage eINSTANCE = io.getgauge.spec.impl.SpecPackageImpl.init();
 
   /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.ModelImpl <em>Model</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.ModelImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getModel()
+   * @generated
+   */
+  int MODEL = 0;
+
+  /**
+   * The feature id for the '<em><b>Definitions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__DEFINITIONS = 0;
+
+  /**
+   * The number of structural features of the '<em>Model</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.AbstractEntityImpl <em>Abstract Entity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.AbstractEntityImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getAbstractEntity()
+   * @generated
+   */
+  int ABSTRACT_ENTITY = 1;
+
+  /**
+   * The number of structural features of the '<em>Abstract Entity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_ENTITY_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link io.getgauge.spec.impl.SpecImpl <em>Spec</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -64,34 +111,16 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getSpec()
    * @generated
    */
-  int SPEC = 0;
+  int SPEC = 2;
 
   /**
-   * The feature id for the '<em><b>Text</b></em>' attribute list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SPEC__TEXT = 0;
-
-  /**
-   * The feature id for the '<em><b>Scenarios</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SPEC__SCENARIOS = 1;
-
-  /**
-   * The feature id for the '<em><b>Steps</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SPEC__STEPS = 2;
+  int SPEC__NAME = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Spec</em>' class.
@@ -100,7 +129,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPEC_FEATURE_COUNT = 3;
+  int SPEC_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.ScenarioImpl <em>Scenario</em>}' class.
@@ -110,16 +139,16 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getScenario()
    * @generated
    */
-  int SCENARIO = 1;
+  int SCENARIO = 3;
 
   /**
-   * The feature id for the '<em><b>Text</b></em>' attribute list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCENARIO__TEXT = 0;
+  int SCENARIO__NAME = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Scenario</em>' class.
@@ -128,7 +157,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_FEATURE_COUNT = 1;
+  int SCENARIO_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.StepImpl <em>Step</em>}' class.
@@ -138,16 +167,16 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getStep()
    * @generated
    */
-  int STEP = 2;
+  int STEP = 4;
 
   /**
-   * The feature id for the '<em><b>Text</b></em>' attribute list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STEP__TEXT = 0;
+  int STEP__NAME = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Step</em>' class.
@@ -156,8 +185,95 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STEP_FEATURE_COUNT = 1;
+  int STEP_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
 
+  /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.CommentImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getComment()
+   * @generated
+   */
+  int COMMENT = 5;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT__TEXT = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Comment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.BlankLineImpl <em>Blank Line</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.BlankLineImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getBlankLine()
+   * @generated
+   */
+  int BLANK_LINE = 6;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLANK_LINE__TEXT = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Blank Line</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLANK_LINE_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.Model <em>Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Model</em>'.
+   * @see io.getgauge.spec.Model
+   * @generated
+   */
+  EClass getModel();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Model#getDefinitions <em>Definitions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Definitions</em>'.
+   * @see io.getgauge.spec.Model#getDefinitions()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Definitions();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.AbstractEntity <em>Abstract Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Abstract Entity</em>'.
+   * @see io.getgauge.spec.AbstractEntity
+   * @generated
+   */
+  EClass getAbstractEntity();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.Spec <em>Spec</em>}'.
@@ -170,37 +286,15 @@ public interface SpecPackage extends EPackage
   EClass getSpec();
 
   /**
-   * Returns the meta object for the attribute list '{@link io.getgauge.spec.Spec#getText <em>Text</em>}'.
+   * Returns the meta object for the attribute '{@link io.getgauge.spec.Spec#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Text</em>'.
-   * @see io.getgauge.spec.Spec#getText()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see io.getgauge.spec.Spec#getName()
    * @see #getSpec()
    * @generated
    */
-  EAttribute getSpec_Text();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Spec#getScenarios <em>Scenarios</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Scenarios</em>'.
-   * @see io.getgauge.spec.Spec#getScenarios()
-   * @see #getSpec()
-   * @generated
-   */
-  EReference getSpec_Scenarios();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Spec#getSteps <em>Steps</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Steps</em>'.
-   * @see io.getgauge.spec.Spec#getSteps()
-   * @see #getSpec()
-   * @generated
-   */
-  EReference getSpec_Steps();
+  EAttribute getSpec_Name();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.Scenario <em>Scenario</em>}'.
@@ -213,15 +307,15 @@ public interface SpecPackage extends EPackage
   EClass getScenario();
 
   /**
-   * Returns the meta object for the attribute list '{@link io.getgauge.spec.Scenario#getText <em>Text</em>}'.
+   * Returns the meta object for the attribute '{@link io.getgauge.spec.Scenario#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Text</em>'.
-   * @see io.getgauge.spec.Scenario#getText()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see io.getgauge.spec.Scenario#getName()
    * @see #getScenario()
    * @generated
    */
-  EAttribute getScenario_Text();
+  EAttribute getScenario_Name();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.Step <em>Step</em>}'.
@@ -234,15 +328,57 @@ public interface SpecPackage extends EPackage
   EClass getStep();
 
   /**
-   * Returns the meta object for the attribute list '{@link io.getgauge.spec.Step#getText <em>Text</em>}'.
+   * Returns the meta object for the attribute '{@link io.getgauge.spec.Step#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Text</em>'.
-   * @see io.getgauge.spec.Step#getText()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see io.getgauge.spec.Step#getName()
    * @see #getStep()
    * @generated
    */
-  EAttribute getStep_Text();
+  EAttribute getStep_Name();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.Comment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comment</em>'.
+   * @see io.getgauge.spec.Comment
+   * @generated
+   */
+  EClass getComment();
+
+  /**
+   * Returns the meta object for the attribute '{@link io.getgauge.spec.Comment#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see io.getgauge.spec.Comment#getText()
+   * @see #getComment()
+   * @generated
+   */
+  EAttribute getComment_Text();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.BlankLine <em>Blank Line</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Blank Line</em>'.
+   * @see io.getgauge.spec.BlankLine
+   * @generated
+   */
+  EClass getBlankLine();
+
+  /**
+   * Returns the meta object for the attribute '{@link io.getgauge.spec.BlankLine#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see io.getgauge.spec.BlankLine#getText()
+   * @see #getBlankLine()
+   * @generated
+   */
+  EAttribute getBlankLine_Text();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -268,6 +404,34 @@ public interface SpecPackage extends EPackage
   interface Literals
   {
     /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.ModelImpl <em>Model</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.ModelImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getModel()
+     * @generated
+     */
+    EClass MODEL = eINSTANCE.getModel();
+
+    /**
+     * The meta object literal for the '<em><b>Definitions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__DEFINITIONS = eINSTANCE.getModel_Definitions();
+
+    /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.AbstractEntityImpl <em>Abstract Entity</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.AbstractEntityImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getAbstractEntity()
+     * @generated
+     */
+    EClass ABSTRACT_ENTITY = eINSTANCE.getAbstractEntity();
+
+    /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.SpecImpl <em>Spec</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -278,28 +442,12 @@ public interface SpecPackage extends EPackage
     EClass SPEC = eINSTANCE.getSpec();
 
     /**
-     * The meta object literal for the '<em><b>Text</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SPEC__TEXT = eINSTANCE.getSpec_Text();
-
-    /**
-     * The meta object literal for the '<em><b>Scenarios</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SPEC__SCENARIOS = eINSTANCE.getSpec_Scenarios();
-
-    /**
-     * The meta object literal for the '<em><b>Steps</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SPEC__STEPS = eINSTANCE.getSpec_Steps();
+    EAttribute SPEC__NAME = eINSTANCE.getSpec_Name();
 
     /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.ScenarioImpl <em>Scenario</em>}' class.
@@ -312,12 +460,12 @@ public interface SpecPackage extends EPackage
     EClass SCENARIO = eINSTANCE.getScenario();
 
     /**
-     * The meta object literal for the '<em><b>Text</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SCENARIO__TEXT = eINSTANCE.getScenario_Text();
+    EAttribute SCENARIO__NAME = eINSTANCE.getScenario_Name();
 
     /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.StepImpl <em>Step</em>}' class.
@@ -330,12 +478,48 @@ public interface SpecPackage extends EPackage
     EClass STEP = eINSTANCE.getStep();
 
     /**
-     * The meta object literal for the '<em><b>Text</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STEP__TEXT = eINSTANCE.getStep_Text();
+    EAttribute STEP__NAME = eINSTANCE.getStep_Name();
+
+    /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.CommentImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getComment()
+     * @generated
+     */
+    EClass COMMENT = eINSTANCE.getComment();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMMENT__TEXT = eINSTANCE.getComment_Text();
+
+    /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.BlankLineImpl <em>Blank Line</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.BlankLineImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getBlankLine()
+     * @generated
+     */
+    EClass BLANK_LINE = eINSTANCE.getBlankLine();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BLANK_LINE__TEXT = eINSTANCE.getBlankLine_Text();
 
   }
 

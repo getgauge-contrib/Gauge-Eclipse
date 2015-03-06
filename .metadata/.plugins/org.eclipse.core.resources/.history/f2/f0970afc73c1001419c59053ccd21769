@@ -1,0 +1,46 @@
+grammar io.getgauge.Spec 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate spec "http://www.getgauge.io/Spec"
+
+Spec:
+	('# ' title=TextPart SINGLE_NL) 
+	(MULTI_NL contents+=TextPart)*
+	(MULTI_NL scenarios+=Scenario)*
+;
+
+Scenario:
+	('## ' title=TextPart SINGLE_NL)
+	(MULTI_NL steps+=Step)* 
+;
+
+Step:
+	'* ' title=TextPart SINGLE_NL
+;
+
+//Comment:
+//	{Spec} ({Comment.elements+=current})*
+//;
+
+
+TextPart:
+	text=Text;
+
+Text:
+	(ID | WS | SINGLE_NL | ANY_OTHER | '\\[' | '\\]' | ',' | "-" | '\\:' | '\\%')+;
+
+terminal ID:
+	('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+
+terminal MULTI_NL:
+	'\r'? '\n' (/*(' ' | '\t')**/ '\r'? '\n')+;
+
+terminal SINGLE_NL:
+	'\r'? '\n';
+
+terminal WS:
+	' ' | '\t';
+
+terminal ANY_OTHER:
+	.;
+	

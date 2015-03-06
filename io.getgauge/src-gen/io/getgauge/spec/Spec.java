@@ -2,9 +2,6 @@
  */
 package io.getgauge.spec;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,9 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link io.getgauge.spec.Spec#getText <em>Text</em>}</li>
- *   <li>{@link io.getgauge.spec.Spec#getScenarios <em>Scenarios</em>}</li>
- *   <li>{@link io.getgauge.spec.Spec#getSteps <em>Steps</em>}</li>
+ *   <li>{@link io.getgauge.spec.Spec#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,54 +19,32 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Spec extends EObject
+public interface Spec extends AbstractEntity
 {
   /**
-   * Returns the value of the '<em><b>Text</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Text</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Text</em>' attribute list.
-   * @see io.getgauge.spec.SpecPackage#getSpec_Text()
-   * @model unique="false"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see io.getgauge.spec.SpecPackage#getSpec_Name()
+   * @model
    * @generated
    */
-  EList<String> getText();
+  String getName();
 
   /**
-   * Returns the value of the '<em><b>Scenarios</b></em>' containment reference list.
-   * The list contents are of type {@link io.getgauge.spec.Scenario}.
+   * Sets the value of the '{@link io.getgauge.spec.Spec#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Scenarios</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Scenarios</em>' containment reference list.
-   * @see io.getgauge.spec.SpecPackage#getSpec_Scenarios()
-   * @model containment="true"
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  EList<Scenario> getScenarios();
-
-  /**
-   * Returns the value of the '<em><b>Steps</b></em>' containment reference list.
-   * The list contents are of type {@link io.getgauge.spec.Step}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Steps</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Steps</em>' containment reference list.
-   * @see io.getgauge.spec.SpecPackage#getSpec_Steps()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Step> getSteps();
+  void setName(String value);
 
 } // Spec

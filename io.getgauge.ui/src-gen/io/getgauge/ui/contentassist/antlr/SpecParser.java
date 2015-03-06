@@ -37,14 +37,17 @@ public class SpecParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getAbstractEntityAccess().getAlternatives(), "rule__AbstractEntity__Alternatives");
+					put(grammarAccess.getBlankLineAccess().getTextAlternatives_0(), "rule__BlankLine__TextAlternatives_0");
 					put(grammarAccess.getSpecAccess().getGroup(), "rule__Spec__Group__0");
 					put(grammarAccess.getScenarioAccess().getGroup(), "rule__Scenario__Group__0");
 					put(grammarAccess.getStepAccess().getGroup(), "rule__Step__Group__0");
-					put(grammarAccess.getSpecAccess().getTextAssignment_1(), "rule__Spec__TextAssignment_1");
-					put(grammarAccess.getSpecAccess().getScenariosAssignment_2(), "rule__Spec__ScenariosAssignment_2");
-					put(grammarAccess.getSpecAccess().getStepsAssignment_3(), "rule__Spec__StepsAssignment_3");
-					put(grammarAccess.getScenarioAccess().getTextAssignment_1(), "rule__Scenario__TextAssignment_1");
-					put(grammarAccess.getStepAccess().getTextAssignment_1(), "rule__Step__TextAssignment_1");
+					put(grammarAccess.getModelAccess().getDefinitionsAssignment(), "rule__Model__DefinitionsAssignment");
+					put(grammarAccess.getSpecAccess().getNameAssignment_1(), "rule__Spec__NameAssignment_1");
+					put(grammarAccess.getScenarioAccess().getNameAssignment_1(), "rule__Scenario__NameAssignment_1");
+					put(grammarAccess.getStepAccess().getNameAssignment_1(), "rule__Step__NameAssignment_1");
+					put(grammarAccess.getCommentAccess().getTextAssignment(), "rule__Comment__TextAssignment");
+					put(grammarAccess.getBlankLineAccess().getTextAssignment(), "rule__BlankLine__TextAssignment");
 				}
 			};
 		}
@@ -55,7 +58,7 @@ public class SpecParser extends AbstractContentAssistParser {
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			io.getgauge.ui.contentassist.antlr.internal.InternalSpecParser typedParser = (io.getgauge.ui.contentassist.antlr.internal.InternalSpecParser) parser;
-			typedParser.entryRuleSpec();
+			typedParser.entryRuleModel();
 			return typedParser.getFollowElements();
 		} catch(RecognitionException ex) {
 			throw new RuntimeException(ex);
@@ -64,7 +67,7 @@ public class SpecParser extends AbstractContentAssistParser {
 	
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
+		return new String[] {  };
 	}
 	
 	public SpecGrammarAccess getGrammarAccess() {

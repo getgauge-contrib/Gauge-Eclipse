@@ -1,0 +1,20 @@
+grammar io.getgauge.Spec with org.eclipse.xtext.common.Terminals
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate spec "http://www.getgauge.io/Spec"
+
+Spec:
+	'# ' text+=ID+ ('\r'? '\n')?
+	scenarios+=Scenario*
+	steps+=Step*
+;
+
+Scenario:
+	'## ' text+=ID+ ('\r'? '\n')?
+;
+
+Step:
+	'* ' text+=ID+ ('\r'? '\n')?
+;
+
+terminal SL_COMMENT 	: '# ' !('\n'|'\r')* ('\r'? '\n')?;

@@ -23,6 +23,24 @@ public interface SpecFactory extends EFactory
   SpecFactory eINSTANCE = io.getgauge.spec.impl.SpecFactoryImpl.init();
 
   /**
+   * Returns a new object of class '<em>Model</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Model</em>'.
+   * @generated
+   */
+  Model createModel();
+
+  /**
+   * Returns a new object of class '<em>Abstract Entity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abstract Entity</em>'.
+   * @generated
+   */
+  AbstractEntity createAbstractEntity();
+
+  /**
    * Returns a new object of class '<em>Spec</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -48,6 +66,24 @@ public interface SpecFactory extends EFactory
    * @generated
    */
   Step createStep();
+
+  /**
+   * Returns a new object of class '<em>Comment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comment</em>'.
+   * @generated
+   */
+  Comment createComment();
+
+  /**
+   * Returns a new object of class '<em>Blank Line</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Blank Line</em>'.
+   * @generated
+   */
+  BlankLine createBlankLine();
 
   /**
    * Returns the package supported by this factory.

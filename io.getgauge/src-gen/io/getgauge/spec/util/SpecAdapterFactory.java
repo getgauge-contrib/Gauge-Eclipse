@@ -75,6 +75,16 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
     new SpecSwitch<Adapter>()
     {
       @Override
+      public Adapter caseModel(Model object)
+      {
+        return createModelAdapter();
+      }
+      @Override
+      public Adapter caseAbstractEntity(AbstractEntity object)
+      {
+        return createAbstractEntityAdapter();
+      }
+      @Override
       public Adapter caseSpec(Spec object)
       {
         return createSpecAdapter();
@@ -88,6 +98,16 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStep(Step object)
       {
         return createStepAdapter();
+      }
+      @Override
+      public Adapter caseComment(Comment object)
+      {
+        return createCommentAdapter();
+      }
+      @Override
+      public Adapter caseBlankLine(BlankLine object)
+      {
+        return createBlankLineAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -110,6 +130,36 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
     return modelSwitch.doSwitch((EObject)target);
   }
 
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.Model <em>Model</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.Model
+   * @generated
+   */
+  public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.AbstractEntity <em>Abstract Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.AbstractEntity
+   * @generated
+   */
+  public Adapter createAbstractEntityAdapter()
+  {
+    return null;
+  }
 
   /**
    * Creates a new adapter for an object of class '{@link io.getgauge.spec.Spec <em>Spec</em>}'.
@@ -152,6 +202,36 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStepAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.Comment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.Comment
+   * @generated
+   */
+  public Adapter createCommentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.BlankLine <em>Blank Line</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.BlankLine
+   * @generated
+   */
+  public Adapter createBlankLineAdapter()
   {
     return null;
   }

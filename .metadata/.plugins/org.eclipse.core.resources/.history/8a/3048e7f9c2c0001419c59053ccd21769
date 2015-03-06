@@ -1,0 +1,22 @@
+grammar io.getgauge.Spec with org.eclipse.xtext.common.Terminals
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate spec "http://www.getgauge.io/Spec"
+
+Spec:
+	spec=SL_SPEC (EOL)* (scenarios+=Scenario)* (ANY_OTHER)*
+;
+
+Scenario:
+	scenario=SL_SCENARIO (EOL)* (steps+=Step)* 
+;
+
+Step:
+	step=SL_STEP (EOL)*
+;
+
+terminal SL_SPEC 	: '# ' -> EOL;
+terminal SL_SCENARIO 	: '## ' -> EOL;
+terminal ML_SPEC 	: !('\n'|'\r')* EOL '-'+ EOL;
+terminal SL_STEP		: '* ' -> EOL;
+terminal EOL : ('\r')? '\n';

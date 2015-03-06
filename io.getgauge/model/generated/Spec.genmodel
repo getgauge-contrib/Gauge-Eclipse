@@ -7,16 +7,24 @@
     editorPluginID="io.getgauge.editor" runtimeVersion="2.10">
   <genPackages prefix="Spec" basePackage="io.getgauge" disposableProviderFactory="true"
       fileExtensions="spec" ecorePackage="Spec.ecore#/">
+    <genClasses ecoreClass="Spec.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Model/definitions"/>
+    </genClasses>
+    <genClasses ecoreClass="Spec.ecore#//AbstractEntity"/>
     <genClasses ecoreClass="Spec.ecore#//Spec">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Spec/text"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Spec/scenarios"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Spec/steps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Spec/name"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//Scenario">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Scenario/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Scenario/name"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//Step">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Step/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Step/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Spec.ecore#//Comment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Comment/text"/>
+    </genClasses>
+    <genClasses ecoreClass="Spec.ecore#//BlankLine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//BlankLine/text"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

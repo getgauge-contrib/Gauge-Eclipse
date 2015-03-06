@@ -15,7 +15,7 @@ public class SpecParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPars
 	
 	@Override
 	protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
-		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT");
+		tokenStream.setInitialHiddenTokens();
 	}
 	
 	@Override
@@ -25,7 +25,7 @@ public class SpecParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPars
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Spec";
+		return "Model";
 	}
 	
 	public SpecGrammarAccess getGrammarAccess() {

@@ -11,12 +11,14 @@ public class SpecHighlightingConfiguration implements IHighlightingConfiguration
 	public static final String SPEC = "Spec";
 	public static final String SCENARIO = "Scenario";
 	public static final String STEP = "Step";
+	public static final String DEFAULT = "Default";
 
 	@Override
 	public void configure(IHighlightingConfigurationAcceptor acceptor) {
 		acceptor.acceptDefaultHighlighting(SPEC, SPEC , getSpecStyle());
 		acceptor.acceptDefaultHighlighting(SCENARIO, SCENARIO, getScenarioStyle());
 		acceptor.acceptDefaultHighlighting(STEP, STEP , getStepStyle());
+		acceptor.acceptDefaultHighlighting(DEFAULT, DEFAULT , getDefaultStyle());
 	}
 
 	private TextStyle getStepStyle() {
@@ -37,5 +39,9 @@ public class SpecHighlightingConfiguration implements IHighlightingConfiguration
 		textStyle.setColor(new RGB(0, 255, 0));
 		textStyle.setStyle(SWT.BOLD);
 		return textStyle;
+	}
+
+	private TextStyle getDefaultStyle() {
+		return new TextStyle();
 	}
 }

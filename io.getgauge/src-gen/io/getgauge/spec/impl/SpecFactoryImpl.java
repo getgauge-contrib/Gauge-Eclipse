@@ -64,12 +64,38 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
   {
     switch (eClass.getClassifierID())
     {
+      case SpecPackage.MODEL: return createModel();
+      case SpecPackage.ABSTRACT_ENTITY: return createAbstractEntity();
       case SpecPackage.SPEC: return createSpec();
       case SpecPackage.SCENARIO: return createScenario();
       case SpecPackage.STEP: return createStep();
+      case SpecPackage.COMMENT: return createComment();
+      case SpecPackage.BLANK_LINE: return createBlankLine();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Model createModel()
+  {
+    ModelImpl model = new ModelImpl();
+    return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AbstractEntity createAbstractEntity()
+  {
+    AbstractEntityImpl abstractEntity = new AbstractEntityImpl();
+    return abstractEntity;
   }
 
   /**
@@ -103,6 +129,28 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
   {
     StepImpl step = new StepImpl();
     return step;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Comment createComment()
+  {
+    CommentImpl comment = new CommentImpl();
+    return comment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BlankLine createBlankLine()
+  {
+    BlankLineImpl blankLine = new BlankLineImpl();
+    return blankLine;
   }
 
   /**

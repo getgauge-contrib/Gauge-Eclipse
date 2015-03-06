@@ -1,0 +1,20 @@
+grammar io.getgauge.Spec 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate spec "http://www.getgauge.io/Spec"
+
+Model:
+	Spec | Text
+;
+
+Text:
+	lines+=LINE*
+;
+
+Spec:
+	spec=SL_SPEC 
+;
+
+terminal SL_SPEC 	: '# ' -> EOL;
+terminal EOL : ('\r')? '\n';
+terminal LINE: (!EOL)* EOL;

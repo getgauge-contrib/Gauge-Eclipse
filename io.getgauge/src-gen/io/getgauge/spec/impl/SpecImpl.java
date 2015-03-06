@@ -2,25 +2,14 @@
  */
 package io.getgauge.spec.impl;
 
-import io.getgauge.spec.Scenario;
 import io.getgauge.spec.Spec;
 import io.getgauge.spec.SpecPackage;
-import io.getgauge.spec.Step;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,45 +18,33 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link io.getgauge.spec.impl.SpecImpl#getText <em>Text</em>}</li>
- *   <li>{@link io.getgauge.spec.impl.SpecImpl#getScenarios <em>Scenarios</em>}</li>
- *   <li>{@link io.getgauge.spec.impl.SpecImpl#getSteps <em>Steps</em>}</li>
+ *   <li>{@link io.getgauge.spec.impl.SpecImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class SpecImpl extends MinimalEObjectImpl.Container implements Spec
+public class SpecImpl extends AbstractEntityImpl implements Spec
 {
   /**
-   * The cached value of the '{@link #getText() <em>Text</em>}' attribute list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<String> text;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getScenarios() <em>Scenarios</em>}' containment reference list.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getScenarios()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<Scenario> scenarios;
-
-  /**
-   * The cached value of the '{@link #getSteps() <em>Steps</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSteps()
-   * @generated
-   * @ordered
-   */
-  protected EList<Step> steps;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -95,13 +72,9 @@ public class SpecImpl extends MinimalEObjectImpl.Container implements Spec
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getText()
+  public String getName()
   {
-    if (text == null)
-    {
-      text = new EDataTypeEList<String>(String.class, this, SpecPackage.SPEC__TEXT);
-    }
-    return text;
+    return name;
   }
 
   /**
@@ -109,45 +82,12 @@ public class SpecImpl extends MinimalEObjectImpl.Container implements Spec
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Scenario> getScenarios()
+  public void setName(String newName)
   {
-    if (scenarios == null)
-    {
-      scenarios = new EObjectContainmentEList<Scenario>(Scenario.class, this, SpecPackage.SPEC__SCENARIOS);
-    }
-    return scenarios;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Step> getSteps()
-  {
-    if (steps == null)
-    {
-      steps = new EObjectContainmentEList<Step>(Step.class, this, SpecPackage.SPEC__STEPS);
-    }
-    return steps;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case SpecPackage.SPEC__SCENARIOS:
-        return ((InternalEList<?>)getScenarios()).basicRemove(otherEnd, msgs);
-      case SpecPackage.SPEC__STEPS:
-        return ((InternalEList<?>)getSteps()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SpecPackage.SPEC__NAME, oldName, name));
   }
 
   /**
@@ -160,12 +100,8 @@ public class SpecImpl extends MinimalEObjectImpl.Container implements Spec
   {
     switch (featureID)
     {
-      case SpecPackage.SPEC__TEXT:
-        return getText();
-      case SpecPackage.SPEC__SCENARIOS:
-        return getScenarios();
-      case SpecPackage.SPEC__STEPS:
-        return getSteps();
+      case SpecPackage.SPEC__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -175,23 +111,13 @@ public class SpecImpl extends MinimalEObjectImpl.Container implements Spec
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SpecPackage.SPEC__TEXT:
-        getText().clear();
-        getText().addAll((Collection<? extends String>)newValue);
-        return;
-      case SpecPackage.SPEC__SCENARIOS:
-        getScenarios().clear();
-        getScenarios().addAll((Collection<? extends Scenario>)newValue);
-        return;
-      case SpecPackage.SPEC__STEPS:
-        getSteps().clear();
-        getSteps().addAll((Collection<? extends Step>)newValue);
+      case SpecPackage.SPEC__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -207,14 +133,8 @@ public class SpecImpl extends MinimalEObjectImpl.Container implements Spec
   {
     switch (featureID)
     {
-      case SpecPackage.SPEC__TEXT:
-        getText().clear();
-        return;
-      case SpecPackage.SPEC__SCENARIOS:
-        getScenarios().clear();
-        return;
-      case SpecPackage.SPEC__STEPS:
-        getSteps().clear();
+      case SpecPackage.SPEC__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -230,12 +150,8 @@ public class SpecImpl extends MinimalEObjectImpl.Container implements Spec
   {
     switch (featureID)
     {
-      case SpecPackage.SPEC__TEXT:
-        return text != null && !text.isEmpty();
-      case SpecPackage.SPEC__SCENARIOS:
-        return scenarios != null && !scenarios.isEmpty();
-      case SpecPackage.SPEC__STEPS:
-        return steps != null && !steps.isEmpty();
+      case SpecPackage.SPEC__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -251,8 +167,8 @@ public class SpecImpl extends MinimalEObjectImpl.Container implements Spec
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (text: ");
-    result.append(text);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
