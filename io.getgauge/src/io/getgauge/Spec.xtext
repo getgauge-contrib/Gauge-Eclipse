@@ -28,7 +28,7 @@ Comment:
 ;
 
 BlankLine:
-	text=(SINGLE_NL|MULTI_NL)
+	SINGLE_NL|MULTI_NL
 ;
 
 terminal MULTI_NL:
@@ -40,5 +40,5 @@ terminal SINGLE_NL:
 ;
 
 terminal LINE_TEXT:
-	!('#'|'*') -> SINGLE_NL
+	!('#'|'*'|'\r'|'\n') -> SINGLE_NL
 ;

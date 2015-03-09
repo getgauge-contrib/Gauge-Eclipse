@@ -3,7 +3,6 @@ package io.getgauge.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import io.getgauge.services.SpecGrammarAccess;
-import io.getgauge.spec.BlankLine;
 import io.getgauge.spec.Comment;
 import io.getgauge.spec.Model;
 import io.getgauge.spec.Scenario;
@@ -30,13 +29,6 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == SpecPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case SpecPackage.BLANK_LINE:
-				if(context == grammarAccess.getAbstractEntityRule() ||
-				   context == grammarAccess.getBlankLineRule()) {
-					sequence_BlankLine(context, (BlankLine) semanticObject); 
-					return; 
-				}
-				else break;
 			case SpecPackage.COMMENT:
 				if(context == grammarAccess.getAbstractEntityRule() ||
 				   context == grammarAccess.getCommentRule()) {
@@ -74,15 +66,6 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Constraint:
-	 *     (text=SINGLE_NL | text=MULTI_NL)
-	 */
-	protected void sequence_BlankLine(EObject context, BlankLine semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Constraint:

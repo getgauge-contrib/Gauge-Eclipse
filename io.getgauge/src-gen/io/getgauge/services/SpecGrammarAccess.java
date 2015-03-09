@@ -155,26 +155,22 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class BlankLineElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BlankLine");
-		private final Assignment cTextAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cTextAlternatives_0 = (Alternatives)cTextAssignment.eContents().get(0);
-		private final RuleCall cTextSINGLE_NLTerminalRuleCall_0_0 = (RuleCall)cTextAlternatives_0.eContents().get(0);
-		private final RuleCall cTextMULTI_NLTerminalRuleCall_0_1 = (RuleCall)cTextAlternatives_0.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSINGLE_NLTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMULTI_NLTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//BlankLine:
-		//	text=(SINGLE_NL | MULTI_NL);
+		//	SINGLE_NL | MULTI_NL;
 		public ParserRule getRule() { return rule; }
 
-		//text=(SINGLE_NL | MULTI_NL)
-		public Assignment getTextAssignment() { return cTextAssignment; }
-
 		//SINGLE_NL | MULTI_NL
-		public Alternatives getTextAlternatives_0() { return cTextAlternatives_0; }
+		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//SINGLE_NL
-		public RuleCall getTextSINGLE_NLTerminalRuleCall_0_0() { return cTextSINGLE_NLTerminalRuleCall_0_0; }
+		public RuleCall getSINGLE_NLTerminalRuleCall_0() { return cSINGLE_NLTerminalRuleCall_0; }
 
 		//MULTI_NL
-		public RuleCall getTextMULTI_NLTerminalRuleCall_0_1() { return cTextMULTI_NLTerminalRuleCall_0_1; }
+		public RuleCall getMULTI_NLTerminalRuleCall_1() { return cMULTI_NLTerminalRuleCall_1; }
 	}
 	
 	
@@ -290,7 +286,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BlankLine:
-	//	text=(SINGLE_NL | MULTI_NL);
+	//	SINGLE_NL | MULTI_NL;
 	public BlankLineElements getBlankLineAccess() {
 		return pBlankLine;
 	}
@@ -312,7 +308,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal LINE_TEXT:
-	//	!("#" | "*")->SINGLE_NL;
+	//	!("#" | "*" | "\r" | "\n")->SINGLE_NL;
 	public TerminalRule getLINE_TEXTRule() {
 		return tLINE_TEXT;
 	} 

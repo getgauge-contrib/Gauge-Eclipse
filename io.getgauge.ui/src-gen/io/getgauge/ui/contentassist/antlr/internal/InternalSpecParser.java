@@ -580,31 +580,31 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleBlankLine"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:237:1: ruleBlankLine : ( ( rule__BlankLine__TextAssignment ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:237:1: ruleBlankLine : ( ( rule__BlankLine__Alternatives ) ) ;
     public final void ruleBlankLine() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:241:2: ( ( ( rule__BlankLine__TextAssignment ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:242:1: ( ( rule__BlankLine__TextAssignment ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:241:2: ( ( ( rule__BlankLine__Alternatives ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:242:1: ( ( rule__BlankLine__Alternatives ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:242:1: ( ( rule__BlankLine__TextAssignment ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:243:1: ( rule__BlankLine__TextAssignment )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:242:1: ( ( rule__BlankLine__Alternatives ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:243:1: ( rule__BlankLine__Alternatives )
             {
-             before(grammarAccess.getBlankLineAccess().getTextAssignment()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:244:1: ( rule__BlankLine__TextAssignment )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:244:2: rule__BlankLine__TextAssignment
+             before(grammarAccess.getBlankLineAccess().getAlternatives()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:244:1: ( rule__BlankLine__Alternatives )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:244:2: rule__BlankLine__Alternatives
             {
-            pushFollow(FOLLOW_rule__BlankLine__TextAssignment_in_ruleBlankLine455);
-            rule__BlankLine__TextAssignment();
+            pushFollow(FOLLOW_rule__BlankLine__Alternatives_in_ruleBlankLine455);
+            rule__BlankLine__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBlankLineAccess().getTextAssignment()); 
+             after(grammarAccess.getBlankLineAccess().getAlternatives()); 
 
             }
 
@@ -782,9 +782,9 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__AbstractEntity__Alternatives"
 
 
-    // $ANTLR start "rule__BlankLine__TextAlternatives_0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:296:1: rule__BlankLine__TextAlternatives_0 : ( ( RULE_SINGLE_NL ) | ( RULE_MULTI_NL ) );
-    public final void rule__BlankLine__TextAlternatives_0() throws RecognitionException {
+    // $ANTLR start "rule__BlankLine__Alternatives"
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:296:1: rule__BlankLine__Alternatives : ( ( RULE_SINGLE_NL ) | ( RULE_MULTI_NL ) );
+    public final void rule__BlankLine__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -812,9 +812,9 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:301:1: ( RULE_SINGLE_NL )
                     // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:302:1: RULE_SINGLE_NL
                     {
-                     before(grammarAccess.getBlankLineAccess().getTextSINGLE_NLTerminalRuleCall_0_0()); 
-                    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__BlankLine__TextAlternatives_0591); 
-                     after(grammarAccess.getBlankLineAccess().getTextSINGLE_NLTerminalRuleCall_0_0()); 
+                     before(grammarAccess.getBlankLineAccess().getSINGLE_NLTerminalRuleCall_0()); 
+                    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__BlankLine__Alternatives591); 
+                     after(grammarAccess.getBlankLineAccess().getSINGLE_NLTerminalRuleCall_0()); 
 
                     }
 
@@ -827,9 +827,9 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:307:6: ( RULE_MULTI_NL )
                     // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:308:1: RULE_MULTI_NL
                     {
-                     before(grammarAccess.getBlankLineAccess().getTextMULTI_NLTerminalRuleCall_0_1()); 
-                    match(input,RULE_MULTI_NL,FOLLOW_RULE_MULTI_NL_in_rule__BlankLine__TextAlternatives_0608); 
-                     after(grammarAccess.getBlankLineAccess().getTextMULTI_NLTerminalRuleCall_0_1()); 
+                     before(grammarAccess.getBlankLineAccess().getMULTI_NLTerminalRuleCall_1()); 
+                    match(input,RULE_MULTI_NL,FOLLOW_RULE_MULTI_NL_in_rule__BlankLine__Alternatives608); 
+                     after(grammarAccess.getBlankLineAccess().getMULTI_NLTerminalRuleCall_1()); 
 
                     }
 
@@ -850,7 +850,7 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BlankLine__TextAlternatives_0"
+    // $ANTLR end "rule__BlankLine__Alternatives"
 
 
     // $ANTLR start "rule__Spec__Group__0"
@@ -1506,53 +1506,6 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     }
     // $ANTLR end "rule__Comment__TextAssignment"
 
-
-    // $ANTLR start "rule__BlankLine__TextAssignment"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:585:1: rule__BlankLine__TextAssignment : ( ( rule__BlankLine__TextAlternatives_0 ) ) ;
-    public final void rule__BlankLine__TextAssignment() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:589:1: ( ( ( rule__BlankLine__TextAlternatives_0 ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:590:1: ( ( rule__BlankLine__TextAlternatives_0 ) )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:590:1: ( ( rule__BlankLine__TextAlternatives_0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:591:1: ( rule__BlankLine__TextAlternatives_0 )
-            {
-             before(grammarAccess.getBlankLineAccess().getTextAlternatives_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:592:1: ( rule__BlankLine__TextAlternatives_0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:592:2: rule__BlankLine__TextAlternatives_0
-            {
-            pushFollow(FOLLOW_rule__BlankLine__TextAlternatives_0_in_rule__BlankLine__TextAssignment1167);
-            rule__BlankLine__TextAlternatives_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getBlankLineAccess().getTextAlternatives_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BlankLine__TextAssignment"
-
     // Delegated rules
 
 
@@ -1578,14 +1531,14 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Comment__TextAssignment_in_ruleComment395 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBlankLine_in_entryRuleBlankLine422 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBlankLine429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BlankLine__TextAssignment_in_ruleBlankLine455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BlankLine__Alternatives_in_ruleBlankLine455 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSpec_in_rule__AbstractEntity__Alternatives491 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleScenario_in_rule__AbstractEntity__Alternatives508 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStep_in_rule__AbstractEntity__Alternatives525 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleComment_in_rule__AbstractEntity__Alternatives542 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBlankLine_in_rule__AbstractEntity__Alternatives559 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__BlankLine__TextAlternatives_0591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MULTI_NL_in_rule__BlankLine__TextAlternatives_0608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__BlankLine__Alternatives591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_MULTI_NL_in_rule__BlankLine__Alternatives608 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Spec__Group__0__Impl_in_rule__Spec__Group__0638 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__Spec__Group__1_in_rule__Spec__Group__0641 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_7_in_rule__Spec__Group__0__Impl669 = new BitSet(new long[]{0x0000000000000002L});
@@ -1606,6 +1559,5 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_LINE_TEXT_in_rule__Scenario__NameAssignment_11074 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_LINE_TEXT_in_rule__Step__NameAssignment_11105 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_LINE_TEXT_in_rule__Comment__TextAssignment1136 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BlankLine__TextAlternatives_0_in_rule__BlankLine__TextAssignment1167 = new BitSet(new long[]{0x0000000000000002L});
 
 }

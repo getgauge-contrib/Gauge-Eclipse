@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.eclipse.xtext.nodemodel.BidiTreeIterator"/>
+<fullyQualifiedTypeName name="io.getgauge.spec.Scenario"/>
+<fullyQualifiedTypeName name="org.eclipse.xtext.nodemodel.impl.CompositeNodeWithSemanticElement"/>
+<fullyQualifiedTypeName name="io.getgauge.spec.Spec"/>
+<fullyQualifiedTypeName name="io.getgauge.spec.Step"/>
+<fullyQualifiedTypeName name="java.util.Dictionary"/>
+<fullyQualifiedTypeName name="io.getgauge.ui.SpecHighlightingCalculator"/>
+<fullyQualifiedTypeName name="org.eclipse.xtext.ui.editor.utils.TextStyle"/>
+<fullyQualifiedTypeName name="io.getgauge.ui.SpecHighlightingConfiguration"/>
+</qualifiedTypeNameHistroy>

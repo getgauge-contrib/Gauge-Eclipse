@@ -222,7 +222,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAbstractEntity"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:115:1: ruleAbstractEntity returns [EObject current=null] : (this_Spec_0= ruleSpec | this_Scenario_1= ruleScenario | this_Step_2= ruleStep | this_Comment_3= ruleComment | this_BlankLine_4= ruleBlankLine ) ;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:115:1: ruleAbstractEntity returns [EObject current=null] : (this_Spec_0= ruleSpec | this_Scenario_1= ruleScenario | this_Step_2= ruleStep | this_Comment_3= ruleComment | ruleBlankLine ) ;
     public final EObject ruleAbstractEntity() throws RecognitionException {
         EObject current = null;
 
@@ -234,16 +234,14 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
         EObject this_Comment_3 = null;
 
-        EObject this_BlankLine_4 = null;
-
 
          enterRule(); 
             
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:118:28: ( (this_Spec_0= ruleSpec | this_Scenario_1= ruleScenario | this_Step_2= ruleStep | this_Comment_3= ruleComment | this_BlankLine_4= ruleBlankLine ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:119:1: (this_Spec_0= ruleSpec | this_Scenario_1= ruleScenario | this_Step_2= ruleStep | this_Comment_3= ruleComment | this_BlankLine_4= ruleBlankLine )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:118:28: ( (this_Spec_0= ruleSpec | this_Scenario_1= ruleScenario | this_Step_2= ruleStep | this_Comment_3= ruleComment | ruleBlankLine ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:119:1: (this_Spec_0= ruleSpec | this_Scenario_1= ruleScenario | this_Step_2= ruleStep | this_Comment_3= ruleComment | ruleBlankLine )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:119:1: (this_Spec_0= ruleSpec | this_Scenario_1= ruleScenario | this_Step_2= ruleStep | this_Comment_3= ruleComment | this_BlankLine_4= ruleBlankLine )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:119:1: (this_Spec_0= ruleSpec | this_Scenario_1= ruleScenario | this_Step_2= ruleStep | this_Comment_3= ruleComment | ruleBlankLine )
             int alt2=5;
             switch ( input.LA(1) ) {
             case 7:
@@ -353,18 +351,17 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:160:5: this_BlankLine_4= ruleBlankLine
+                    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:160:5: ruleBlankLine
                     {
                      
                             newCompositeNode(grammarAccess.getAbstractEntityAccess().getBlankLineParserRuleCall_4()); 
                         
-                    pushFollow(FOLLOW_ruleBlankLine_in_ruleAbstractEntity331);
-                    this_BlankLine_4=ruleBlankLine();
+                    pushFollow(FOLLOW_ruleBlankLine_in_ruleAbstractEntity325);
+                    ruleBlankLine();
 
                     state._fsp--;
 
                      
-                            current = this_BlankLine_4; 
                             afterParserOrEnumRuleCall();
                         
 
@@ -391,7 +388,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSpec"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:176:1: entryRuleSpec returns [EObject current=null] : iv_ruleSpec= ruleSpec EOF ;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:175:1: entryRuleSpec returns [EObject current=null] : iv_ruleSpec= ruleSpec EOF ;
     public final EObject entryRuleSpec() throws RecognitionException {
         EObject current = null;
 
@@ -399,17 +396,17 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:177:2: (iv_ruleSpec= ruleSpec EOF )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:178:2: iv_ruleSpec= ruleSpec EOF
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:176:2: (iv_ruleSpec= ruleSpec EOF )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:177:2: iv_ruleSpec= ruleSpec EOF
             {
              newCompositeNode(grammarAccess.getSpecRule()); 
-            pushFollow(FOLLOW_ruleSpec_in_entryRuleSpec366);
+            pushFollow(FOLLOW_ruleSpec_in_entryRuleSpec360);
             iv_ruleSpec=ruleSpec();
 
             state._fsp--;
 
              current =iv_ruleSpec; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpec376); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpec370); 
 
             }
 
@@ -427,7 +424,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSpec"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:185:1: ruleSpec returns [EObject current=null] : (otherlv_0= '# ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) ;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:184:1: ruleSpec returns [EObject current=null] : (otherlv_0= '# ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) ;
     public final EObject ruleSpec() throws RecognitionException {
         EObject current = null;
 
@@ -437,23 +434,23 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:188:28: ( (otherlv_0= '# ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:189:1: (otherlv_0= '# ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:187:28: ( (otherlv_0= '# ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:188:1: (otherlv_0= '# ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:189:1: (otherlv_0= '# ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:189:3: otherlv_0= '# ' ( (lv_name_1_0= RULE_LINE_TEXT ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:188:1: (otherlv_0= '# ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:188:3: otherlv_0= '# ' ( (lv_name_1_0= RULE_LINE_TEXT ) )
             {
-            otherlv_0=(Token)match(input,7,FOLLOW_7_in_ruleSpec413); 
+            otherlv_0=(Token)match(input,7,FOLLOW_7_in_ruleSpec407); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSpecAccess().getNumberSignSpaceKeyword_0());
                 
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:193:1: ( (lv_name_1_0= RULE_LINE_TEXT ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:194:1: (lv_name_1_0= RULE_LINE_TEXT )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:192:1: ( (lv_name_1_0= RULE_LINE_TEXT ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:193:1: (lv_name_1_0= RULE_LINE_TEXT )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:194:1: (lv_name_1_0= RULE_LINE_TEXT )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:195:3: lv_name_1_0= RULE_LINE_TEXT
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:193:1: (lv_name_1_0= RULE_LINE_TEXT )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:194:3: lv_name_1_0= RULE_LINE_TEXT
             {
-            lv_name_1_0=(Token)match(input,RULE_LINE_TEXT,FOLLOW_RULE_LINE_TEXT_in_ruleSpec430); 
+            lv_name_1_0=(Token)match(input,RULE_LINE_TEXT,FOLLOW_RULE_LINE_TEXT_in_ruleSpec424); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getSpecAccess().getNameLINE_TEXTTerminalRuleCall_1_0()); 
             		
@@ -494,7 +491,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleScenario"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:219:1: entryRuleScenario returns [EObject current=null] : iv_ruleScenario= ruleScenario EOF ;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:218:1: entryRuleScenario returns [EObject current=null] : iv_ruleScenario= ruleScenario EOF ;
     public final EObject entryRuleScenario() throws RecognitionException {
         EObject current = null;
 
@@ -502,17 +499,17 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:220:2: (iv_ruleScenario= ruleScenario EOF )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:221:2: iv_ruleScenario= ruleScenario EOF
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:219:2: (iv_ruleScenario= ruleScenario EOF )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:220:2: iv_ruleScenario= ruleScenario EOF
             {
              newCompositeNode(grammarAccess.getScenarioRule()); 
-            pushFollow(FOLLOW_ruleScenario_in_entryRuleScenario471);
+            pushFollow(FOLLOW_ruleScenario_in_entryRuleScenario465);
             iv_ruleScenario=ruleScenario();
 
             state._fsp--;
 
              current =iv_ruleScenario; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleScenario481); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleScenario475); 
 
             }
 
@@ -530,7 +527,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleScenario"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:228:1: ruleScenario returns [EObject current=null] : (otherlv_0= '## ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) ;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:227:1: ruleScenario returns [EObject current=null] : (otherlv_0= '## ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) ;
     public final EObject ruleScenario() throws RecognitionException {
         EObject current = null;
 
@@ -540,23 +537,23 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:231:28: ( (otherlv_0= '## ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:232:1: (otherlv_0= '## ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:230:28: ( (otherlv_0= '## ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:231:1: (otherlv_0= '## ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:232:1: (otherlv_0= '## ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:232:3: otherlv_0= '## ' ( (lv_name_1_0= RULE_LINE_TEXT ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:231:1: (otherlv_0= '## ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:231:3: otherlv_0= '## ' ( (lv_name_1_0= RULE_LINE_TEXT ) )
             {
-            otherlv_0=(Token)match(input,8,FOLLOW_8_in_ruleScenario518); 
+            otherlv_0=(Token)match(input,8,FOLLOW_8_in_ruleScenario512); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getScenarioAccess().getNumberSignNumberSignSpaceKeyword_0());
                 
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:236:1: ( (lv_name_1_0= RULE_LINE_TEXT ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:237:1: (lv_name_1_0= RULE_LINE_TEXT )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:235:1: ( (lv_name_1_0= RULE_LINE_TEXT ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:236:1: (lv_name_1_0= RULE_LINE_TEXT )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:237:1: (lv_name_1_0= RULE_LINE_TEXT )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:238:3: lv_name_1_0= RULE_LINE_TEXT
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:236:1: (lv_name_1_0= RULE_LINE_TEXT )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:237:3: lv_name_1_0= RULE_LINE_TEXT
             {
-            lv_name_1_0=(Token)match(input,RULE_LINE_TEXT,FOLLOW_RULE_LINE_TEXT_in_ruleScenario535); 
+            lv_name_1_0=(Token)match(input,RULE_LINE_TEXT,FOLLOW_RULE_LINE_TEXT_in_ruleScenario529); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getScenarioAccess().getNameLINE_TEXTTerminalRuleCall_1_0()); 
             		
@@ -597,7 +594,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStep"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:262:1: entryRuleStep returns [EObject current=null] : iv_ruleStep= ruleStep EOF ;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:261:1: entryRuleStep returns [EObject current=null] : iv_ruleStep= ruleStep EOF ;
     public final EObject entryRuleStep() throws RecognitionException {
         EObject current = null;
 
@@ -605,17 +602,17 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:263:2: (iv_ruleStep= ruleStep EOF )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:264:2: iv_ruleStep= ruleStep EOF
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:262:2: (iv_ruleStep= ruleStep EOF )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:263:2: iv_ruleStep= ruleStep EOF
             {
              newCompositeNode(grammarAccess.getStepRule()); 
-            pushFollow(FOLLOW_ruleStep_in_entryRuleStep576);
+            pushFollow(FOLLOW_ruleStep_in_entryRuleStep570);
             iv_ruleStep=ruleStep();
 
             state._fsp--;
 
              current =iv_ruleStep; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStep586); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStep580); 
 
             }
 
@@ -633,7 +630,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStep"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:271:1: ruleStep returns [EObject current=null] : (otherlv_0= '* ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) ;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:270:1: ruleStep returns [EObject current=null] : (otherlv_0= '* ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) ;
     public final EObject ruleStep() throws RecognitionException {
         EObject current = null;
 
@@ -643,23 +640,23 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:274:28: ( (otherlv_0= '* ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:275:1: (otherlv_0= '* ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:273:28: ( (otherlv_0= '* ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:274:1: (otherlv_0= '* ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:275:1: (otherlv_0= '* ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:275:3: otherlv_0= '* ' ( (lv_name_1_0= RULE_LINE_TEXT ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:274:1: (otherlv_0= '* ' ( (lv_name_1_0= RULE_LINE_TEXT ) ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:274:3: otherlv_0= '* ' ( (lv_name_1_0= RULE_LINE_TEXT ) )
             {
-            otherlv_0=(Token)match(input,9,FOLLOW_9_in_ruleStep623); 
+            otherlv_0=(Token)match(input,9,FOLLOW_9_in_ruleStep617); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getStepAccess().getAsteriskSpaceKeyword_0());
                 
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:279:1: ( (lv_name_1_0= RULE_LINE_TEXT ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:280:1: (lv_name_1_0= RULE_LINE_TEXT )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:278:1: ( (lv_name_1_0= RULE_LINE_TEXT ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:279:1: (lv_name_1_0= RULE_LINE_TEXT )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:280:1: (lv_name_1_0= RULE_LINE_TEXT )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:281:3: lv_name_1_0= RULE_LINE_TEXT
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:279:1: (lv_name_1_0= RULE_LINE_TEXT )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:280:3: lv_name_1_0= RULE_LINE_TEXT
             {
-            lv_name_1_0=(Token)match(input,RULE_LINE_TEXT,FOLLOW_RULE_LINE_TEXT_in_ruleStep640); 
+            lv_name_1_0=(Token)match(input,RULE_LINE_TEXT,FOLLOW_RULE_LINE_TEXT_in_ruleStep634); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getStepAccess().getNameLINE_TEXTTerminalRuleCall_1_0()); 
             		
@@ -700,7 +697,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComment"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:305:1: entryRuleComment returns [EObject current=null] : iv_ruleComment= ruleComment EOF ;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:304:1: entryRuleComment returns [EObject current=null] : iv_ruleComment= ruleComment EOF ;
     public final EObject entryRuleComment() throws RecognitionException {
         EObject current = null;
 
@@ -708,17 +705,17 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:306:2: (iv_ruleComment= ruleComment EOF )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:307:2: iv_ruleComment= ruleComment EOF
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:305:2: (iv_ruleComment= ruleComment EOF )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:306:2: iv_ruleComment= ruleComment EOF
             {
              newCompositeNode(grammarAccess.getCommentRule()); 
-            pushFollow(FOLLOW_ruleComment_in_entryRuleComment681);
+            pushFollow(FOLLOW_ruleComment_in_entryRuleComment675);
             iv_ruleComment=ruleComment();
 
             state._fsp--;
 
              current =iv_ruleComment; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleComment691); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleComment685); 
 
             }
 
@@ -736,7 +733,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComment"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:314:1: ruleComment returns [EObject current=null] : ( (lv_text_0_0= RULE_LINE_TEXT ) ) ;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:313:1: ruleComment returns [EObject current=null] : ( (lv_text_0_0= RULE_LINE_TEXT ) ) ;
     public final EObject ruleComment() throws RecognitionException {
         EObject current = null;
 
@@ -745,16 +742,16 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:317:28: ( ( (lv_text_0_0= RULE_LINE_TEXT ) ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:318:1: ( (lv_text_0_0= RULE_LINE_TEXT ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:316:28: ( ( (lv_text_0_0= RULE_LINE_TEXT ) ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:317:1: ( (lv_text_0_0= RULE_LINE_TEXT ) )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:318:1: ( (lv_text_0_0= RULE_LINE_TEXT ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:319:1: (lv_text_0_0= RULE_LINE_TEXT )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:317:1: ( (lv_text_0_0= RULE_LINE_TEXT ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:318:1: (lv_text_0_0= RULE_LINE_TEXT )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:319:1: (lv_text_0_0= RULE_LINE_TEXT )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:320:3: lv_text_0_0= RULE_LINE_TEXT
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:318:1: (lv_text_0_0= RULE_LINE_TEXT )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:319:3: lv_text_0_0= RULE_LINE_TEXT
             {
-            lv_text_0_0=(Token)match(input,RULE_LINE_TEXT,FOLLOW_RULE_LINE_TEXT_in_ruleComment732); 
+            lv_text_0_0=(Token)match(input,RULE_LINE_TEXT,FOLLOW_RULE_LINE_TEXT_in_ruleComment726); 
 
             			newLeafNode(lv_text_0_0, grammarAccess.getCommentAccess().getTextLINE_TEXTTerminalRuleCall_0()); 
             		
@@ -792,25 +789,25 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBlankLine"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:344:1: entryRuleBlankLine returns [EObject current=null] : iv_ruleBlankLine= ruleBlankLine EOF ;
-    public final EObject entryRuleBlankLine() throws RecognitionException {
-        EObject current = null;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:343:1: entryRuleBlankLine returns [String current=null] : iv_ruleBlankLine= ruleBlankLine EOF ;
+    public final String entryRuleBlankLine() throws RecognitionException {
+        String current = null;
 
-        EObject iv_ruleBlankLine = null;
+        AntlrDatatypeRuleToken iv_ruleBlankLine = null;
 
 
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:345:2: (iv_ruleBlankLine= ruleBlankLine EOF )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:346:2: iv_ruleBlankLine= ruleBlankLine EOF
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:344:2: (iv_ruleBlankLine= ruleBlankLine EOF )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:345:2: iv_ruleBlankLine= ruleBlankLine EOF
             {
              newCompositeNode(grammarAccess.getBlankLineRule()); 
-            pushFollow(FOLLOW_ruleBlankLine_in_entryRuleBlankLine772);
+            pushFollow(FOLLOW_ruleBlankLine_in_entryRuleBlankLine767);
             iv_ruleBlankLine=ruleBlankLine();
 
             state._fsp--;
 
-             current =iv_ruleBlankLine; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBlankLine782); 
+             current =iv_ruleBlankLine.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBlankLine778); 
 
             }
 
@@ -828,26 +825,20 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBlankLine"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:353:1: ruleBlankLine returns [EObject current=null] : ( ( (lv_text_0_1= RULE_SINGLE_NL | lv_text_0_2= RULE_MULTI_NL ) ) ) ;
-    public final EObject ruleBlankLine() throws RecognitionException {
-        EObject current = null;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:352:1: ruleBlankLine returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_SINGLE_NL_0= RULE_SINGLE_NL | this_MULTI_NL_1= RULE_MULTI_NL ) ;
+    public final AntlrDatatypeRuleToken ruleBlankLine() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        Token lv_text_0_1=null;
-        Token lv_text_0_2=null;
+        Token this_SINGLE_NL_0=null;
+        Token this_MULTI_NL_1=null;
 
          enterRule(); 
             
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:356:28: ( ( ( (lv_text_0_1= RULE_SINGLE_NL | lv_text_0_2= RULE_MULTI_NL ) ) ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:357:1: ( ( (lv_text_0_1= RULE_SINGLE_NL | lv_text_0_2= RULE_MULTI_NL ) ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:355:28: ( (this_SINGLE_NL_0= RULE_SINGLE_NL | this_MULTI_NL_1= RULE_MULTI_NL ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:356:1: (this_SINGLE_NL_0= RULE_SINGLE_NL | this_MULTI_NL_1= RULE_MULTI_NL )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:357:1: ( ( (lv_text_0_1= RULE_SINGLE_NL | lv_text_0_2= RULE_MULTI_NL ) ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:358:1: ( (lv_text_0_1= RULE_SINGLE_NL | lv_text_0_2= RULE_MULTI_NL ) )
-            {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:358:1: ( (lv_text_0_1= RULE_SINGLE_NL | lv_text_0_2= RULE_MULTI_NL ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:359:1: (lv_text_0_1= RULE_SINGLE_NL | lv_text_0_2= RULE_MULTI_NL )
-            {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:359:1: (lv_text_0_1= RULE_SINGLE_NL | lv_text_0_2= RULE_MULTI_NL )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:356:1: (this_SINGLE_NL_0= RULE_SINGLE_NL | this_MULTI_NL_1= RULE_MULTI_NL )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -865,51 +856,31 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:360:3: lv_text_0_1= RULE_SINGLE_NL
+                    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:356:6: this_SINGLE_NL_0= RULE_SINGLE_NL
                     {
-                    lv_text_0_1=(Token)match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_ruleBlankLine825); 
+                    this_SINGLE_NL_0=(Token)match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_ruleBlankLine818); 
 
-                    			newLeafNode(lv_text_0_1, grammarAccess.getBlankLineAccess().getTextSINGLE_NLTerminalRuleCall_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getBlankLineRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"text",
-                            		lv_text_0_1, 
-                            		"SINGLE_NL");
-                    	    
+                    		current.merge(this_SINGLE_NL_0);
+                        
+                     
+                        newLeafNode(this_SINGLE_NL_0, grammarAccess.getBlankLineAccess().getSINGLE_NLTerminalRuleCall_0()); 
+                        
 
                     }
                     break;
                 case 2 :
-                    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:375:8: lv_text_0_2= RULE_MULTI_NL
+                    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:364:10: this_MULTI_NL_1= RULE_MULTI_NL
                     {
-                    lv_text_0_2=(Token)match(input,RULE_MULTI_NL,FOLLOW_RULE_MULTI_NL_in_ruleBlankLine845); 
+                    this_MULTI_NL_1=(Token)match(input,RULE_MULTI_NL,FOLLOW_RULE_MULTI_NL_in_ruleBlankLine844); 
 
-                    			newLeafNode(lv_text_0_2, grammarAccess.getBlankLineAccess().getTextMULTI_NLTerminalRuleCall_0_1()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getBlankLineRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"text",
-                            		lv_text_0_2, 
-                            		"MULTI_NL");
-                    	    
+                    		current.merge(this_MULTI_NL_1);
+                        
+                     
+                        newLeafNode(this_MULTI_NL_1, grammarAccess.getBlankLineAccess().getMULTI_NLTerminalRuleCall_1()); 
+                        
 
                     }
                     break;
-
-            }
-
-
-            }
-
 
             }
 
@@ -943,25 +914,25 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleScenario_in_ruleAbstractEntity250 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStep_in_ruleAbstractEntity277 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleComment_in_ruleAbstractEntity304 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBlankLine_in_ruleAbstractEntity331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpec_in_entryRuleSpec366 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpec376 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_7_in_ruleSpec413 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_LINE_TEXT_in_ruleSpec430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleScenario_in_entryRuleScenario471 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleScenario481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_8_in_ruleScenario518 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_LINE_TEXT_in_ruleScenario535 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStep_in_entryRuleStep576 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStep586 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_9_in_ruleStep623 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_LINE_TEXT_in_ruleStep640 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComment_in_entryRuleComment681 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleComment691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LINE_TEXT_in_ruleComment732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBlankLine_in_entryRuleBlankLine772 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBlankLine782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_ruleBlankLine825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_MULTI_NL_in_ruleBlankLine845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBlankLine_in_ruleAbstractEntity325 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpec_in_entryRuleSpec360 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpec370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_7_in_ruleSpec407 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_LINE_TEXT_in_ruleSpec424 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleScenario_in_entryRuleScenario465 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleScenario475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_8_in_ruleScenario512 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_LINE_TEXT_in_ruleScenario529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStep_in_entryRuleStep570 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStep580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_9_in_ruleStep617 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_LINE_TEXT_in_ruleStep634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComment_in_entryRuleComment675 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleComment685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LINE_TEXT_in_ruleComment726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBlankLine_in_entryRuleBlankLine767 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBlankLine778 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_ruleBlankLine818 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_MULTI_NL_in_ruleBlankLine844 = new BitSet(new long[]{0x0000000000000002L});
 
 }

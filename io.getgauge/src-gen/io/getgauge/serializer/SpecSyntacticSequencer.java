@@ -23,9 +23,21 @@ public class SpecSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getBlankLineRule())
+			return getBlankLineToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * BlankLine:
+	 * 	SINGLE_NL|MULTI_NL
+	 * ;
+	 */
+	protected String getBlankLineToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\n";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

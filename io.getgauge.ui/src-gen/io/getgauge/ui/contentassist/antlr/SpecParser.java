@@ -38,7 +38,7 @@ public class SpecParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getAbstractEntityAccess().getAlternatives(), "rule__AbstractEntity__Alternatives");
-					put(grammarAccess.getBlankLineAccess().getTextAlternatives_0(), "rule__BlankLine__TextAlternatives_0");
+					put(grammarAccess.getBlankLineAccess().getAlternatives(), "rule__BlankLine__Alternatives");
 					put(grammarAccess.getSpecAccess().getGroup(), "rule__Spec__Group__0");
 					put(grammarAccess.getScenarioAccess().getGroup(), "rule__Scenario__Group__0");
 					put(grammarAccess.getStepAccess().getGroup(), "rule__Step__Group__0");
@@ -47,7 +47,6 @@ public class SpecParser extends AbstractContentAssistParser {
 					put(grammarAccess.getScenarioAccess().getNameAssignment_1(), "rule__Scenario__NameAssignment_1");
 					put(grammarAccess.getStepAccess().getNameAssignment_1(), "rule__Step__NameAssignment_1");
 					put(grammarAccess.getCommentAccess().getTextAssignment(), "rule__Comment__TextAssignment");
-					put(grammarAccess.getBlankLineAccess().getTextAssignment(), "rule__BlankLine__TextAssignment");
 				}
 			};
 		}

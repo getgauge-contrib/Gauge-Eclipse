@@ -3,7 +3,6 @@
 package io.getgauge.spec.impl;
 
 import io.getgauge.spec.AbstractEntity;
-import io.getgauge.spec.BlankLine;
 import io.getgauge.spec.Comment;
 import io.getgauge.spec.Model;
 import io.getgauge.spec.Scenario;
@@ -68,13 +67,6 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * @generated
    */
   private EClass commentEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass blankLineEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -254,26 +246,6 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBlankLine()
-  {
-    return blankLineEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getBlankLine_Text()
-  {
-    return (EAttribute)blankLineEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public SpecFactory getSpecFactory()
   {
     return (SpecFactory)getEFactoryInstance();
@@ -315,9 +287,6 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
 
     commentEClass = createEClass(COMMENT);
     createEAttribute(commentEClass, COMMENT__TEXT);
-
-    blankLineEClass = createEClass(BLANK_LINE);
-    createEAttribute(blankLineEClass, BLANK_LINE__TEXT);
   }
 
   /**
@@ -353,7 +322,6 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     scenarioEClass.getESuperTypes().add(this.getAbstractEntity());
     stepEClass.getESuperTypes().add(this.getAbstractEntity());
     commentEClass.getESuperTypes().add(this.getAbstractEntity());
-    blankLineEClass.getESuperTypes().add(this.getAbstractEntity());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -372,9 +340,6 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
 
     initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComment_Text(), ecorePackage.getEString(), "text", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(blankLineEClass, BlankLine.class, "BlankLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBlankLine_Text(), ecorePackage.getEString(), "text", null, 0, 1, BlankLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

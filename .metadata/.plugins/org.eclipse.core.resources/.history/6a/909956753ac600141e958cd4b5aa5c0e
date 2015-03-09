@@ -1,0 +1,44 @@
+grammar io.getgauge.Spec 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate spec "http://www.getgauge.io/Spec"
+
+Model:
+	definitions+=AbstractEntity*
+;
+
+AbstractEntity:
+	Spec | Scenario | Step | Comment | BlankLine
+;
+
+Spec:
+	'# ' name=LINE_TEXT
+;
+
+Scenario:
+	'## ' name=LINE_TEXT
+;
+
+Step:
+	'* ' name=LINE_TEXT
+;
+
+Comment:
+	text=LINE_TEXT
+;
+
+BlankLine:
+	text+=SINGLE_NL
+;
+
+terminal MULTI_NL:
+	SINGLE_NL SINGLE_NL+
+;
+
+terminal SINGLE_NL:
+	'\r'? '\n'
+;
+
+terminal LINE_TEXT:
+	!('#'|'*'|SINGLE_NL) -> SINGLE_NL
+;

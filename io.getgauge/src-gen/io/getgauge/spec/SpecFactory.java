@@ -77,15 +77,6 @@ public interface SpecFactory extends EFactory
   Comment createComment();
 
   /**
-   * Returns a new object of class '<em>Blank Line</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Blank Line</em>'.
-   * @generated
-   */
-  BlankLine createBlankLine();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

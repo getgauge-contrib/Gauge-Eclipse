@@ -660,3 +660,13 @@ org.eclipse.emf.common.util.WrappedException: java.lang.NullPointerException
 Caused by: java.lang.NullPointerException
 	at org.eclipse.xtext.ui.refactoring.impl.EmfResourceReferenceUpdater.createReferenceUpdates(EmfResourceReferenceUpdater.java:55)
 	... 49 more
+!SESSION 2015-03-09 14:15:35.384 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_31
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product -keyring /Users/steam/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.dsl.product -keyring /Users/steam/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-09 14:15:41.419
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

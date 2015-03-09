@@ -101,11 +101,11 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = RULE_MULTI_NL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:400:15: ( RULE_SINGLE_NL ( RULE_SINGLE_NL )+ )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:400:17: RULE_SINGLE_NL ( RULE_SINGLE_NL )+
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:378:15: ( RULE_SINGLE_NL ( RULE_SINGLE_NL )+ )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:378:17: RULE_SINGLE_NL ( RULE_SINGLE_NL )+
             {
             mRULE_SINGLE_NL(); 
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:400:32: ( RULE_SINGLE_NL )+
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:378:32: ( RULE_SINGLE_NL )+
             int cnt1=0;
             loop1:
             do {
@@ -119,7 +119,7 @@ public class InternalSpecLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:400:32: RULE_SINGLE_NL
+            	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:378:32: RULE_SINGLE_NL
             	    {
             	    mRULE_SINGLE_NL(); 
 
@@ -151,10 +151,10 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = RULE_SINGLE_NL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:402:16: ( ( '\\r' )? '\\n' )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:402:18: ( '\\r' )? '\\n'
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:380:16: ( ( '\\r' )? '\\n' )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:380:18: ( '\\r' )? '\\n'
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:402:18: ( '\\r' )?
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:380:18: ( '\\r' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -163,7 +163,7 @@ public class InternalSpecLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:402:18: '\\r'
+                    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:380:18: '\\r'
                     {
                     match('\r'); 
 
@@ -189,10 +189,10 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = RULE_LINE_TEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:404:16: (~ ( ( '#' | '*' ) ) ( options {greedy=false; } : . )* RULE_SINGLE_NL )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:404:18: ~ ( ( '#' | '*' ) ) ( options {greedy=false; } : . )* RULE_SINGLE_NL
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:382:16: (~ ( ( '#' | '*' | '\\r' | '\\n' ) ) ( options {greedy=false; } : . )* RULE_SINGLE_NL )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:382:18: ~ ( ( '#' | '*' | '\\r' | '\\n' ) ) ( options {greedy=false; } : . )* RULE_SINGLE_NL
             {
-            if ( (input.LA(1)>='\u0000' && input.LA(1)<='\"')||(input.LA(1)>='$' && input.LA(1)<=')')||(input.LA(1)>='+' && input.LA(1)<='\uFFFF') ) {
+            if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\"')||(input.LA(1)>='$' && input.LA(1)<=')')||(input.LA(1)>='+' && input.LA(1)<='\uFFFF') ) {
                 input.consume();
 
             }
@@ -201,7 +201,7 @@ public class InternalSpecLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:404:31: ( options {greedy=false; } : . )*
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:382:41: ( options {greedy=false; } : . )*
             loop3:
             do {
                 int alt3=2;
@@ -220,7 +220,7 @@ public class InternalSpecLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:404:59: .
+            	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:382:69: .
             	    {
             	    matchAny(); 
 
@@ -299,30 +299,27 @@ public class InternalSpecLexer extends Lexer {
 
     protected DFA4 dfa4 = new DFA4(this);
     static final String DFA4_eotS =
-        "\4\uffff\1\11\3\uffff\1\11\2\uffff\1\14\1\uffff";
+        "\4\uffff\1\10\5\uffff";
     static final String DFA4_eofS =
-        "\15\uffff";
+        "\12\uffff";
     static final String DFA4_minS =
-        "\1\0\1\40\1\uffff\2\0\3\uffff\1\0\1\uffff\2\0\1\uffff";
+        "\1\0\1\40\1\uffff\2\12\5\uffff";
     static final String DFA4_maxS =
-        "\1\uffff\1\43\1\uffff\2\uffff\3\uffff\1\uffff\1\uffff\2\uffff\1\uffff";
+        "\1\uffff\1\43\1\uffff\1\12\1\15\5\uffff";
     static final String DFA4_acceptS =
-        "\2\uffff\1\3\2\uffff\1\6\1\1\1\2\1\uffff\1\5\2\uffff\1\4";
+        "\2\uffff\1\3\2\uffff\1\6\1\1\1\2\1\5\1\4";
     static final String DFA4_specialS =
-        "\1\5\2\uffff\1\2\1\0\3\uffff\1\1\1\uffff\1\3\1\4\1\uffff}>";
+        "\1\0\11\uffff}>";
     static final String[] DFA4_transitionS = {
             "\12\5\1\4\2\5\1\3\25\5\1\1\6\5\1\2\uffd5\5",
             "\1\6\2\uffff\1\7",
             "",
-            "\12\5\1\10\ufff5\5",
-            "\12\5\1\13\2\5\1\12\ufff2\5",
+            "\1\4",
+            "\1\11\2\uffff\1\11",
             "",
             "",
             "",
-            "\12\5\1\13\2\5\1\12\ufff2\5",
             "",
-            "\12\5\1\13\ufff5\5",
-            "\12\5\1\13\2\5\1\12\ufff2\5",
             ""
     };
 
@@ -363,68 +360,6 @@ public class InternalSpecLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA4_4 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA4_4=='\r') ) {s = 10;}
-
-                        else if ( (LA4_4=='\n') ) {s = 11;}
-
-                        else if ( ((LA4_4>='\u0000' && LA4_4<='\t')||(LA4_4>='\u000B' && LA4_4<='\f')||(LA4_4>='\u000E' && LA4_4<='\uFFFF')) ) {s = 5;}
-
-                        else s = 9;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA4_8 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA4_8=='\r') ) {s = 10;}
-
-                        else if ( (LA4_8=='\n') ) {s = 11;}
-
-                        else if ( ((LA4_8>='\u0000' && LA4_8<='\t')||(LA4_8>='\u000B' && LA4_8<='\f')||(LA4_8>='\u000E' && LA4_8<='\uFFFF')) ) {s = 5;}
-
-                        else s = 9;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA4_3 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA4_3=='\n') ) {s = 8;}
-
-                        else if ( ((LA4_3>='\u0000' && LA4_3<='\t')||(LA4_3>='\u000B' && LA4_3<='\uFFFF')) ) {s = 5;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
-                        int LA4_10 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA4_10=='\n') ) {s = 11;}
-
-                        else if ( ((LA4_10>='\u0000' && LA4_10<='\t')||(LA4_10>='\u000B' && LA4_10<='\uFFFF')) ) {s = 5;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 4 : 
-                        int LA4_11 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA4_11=='\r') ) {s = 10;}
-
-                        else if ( (LA4_11=='\n') ) {s = 11;}
-
-                        else if ( ((LA4_11>='\u0000' && LA4_11<='\t')||(LA4_11>='\u000B' && LA4_11<='\f')||(LA4_11>='\u000E' && LA4_11<='\uFFFF')) ) {s = 5;}
-
-                        else s = 12;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
                         int LA4_0 = input.LA(1);
 
                         s = -1;

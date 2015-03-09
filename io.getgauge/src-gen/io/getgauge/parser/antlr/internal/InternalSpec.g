@@ -160,9 +160,8 @@ ruleAbstractEntity returns [EObject current=null]
     { 
         newCompositeNode(grammarAccess.getAbstractEntityAccess().getBlankLineParserRuleCall_4()); 
     }
-    this_BlankLine_4=ruleBlankLine
+ruleBlankLine
     { 
-        $current = $this_BlankLine_4.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -341,57 +340,36 @@ ruleComment returns [EObject current=null]
 
 
 // Entry rule entryRuleBlankLine
-entryRuleBlankLine returns [EObject current=null] 
+entryRuleBlankLine returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getBlankLineRule()); }
+	{ newCompositeNode(grammarAccess.getBlankLineRule()); } 
 	 iv_ruleBlankLine=ruleBlankLine 
-	 { $current=$iv_ruleBlankLine.current; } 
+	 { $current=$iv_ruleBlankLine.current.getText(); }  
 	 EOF 
 ;
 
 // Rule BlankLine
-ruleBlankLine returns [EObject current=null] 
+ruleBlankLine returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-(
-(
-		lv_text_0_1=RULE_SINGLE_NL
-		{
-			newLeafNode(lv_text_0_1, grammarAccess.getBlankLineAccess().getTextSINGLE_NLTerminalRuleCall_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getBlankLineRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"text",
-        		lv_text_0_1, 
-        		"SINGLE_NL");
-	    }
+(    this_SINGLE_NL_0=RULE_SINGLE_NL    {
+		$current.merge(this_SINGLE_NL_0);
+    }
 
-    |		lv_text_0_2=RULE_MULTI_NL
-		{
-			newLeafNode(lv_text_0_2, grammarAccess.getBlankLineAccess().getTextMULTI_NLTerminalRuleCall_0_1()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getBlankLineRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"text",
-        		lv_text_0_2, 
-        		"MULTI_NL");
-	    }
+    { 
+    newLeafNode(this_SINGLE_NL_0, grammarAccess.getBlankLineAccess().getSINGLE_NLTerminalRuleCall_0()); 
+    }
 
-)
+    |    this_MULTI_NL_1=RULE_MULTI_NL    {
+		$current.merge(this_MULTI_NL_1);
+    }
 
+    { 
+    newLeafNode(this_MULTI_NL_1, grammarAccess.getBlankLineAccess().getMULTI_NLTerminalRuleCall_1()); 
+    }
 )
-)
-;
+    ;
 
 
 
@@ -401,6 +379,6 @@ RULE_MULTI_NL : RULE_SINGLE_NL RULE_SINGLE_NL+;
 
 RULE_SINGLE_NL : '\r'? '\n';
 
-RULE_LINE_TEXT : ~(('#'|'*')) ( options {greedy=false;} : . )*RULE_SINGLE_NL;
+RULE_LINE_TEXT : ~(('#'|'*'|'\r'|'\n')) ( options {greedy=false;} : . )*RULE_SINGLE_NL;
 
 

@@ -215,34 +215,6 @@ public interface SpecPackage extends EPackage
    */
   int COMMENT_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
 
-  /**
-   * The meta object id for the '{@link io.getgauge.spec.impl.BlankLineImpl <em>Blank Line</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see io.getgauge.spec.impl.BlankLineImpl
-   * @see io.getgauge.spec.impl.SpecPackageImpl#getBlankLine()
-   * @generated
-   */
-  int BLANK_LINE = 6;
-
-  /**
-   * The feature id for the '<em><b>Text</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BLANK_LINE__TEXT = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Blank Line</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BLANK_LINE_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
-
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.Model <em>Model</em>}'.
@@ -358,27 +330,6 @@ public interface SpecPackage extends EPackage
    * @generated
    */
   EAttribute getComment_Text();
-
-  /**
-   * Returns the meta object for class '{@link io.getgauge.spec.BlankLine <em>Blank Line</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Blank Line</em>'.
-   * @see io.getgauge.spec.BlankLine
-   * @generated
-   */
-  EClass getBlankLine();
-
-  /**
-   * Returns the meta object for the attribute '{@link io.getgauge.spec.BlankLine#getText <em>Text</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Text</em>'.
-   * @see io.getgauge.spec.BlankLine#getText()
-   * @see #getBlankLine()
-   * @generated
-   */
-  EAttribute getBlankLine_Text();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -502,24 +453,6 @@ public interface SpecPackage extends EPackage
      * @generated
      */
     EAttribute COMMENT__TEXT = eINSTANCE.getComment_Text();
-
-    /**
-     * The meta object literal for the '{@link io.getgauge.spec.impl.BlankLineImpl <em>Blank Line</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see io.getgauge.spec.impl.BlankLineImpl
-     * @see io.getgauge.spec.impl.SpecPackageImpl#getBlankLine()
-     * @generated
-     */
-    EClass BLANK_LINE = eINSTANCE.getBlankLine();
-
-    /**
-     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BLANK_LINE__TEXT = eINSTANCE.getBlankLine_Text();
 
   }
 

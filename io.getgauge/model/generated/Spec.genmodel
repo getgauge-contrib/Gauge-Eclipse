@@ -23,8 +23,5 @@
     <genClasses ecoreClass="Spec.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Comment/text"/>
     </genClasses>
-    <genClasses ecoreClass="Spec.ecore#//BlankLine">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//BlankLine/text"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>
