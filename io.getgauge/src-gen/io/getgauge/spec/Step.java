@@ -2,6 +2,7 @@
  */
 package io.getgauge.spec;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,7 +12,7 @@ package io.getgauge.spec;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link io.getgauge.spec.Step#getName <em>Name</em>}</li>
+ *   <li>{@link io.getgauge.spec.Step#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,29 +23,19 @@ package io.getgauge.spec;
 public interface Step extends AbstractEntity
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Params</b></em>' containment reference list.
+   * The list contents are of type {@link io.getgauge.spec.StaticParam}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Params</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see io.getgauge.spec.SpecPackage#getStep_Name()
-   * @model
+   * @return the value of the '<em>Params</em>' containment reference list.
+   * @see io.getgauge.spec.SpecPackage#getStep_Params()
+   * @model containment="true"
    * @generated
    */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link io.getgauge.spec.Step#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
+  EList<StaticParam> getParams();
 
 } // Step

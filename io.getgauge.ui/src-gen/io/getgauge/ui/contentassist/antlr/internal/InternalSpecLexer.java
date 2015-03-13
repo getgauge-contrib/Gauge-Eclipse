@@ -14,11 +14,12 @@ import java.util.ArrayList;
 public class InternalSpecLexer extends Lexer {
     public static final int T__9=9;
     public static final int T__8=8;
-    public static final int RULE_SINGLE_NL=4;
-    public static final int T__7=7;
-    public static final int RULE_LINE_TEXT=6;
-    public static final int RULE_MULTI_NL=5;
+    public static final int RULE_SINGLE_NL=7;
+    public static final int RULE_STATIC_PARAM=6;
+    public static final int RULE_WORD=4;
     public static final int EOF=-1;
+    public static final int RULE_SEPARATORS=5;
+    public static final int T__10=10;
 
     // delegates
     // delegators
@@ -33,36 +34,15 @@ public class InternalSpecLexer extends Lexer {
     }
     public String getGrammarFileName() { return "../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g"; }
 
-    // $ANTLR start "T__7"
-    public final void mT__7() throws RecognitionException {
-        try {
-            int _type = T__7;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:11:6: ( '# ' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:11:8: '# '
-            {
-            match("# "); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__7"
-
     // $ANTLR start "T__8"
     public final void mT__8() throws RecognitionException {
         try {
             int _type = T__8;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:12:6: ( '## ' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:12:8: '## '
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:11:6: ( '# ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:11:8: '# '
             {
-            match("## "); 
+            match("# "); 
 
 
             }
@@ -80,10 +60,10 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = T__9;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:13:6: ( '* ' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:13:8: '* '
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:12:6: ( '## ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:12:8: '## '
             {
-            match("* "); 
+            match("## "); 
 
 
             }
@@ -96,44 +76,15 @@ public class InternalSpecLexer extends Lexer {
     }
     // $ANTLR end "T__9"
 
-    // $ANTLR start "RULE_MULTI_NL"
-    public final void mRULE_MULTI_NL() throws RecognitionException {
+    // $ANTLR start "T__10"
+    public final void mT__10() throws RecognitionException {
         try {
-            int _type = RULE_MULTI_NL;
+            int _type = T__10;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:586:15: ( RULE_SINGLE_NL ( RULE_SINGLE_NL )+ )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:586:17: RULE_SINGLE_NL ( RULE_SINGLE_NL )+
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:13:7: ( '* ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:13:9: '* '
             {
-            mRULE_SINGLE_NL(); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:586:32: ( RULE_SINGLE_NL )+
-            int cnt1=0;
-            loop1:
-            do {
-                int alt1=2;
-                int LA1_0 = input.LA(1);
-
-                if ( (LA1_0=='\n'||LA1_0=='\r') ) {
-                    alt1=1;
-                }
-
-
-                switch (alt1) {
-            	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:586:32: RULE_SINGLE_NL
-            	    {
-            	    mRULE_SINGLE_NL(); 
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt1 >= 1 ) break loop1;
-                        EarlyExitException eee =
-                            new EarlyExitException(1, input);
-                        throw eee;
-                }
-                cnt1++;
-            } while (true);
+            match("* "); 
 
 
             }
@@ -144,26 +95,26 @@ public class InternalSpecLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "RULE_MULTI_NL"
+    // $ANTLR end "T__10"
 
     // $ANTLR start "RULE_SINGLE_NL"
     public final void mRULE_SINGLE_NL() throws RecognitionException {
         try {
             int _type = RULE_SINGLE_NL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:588:16: ( ( '\\r' )? '\\n' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:588:18: ( '\\r' )? '\\n'
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:990:16: ( ( '\\r' )? '\\n' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:990:18: ( '\\r' )? '\\n'
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:588:18: ( '\\r' )?
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:990:18: ( '\\r' )?
+            int alt1=2;
+            int LA1_0 = input.LA(1);
 
-            if ( (LA2_0=='\r') ) {
-                alt2=1;
+            if ( (LA1_0=='\r') ) {
+                alt1=1;
             }
-            switch (alt2) {
+            switch (alt1) {
                 case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:588:18: '\\r'
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:990:18: '\\r'
                     {
                     match('\r'); 
 
@@ -184,15 +135,15 @@ public class InternalSpecLexer extends Lexer {
     }
     // $ANTLR end "RULE_SINGLE_NL"
 
-    // $ANTLR start "RULE_LINE_TEXT"
-    public final void mRULE_LINE_TEXT() throws RecognitionException {
+    // $ANTLR start "RULE_WORD"
+    public final void mRULE_WORD() throws RecognitionException {
         try {
-            int _type = RULE_LINE_TEXT;
+            int _type = RULE_WORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:590:16: (~ ( ( '#' | '*' | '\\r' | '\\n' ) ) ( options {greedy=false; } : . )* RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:590:18: ~ ( ( '#' | '*' | '\\r' | '\\n' ) ) ( options {greedy=false; } : . )* RULE_SINGLE_NL
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:992:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:992:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\"')||(input.LA(1)>='$' && input.LA(1)<=')')||(input.LA(1)>='+' && input.LA(1)<='\uFFFF') ) {
+            if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
 
             }
@@ -201,26 +152,104 @@ public class InternalSpecLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:590:41: ( options {greedy=false; } : . )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:992:37: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            loop2:
+            do {
+                int alt2=2;
+                int LA2_0 = input.LA(1);
+
+                if ( ((LA2_0>='0' && LA2_0<='9')||(LA2_0>='A' && LA2_0<='Z')||LA2_0=='_'||(LA2_0>='a' && LA2_0<='z')) ) {
+                    alt2=1;
+                }
+
+
+                switch (alt2) {
+            	case 1 :
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:
+            	    {
+            	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
+            	        input.consume();
+
+            	    }
+            	    else {
+            	        MismatchedSetException mse = new MismatchedSetException(null,input);
+            	        recover(mse);
+            	        throw mse;}
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop2;
+                }
+            } while (true);
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_WORD"
+
+    // $ANTLR start "RULE_SEPARATORS"
+    public final void mRULE_SEPARATORS() throws RecognitionException {
+        try {
+            int _type = RULE_SEPARATORS;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:994:17: (~ ( ( '\\r' | '\\n' | 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:994:19: ~ ( ( '\\r' | '\\n' | 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' ) )
+            {
+            if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='/')||(input.LA(1)>=':' && input.LA(1)<='@')||(input.LA(1)>='[' && input.LA(1)<='^')||input.LA(1)=='`'||(input.LA(1)>='{' && input.LA(1)<='\uFFFF') ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_SEPARATORS"
+
+    // $ANTLR start "RULE_STATIC_PARAM"
+    public final void mRULE_STATIC_PARAM() throws RecognitionException {
+        try {
+            int _type = RULE_STATIC_PARAM;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:996:19: ( '\"' ( options {greedy=false; } : . )* '\"' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:996:21: '\"' ( options {greedy=false; } : . )* '\"'
+            {
+            match('\"'); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:996:25: ( options {greedy=false; } : . )*
             loop3:
             do {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0=='\r') ) {
+                if ( (LA3_0=='\"') ) {
                     alt3=2;
                 }
-                else if ( (LA3_0=='\n') ) {
-                    alt3=2;
-                }
-                else if ( ((LA3_0>='\u0000' && LA3_0<='\t')||(LA3_0>='\u000B' && LA3_0<='\f')||(LA3_0>='\u000E' && LA3_0<='\uFFFF')) ) {
+                else if ( ((LA3_0>='\u0000' && LA3_0<='!')||(LA3_0>='#' && LA3_0<='\uFFFF')) ) {
                     alt3=1;
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:590:69: .
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:996:53: .
             	    {
             	    matchAny(); 
 
@@ -232,7 +261,7 @@ public class InternalSpecLexer extends Lexer {
                 }
             } while (true);
 
-            mRULE_SINGLE_NL(); 
+            match('\"'); 
 
             }
 
@@ -242,52 +271,59 @@ public class InternalSpecLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "RULE_LINE_TEXT"
+    // $ANTLR end "RULE_STATIC_PARAM"
 
     public void mTokens() throws RecognitionException {
-        // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:8: ( T__7 | T__8 | T__9 | RULE_MULTI_NL | RULE_SINGLE_NL | RULE_LINE_TEXT )
-        int alt4=6;
+        // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:8: ( T__8 | T__9 | T__10 | RULE_SINGLE_NL | RULE_WORD | RULE_SEPARATORS | RULE_STATIC_PARAM )
+        int alt4=7;
         alt4 = dfa4.predict(input);
         switch (alt4) {
             case 1 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:10: T__7
-                {
-                mT__7(); 
-
-                }
-                break;
-            case 2 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:15: T__8
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:10: T__8
                 {
                 mT__8(); 
 
                 }
                 break;
-            case 3 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:20: T__9
+            case 2 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:15: T__9
                 {
                 mT__9(); 
 
                 }
                 break;
-            case 4 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:25: RULE_MULTI_NL
+            case 3 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:20: T__10
                 {
-                mRULE_MULTI_NL(); 
+                mT__10(); 
 
                 }
                 break;
-            case 5 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:39: RULE_SINGLE_NL
+            case 4 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:26: RULE_SINGLE_NL
                 {
                 mRULE_SINGLE_NL(); 
 
                 }
                 break;
-            case 6 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:54: RULE_LINE_TEXT
+            case 5 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:41: RULE_WORD
                 {
-                mRULE_LINE_TEXT(); 
+                mRULE_WORD(); 
+
+                }
+                break;
+            case 6 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:51: RULE_SEPARATORS
+                {
+                mRULE_SEPARATORS(); 
+
+                }
+                break;
+            case 7 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:67: RULE_STATIC_PARAM
+                {
+                mRULE_STATIC_PARAM(); 
 
                 }
                 break;
@@ -299,23 +335,24 @@ public class InternalSpecLexer extends Lexer {
 
     protected DFA4 dfa4 = new DFA4(this);
     static final String DFA4_eotS =
-        "\4\uffff\1\10\5\uffff";
+        "\1\uffff\2\6\2\uffff\1\6\5\uffff";
     static final String DFA4_eofS =
-        "\12\uffff";
+        "\13\uffff";
     static final String DFA4_minS =
-        "\1\0\1\40\1\uffff\2\12\5\uffff";
+        "\1\0\2\40\2\uffff\1\0\5\uffff";
     static final String DFA4_maxS =
-        "\1\uffff\1\43\1\uffff\1\12\1\15\5\uffff";
+        "\1\uffff\1\43\1\40\2\uffff\1\uffff\5\uffff";
     static final String DFA4_acceptS =
-        "\2\uffff\1\3\2\uffff\1\6\1\1\1\2\1\5\1\4";
+        "\3\uffff\1\4\1\5\1\uffff\1\6\1\1\1\2\1\3\1\7";
     static final String DFA4_specialS =
-        "\1\0\11\uffff}>";
+        "\1\0\4\uffff\1\1\5\uffff}>";
     static final String[] DFA4_transitionS = {
-            "\12\5\1\4\2\5\1\3\25\5\1\1\6\5\1\2\uffd5\5",
-            "\1\6\2\uffff\1\7",
+            "\12\6\1\3\2\6\1\3\24\6\1\5\1\1\6\6\1\2\5\6\12\uffff\7\6\32\4\4\6\1\4\1\6\32\4\uff85\6",
+            "\1\7\2\uffff\1\10",
+            "\1\11",
             "",
-            "\1\4",
-            "\1\11\2\uffff\1\11",
+            "",
+            "\0\12",
             "",
             "",
             "",
@@ -353,7 +390,7 @@ public class InternalSpecLexer extends Lexer {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__7 | T__8 | T__9 | RULE_MULTI_NL | RULE_SINGLE_NL | RULE_LINE_TEXT );";
+            return "1:1: Tokens : ( T__8 | T__9 | T__10 | RULE_SINGLE_NL | RULE_WORD | RULE_SEPARATORS | RULE_STATIC_PARAM );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -367,11 +404,23 @@ public class InternalSpecLexer extends Lexer {
 
                         else if ( (LA4_0=='*') ) {s = 2;}
 
-                        else if ( (LA4_0=='\r') ) {s = 3;}
+                        else if ( (LA4_0=='\n'||LA4_0=='\r') ) {s = 3;}
 
-                        else if ( (LA4_0=='\n') ) {s = 4;}
+                        else if ( ((LA4_0>='A' && LA4_0<='Z')||LA4_0=='_'||(LA4_0>='a' && LA4_0<='z')) ) {s = 4;}
 
-                        else if ( ((LA4_0>='\u0000' && LA4_0<='\t')||(LA4_0>='\u000B' && LA4_0<='\f')||(LA4_0>='\u000E' && LA4_0<='\"')||(LA4_0>='$' && LA4_0<=')')||(LA4_0>='+' && LA4_0<='\uFFFF')) ) {s = 5;}
+                        else if ( (LA4_0=='\"') ) {s = 5;}
+
+                        else if ( ((LA4_0>='\u0000' && LA4_0<='\t')||(LA4_0>='\u000B' && LA4_0<='\f')||(LA4_0>='\u000E' && LA4_0<='!')||(LA4_0>='$' && LA4_0<=')')||(LA4_0>='+' && LA4_0<='/')||(LA4_0>=':' && LA4_0<='@')||(LA4_0>='[' && LA4_0<='^')||LA4_0=='`'||(LA4_0>='{' && LA4_0<='\uFFFF')) ) {s = 6;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA4_5 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA4_5>='\u0000' && LA4_5<='\uFFFF')) ) {s = 10;}
+
+                        else s = 6;
 
                         if ( s>=0 ) return s;
                         break;

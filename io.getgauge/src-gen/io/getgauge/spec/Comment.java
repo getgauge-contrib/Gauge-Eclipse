@@ -2,6 +2,7 @@
  */
 package io.getgauge.spec;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,29 +23,19 @@ package io.getgauge.spec;
 public interface Comment extends AbstractEntity
 {
   /**
-   * Returns the value of the '<em><b>Text</b></em>' attribute.
+   * Returns the value of the '<em><b>Text</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Text</em>' attribute isn't clear,
+   * If the meaning of the '<em>Text</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Text</em>' attribute.
-   * @see #setText(String)
+   * @return the value of the '<em>Text</em>' attribute list.
    * @see io.getgauge.spec.SpecPackage#getComment_Text()
-   * @model
+   * @model unique="false"
    * @generated
    */
-  String getText();
-
-  /**
-   * Sets the value of the '{@link io.getgauge.spec.Comment#getText <em>Text</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Text</em>' attribute.
-   * @see #getText()
-   * @generated
-   */
-  void setText(String value);
+  EList<String> getText();
 
 } // Comment

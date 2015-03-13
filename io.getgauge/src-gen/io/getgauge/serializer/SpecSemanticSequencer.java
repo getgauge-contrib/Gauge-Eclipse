@@ -8,6 +8,7 @@ import io.getgauge.spec.Model;
 import io.getgauge.spec.Scenario;
 import io.getgauge.spec.Spec;
 import io.getgauge.spec.SpecPackage;
+import io.getgauge.spec.StaticParam;
 import io.getgauge.spec.Step;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
@@ -56,6 +57,12 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case SpecPackage.STATIC_PARAM:
+				if(context == grammarAccess.getStaticParamRule()) {
+					sequence_StaticParam(context, (StaticParam) semanticObject); 
+					return; 
+				}
+				else break;
 			case SpecPackage.STEP:
 				if(context == grammarAccess.getAbstractEntityRule() ||
 				   context == grammarAccess.getStepRule()) {
@@ -69,17 +76,10 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     text=LINE_TEXT
+	 *     (text+=WORD | text+=SEPARATORS | text+=STATIC_PARAM)+
 	 */
 	protected void sequence_Comment(EObject context, Comment semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SpecPackage.Literals.COMMENT__TEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecPackage.Literals.COMMENT__TEXT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCommentAccess().getTextLINE_TEXTTerminalRuleCall_0(), semanticObject.getText());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -94,48 +94,43 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     name=LINE_TEXT
+	 *     (name+=WORD | name+=SEPARATORS)+
 	 */
 	protected void sequence_Scenario(EObject context, Scenario semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SpecPackage.Literals.SCENARIO__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecPackage.Literals.SCENARIO__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getScenarioAccess().getNameLINE_TEXTTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     name=LINE_TEXT
+	 *     (name+=WORD | name+=SEPARATORS)+
 	 */
 	protected void sequence_Spec(EObject context, Spec semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=STATIC_PARAM
+	 */
+	protected void sequence_StaticParam(EObject context, StaticParam semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SpecPackage.Literals.SPEC__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecPackage.Literals.SPEC__NAME));
+			if(transientValues.isValueTransient(semanticObject, SpecPackage.Literals.STATIC_PARAM__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecPackage.Literals.STATIC_PARAM__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSpecAccess().getNameLINE_TEXTTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getStaticParamAccess().getValueSTATIC_PARAMTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     name=LINE_TEXT
+	 *     (params+=StaticParam*)
 	 */
 	protected void sequence_Step(EObject context, Step semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SpecPackage.Literals.STEP__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecPackage.Literals.STEP__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStepAccess().getNameLINE_TEXTTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 }

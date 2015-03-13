@@ -38,15 +38,22 @@ public class SpecParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getAbstractEntityAccess().getAlternatives(), "rule__AbstractEntity__Alternatives");
-					put(grammarAccess.getBlankLineAccess().getAlternatives(), "rule__BlankLine__Alternatives");
+					put(grammarAccess.getAbstractEntityAccess().getAlternatives_0(), "rule__AbstractEntity__Alternatives_0");
+					put(grammarAccess.getSpecAccess().getNameAlternatives_1_0(), "rule__Spec__NameAlternatives_1_0");
+					put(grammarAccess.getScenarioAccess().getNameAlternatives_1_0(), "rule__Scenario__NameAlternatives_1_0");
+					put(grammarAccess.getStepAccess().getAlternatives_2_0(), "rule__Step__Alternatives_2_0");
+					put(grammarAccess.getCommentAccess().getTextAlternatives_0_0(), "rule__Comment__TextAlternatives_0_0");
 					put(grammarAccess.getSpecAccess().getGroup(), "rule__Spec__Group__0");
 					put(grammarAccess.getScenarioAccess().getGroup(), "rule__Scenario__Group__0");
 					put(grammarAccess.getStepAccess().getGroup(), "rule__Step__Group__0");
+					put(grammarAccess.getStepAccess().getGroup_2(), "rule__Step__Group_2__0");
+					put(grammarAccess.getCommentAccess().getGroup(), "rule__Comment__Group__0");
 					put(grammarAccess.getModelAccess().getDefinitionsAssignment(), "rule__Model__DefinitionsAssignment");
 					put(grammarAccess.getSpecAccess().getNameAssignment_1(), "rule__Spec__NameAssignment_1");
 					put(grammarAccess.getScenarioAccess().getNameAssignment_1(), "rule__Scenario__NameAssignment_1");
-					put(grammarAccess.getStepAccess().getNameAssignment_1(), "rule__Step__NameAssignment_1");
-					put(grammarAccess.getCommentAccess().getTextAssignment(), "rule__Comment__TextAssignment");
+					put(grammarAccess.getStepAccess().getParamsAssignment_2_0_0(), "rule__Step__ParamsAssignment_2_0_0");
+					put(grammarAccess.getCommentAccess().getTextAssignment_0(), "rule__Comment__TextAssignment_0");
+					put(grammarAccess.getStaticParamAccess().getValueAssignment(), "rule__StaticParam__ValueAssignment");
 				}
 			};
 		}

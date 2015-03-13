@@ -70,6 +70,7 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
       case SpecPackage.SCENARIO: return createScenario();
       case SpecPackage.STEP: return createStep();
       case SpecPackage.COMMENT: return createComment();
+      case SpecPackage.STATIC_PARAM: return createStaticParam();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -139,6 +140,17 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
   {
     CommentImpl comment = new CommentImpl();
     return comment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StaticParam createStaticParam()
+  {
+    StaticParamImpl staticParam = new StaticParamImpl();
+    return staticParam;
   }
 
   /**

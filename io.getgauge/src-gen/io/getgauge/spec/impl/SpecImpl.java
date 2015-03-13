@@ -5,11 +5,13 @@ package io.getgauge.spec.impl;
 import io.getgauge.spec.Spec;
 import io.getgauge.spec.SpecPackage;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,24 +29,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class SpecImpl extends AbstractEntityImpl implements Spec
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected EList<String> name;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,22 +64,13 @@ public class SpecImpl extends AbstractEntityImpl implements Spec
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public EList<String> getName()
   {
+    if (name == null)
+    {
+      name = new EDataTypeEList<String>(String.class, this, SpecPackage.SPEC__NAME);
+    }
     return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SpecPackage.SPEC__NAME, oldName, name));
   }
 
   /**
@@ -111,13 +94,15 @@ public class SpecImpl extends AbstractEntityImpl implements Spec
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case SpecPackage.SPEC__NAME:
-        setName((String)newValue);
+        getName().clear();
+        getName().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +119,7 @@ public class SpecImpl extends AbstractEntityImpl implements Spec
     switch (featureID)
     {
       case SpecPackage.SPEC__NAME:
-        setName(NAME_EDEFAULT);
+        getName().clear();
         return;
     }
     super.eUnset(featureID);
@@ -151,7 +136,7 @@ public class SpecImpl extends AbstractEntityImpl implements Spec
     switch (featureID)
     {
       case SpecPackage.SPEC__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+        return name != null && !name.isEmpty();
     }
     return super.eIsSet(featureID);
   }

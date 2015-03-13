@@ -114,7 +114,7 @@ public interface SpecPackage extends EPackage
   int SPEC = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -142,7 +142,7 @@ public interface SpecPackage extends EPackage
   int SCENARIO = 3;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -170,13 +170,13 @@ public interface SpecPackage extends EPackage
   int STEP = 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Params</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STEP__NAME = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
+  int STEP__PARAMS = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Step</em>' class.
@@ -198,7 +198,7 @@ public interface SpecPackage extends EPackage
   int COMMENT = 5;
 
   /**
-   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * The feature id for the '<em><b>Text</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -214,6 +214,34 @@ public interface SpecPackage extends EPackage
    * @ordered
    */
   int COMMENT_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.StaticParamImpl <em>Static Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.StaticParamImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getStaticParam()
+   * @generated
+   */
+  int STATIC_PARAM = 6;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATIC_PARAM__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Static Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATIC_PARAM_FEATURE_COUNT = 1;
 
 
   /**
@@ -258,10 +286,10 @@ public interface SpecPackage extends EPackage
   EClass getSpec();
 
   /**
-   * Returns the meta object for the attribute '{@link io.getgauge.spec.Spec#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute list '{@link io.getgauge.spec.Spec#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
+   * @return the meta object for the attribute list '<em>Name</em>'.
    * @see io.getgauge.spec.Spec#getName()
    * @see #getSpec()
    * @generated
@@ -279,10 +307,10 @@ public interface SpecPackage extends EPackage
   EClass getScenario();
 
   /**
-   * Returns the meta object for the attribute '{@link io.getgauge.spec.Scenario#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute list '{@link io.getgauge.spec.Scenario#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
+   * @return the meta object for the attribute list '<em>Name</em>'.
    * @see io.getgauge.spec.Scenario#getName()
    * @see #getScenario()
    * @generated
@@ -300,15 +328,15 @@ public interface SpecPackage extends EPackage
   EClass getStep();
 
   /**
-   * Returns the meta object for the attribute '{@link io.getgauge.spec.Step#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Step#getParams <em>Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see io.getgauge.spec.Step#getName()
+   * @return the meta object for the containment reference list '<em>Params</em>'.
+   * @see io.getgauge.spec.Step#getParams()
    * @see #getStep()
    * @generated
    */
-  EAttribute getStep_Name();
+  EReference getStep_Params();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.Comment <em>Comment</em>}'.
@@ -321,15 +349,36 @@ public interface SpecPackage extends EPackage
   EClass getComment();
 
   /**
-   * Returns the meta object for the attribute '{@link io.getgauge.spec.Comment#getText <em>Text</em>}'.
+   * Returns the meta object for the attribute list '{@link io.getgauge.spec.Comment#getText <em>Text</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Text</em>'.
+   * @return the meta object for the attribute list '<em>Text</em>'.
    * @see io.getgauge.spec.Comment#getText()
    * @see #getComment()
    * @generated
    */
   EAttribute getComment_Text();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.StaticParam <em>Static Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Static Param</em>'.
+   * @see io.getgauge.spec.StaticParam
+   * @generated
+   */
+  EClass getStaticParam();
+
+  /**
+   * Returns the meta object for the attribute '{@link io.getgauge.spec.StaticParam#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see io.getgauge.spec.StaticParam#getValue()
+   * @see #getStaticParam()
+   * @generated
+   */
+  EAttribute getStaticParam_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -393,7 +442,7 @@ public interface SpecPackage extends EPackage
     EClass SPEC = eINSTANCE.getSpec();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -411,7 +460,7 @@ public interface SpecPackage extends EPackage
     EClass SCENARIO = eINSTANCE.getScenario();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -429,12 +478,12 @@ public interface SpecPackage extends EPackage
     EClass STEP = eINSTANCE.getStep();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STEP__NAME = eINSTANCE.getStep_Name();
+    EReference STEP__PARAMS = eINSTANCE.getStep_Params();
 
     /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.
@@ -447,12 +496,30 @@ public interface SpecPackage extends EPackage
     EClass COMMENT = eINSTANCE.getComment();
 
     /**
-     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Text</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute COMMENT__TEXT = eINSTANCE.getComment_Text();
+
+    /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.StaticParamImpl <em>Static Param</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.StaticParamImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getStaticParam()
+     * @generated
+     */
+    EClass STATIC_PARAM = eINSTANCE.getStaticParam();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATIC_PARAM__VALUE = eINSTANCE.getStaticParam_Value();
 
   }
 

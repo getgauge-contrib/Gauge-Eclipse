@@ -1,0 +1,51 @@
+grammar io.getgauge.Spec 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate spec "http://www.getgauge.io/Spec"
+
+Model:
+	definitions+=AbstractEntity*
+;
+
+AbstractEntity:
+	(Spec | Scenario | Step) | Comment
+;
+
+Spec:
+	'# ' name+=(WORD | SEPARATORS)+ SINGLE_NL+
+;
+
+Scenario:
+	'## ' name+=(WORD | SEPARATORS)+ SINGLE_NL+
+;
+
+Step:
+	{Step}
+	'* ' (((params+=StaticParam) | WORD ) SEPARATORS?)+ SINGLE_NL+
+;
+
+Comment:
+	text+=(WORD | NOT_NL)+ SINGLE_NL+
+;
+
+terminal SINGLE_NL:
+	'\r'? '\n'
+;
+
+terminal NOT_NL:
+	!('\r' | '\n')
+;
+
+StaticParam:
+	value=STATIC_PARAM
+;
+
+terminal STATIC_PARAM:
+	'"' -> '"'
+;
+
+terminal WORD: ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+
+terminal SEPARATORS:
+	!('\r' | '\n' | 'a'..'z' | 'A'..'Z' | '0'..'9' | '_' ) 
+;

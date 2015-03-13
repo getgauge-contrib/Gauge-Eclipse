@@ -670,3 +670,103 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY org.eclipse.core.net 1 0 2015-03-09 14:15:41.419
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jdt.core 4 4 2015-03-12 13:00:05.116
+!MESSAGE Background Indexer Crash Recovery
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+	at org.eclipse.jdt.internal.compiler.util.HashtableOfObject.<init>(HashtableOfObject.java:38)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readCategoryTable(DiskIndex.java:642)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeCategory(DiskIndex.java:463)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeCategories(DiskIndex.java:455)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.mergeWith(DiskIndex.java:549)
+	at org.eclipse.jdt.internal.core.index.Index.save(Index.java:197)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndex(IndexManager.java:905)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.saveIndexes(IndexManager.java:947)
+	at org.eclipse.jdt.internal.core.search.indexing.IndexManager.notifyIdle(IndexManager.java:644)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:388)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-03-12 13:00:10.611
+!MESSAGE An internal error occurred during: "Building workspace".
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+	at org.eclipse.jdt.internal.compiler.util.HashtableOfObject.<init>(HashtableOfObject.java:38)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readCategoryTable(DiskIndex.java:642)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.addQueryResults(DiskIndex.java:214)
+	at org.eclipse.jdt.internal.core.index.Index.query(Index.java:140)
+	at org.eclipse.jdt.internal.core.search.matching.SecondaryTypeDeclarationPattern.queryIn(SecondaryTypeDeclarationPattern.java:44)
+	at org.eclipse.jdt.core.search.SearchPattern.findIndexMatches(SearchPattern.java:2306)
+	at org.eclipse.jdt.internal.core.search.matching.MatchLocator.findIndexMatches(MatchLocator.java:273)
+	at org.eclipse.jdt.internal.core.search.PatternSearchJob.search(PatternSearchJob.java:109)
+	at org.eclipse.jdt.internal.core.search.PatternSearchJob.execute(PatternSearchJob.java:65)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.performConcurrentJob(JobManager.java:189)
+	at org.eclipse.jdt.internal.core.search.BasicSearchEngine.searchAllSecondaryTypeNames(BasicSearchEngine.java:962)
+	at org.eclipse.jdt.internal.core.JavaModelManager.secondaryTypesSearching(JavaModelManager.java:4660)
+	at org.eclipse.jdt.internal.core.JavaModelManager.secondaryTypes(JavaModelManager.java:4529)
+	at org.eclipse.jdt.internal.core.NameLookup.findSecondaryType(NameLookup.java:592)
+	at org.eclipse.jdt.internal.core.NameLookup.findType(NameLookup.java:773)
+	at org.eclipse.jdt.internal.core.NameLookup.findType(NameLookup.java:663)
+	at org.eclipse.jdt.internal.core.NameLookup.findType(NameLookup.java:622)
+	at org.eclipse.jdt.internal.core.SearchableEnvironment.find(SearchableEnvironment.java:103)
+	at org.eclipse.jdt.internal.core.SearchableEnvironment.findType(SearchableEnvironment.java:294)
+	at org.eclipse.jdt.internal.core.CancelableNameEnvironment.findType(CancelableNameEnvironment.java:45)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:158)
+	at org.eclipse.jdt.internal.compiler.lookup.PackageBinding.getType(PackageBinding.java:145)
+	at org.eclipse.jdt.internal.compiler.lookup.PackageBinding.isViewedAsDeprecated(PackageBinding.java:229)
+	at org.eclipse.jdt.internal.compiler.lookup.ReferenceBinding.isViewedAsDeprecated(ReferenceBinding.java:1550)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.cachePartsFrom(BinaryTypeBinding.java:475)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.createBinaryTypeFrom(LookupEnvironment.java:696)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.createBinaryTypeFrom(LookupEnvironment.java:679)
+	at org.eclipse.jdt.internal.compiler.Compiler.accept(Compiler.java:299)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:140)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.getType(LookupEnvironment.java:1149)
+	at org.eclipse.jdt.internal.core.util.BindingKeyResolver.getCompilationUnitDeclaration(BindingKeyResolver.java:596)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.beginToCompile(CompilationUnitResolver.java:229)
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-03-12 13:00:10.611
+!MESSAGE An internal error occurred during: "Building workspace".
+!STACK 0
+java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+	at org.eclipse.jdt.internal.compiler.util.HashtableOfObject.<init>(HashtableOfObject.java:38)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.readCategoryTable(DiskIndex.java:642)
+	at org.eclipse.jdt.internal.core.index.DiskIndex.addQueryResults(DiskIndex.java:214)
+	at org.eclipse.jdt.internal.core.index.Index.query(Index.java:140)
+	at org.eclipse.jdt.internal.core.search.matching.SecondaryTypeDeclarationPattern.queryIn(SecondaryTypeDeclarationPattern.java:44)
+	at org.eclipse.jdt.core.search.SearchPattern.findIndexMatches(SearchPattern.java:2306)
+	at org.eclipse.jdt.internal.core.search.matching.MatchLocator.findIndexMatches(MatchLocator.java:273)
+	at org.eclipse.jdt.internal.core.search.PatternSearchJob.search(PatternSearchJob.java:109)
+	at org.eclipse.jdt.internal.core.search.PatternSearchJob.execute(PatternSearchJob.java:65)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.performConcurrentJob(JobManager.java:189)
+	at org.eclipse.jdt.internal.core.search.BasicSearchEngine.searchAllSecondaryTypeNames(BasicSearchEngine.java:962)
+	at org.eclipse.jdt.internal.core.JavaModelManager.secondaryTypesSearching(JavaModelManager.java:4660)
+	at org.eclipse.jdt.internal.core.JavaModelManager.secondaryTypes(JavaModelManager.java:4529)
+	at org.eclipse.jdt.internal.core.NameLookup.findSecondaryType(NameLookup.java:592)
+	at org.eclipse.jdt.internal.core.NameLookup.findType(NameLookup.java:773)
+	at org.eclipse.jdt.internal.core.NameLookup.findType(NameLookup.java:663)
+	at org.eclipse.jdt.internal.core.NameLookup.findType(NameLookup.java:622)
+	at org.eclipse.jdt.internal.core.SearchableEnvironment.find(SearchableEnvironment.java:103)
+	at org.eclipse.jdt.internal.core.SearchableEnvironment.findType(SearchableEnvironment.java:294)
+	at org.eclipse.jdt.internal.core.CancelableNameEnvironment.findType(CancelableNameEnvironment.java:45)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:158)
+	at org.eclipse.jdt.internal.compiler.lookup.PackageBinding.getType(PackageBinding.java:145)
+	at org.eclipse.jdt.internal.compiler.lookup.PackageBinding.isViewedAsDeprecated(PackageBinding.java:229)
+	at org.eclipse.jdt.internal.compiler.lookup.ReferenceBinding.isViewedAsDeprecated(ReferenceBinding.java:1550)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.cachePartsFrom(BinaryTypeBinding.java:475)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.createBinaryTypeFrom(LookupEnvironment.java:696)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.createBinaryTypeFrom(LookupEnvironment.java:679)
+	at org.eclipse.jdt.internal.compiler.Compiler.accept(Compiler.java:299)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:140)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.getType(LookupEnvironment.java:1149)
+	at org.eclipse.jdt.internal.core.util.BindingKeyResolver.getCompilationUnitDeclaration(BindingKeyResolver.java:596)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.beginToCompile(CompilationUnitResolver.java:229)
+!SESSION 2015-03-12 16:32:18.571 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_31
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.dsl.product -keyring /Users/steam/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.dsl.product -keyring /Users/steam/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-12 16:32:23.640
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

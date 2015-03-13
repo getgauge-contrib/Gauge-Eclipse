@@ -5,11 +5,13 @@ package io.getgauge.spec.impl;
 import io.getgauge.spec.Comment;
 import io.getgauge.spec.SpecPackage;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,24 +29,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class CommentImpl extends AbstractEntityImpl implements Comment
 {
   /**
-   * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+   * The cached value of the '{@link #getText() <em>Text</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getText()
    * @generated
    * @ordered
    */
-  protected static final String TEXT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getText()
-   * @generated
-   * @ordered
-   */
-  protected String text = TEXT_EDEFAULT;
+  protected EList<String> text;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,22 +64,13 @@ public class CommentImpl extends AbstractEntityImpl implements Comment
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getText()
+  public EList<String> getText()
   {
+    if (text == null)
+    {
+      text = new EDataTypeEList<String>(String.class, this, SpecPackage.COMMENT__TEXT);
+    }
     return text;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setText(String newText)
-  {
-    String oldText = text;
-    text = newText;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SpecPackage.COMMENT__TEXT, oldText, text));
   }
 
   /**
@@ -111,13 +94,15 @@ public class CommentImpl extends AbstractEntityImpl implements Comment
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case SpecPackage.COMMENT__TEXT:
-        setText((String)newValue);
+        getText().clear();
+        getText().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +119,7 @@ public class CommentImpl extends AbstractEntityImpl implements Comment
     switch (featureID)
     {
       case SpecPackage.COMMENT__TEXT:
-        setText(TEXT_EDEFAULT);
+        getText().clear();
         return;
     }
     super.eUnset(featureID);
@@ -151,7 +136,7 @@ public class CommentImpl extends AbstractEntityImpl implements Comment
     switch (featureID)
     {
       case SpecPackage.COMMENT__TEXT:
-        return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
+        return text != null && !text.isEmpty();
     }
     return super.eIsSet(featureID);
   }

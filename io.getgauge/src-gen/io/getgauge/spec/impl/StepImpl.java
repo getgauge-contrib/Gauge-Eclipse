@@ -3,13 +3,20 @@
 package io.getgauge.spec.impl;
 
 import io.getgauge.spec.SpecPackage;
+import io.getgauge.spec.StaticParam;
 import io.getgauge.spec.Step;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link io.getgauge.spec.impl.StepImpl#getName <em>Name</em>}</li>
+ *   <li>{@link io.getgauge.spec.impl.StepImpl#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,24 +34,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class StepImpl extends AbstractEntityImpl implements Step
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getParams()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected EList<StaticParam> params;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,9 +69,13 @@ public class StepImpl extends AbstractEntityImpl implements Step
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public EList<StaticParam> getParams()
   {
-    return name;
+    if (params == null)
+    {
+      params = new EObjectContainmentEList<StaticParam>(StaticParam.class, this, SpecPackage.STEP__PARAMS);
+    }
+    return params;
   }
 
   /**
@@ -82,12 +83,15 @@ public class StepImpl extends AbstractEntityImpl implements Step
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SpecPackage.STEP__NAME, oldName, name));
+    switch (featureID)
+    {
+      case SpecPackage.STEP__PARAMS:
+        return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -100,8 +104,8 @@ public class StepImpl extends AbstractEntityImpl implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__NAME:
-        return getName();
+      case SpecPackage.STEP__PARAMS:
+        return getParams();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -111,13 +115,15 @@ public class StepImpl extends AbstractEntityImpl implements Step
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__NAME:
-        setName((String)newValue);
+      case SpecPackage.STEP__PARAMS:
+        getParams().clear();
+        getParams().addAll((Collection<? extends StaticParam>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -133,8 +139,8 @@ public class StepImpl extends AbstractEntityImpl implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__NAME:
-        setName(NAME_EDEFAULT);
+      case SpecPackage.STEP__PARAMS:
+        getParams().clear();
         return;
     }
     super.eUnset(featureID);
@@ -150,27 +156,10 @@ public class StepImpl extends AbstractEntityImpl implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SpecPackage.STEP__PARAMS:
+        return params != null && !params.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //StepImpl

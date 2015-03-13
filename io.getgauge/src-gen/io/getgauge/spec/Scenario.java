@@ -2,6 +2,7 @@
  */
 package io.getgauge.spec;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,29 +23,19 @@ package io.getgauge.spec;
 public interface Scenario extends AbstractEntity
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
+   * @return the value of the '<em>Name</em>' attribute list.
    * @see io.getgauge.spec.SpecPackage#getScenario_Name()
-   * @model
+   * @model unique="false"
    * @generated
    */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link io.getgauge.spec.Scenario#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
+  EList<String> getName();
 
 } // Scenario
