@@ -42,18 +42,23 @@ public class SpecParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSpecAccess().getNameAlternatives_1_0(), "rule__Spec__NameAlternatives_1_0");
 					put(grammarAccess.getScenarioAccess().getNameAlternatives_1_0(), "rule__Scenario__NameAlternatives_1_0");
 					put(grammarAccess.getStepAccess().getAlternatives_2_0(), "rule__Step__Alternatives_2_0");
+					put(grammarAccess.getDynamicParamAccess().getTypeAlternatives_1_0(), "rule__DynamicParam__TypeAlternatives_1_0");
 					put(grammarAccess.getCommentAccess().getTextAlternatives_0_0(), "rule__Comment__TextAlternatives_0_0");
 					put(grammarAccess.getSpecAccess().getGroup(), "rule__Spec__Group__0");
 					put(grammarAccess.getScenarioAccess().getGroup(), "rule__Scenario__Group__0");
 					put(grammarAccess.getStepAccess().getGroup(), "rule__Step__Group__0");
 					put(grammarAccess.getStepAccess().getGroup_2(), "rule__Step__Group_2__0");
+					put(grammarAccess.getDynamicParamAccess().getGroup(), "rule__DynamicParam__Group__0");
 					put(grammarAccess.getCommentAccess().getGroup(), "rule__Comment__Group__0");
 					put(grammarAccess.getModelAccess().getDefinitionsAssignment(), "rule__Model__DefinitionsAssignment");
 					put(grammarAccess.getSpecAccess().getNameAssignment_1(), "rule__Spec__NameAssignment_1");
 					put(grammarAccess.getScenarioAccess().getNameAssignment_1(), "rule__Scenario__NameAssignment_1");
-					put(grammarAccess.getStepAccess().getParamsAssignment_2_0_0(), "rule__Step__ParamsAssignment_2_0_0");
-					put(grammarAccess.getCommentAccess().getTextAssignment_0(), "rule__Comment__TextAssignment_0");
+					put(grammarAccess.getStepAccess().getStaticParamsAssignment_2_0_0(), "rule__Step__StaticParamsAssignment_2_0_0");
+					put(grammarAccess.getStepAccess().getDynamicParamsAssignment_2_0_1(), "rule__Step__DynamicParamsAssignment_2_0_1");
 					put(grammarAccess.getStaticParamAccess().getValueAssignment(), "rule__StaticParam__ValueAssignment");
+					put(grammarAccess.getDynamicParamAccess().getTypeAssignment_1(), "rule__DynamicParam__TypeAssignment_1");
+					put(grammarAccess.getDynamicParamAccess().getValueAssignment_3(), "rule__DynamicParam__ValueAssignment_3");
+					put(grammarAccess.getCommentAccess().getTextAssignment_0(), "rule__Comment__TextAssignment_0");
 				}
 			};
 		}

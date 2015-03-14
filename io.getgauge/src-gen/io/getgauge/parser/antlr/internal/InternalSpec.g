@@ -319,35 +319,174 @@ ruleStep returns [EObject current=null]
 (((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStepAccess().getParamsStaticParamParserRuleCall_2_0_0_0()); 
+	        newCompositeNode(grammarAccess.getStepAccess().getStaticParamsStaticParamParserRuleCall_2_0_0_0()); 
 	    }
-		lv_params_2_0=ruleStaticParam		{
+		lv_staticParams_2_0=ruleStaticParam		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getStepRule());
 	        }
        		add(
        			$current, 
-       			"params",
-        		lv_params_2_0, 
+       			"staticParams",
+        		lv_staticParams_2_0, 
         		"StaticParam");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )
-    |this_WORD_3=RULE_WORD
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getStepAccess().getDynamicParamsDynamicParamParserRuleCall_2_0_1_0()); 
+	    }
+		lv_dynamicParams_3_0=ruleDynamicParam		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getStepRule());
+	        }
+       		add(
+       			$current, 
+       			"dynamicParams",
+        		lv_dynamicParams_3_0, 
+        		"DynamicParam");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |this_WORD_4=RULE_WORD
     { 
-    newLeafNode(this_WORD_3, grammarAccess.getStepAccess().getWORDTerminalRuleCall_2_0_1()); 
+    newLeafNode(this_WORD_4, grammarAccess.getStepAccess().getWORDTerminalRuleCall_2_0_2()); 
     }
-)(this_SEPARATORS_4=RULE_SEPARATORS
+)(this_SEPARATORS_5=RULE_SEPARATORS
     { 
-    newLeafNode(this_SEPARATORS_4, grammarAccess.getStepAccess().getSEPARATORSTerminalRuleCall_2_1()); 
+    newLeafNode(this_SEPARATORS_5, grammarAccess.getStepAccess().getSEPARATORSTerminalRuleCall_2_1()); 
     }
-)?)+(this_SINGLE_NL_5=RULE_SINGLE_NL
+)*)+(this_SINGLE_NL_6=RULE_SINGLE_NL
     { 
-    newLeafNode(this_SINGLE_NL_5, grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_3()); 
+    newLeafNode(this_SINGLE_NL_6, grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_3()); 
     }
 )+)
+;
+
+
+
+
+
+// Entry rule entryRuleStaticParam
+entryRuleStaticParam returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getStaticParamRule()); }
+	 iv_ruleStaticParam=ruleStaticParam 
+	 { $current=$iv_ruleStaticParam.current; } 
+	 EOF 
+;
+
+// Rule StaticParam
+ruleStaticParam returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		lv_value_0_0=RULE_STATIC_PARAM
+		{
+			newLeafNode(lv_value_0_0, grammarAccess.getStaticParamAccess().getValueSTATIC_PARAMTerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getStaticParamRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_0_0, 
+        		"STATIC_PARAM");
+	    }
+
+)
+)
+;
+
+
+
+
+
+// Entry rule entryRuleDynamicParam
+entryRuleDynamicParam returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDynamicParamRule()); }
+	 iv_ruleDynamicParam=ruleDynamicParam 
+	 { $current=$iv_ruleDynamicParam.current; } 
+	 EOF 
+;
+
+// Rule DynamicParam
+ruleDynamicParam returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='<' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getDynamicParamAccess().getLessThanSignKeyword_0());
+    }
+(
+(
+(
+		lv_type_1_1=	'table' 
+    {
+        newLeafNode(lv_type_1_1, grammarAccess.getDynamicParamAccess().getTypeTableKeyword_1_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDynamicParamRule());
+	        }
+       		setWithLastConsumed($current, "type", lv_type_1_1, null);
+	    }
+
+    |		lv_type_1_2=	'file' 
+    {
+        newLeafNode(lv_type_1_2, grammarAccess.getDynamicParamAccess().getTypeFileKeyword_1_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDynamicParamRule());
+	        }
+       		setWithLastConsumed($current, "type", lv_type_1_2, null);
+	    }
+
+)
+
+)
+)	otherlv_2=':' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getDynamicParamAccess().getColonKeyword_2());
+    }
+(
+(
+		lv_value_3_0=RULE_DYNAMIC_PARAM_VALUE
+		{
+			newLeafNode(lv_value_3_0, grammarAccess.getDynamicParamAccess().getValueDYNAMIC_PARAM_VALUETerminalRuleCall_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDynamicParamRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_3_0, 
+        		"DYNAMIC_PARAM_VALUE");
+	    }
+
+)
+)	otherlv_4='>' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getDynamicParamAccess().getGreaterThanSignKeyword_4());
+    }
+)
 ;
 
 
@@ -416,6 +555,18 @@ ruleComment returns [EObject current=null]
         		"STATIC_PARAM");
 	    }
 
+    |		lv_text_0_4=	'.' 
+    {
+        newLeafNode(lv_text_0_4, grammarAccess.getCommentAccess().getTextFullStopKeyword_0_0_3());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getCommentRule());
+	        }
+       		addWithLastConsumed($current, "text", lv_text_0_4, null);
+	    }
+
 )
 
 )
@@ -430,50 +581,13 @@ ruleComment returns [EObject current=null]
 
 
 
-// Entry rule entryRuleStaticParam
-entryRuleStaticParam returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getStaticParamRule()); }
-	 iv_ruleStaticParam=ruleStaticParam 
-	 { $current=$iv_ruleStaticParam.current; } 
-	 EOF 
-;
-
-// Rule StaticParam
-ruleStaticParam returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-(
-		lv_value_0_0=RULE_STATIC_PARAM
-		{
-			newLeafNode(lv_value_0_0, grammarAccess.getStaticParamAccess().getValueSTATIC_PARAMTerminalRuleCall_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getStaticParamRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"value",
-        		lv_value_0_0, 
-        		"STATIC_PARAM");
-	    }
-
-)
-)
-;
-
-
-
-
-
 RULE_SINGLE_NL : '\r'? '\n';
 
 RULE_WORD : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
 RULE_SEPARATORS : ~(('\r'|'\n'|'a'..'z'|'A'..'Z'|'0'..'9'|'_'));
+
+RULE_DYNAMIC_PARAM_VALUE : RULE_WORD ('.' ('txt'|'csv'))?;
 
 RULE_STATIC_PARAM : '"' ( options {greedy=false;} : . )*'"';
 

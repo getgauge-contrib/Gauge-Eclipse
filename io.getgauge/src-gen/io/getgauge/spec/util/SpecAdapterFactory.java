@@ -100,14 +100,19 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
         return createStepAdapter();
       }
       @Override
-      public Adapter caseComment(Comment object)
-      {
-        return createCommentAdapter();
-      }
-      @Override
       public Adapter caseStaticParam(StaticParam object)
       {
         return createStaticParamAdapter();
+      }
+      @Override
+      public Adapter caseDynamicParam(DynamicParam object)
+      {
+        return createDynamicParamAdapter();
+      }
+      @Override
+      public Adapter caseComment(Comment object)
+      {
+        return createCommentAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -207,21 +212,6 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link io.getgauge.spec.Comment <em>Comment</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.getgauge.spec.Comment
-   * @generated
-   */
-  public Adapter createCommentAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link io.getgauge.spec.StaticParam <em>Static Param</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -232,6 +222,36 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStaticParamAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.DynamicParam <em>Dynamic Param</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.DynamicParam
+   * @generated
+   */
+  public Adapter createDynamicParamAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.Comment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.Comment
+   * @generated
+   */
+  public Adapter createCommentAdapter()
   {
     return null;
   }

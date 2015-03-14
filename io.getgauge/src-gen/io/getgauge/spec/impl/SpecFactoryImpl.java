@@ -69,8 +69,9 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
       case SpecPackage.SPEC: return createSpec();
       case SpecPackage.SCENARIO: return createScenario();
       case SpecPackage.STEP: return createStep();
-      case SpecPackage.COMMENT: return createComment();
       case SpecPackage.STATIC_PARAM: return createStaticParam();
+      case SpecPackage.DYNAMIC_PARAM: return createDynamicParam();
+      case SpecPackage.COMMENT: return createComment();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -136,10 +137,10 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Comment createComment()
+  public StaticParam createStaticParam()
   {
-    CommentImpl comment = new CommentImpl();
-    return comment;
+    StaticParamImpl staticParam = new StaticParamImpl();
+    return staticParam;
   }
 
   /**
@@ -147,10 +148,21 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public StaticParam createStaticParam()
+  public DynamicParam createDynamicParam()
   {
-    StaticParamImpl staticParam = new StaticParamImpl();
-    return staticParam;
+    DynamicParamImpl dynamicParam = new DynamicParamImpl();
+    return dynamicParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Comment createComment()
+  {
+    CommentImpl comment = new CommentImpl();
+    return comment;
   }
 
   /**

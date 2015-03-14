@@ -21,11 +21,7 @@ Scenario:
 
 Step:
 	{Step}
-	'* ' (((params+=StaticParam) | WORD ) SEPARATORS?)+ SINGLE_NL+
-;
-
-Comment:
-	text+=(WORD | SEPARATORS | STATIC_PARAM)+ SINGLE_NL+
+	'* ' (((staticParams+=StaticParam) | (dynamicParams+=DynamicParam) | WORD) SEPARATORS*)+ SINGLE_NL+
 ;
 
 terminal SINGLE_NL:
@@ -42,6 +38,17 @@ StaticParam:
 	value=STATIC_PARAM
 ;
 
+DynamicParam:
+	'<' type=('table'|'file') ':' value=DYNAMIC_PARAM_VALUE '>'
+;
+
+terminal DYNAMIC_PARAM_VALUE:
+	WORD ('.'('txt'|'csv'))?
+;
 terminal STATIC_PARAM:
 	'"' -> '"'
+;
+
+Comment:
+	(text+=(WORD | SEPARATORS | STATIC_PARAM))+ SINGLE_NL+
 ;

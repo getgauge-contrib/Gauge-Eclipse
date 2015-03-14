@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import io.getgauge.services.SpecGrammarAccess;
 import io.getgauge.spec.Comment;
+import io.getgauge.spec.DynamicParam;
 import io.getgauge.spec.Model;
 import io.getgauge.spec.Scenario;
 import io.getgauge.spec.Spec;
@@ -34,6 +35,12 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				if(context == grammarAccess.getAbstractEntityRule() ||
 				   context == grammarAccess.getCommentRule()) {
 					sequence_Comment(context, (Comment) semanticObject); 
+					return; 
+				}
+				else break;
+			case SpecPackage.DYNAMIC_PARAM:
+				if(context == grammarAccess.getDynamicParamRule()) {
+					sequence_DynamicParam(context, (DynamicParam) semanticObject); 
 					return; 
 				}
 				else break;
@@ -76,9 +83,18 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (text+=WORD | text+=SEPARATORS | text+=STATIC_PARAM)+
+	 *     (text+=WORD | text+=SEPARATORS | text+=STATIC_PARAM | text+='.')+
 	 */
 	protected void sequence_Comment(EObject context, Comment semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ((type='table' | type='file') value=DYNAMIC_PARAM_VALUE)
+	 */
+	protected void sequence_DynamicParam(EObject context, DynamicParam semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -128,7 +144,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (params+=StaticParam*)
+	 *     ((staticParams+=StaticParam | dynamicParams+=DynamicParam)*)
 	 */
 	protected void sequence_Step(EObject context, Step semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

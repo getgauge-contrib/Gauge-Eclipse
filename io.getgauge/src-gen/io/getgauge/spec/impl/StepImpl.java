@@ -2,6 +2,7 @@
  */
 package io.getgauge.spec.impl;
 
+import io.getgauge.spec.DynamicParam;
 import io.getgauge.spec.SpecPackage;
 import io.getgauge.spec.StaticParam;
 import io.getgauge.spec.Step;
@@ -25,7 +26,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link io.getgauge.spec.impl.StepImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link io.getgauge.spec.impl.StepImpl#getStaticParams <em>Static Params</em>}</li>
+ *   <li>{@link io.getgauge.spec.impl.StepImpl#getDynamicParams <em>Dynamic Params</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,14 +36,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class StepImpl extends AbstractEntityImpl implements Step
 {
   /**
-   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
+   * The cached value of the '{@link #getStaticParams() <em>Static Params</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParams()
+   * @see #getStaticParams()
    * @generated
    * @ordered
    */
-  protected EList<StaticParam> params;
+  protected EList<StaticParam> staticParams;
+
+  /**
+   * The cached value of the '{@link #getDynamicParams() <em>Dynamic Params</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDynamicParams()
+   * @generated
+   * @ordered
+   */
+  protected EList<DynamicParam> dynamicParams;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,13 +81,27 @@ public class StepImpl extends AbstractEntityImpl implements Step
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StaticParam> getParams()
+  public EList<StaticParam> getStaticParams()
   {
-    if (params == null)
+    if (staticParams == null)
     {
-      params = new EObjectContainmentEList<StaticParam>(StaticParam.class, this, SpecPackage.STEP__PARAMS);
+      staticParams = new EObjectContainmentEList<StaticParam>(StaticParam.class, this, SpecPackage.STEP__STATIC_PARAMS);
     }
-    return params;
+    return staticParams;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<DynamicParam> getDynamicParams()
+  {
+    if (dynamicParams == null)
+    {
+      dynamicParams = new EObjectContainmentEList<DynamicParam>(DynamicParam.class, this, SpecPackage.STEP__DYNAMIC_PARAMS);
+    }
+    return dynamicParams;
   }
 
   /**
@@ -88,8 +114,10 @@ public class StepImpl extends AbstractEntityImpl implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__PARAMS:
-        return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
+      case SpecPackage.STEP__STATIC_PARAMS:
+        return ((InternalEList<?>)getStaticParams()).basicRemove(otherEnd, msgs);
+      case SpecPackage.STEP__DYNAMIC_PARAMS:
+        return ((InternalEList<?>)getDynamicParams()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +132,10 @@ public class StepImpl extends AbstractEntityImpl implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__PARAMS:
-        return getParams();
+      case SpecPackage.STEP__STATIC_PARAMS:
+        return getStaticParams();
+      case SpecPackage.STEP__DYNAMIC_PARAMS:
+        return getDynamicParams();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +151,13 @@ public class StepImpl extends AbstractEntityImpl implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__PARAMS:
-        getParams().clear();
-        getParams().addAll((Collection<? extends StaticParam>)newValue);
+      case SpecPackage.STEP__STATIC_PARAMS:
+        getStaticParams().clear();
+        getStaticParams().addAll((Collection<? extends StaticParam>)newValue);
+        return;
+      case SpecPackage.STEP__DYNAMIC_PARAMS:
+        getDynamicParams().clear();
+        getDynamicParams().addAll((Collection<? extends DynamicParam>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +173,11 @@ public class StepImpl extends AbstractEntityImpl implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__PARAMS:
-        getParams().clear();
+      case SpecPackage.STEP__STATIC_PARAMS:
+        getStaticParams().clear();
+        return;
+      case SpecPackage.STEP__DYNAMIC_PARAMS:
+        getDynamicParams().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,8 +193,10 @@ public class StepImpl extends AbstractEntityImpl implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__PARAMS:
-        return params != null && !params.isEmpty();
+      case SpecPackage.STEP__STATIC_PARAMS:
+        return staticParams != null && !staticParams.isEmpty();
+      case SpecPackage.STEP__DYNAMIC_PARAMS:
+        return dynamicParams != null && !dynamicParams.isEmpty();
     }
     return super.eIsSet(featureID);
   }

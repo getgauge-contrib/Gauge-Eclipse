@@ -18,13 +18,18 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Scenario/name"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//Step">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Step/params"/>
-    </genClasses>
-    <genClasses ecoreClass="Spec.ecore#//Comment">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Comment/text"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Step/staticParams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Step/dynamicParams"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//StaticParam">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//StaticParam/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Spec.ecore#//DynamicParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//DynamicParam/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//DynamicParam/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Spec.ecore#//Comment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Comment/text"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

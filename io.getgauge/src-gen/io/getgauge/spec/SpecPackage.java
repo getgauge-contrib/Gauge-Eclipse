@@ -170,13 +170,22 @@ public interface SpecPackage extends EPackage
   int STEP = 4;
 
   /**
-   * The feature id for the '<em><b>Params</b></em>' containment reference list.
+   * The feature id for the '<em><b>Static Params</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STEP__PARAMS = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
+  int STEP__STATIC_PARAMS = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Dynamic Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP__DYNAMIC_PARAMS = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Step</em>' class.
@@ -185,35 +194,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STEP_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see io.getgauge.spec.impl.CommentImpl
-   * @see io.getgauge.spec.impl.SpecPackageImpl#getComment()
-   * @generated
-   */
-  int COMMENT = 5;
-
-  /**
-   * The feature id for the '<em><b>Text</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMENT__TEXT = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Comment</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMMENT_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+  int STEP_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.StaticParamImpl <em>Static Param</em>}' class.
@@ -223,7 +204,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getStaticParam()
    * @generated
    */
-  int STATIC_PARAM = 6;
+  int STATIC_PARAM = 5;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -242,6 +223,71 @@ public interface SpecPackage extends EPackage
    * @ordered
    */
   int STATIC_PARAM_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.DynamicParamImpl <em>Dynamic Param</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.DynamicParamImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getDynamicParam()
+   * @generated
+   */
+  int DYNAMIC_PARAM = 6;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DYNAMIC_PARAM__TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DYNAMIC_PARAM__VALUE = 1;
+
+  /**
+   * The number of structural features of the '<em>Dynamic Param</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DYNAMIC_PARAM_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.CommentImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getComment()
+   * @generated
+   */
+  int COMMENT = 7;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT__TEXT = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Comment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMMENT_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
 
 
   /**
@@ -328,36 +374,26 @@ public interface SpecPackage extends EPackage
   EClass getStep();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Step#getParams <em>Params</em>}'.
+   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Step#getStaticParams <em>Static Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Params</em>'.
-   * @see io.getgauge.spec.Step#getParams()
+   * @return the meta object for the containment reference list '<em>Static Params</em>'.
+   * @see io.getgauge.spec.Step#getStaticParams()
    * @see #getStep()
    * @generated
    */
-  EReference getStep_Params();
+  EReference getStep_StaticParams();
 
   /**
-   * Returns the meta object for class '{@link io.getgauge.spec.Comment <em>Comment</em>}'.
+   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Step#getDynamicParams <em>Dynamic Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comment</em>'.
-   * @see io.getgauge.spec.Comment
+   * @return the meta object for the containment reference list '<em>Dynamic Params</em>'.
+   * @see io.getgauge.spec.Step#getDynamicParams()
+   * @see #getStep()
    * @generated
    */
-  EClass getComment();
-
-  /**
-   * Returns the meta object for the attribute list '{@link io.getgauge.spec.Comment#getText <em>Text</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Text</em>'.
-   * @see io.getgauge.spec.Comment#getText()
-   * @see #getComment()
-   * @generated
-   */
-  EAttribute getComment_Text();
+  EReference getStep_DynamicParams();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.StaticParam <em>Static Param</em>}'.
@@ -379,6 +415,59 @@ public interface SpecPackage extends EPackage
    * @generated
    */
   EAttribute getStaticParam_Value();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.DynamicParam <em>Dynamic Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Dynamic Param</em>'.
+   * @see io.getgauge.spec.DynamicParam
+   * @generated
+   */
+  EClass getDynamicParam();
+
+  /**
+   * Returns the meta object for the attribute '{@link io.getgauge.spec.DynamicParam#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see io.getgauge.spec.DynamicParam#getType()
+   * @see #getDynamicParam()
+   * @generated
+   */
+  EAttribute getDynamicParam_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link io.getgauge.spec.DynamicParam#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see io.getgauge.spec.DynamicParam#getValue()
+   * @see #getDynamicParam()
+   * @generated
+   */
+  EAttribute getDynamicParam_Value();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.Comment <em>Comment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comment</em>'.
+   * @see io.getgauge.spec.Comment
+   * @generated
+   */
+  EClass getComment();
+
+  /**
+   * Returns the meta object for the attribute list '{@link io.getgauge.spec.Comment#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Text</em>'.
+   * @see io.getgauge.spec.Comment#getText()
+   * @see #getComment()
+   * @generated
+   */
+  EAttribute getComment_Text();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -478,30 +567,20 @@ public interface SpecPackage extends EPackage
     EClass STEP = eINSTANCE.getStep();
 
     /**
-     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Static Params</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STEP__PARAMS = eINSTANCE.getStep_Params();
+    EReference STEP__STATIC_PARAMS = eINSTANCE.getStep_StaticParams();
 
     /**
-     * The meta object literal for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see io.getgauge.spec.impl.CommentImpl
-     * @see io.getgauge.spec.impl.SpecPackageImpl#getComment()
-     * @generated
-     */
-    EClass COMMENT = eINSTANCE.getComment();
-
-    /**
-     * The meta object literal for the '<em><b>Text</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Dynamic Params</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMMENT__TEXT = eINSTANCE.getComment_Text();
+    EReference STEP__DYNAMIC_PARAMS = eINSTANCE.getStep_DynamicParams();
 
     /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.StaticParamImpl <em>Static Param</em>}' class.
@@ -520,6 +599,50 @@ public interface SpecPackage extends EPackage
      * @generated
      */
     EAttribute STATIC_PARAM__VALUE = eINSTANCE.getStaticParam_Value();
+
+    /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.DynamicParamImpl <em>Dynamic Param</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.DynamicParamImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getDynamicParam()
+     * @generated
+     */
+    EClass DYNAMIC_PARAM = eINSTANCE.getDynamicParam();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DYNAMIC_PARAM__TYPE = eINSTANCE.getDynamicParam_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DYNAMIC_PARAM__VALUE = eINSTANCE.getDynamicParam_Value();
+
+    /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.CommentImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getComment()
+     * @generated
+     */
+    EClass COMMENT = eINSTANCE.getComment();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMMENT__TEXT = eINSTANCE.getComment_Text();
 
   }
 

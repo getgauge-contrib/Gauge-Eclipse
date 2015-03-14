@@ -24,7 +24,6 @@ public class SpecHighlightingCalculator implements ISemanticHighlightingCalculat
         {
         	INode node = it.next();
     		String nodeType="";
-    		System.out.println(node.getSemanticElement());
         	if( node instanceof CompositeNodeWithSemanticElement)
         	{
         		if(node.getSemanticElement() instanceof Spec )

@@ -68,15 +68,6 @@ public interface SpecFactory extends EFactory
   Step createStep();
 
   /**
-   * Returns a new object of class '<em>Comment</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comment</em>'.
-   * @generated
-   */
-  Comment createComment();
-
-  /**
    * Returns a new object of class '<em>Static Param</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -84,6 +75,24 @@ public interface SpecFactory extends EFactory
    * @generated
    */
   StaticParam createStaticParam();
+
+  /**
+   * Returns a new object of class '<em>Dynamic Param</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Dynamic Param</em>'.
+   * @generated
+   */
+  DynamicParam createDynamicParam();
+
+  /**
+   * Returns a new object of class '<em>Comment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comment</em>'.
+   * @generated
+   */
+  Comment createComment();
 
   /**
    * Returns the package supported by this factory.

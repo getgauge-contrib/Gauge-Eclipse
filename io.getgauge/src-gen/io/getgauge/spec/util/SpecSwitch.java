@@ -110,18 +110,25 @@ public class SpecSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SpecPackage.STATIC_PARAM:
+      {
+        StaticParam staticParam = (StaticParam)theEObject;
+        T result = caseStaticParam(staticParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SpecPackage.DYNAMIC_PARAM:
+      {
+        DynamicParam dynamicParam = (DynamicParam)theEObject;
+        T result = caseDynamicParam(dynamicParam);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SpecPackage.COMMENT:
       {
         Comment comment = (Comment)theEObject;
         T result = caseComment(comment);
         if (result == null) result = caseAbstractEntity(comment);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SpecPackage.STATIC_PARAM:
-      {
-        StaticParam staticParam = (StaticParam)theEObject;
-        T result = caseStaticParam(staticParam);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -210,22 +217,6 @@ public class SpecSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseComment(Comment object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Static Param</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -237,6 +228,38 @@ public class SpecSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStaticParam(StaticParam object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Dynamic Param</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Dynamic Param</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDynamicParam(DynamicParam object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComment(Comment object)
   {
     return null;
   }
