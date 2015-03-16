@@ -12,6 +12,7 @@ public class SpecHighlightingConfiguration implements IHighlightingConfiguration
 	public static final String SCENARIO = "Scenario";
 	public static final String STEP = "Step";
 	public static final String STATIC_PARAM = "StaticParam";
+	public static final String DYNAMIC_PARAM = "DynamicParam";
 	public static final String DEFAULT = "Default";
 
 	@Override
@@ -20,6 +21,7 @@ public class SpecHighlightingConfiguration implements IHighlightingConfiguration
 		acceptor.acceptDefaultHighlighting(SCENARIO, SCENARIO, getScenarioStyle());
 		acceptor.acceptDefaultHighlighting(STEP, STEP , getStepStyle());
 		acceptor.acceptDefaultHighlighting(STATIC_PARAM, STATIC_PARAM, getStaticParamStyle());
+		acceptor.acceptDefaultHighlighting(DYNAMIC_PARAM, DYNAMIC_PARAM, getDynamicParamStyle());
 		acceptor.acceptDefaultHighlighting(DEFAULT, DEFAULT , getDefaultStyle());
 	}
 
@@ -50,6 +52,12 @@ public class SpecHighlightingConfiguration implements IHighlightingConfiguration
 		return textStyle;
 	}
 
+	private TextStyle getDynamicParamStyle() {
+		TextStyle textStyle = new TextStyle();
+		textStyle.setColor(new RGB(255, 255, 0));
+		textStyle.setStyle(SWT.ITALIC);
+		return textStyle;
+	}
 
 	private TextStyle getDefaultStyle() {
 		return new TextStyle();

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;semanticElement&apos; from expression &apos;node.getSemanticElement()&apos;&#x0A;- Original project: &apos;io.getgauge.ui&apos;&#x0A;- Variable name: &apos;semanticElement&apos;&#x0A;- Destination method: &apos;io.getgauge.ui.SpecHighlightingCalculator.provideHighlightingFor()&apos;&#x0A;- Variable expression: &apos;node.getSemanticElement()&apos;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;semanticElement&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;io.getgauge.ui{SpecHighlightingCalculator.java" name="semanticElement" replace="true" selection="976 25" stamp="1426483785197" version="1.0"/>
+</session>

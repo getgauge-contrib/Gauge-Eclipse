@@ -22,11 +22,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Step/dynamicParams"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//StaticParam">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//StaticParam/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//StaticParam/name"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//DynamicParam">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//DynamicParam/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//DynamicParam/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//DynamicParam/name"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Comment/text"/>

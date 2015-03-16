@@ -207,13 +207,13 @@ public interface SpecPackage extends EPackage
   int STATIC_PARAM = 5;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATIC_PARAM__VALUE = 0;
+  int STATIC_PARAM__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Static Param</em>' class.
@@ -235,22 +235,13 @@ public interface SpecPackage extends EPackage
   int DYNAMIC_PARAM = 6;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DYNAMIC_PARAM__TYPE = 0;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DYNAMIC_PARAM__VALUE = 1;
+  int DYNAMIC_PARAM__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Dynamic Param</em>' class.
@@ -259,7 +250,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DYNAMIC_PARAM_FEATURE_COUNT = 2;
+  int DYNAMIC_PARAM_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.
@@ -406,15 +397,15 @@ public interface SpecPackage extends EPackage
   EClass getStaticParam();
 
   /**
-   * Returns the meta object for the attribute '{@link io.getgauge.spec.StaticParam#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link io.getgauge.spec.StaticParam#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see io.getgauge.spec.StaticParam#getValue()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see io.getgauge.spec.StaticParam#getName()
    * @see #getStaticParam()
    * @generated
    */
-  EAttribute getStaticParam_Value();
+  EAttribute getStaticParam_Name();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.DynamicParam <em>Dynamic Param</em>}'.
@@ -427,26 +418,15 @@ public interface SpecPackage extends EPackage
   EClass getDynamicParam();
 
   /**
-   * Returns the meta object for the attribute '{@link io.getgauge.spec.DynamicParam#getType <em>Type</em>}'.
+   * Returns the meta object for the attribute '{@link io.getgauge.spec.DynamicParam#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see io.getgauge.spec.DynamicParam#getType()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see io.getgauge.spec.DynamicParam#getName()
    * @see #getDynamicParam()
    * @generated
    */
-  EAttribute getDynamicParam_Type();
-
-  /**
-   * Returns the meta object for the attribute '{@link io.getgauge.spec.DynamicParam#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see io.getgauge.spec.DynamicParam#getValue()
-   * @see #getDynamicParam()
-   * @generated
-   */
-  EAttribute getDynamicParam_Value();
+  EAttribute getDynamicParam_Name();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.Comment <em>Comment</em>}'.
@@ -593,12 +573,12 @@ public interface SpecPackage extends EPackage
     EClass STATIC_PARAM = eINSTANCE.getStaticParam();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STATIC_PARAM__VALUE = eINSTANCE.getStaticParam_Value();
+    EAttribute STATIC_PARAM__NAME = eINSTANCE.getStaticParam_Name();
 
     /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.DynamicParamImpl <em>Dynamic Param</em>}' class.
@@ -611,20 +591,12 @@ public interface SpecPackage extends EPackage
     EClass DYNAMIC_PARAM = eINSTANCE.getDynamicParam();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DYNAMIC_PARAM__TYPE = eINSTANCE.getDynamicParam_Type();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DYNAMIC_PARAM__VALUE = eINSTANCE.getDynamicParam_Value();
+    EAttribute DYNAMIC_PARAM__NAME = eINSTANCE.getDynamicParam_Name();
 
     /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.

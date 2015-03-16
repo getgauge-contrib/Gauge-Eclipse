@@ -83,7 +83,17 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (text+=WORD | text+=SEPARATORS | text+=STATIC_PARAM | text+='.')+
+	 *     (
+	 *         (text+=WORD | text+=STATIC_PARAM | text+=DYNAMIC_PARAM) 
+	 *         (
+	 *             text+=WORD | 
+	 *             text+=SEPARATORS | 
+	 *             text+=STATIC_PARAM | 
+	 *             text+=DYNAMIC_PARAM | 
+	 *             text+='-' | 
+	 *             text+='='
+	 *         )+
+	 *     )
 	 */
 	protected void sequence_Comment(EObject context, Comment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -92,10 +102,17 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((type='table' | type='file') value=DYNAMIC_PARAM_VALUE)
+	 *     name=DYNAMIC_PARAM
 	 */
 	protected void sequence_DynamicParam(EObject context, DynamicParam semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SpecPackage.Literals.DYNAMIC_PARAM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecPackage.Literals.DYNAMIC_PARAM__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDynamicParamAccess().getNameDYNAMIC_PARAMTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -110,7 +127,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name+=WORD | name+=SEPARATORS)+
+	 *     ((name+=WORD | name+=SEPARATORS)+ | (name+=WORD | name+=SEPARATORS)+)
 	 */
 	protected void sequence_Scenario(EObject context, Scenario semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -119,7 +136,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name+=WORD | name+=SEPARATORS)+
+	 *     ((name+=WORD | name+=SEPARATORS)+ | (name+=WORD | name+=SEPARATORS)+)
 	 */
 	protected void sequence_Spec(EObject context, Spec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -128,16 +145,16 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     value=STATIC_PARAM
+	 *     name=STATIC_PARAM
 	 */
 	protected void sequence_StaticParam(EObject context, StaticParam semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SpecPackage.Literals.STATIC_PARAM__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecPackage.Literals.STATIC_PARAM__VALUE));
+			if(transientValues.isValueTransient(semanticObject, SpecPackage.Literals.STATIC_PARAM__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpecPackage.Literals.STATIC_PARAM__NAME));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStaticParamAccess().getValueSTATIC_PARAMTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getStaticParamAccess().getNameSTATIC_PARAMTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

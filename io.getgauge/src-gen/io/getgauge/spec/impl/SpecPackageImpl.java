@@ -262,7 +262,7 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStaticParam_Value()
+  public EAttribute getStaticParam_Name()
   {
     return (EAttribute)staticParamEClass.getEStructuralFeatures().get(0);
   }
@@ -282,19 +282,9 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDynamicParam_Type()
+  public EAttribute getDynamicParam_Name()
   {
     return (EAttribute)dynamicParamEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getDynamicParam_Value()
-  {
-    return (EAttribute)dynamicParamEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -363,11 +353,10 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     createEReference(stepEClass, STEP__DYNAMIC_PARAMS);
 
     staticParamEClass = createEClass(STATIC_PARAM);
-    createEAttribute(staticParamEClass, STATIC_PARAM__VALUE);
+    createEAttribute(staticParamEClass, STATIC_PARAM__NAME);
 
     dynamicParamEClass = createEClass(DYNAMIC_PARAM);
-    createEAttribute(dynamicParamEClass, DYNAMIC_PARAM__TYPE);
-    createEAttribute(dynamicParamEClass, DYNAMIC_PARAM__VALUE);
+    createEAttribute(dynamicParamEClass, DYNAMIC_PARAM__NAME);
 
     commentEClass = createEClass(COMMENT);
     createEAttribute(commentEClass, COMMENT__TEXT);
@@ -424,11 +413,10 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     initEReference(getStep_DynamicParams(), this.getDynamicParam(), null, "dynamicParams", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(staticParamEClass, StaticParam.class, "StaticParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStaticParam_Value(), ecorePackage.getEString(), "value", null, 0, 1, StaticParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStaticParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, StaticParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dynamicParamEClass, DynamicParam.class, "DynamicParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDynamicParam_Type(), ecorePackage.getEString(), "type", null, 0, 1, DynamicParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDynamicParam_Value(), ecorePackage.getEString(), "value", null, 0, 1, DynamicParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDynamicParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, DynamicParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComment_Text(), ecorePackage.getEString(), "text", null, 0, -1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

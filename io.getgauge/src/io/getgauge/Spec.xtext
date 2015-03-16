@@ -8,20 +8,20 @@ Model:
 ;
 
 AbstractEntity:
-	(Spec | Scenario | Step) | Comment
+	Spec | Scenario | Step | (Comment)
 ;
 
 Spec:
-	'# ' name+=(WORD | SEPARATORS)+ SINGLE_NL+
+	('# ' name+=(WORD | SEPARATORS)+ SINGLE_NL+) | (name+=(WORD | SEPARATORS)+ SINGLE_NL ('='+ SINGLE_NL+))
 ;
 
 Scenario:
-	'## ' name+=(WORD | SEPARATORS)+ SINGLE_NL+
+	('## ' name+=(WORD | SEPARATORS)+ SINGLE_NL+) | (name+=(WORD | SEPARATORS)+ SINGLE_NL ('-'+ SINGLE_NL+))
 ;
 
 Step:
 	{Step}
-	'* ' (((staticParams+=StaticParam) | (dynamicParams+=DynamicParam) | WORD) SEPARATORS*)+ SINGLE_NL+
+	'* ' (((staticParams+=StaticParam) | (dynamicParams+=DynamicParam) | WORD | '-' | '=') SEPARATORS*)+ SINGLE_NL+
 ;
 
 terminal SINGLE_NL:
@@ -35,20 +35,21 @@ terminal SEPARATORS:
 ;
 
 StaticParam:
-	value=STATIC_PARAM
+	name=STATIC_PARAM
 ;
 
 DynamicParam:
-	'<' type=('table'|'file') ':' value=DYNAMIC_PARAM_VALUE '>'
+	name=DYNAMIC_PARAM
 ;
 
-terminal DYNAMIC_PARAM_VALUE:
-	WORD ('.'('txt'|'csv'))?
+Comment:
+	text+=(WORD | STATIC_PARAM | DYNAMIC_PARAM) text+=(WORD | SEPARATORS | STATIC_PARAM | DYNAMIC_PARAM | '-' | '=')+ SINGLE_NL+
 ;
+
 terminal STATIC_PARAM:
 	'"' -> '"'
 ;
 
-Comment:
-	(text+=(WORD | SEPARATORS | STATIC_PARAM))+ SINGLE_NL+
+terminal DYNAMIC_PARAM:
+	'<' -> '>'
 ;

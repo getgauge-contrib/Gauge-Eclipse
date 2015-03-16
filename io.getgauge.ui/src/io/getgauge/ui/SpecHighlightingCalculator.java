@@ -1,10 +1,12 @@
 package io.getgauge.ui;
 
+import io.getgauge.spec.DynamicParam;
 import io.getgauge.spec.Scenario;
 import io.getgauge.spec.Spec;
 import io.getgauge.spec.StaticParam;
 import io.getgauge.spec.Step;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.nodemodel.BidiTreeIterator;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.impl.CompositeNodeWithSemanticElement;
@@ -24,15 +26,18 @@ public class SpecHighlightingCalculator implements ISemanticHighlightingCalculat
         {
         	INode node = it.next();
     		String nodeType="";
+    		EObject semanticElement = node.getSemanticElement();
         	if( node instanceof CompositeNodeWithSemanticElement)
         	{
-        		if(node.getSemanticElement() instanceof Spec )
+        		if(semanticElement instanceof Spec )
         			nodeType=SpecHighlightingConfiguration.SPEC;
-        		else if( node.getSemanticElement() instanceof Scenario )
+        		else if( semanticElement instanceof Scenario )
         			nodeType=SpecHighlightingConfiguration.SCENARIO;
-        		else if( node.getSemanticElement() instanceof StaticParam )
+        		else if( semanticElement instanceof StaticParam )
         			nodeType=SpecHighlightingConfiguration.STATIC_PARAM;
-        		else if( node.getSemanticElement() instanceof Step )
+        		else if( semanticElement instanceof DynamicParam)
+        			nodeType=SpecHighlightingConfiguration.DYNAMIC_PARAM;
+        		else if( semanticElement instanceof Step )
         			nodeType=SpecHighlightingConfiguration.STEP;
         		else
         			nodeType=SpecHighlightingConfiguration.DEFAULT;

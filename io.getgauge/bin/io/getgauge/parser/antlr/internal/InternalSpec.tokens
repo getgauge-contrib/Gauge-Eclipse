@@ -1,13 +1,9 @@
 '# '=9
-'## '=10
-'* '=11
-'.'=17
-':'=15
-'<'=12
-'>'=16
-'file'=14
-'table'=13
-RULE_DYNAMIC_PARAM_VALUE=8
+'## '=11
+'* '=13
+'-'=12
+'='=10
+RULE_DYNAMIC_PARAM=8
 RULE_SEPARATORS=5
 RULE_SINGLE_NL=6
 RULE_STATIC_PARAM=7
@@ -16,8 +12,4 @@ T__10=10
 T__11=11
 T__12=12
 T__13=13
-T__14=14
-T__15=15
-T__16=16
-T__17=17
 T__9=9
