@@ -2,7 +2,6 @@
  */
 package io.getgauge.spec.impl;
 
-import io.getgauge.spec.AbstractEntity;
 import io.getgauge.spec.Comment;
 import io.getgauge.spec.DynamicParam;
 import io.getgauge.spec.Model;
@@ -12,6 +11,9 @@ import io.getgauge.spec.SpecFactory;
 import io.getgauge.spec.SpecPackage;
 import io.getgauge.spec.StaticParam;
 import io.getgauge.spec.Step;
+import io.getgauge.spec.Table;
+import io.getgauge.spec.TableCell;
+import io.getgauge.spec.TableRow;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -34,13 +36,6 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * @generated
    */
   private EClass modelEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass abstractEntityEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,6 +78,27 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * @generated
    */
   private EClass commentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tableRowEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tableCellEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -172,16 +188,6 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAbstractEntity()
-  {
-    return abstractEntityEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getSpec()
   {
     return specEClass;
@@ -252,6 +258,16 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getStep_Table()
+  {
+    return (EReference)stepEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getStaticParam()
   {
     return staticParamEClass;
@@ -302,9 +318,79 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getComment_Text()
+  public EAttribute getComment_Name()
   {
     return (EAttribute)commentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTable()
+  {
+    return tableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTable_Heading()
+  {
+    return (EReference)tableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTable_Rows()
+  {
+    return (EReference)tableEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTableRow()
+  {
+    return tableRowEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTableRow_Cells()
+  {
+    return (EReference)tableRowEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTableCell()
+  {
+    return tableCellEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTableCell_Name()
+  {
+    return (EAttribute)tableCellEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -340,8 +426,6 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__DEFINITIONS);
 
-    abstractEntityEClass = createEClass(ABSTRACT_ENTITY);
-
     specEClass = createEClass(SPEC);
     createEAttribute(specEClass, SPEC__NAME);
 
@@ -351,6 +435,7 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     stepEClass = createEClass(STEP);
     createEReference(stepEClass, STEP__STATIC_PARAMS);
     createEReference(stepEClass, STEP__DYNAMIC_PARAMS);
+    createEReference(stepEClass, STEP__TABLE);
 
     staticParamEClass = createEClass(STATIC_PARAM);
     createEAttribute(staticParamEClass, STATIC_PARAM__NAME);
@@ -359,7 +444,17 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     createEAttribute(dynamicParamEClass, DYNAMIC_PARAM__NAME);
 
     commentEClass = createEClass(COMMENT);
-    createEAttribute(commentEClass, COMMENT__TEXT);
+    createEAttribute(commentEClass, COMMENT__NAME);
+
+    tableEClass = createEClass(TABLE);
+    createEReference(tableEClass, TABLE__HEADING);
+    createEReference(tableEClass, TABLE__ROWS);
+
+    tableRowEClass = createEClass(TABLE_ROW);
+    createEReference(tableRowEClass, TABLE_ROW__CELLS);
+
+    tableCellEClass = createEClass(TABLE_CELL);
+    createEAttribute(tableCellEClass, TABLE_CELL__NAME);
   }
 
   /**
@@ -391,16 +486,10 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    specEClass.getESuperTypes().add(this.getAbstractEntity());
-    scenarioEClass.getESuperTypes().add(this.getAbstractEntity());
-    stepEClass.getESuperTypes().add(this.getAbstractEntity());
-    commentEClass.getESuperTypes().add(this.getAbstractEntity());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Definitions(), this.getAbstractEntity(), null, "definitions", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(abstractEntityEClass, AbstractEntity.class, "AbstractEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getModel_Definitions(), ecorePackage.getEObject(), null, "definitions", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(specEClass, Spec.class, "Spec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSpec_Name(), ecorePackage.getEString(), "name", null, 0, -1, Spec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -411,6 +500,7 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStep_StaticParams(), this.getStaticParam(), null, "staticParams", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStep_DynamicParams(), this.getDynamicParam(), null, "dynamicParams", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStep_Table(), this.getTable(), null, "table", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(staticParamEClass, StaticParam.class, "StaticParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStaticParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, StaticParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -419,7 +509,17 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     initEAttribute(getDynamicParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, DynamicParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getComment_Text(), ecorePackage.getEString(), "text", null, 0, -1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComment_Name(), ecorePackage.getEString(), "name", null, 0, -1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTable_Heading(), this.getTableRow(), null, "heading", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTable_Rows(), this.getTableRow(), null, "rows", null, 0, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tableRowEClass, TableRow.class, "TableRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTableRow_Cells(), this.getTableCell(), null, "cells", null, 0, -1, TableRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tableCellEClass, TableCell.class, "TableCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTableCell_Name(), ecorePackage.getEString(), "name", null, 0, -1, TableCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

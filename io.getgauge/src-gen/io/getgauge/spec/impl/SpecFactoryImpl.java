@@ -65,13 +65,15 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
     switch (eClass.getClassifierID())
     {
       case SpecPackage.MODEL: return createModel();
-      case SpecPackage.ABSTRACT_ENTITY: return createAbstractEntity();
       case SpecPackage.SPEC: return createSpec();
       case SpecPackage.SCENARIO: return createScenario();
       case SpecPackage.STEP: return createStep();
       case SpecPackage.STATIC_PARAM: return createStaticParam();
       case SpecPackage.DYNAMIC_PARAM: return createDynamicParam();
       case SpecPackage.COMMENT: return createComment();
+      case SpecPackage.TABLE: return createTable();
+      case SpecPackage.TABLE_ROW: return createTableRow();
+      case SpecPackage.TABLE_CELL: return createTableCell();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -86,17 +88,6 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AbstractEntity createAbstractEntity()
-  {
-    AbstractEntityImpl abstractEntity = new AbstractEntityImpl();
-    return abstractEntity;
   }
 
   /**
@@ -163,6 +154,39 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
   {
     CommentImpl comment = new CommentImpl();
     return comment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Table createTable()
+  {
+    TableImpl table = new TableImpl();
+    return table;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TableRow createTableRow()
+  {
+    TableRowImpl tableRow = new TableRowImpl();
+    return tableRow;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TableCell createTableCell()
+  {
+    TableCellImpl tableCell = new TableCellImpl();
+    return tableCell;
   }
 
   /**

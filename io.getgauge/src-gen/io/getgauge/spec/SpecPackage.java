@@ -85,25 +85,6 @@ public interface SpecPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link io.getgauge.spec.impl.AbstractEntityImpl <em>Abstract Entity</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see io.getgauge.spec.impl.AbstractEntityImpl
-   * @see io.getgauge.spec.impl.SpecPackageImpl#getAbstractEntity()
-   * @generated
-   */
-  int ABSTRACT_ENTITY = 1;
-
-  /**
-   * The number of structural features of the '<em>Abstract Entity</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ABSTRACT_ENTITY_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link io.getgauge.spec.impl.SpecImpl <em>Spec</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,7 +92,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getSpec()
    * @generated
    */
-  int SPEC = 2;
+  int SPEC = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute list.
@@ -120,7 +101,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPEC__NAME = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
+  int SPEC__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Spec</em>' class.
@@ -129,7 +110,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPEC_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+  int SPEC_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.ScenarioImpl <em>Scenario</em>}' class.
@@ -139,7 +120,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getScenario()
    * @generated
    */
-  int SCENARIO = 3;
+  int SCENARIO = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute list.
@@ -148,7 +129,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO__NAME = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
+  int SCENARIO__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Scenario</em>' class.
@@ -157,7 +138,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+  int SCENARIO_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.StepImpl <em>Step</em>}' class.
@@ -167,7 +148,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getStep()
    * @generated
    */
-  int STEP = 4;
+  int STEP = 3;
 
   /**
    * The feature id for the '<em><b>Static Params</b></em>' containment reference list.
@@ -176,7 +157,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STEP__STATIC_PARAMS = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
+  int STEP__STATIC_PARAMS = 0;
 
   /**
    * The feature id for the '<em><b>Dynamic Params</b></em>' containment reference list.
@@ -185,7 +166,16 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STEP__DYNAMIC_PARAMS = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+  int STEP__DYNAMIC_PARAMS = 1;
+
+  /**
+   * The feature id for the '<em><b>Table</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP__TABLE = 2;
 
   /**
    * The number of structural features of the '<em>Step</em>' class.
@@ -194,7 +184,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STEP_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 2;
+  int STEP_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.StaticParamImpl <em>Static Param</em>}' class.
@@ -204,7 +194,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getStaticParam()
    * @generated
    */
-  int STATIC_PARAM = 5;
+  int STATIC_PARAM = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -232,7 +222,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getDynamicParam()
    * @generated
    */
-  int DYNAMIC_PARAM = 6;
+  int DYNAMIC_PARAM = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -260,16 +250,16 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getComment()
    * @generated
    */
-  int COMMENT = 7;
+  int COMMENT = 6;
 
   /**
-   * The feature id for the '<em><b>Text</b></em>' attribute list.
+   * The feature id for the '<em><b>Name</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMMENT__TEXT = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
+  int COMMENT__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Comment</em>' class.
@@ -278,7 +268,100 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMENT_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+  int COMMENT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.TableImpl <em>Table</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.TableImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getTable()
+   * @generated
+   */
+  int TABLE = 7;
+
+  /**
+   * The feature id for the '<em><b>Heading</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE__HEADING = 0;
+
+  /**
+   * The feature id for the '<em><b>Rows</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE__ROWS = 1;
+
+  /**
+   * The number of structural features of the '<em>Table</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.TableRowImpl <em>Table Row</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.TableRowImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getTableRow()
+   * @generated
+   */
+  int TABLE_ROW = 8;
+
+  /**
+   * The feature id for the '<em><b>Cells</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_ROW__CELLS = 0;
+
+  /**
+   * The number of structural features of the '<em>Table Row</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_ROW_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.TableCellImpl <em>Table Cell</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.TableCellImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getTableCell()
+   * @generated
+   */
+  int TABLE_CELL = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_CELL__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Table Cell</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE_CELL_FEATURE_COUNT = 1;
 
 
   /**
@@ -301,16 +384,6 @@ public interface SpecPackage extends EPackage
    * @generated
    */
   EReference getModel_Definitions();
-
-  /**
-   * Returns the meta object for class '{@link io.getgauge.spec.AbstractEntity <em>Abstract Entity</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Abstract Entity</em>'.
-   * @see io.getgauge.spec.AbstractEntity
-   * @generated
-   */
-  EClass getAbstractEntity();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.Spec <em>Spec</em>}'.
@@ -387,6 +460,17 @@ public interface SpecPackage extends EPackage
   EReference getStep_DynamicParams();
 
   /**
+   * Returns the meta object for the containment reference '{@link io.getgauge.spec.Step#getTable <em>Table</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Table</em>'.
+   * @see io.getgauge.spec.Step#getTable()
+   * @see #getStep()
+   * @generated
+   */
+  EReference getStep_Table();
+
+  /**
    * Returns the meta object for class '{@link io.getgauge.spec.StaticParam <em>Static Param</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -439,15 +523,89 @@ public interface SpecPackage extends EPackage
   EClass getComment();
 
   /**
-   * Returns the meta object for the attribute list '{@link io.getgauge.spec.Comment#getText <em>Text</em>}'.
+   * Returns the meta object for the attribute list '{@link io.getgauge.spec.Comment#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Text</em>'.
-   * @see io.getgauge.spec.Comment#getText()
+   * @return the meta object for the attribute list '<em>Name</em>'.
+   * @see io.getgauge.spec.Comment#getName()
    * @see #getComment()
    * @generated
    */
-  EAttribute getComment_Text();
+  EAttribute getComment_Name();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.Table <em>Table</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Table</em>'.
+   * @see io.getgauge.spec.Table
+   * @generated
+   */
+  EClass getTable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link io.getgauge.spec.Table#getHeading <em>Heading</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Heading</em>'.
+   * @see io.getgauge.spec.Table#getHeading()
+   * @see #getTable()
+   * @generated
+   */
+  EReference getTable_Heading();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Table#getRows <em>Rows</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Rows</em>'.
+   * @see io.getgauge.spec.Table#getRows()
+   * @see #getTable()
+   * @generated
+   */
+  EReference getTable_Rows();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.TableRow <em>Table Row</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Table Row</em>'.
+   * @see io.getgauge.spec.TableRow
+   * @generated
+   */
+  EClass getTableRow();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.TableRow#getCells <em>Cells</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Cells</em>'.
+   * @see io.getgauge.spec.TableRow#getCells()
+   * @see #getTableRow()
+   * @generated
+   */
+  EReference getTableRow_Cells();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.TableCell <em>Table Cell</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Table Cell</em>'.
+   * @see io.getgauge.spec.TableCell
+   * @generated
+   */
+  EClass getTableCell();
+
+  /**
+   * Returns the meta object for the attribute list '{@link io.getgauge.spec.TableCell#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Name</em>'.
+   * @see io.getgauge.spec.TableCell#getName()
+   * @see #getTableCell()
+   * @generated
+   */
+  EAttribute getTableCell_Name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -489,16 +647,6 @@ public interface SpecPackage extends EPackage
      * @generated
      */
     EReference MODEL__DEFINITIONS = eINSTANCE.getModel_Definitions();
-
-    /**
-     * The meta object literal for the '{@link io.getgauge.spec.impl.AbstractEntityImpl <em>Abstract Entity</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see io.getgauge.spec.impl.AbstractEntityImpl
-     * @see io.getgauge.spec.impl.SpecPackageImpl#getAbstractEntity()
-     * @generated
-     */
-    EClass ABSTRACT_ENTITY = eINSTANCE.getAbstractEntity();
 
     /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.SpecImpl <em>Spec</em>}' class.
@@ -563,6 +711,14 @@ public interface SpecPackage extends EPackage
     EReference STEP__DYNAMIC_PARAMS = eINSTANCE.getStep_DynamicParams();
 
     /**
+     * The meta object literal for the '<em><b>Table</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STEP__TABLE = eINSTANCE.getStep_Table();
+
+    /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.StaticParamImpl <em>Static Param</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -609,12 +765,74 @@ public interface SpecPackage extends EPackage
     EClass COMMENT = eINSTANCE.getComment();
 
     /**
-     * The meta object literal for the '<em><b>Text</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMMENT__TEXT = eINSTANCE.getComment_Text();
+    EAttribute COMMENT__NAME = eINSTANCE.getComment_Name();
+
+    /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.TableImpl <em>Table</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.TableImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getTable()
+     * @generated
+     */
+    EClass TABLE = eINSTANCE.getTable();
+
+    /**
+     * The meta object literal for the '<em><b>Heading</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE__HEADING = eINSTANCE.getTable_Heading();
+
+    /**
+     * The meta object literal for the '<em><b>Rows</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE__ROWS = eINSTANCE.getTable_Rows();
+
+    /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.TableRowImpl <em>Table Row</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.TableRowImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getTableRow()
+     * @generated
+     */
+    EClass TABLE_ROW = eINSTANCE.getTableRow();
+
+    /**
+     * The meta object literal for the '<em><b>Cells</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLE_ROW__CELLS = eINSTANCE.getTableRow_Cells();
+
+    /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.TableCellImpl <em>Table Cell</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.TableCellImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getTableCell()
+     * @generated
+     */
+    EClass TABLE_CELL = eINSTANCE.getTableCell();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TABLE_CELL__NAME = eINSTANCE.getTableCell_Name();
 
   }
 

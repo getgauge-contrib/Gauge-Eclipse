@@ -2,8 +2,8 @@
  */
 package io.getgauge.spec.impl;
 
-import io.getgauge.spec.Comment;
 import io.getgauge.spec.SpecPackage;
+import io.getgauge.spec.TableCell;
 
 import java.util.Collection;
 
@@ -17,18 +17,18 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Comment</b></em>'.
+ * An implementation of the model object '<em><b>Table Cell</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link io.getgauge.spec.impl.CommentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link io.getgauge.spec.impl.TableCellImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
+public class TableCellImpl extends MinimalEObjectImpl.Container implements TableCell
 {
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' attribute list.
@@ -45,7 +45,7 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
    * <!-- end-user-doc -->
    * @generated
    */
-  protected CommentImpl()
+  protected TableCellImpl()
   {
     super();
   }
@@ -58,7 +58,7 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
   @Override
   protected EClass eStaticClass()
   {
-    return SpecPackage.Literals.COMMENT;
+    return SpecPackage.Literals.TABLE_CELL;
   }
 
   /**
@@ -70,7 +70,7 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
   {
     if (name == null)
     {
-      name = new EDataTypeEList<String>(String.class, this, SpecPackage.COMMENT__NAME);
+      name = new EDataTypeEList<String>(String.class, this, SpecPackage.TABLE_CELL__NAME);
     }
     return name;
   }
@@ -85,7 +85,7 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
   {
     switch (featureID)
     {
-      case SpecPackage.COMMENT__NAME:
+      case SpecPackage.TABLE_CELL__NAME:
         return getName();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -102,7 +102,7 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
   {
     switch (featureID)
     {
-      case SpecPackage.COMMENT__NAME:
+      case SpecPackage.TABLE_CELL__NAME:
         getName().clear();
         getName().addAll((Collection<? extends String>)newValue);
         return;
@@ -120,7 +120,7 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
   {
     switch (featureID)
     {
-      case SpecPackage.COMMENT__NAME:
+      case SpecPackage.TABLE_CELL__NAME:
         getName().clear();
         return;
     }
@@ -137,7 +137,7 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
   {
     switch (featureID)
     {
-      case SpecPackage.COMMENT__NAME:
+      case SpecPackage.TABLE_CELL__NAME:
         return name != null && !name.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -160,4 +160,4 @@ public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
     return result.toString();
   }
 
-} //CommentImpl
+} //TableCellImpl

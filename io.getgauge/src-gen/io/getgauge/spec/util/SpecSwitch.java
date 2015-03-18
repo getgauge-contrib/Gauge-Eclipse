@@ -79,18 +79,10 @@ public class SpecSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SpecPackage.ABSTRACT_ENTITY:
-      {
-        AbstractEntity abstractEntity = (AbstractEntity)theEObject;
-        T result = caseAbstractEntity(abstractEntity);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SpecPackage.SPEC:
       {
         Spec spec = (Spec)theEObject;
         T result = caseSpec(spec);
-        if (result == null) result = caseAbstractEntity(spec);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -98,7 +90,6 @@ public class SpecSwitch<T> extends Switch<T>
       {
         Scenario scenario = (Scenario)theEObject;
         T result = caseScenario(scenario);
-        if (result == null) result = caseAbstractEntity(scenario);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -106,7 +97,6 @@ public class SpecSwitch<T> extends Switch<T>
       {
         Step step = (Step)theEObject;
         T result = caseStep(step);
-        if (result == null) result = caseAbstractEntity(step);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -128,7 +118,27 @@ public class SpecSwitch<T> extends Switch<T>
       {
         Comment comment = (Comment)theEObject;
         T result = caseComment(comment);
-        if (result == null) result = caseAbstractEntity(comment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SpecPackage.TABLE:
+      {
+        Table table = (Table)theEObject;
+        T result = caseTable(table);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SpecPackage.TABLE_ROW:
+      {
+        TableRow tableRow = (TableRow)theEObject;
+        T result = caseTableRow(tableRow);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SpecPackage.TABLE_CELL:
+      {
+        TableCell tableCell = (TableCell)theEObject;
+        T result = caseTableCell(tableCell);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -148,22 +158,6 @@ public class SpecSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModel(Model object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Abstract Entity</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Abstract Entity</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAbstractEntity(AbstractEntity object)
   {
     return null;
   }
@@ -260,6 +254,54 @@ public class SpecSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComment(Comment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Table</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Table</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTable(Table object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Table Row</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Table Row</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTableRow(TableRow object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Table Cell</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Table Cell</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTableCell(TableCell object)
   {
     return null;
   }

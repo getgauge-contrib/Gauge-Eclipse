@@ -2,7 +2,6 @@
  */
 package io.getgauge.spec.impl;
 
-import io.getgauge.spec.AbstractEntity;
 import io.getgauge.spec.Model;
 import io.getgauge.spec.SpecPackage;
 
@@ -13,6 +12,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -43,7 +43,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    * @ordered
    */
-  protected EList<AbstractEntity> definitions;
+  protected EList<EObject> definitions;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +71,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<AbstractEntity> getDefinitions()
+  public EList<EObject> getDefinitions()
   {
     if (definitions == null)
     {
-      definitions = new EObjectContainmentEList<AbstractEntity>(AbstractEntity.class, this, SpecPackage.MODEL__DEFINITIONS);
+      definitions = new EObjectContainmentEList<EObject>(EObject.class, this, SpecPackage.MODEL__DEFINITIONS);
     }
     return definitions;
   }
@@ -125,7 +125,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SpecPackage.MODEL__DEFINITIONS:
         getDefinitions().clear();
-        getDefinitions().addAll((Collection<? extends AbstractEntity>)newValue);
+        getDefinitions().addAll((Collection<? extends EObject>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

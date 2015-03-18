@@ -4,6 +4,8 @@ package io.getgauge.spec;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Scenario</b></em>'.
@@ -20,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Scenario extends AbstractEntity
+public interface Scenario extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute list.

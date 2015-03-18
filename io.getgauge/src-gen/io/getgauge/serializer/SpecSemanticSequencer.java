@@ -11,6 +11,9 @@ import io.getgauge.spec.Spec;
 import io.getgauge.spec.SpecPackage;
 import io.getgauge.spec.StaticParam;
 import io.getgauge.spec.Step;
+import io.getgauge.spec.Table;
+import io.getgauge.spec.TableCell;
+import io.getgauge.spec.TableRow;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
@@ -32,8 +35,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == SpecPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case SpecPackage.COMMENT:
-				if(context == grammarAccess.getAbstractEntityRule() ||
-				   context == grammarAccess.getCommentRule()) {
+				if(context == grammarAccess.getCommentRule()) {
 					sequence_Comment(context, (Comment) semanticObject); 
 					return; 
 				}
@@ -51,15 +53,13 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case SpecPackage.SCENARIO:
-				if(context == grammarAccess.getAbstractEntityRule() ||
-				   context == grammarAccess.getScenarioRule()) {
+				if(context == grammarAccess.getScenarioRule()) {
 					sequence_Scenario(context, (Scenario) semanticObject); 
 					return; 
 				}
 				else break;
 			case SpecPackage.SPEC:
-				if(context == grammarAccess.getAbstractEntityRule() ||
-				   context == grammarAccess.getSpecRule()) {
+				if(context == grammarAccess.getSpecRule()) {
 					sequence_Spec(context, (Spec) semanticObject); 
 					return; 
 				}
@@ -71,9 +71,26 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				}
 				else break;
 			case SpecPackage.STEP:
-				if(context == grammarAccess.getAbstractEntityRule() ||
-				   context == grammarAccess.getStepRule()) {
+				if(context == grammarAccess.getStepRule()) {
 					sequence_Step(context, (Step) semanticObject); 
+					return; 
+				}
+				else break;
+			case SpecPackage.TABLE:
+				if(context == grammarAccess.getTableRule()) {
+					sequence_Table(context, (Table) semanticObject); 
+					return; 
+				}
+				else break;
+			case SpecPackage.TABLE_CELL:
+				if(context == grammarAccess.getTableCellRule()) {
+					sequence_TableCell(context, (TableCell) semanticObject); 
+					return; 
+				}
+				else break;
+			case SpecPackage.TABLE_ROW:
+				if(context == grammarAccess.getTableRowRule()) {
+					sequence_TableRow(context, (TableRow) semanticObject); 
 					return; 
 				}
 				else break;
@@ -83,17 +100,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (text+=WORD | text+=STATIC_PARAM | text+=DYNAMIC_PARAM) 
-	 *         (
-	 *             text+=WORD | 
-	 *             text+=SEPARATORS | 
-	 *             text+=STATIC_PARAM | 
-	 *             text+=DYNAMIC_PARAM | 
-	 *             text+='-' | 
-	 *             text+='='
-	 *         )+
-	 *     )
+	 *     (name+=TextPart (name+=TextPart | name+='-' | name+='=' | name+='|')+)
 	 */
 	protected void sequence_Comment(EObject context, Comment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -118,7 +125,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     definitions+=AbstractEntity*
+	 *     (definitions+=Spec | definitions+=Scenario | definitions+=Step | definitions+=Comment)*
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -127,7 +134,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((name+=WORD | name+=SEPARATORS)+ | (name+=WORD | name+=SEPARATORS)+)
+	 *     (name+=TextPart+ | name+=TextPart+)
 	 */
 	protected void sequence_Scenario(EObject context, Scenario semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -136,7 +143,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((name+=WORD | name+=SEPARATORS)+ | (name+=WORD | name+=SEPARATORS)+)
+	 *     (name+=TextPart+ | name+=TextPart+)
 	 */
 	protected void sequence_Spec(EObject context, Spec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -161,9 +168,36 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((staticParams+=StaticParam | dynamicParams+=DynamicParam)*)
+	 *     ((staticParams+=StaticParam | dynamicParams+=DynamicParam)* table=Table?)
 	 */
 	protected void sequence_Step(EObject context, Step semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name+=WORD | name+=SEPARATORS | name+=WS)+
+	 */
+	protected void sequence_TableCell(EObject context, TableCell semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     cells+=TableCell+
+	 */
+	protected void sequence_TableRow(EObject context, TableRow semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (heading=TableRow rows+=TableRow+)
+	 */
+	protected void sequence_Table(EObject context, Table semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

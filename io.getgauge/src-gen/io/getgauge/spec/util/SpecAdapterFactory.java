@@ -80,11 +80,6 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseAbstractEntity(AbstractEntity object)
-      {
-        return createAbstractEntityAdapter();
-      }
-      @Override
       public Adapter caseSpec(Spec object)
       {
         return createSpecAdapter();
@@ -113,6 +108,21 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
       public Adapter caseComment(Comment object)
       {
         return createCommentAdapter();
+      }
+      @Override
+      public Adapter caseTable(Table object)
+      {
+        return createTableAdapter();
+      }
+      @Override
+      public Adapter caseTableRow(TableRow object)
+      {
+        return createTableRowAdapter();
+      }
+      @Override
+      public Adapter caseTableCell(TableCell object)
+      {
+        return createTableCellAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -147,21 +157,6 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link io.getgauge.spec.AbstractEntity <em>Abstract Entity</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see io.getgauge.spec.AbstractEntity
-   * @generated
-   */
-  public Adapter createAbstractEntityAdapter()
   {
     return null;
   }
@@ -252,6 +247,51 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCommentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.Table <em>Table</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.Table
+   * @generated
+   */
+  public Adapter createTableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.TableRow <em>Table Row</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.TableRow
+   * @generated
+   */
+  public Adapter createTableRowAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.TableCell <em>Table Cell</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.TableCell
+   * @generated
+   */
+  public Adapter createTableCellAdapter()
   {
     return null;
   }

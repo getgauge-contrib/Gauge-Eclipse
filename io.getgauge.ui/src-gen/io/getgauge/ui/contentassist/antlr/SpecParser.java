@@ -37,25 +37,25 @@ public class SpecParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getAbstractEntityAccess().getAlternatives(), "rule__AbstractEntity__Alternatives");
+					put(grammarAccess.getModelAccess().getDefinitionsAlternatives_0(), "rule__Model__DefinitionsAlternatives_0");
 					put(grammarAccess.getSpecAccess().getAlternatives(), "rule__Spec__Alternatives");
-					put(grammarAccess.getSpecAccess().getNameAlternatives_0_1_0(), "rule__Spec__NameAlternatives_0_1_0");
-					put(grammarAccess.getSpecAccess().getNameAlternatives_1_0_0(), "rule__Spec__NameAlternatives_1_0_0");
 					put(grammarAccess.getScenarioAccess().getAlternatives(), "rule__Scenario__Alternatives");
-					put(grammarAccess.getScenarioAccess().getNameAlternatives_0_1_0(), "rule__Scenario__NameAlternatives_0_1_0");
-					put(grammarAccess.getScenarioAccess().getNameAlternatives_1_0_0(), "rule__Scenario__NameAlternatives_1_0_0");
 					put(grammarAccess.getStepAccess().getAlternatives_2_0(), "rule__Step__Alternatives_2_0");
-					put(grammarAccess.getCommentAccess().getTextAlternatives_0_0(), "rule__Comment__TextAlternatives_0_0");
-					put(grammarAccess.getCommentAccess().getTextAlternatives_1_0(), "rule__Comment__TextAlternatives_1_0");
+					put(grammarAccess.getCommentAccess().getNameAlternatives_1_0(), "rule__Comment__NameAlternatives_1_0");
+					put(grammarAccess.getTextPartAccess().getAlternatives(), "rule__TextPart__Alternatives");
+					put(grammarAccess.getTableCellAccess().getNameAlternatives_1_0(), "rule__TableCell__NameAlternatives_1_0");
 					put(grammarAccess.getSpecAccess().getGroup_0(), "rule__Spec__Group_0__0");
 					put(grammarAccess.getSpecAccess().getGroup_1(), "rule__Spec__Group_1__0");
-					put(grammarAccess.getSpecAccess().getGroup_1_2(), "rule__Spec__Group_1_2__0");
 					put(grammarAccess.getScenarioAccess().getGroup_0(), "rule__Scenario__Group_0__0");
 					put(grammarAccess.getScenarioAccess().getGroup_1(), "rule__Scenario__Group_1__0");
-					put(grammarAccess.getScenarioAccess().getGroup_1_2(), "rule__Scenario__Group_1_2__0");
 					put(grammarAccess.getStepAccess().getGroup(), "rule__Step__Group__0");
 					put(grammarAccess.getStepAccess().getGroup_2(), "rule__Step__Group_2__0");
+					put(grammarAccess.getStepAccess().getGroup_3(), "rule__Step__Group_3__0");
 					put(grammarAccess.getCommentAccess().getGroup(), "rule__Comment__Group__0");
+					put(grammarAccess.getTableAccess().getGroup(), "rule__Table__Group__0");
+					put(grammarAccess.getTableAccess().getGroup_3(), "rule__Table__Group_3__0");
+					put(grammarAccess.getTableRowAccess().getGroup(), "rule__TableRow__Group__0");
+					put(grammarAccess.getTableCellAccess().getGroup(), "rule__TableCell__Group__0");
 					put(grammarAccess.getModelAccess().getDefinitionsAssignment(), "rule__Model__DefinitionsAssignment");
 					put(grammarAccess.getSpecAccess().getNameAssignment_0_1(), "rule__Spec__NameAssignment_0_1");
 					put(grammarAccess.getSpecAccess().getNameAssignment_1_0(), "rule__Spec__NameAssignment_1_0");
@@ -63,10 +63,15 @@ public class SpecParser extends AbstractContentAssistParser {
 					put(grammarAccess.getScenarioAccess().getNameAssignment_1_0(), "rule__Scenario__NameAssignment_1_0");
 					put(grammarAccess.getStepAccess().getStaticParamsAssignment_2_0_0(), "rule__Step__StaticParamsAssignment_2_0_0");
 					put(grammarAccess.getStepAccess().getDynamicParamsAssignment_2_0_1(), "rule__Step__DynamicParamsAssignment_2_0_1");
+					put(grammarAccess.getStepAccess().getTableAssignment_3_2(), "rule__Step__TableAssignment_3_2");
 					put(grammarAccess.getStaticParamAccess().getNameAssignment(), "rule__StaticParam__NameAssignment");
 					put(grammarAccess.getDynamicParamAccess().getNameAssignment(), "rule__DynamicParam__NameAssignment");
-					put(grammarAccess.getCommentAccess().getTextAssignment_0(), "rule__Comment__TextAssignment_0");
-					put(grammarAccess.getCommentAccess().getTextAssignment_1(), "rule__Comment__TextAssignment_1");
+					put(grammarAccess.getCommentAccess().getNameAssignment_0(), "rule__Comment__NameAssignment_0");
+					put(grammarAccess.getCommentAccess().getNameAssignment_1(), "rule__Comment__NameAssignment_1");
+					put(grammarAccess.getTableAccess().getHeadingAssignment_1(), "rule__Table__HeadingAssignment_1");
+					put(grammarAccess.getTableAccess().getRowsAssignment_6(), "rule__Table__RowsAssignment_6");
+					put(grammarAccess.getTableRowAccess().getCellsAssignment_0(), "rule__TableRow__CellsAssignment_0");
+					put(grammarAccess.getTableCellAccess().getNameAssignment_1(), "rule__TableCell__NameAssignment_1");
 				}
 			};
 		}

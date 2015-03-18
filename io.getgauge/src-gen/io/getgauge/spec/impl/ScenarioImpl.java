@@ -11,6 +11,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
@@ -26,7 +28,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class ScenarioImpl extends AbstractEntityImpl implements Scenario
+public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenario
 {
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' attribute list.

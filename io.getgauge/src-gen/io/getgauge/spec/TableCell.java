@@ -8,21 +8,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Comment</b></em>'.
+ * A representation of the model object '<em><b>Table Cell</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link io.getgauge.spec.Comment#getName <em>Name</em>}</li>
+ *   <li>{@link io.getgauge.spec.TableCell#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see io.getgauge.spec.SpecPackage#getComment()
+ * @see io.getgauge.spec.SpecPackage#getTableCell()
  * @model
  * @generated
  */
-public interface Comment extends EObject
+public interface TableCell extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute list.
@@ -34,10 +34,10 @@ public interface Comment extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute list.
-   * @see io.getgauge.spec.SpecPackage#getComment_Name()
+   * @see io.getgauge.spec.SpecPackage#getTableCell_Name()
    * @model unique="false"
    * @generated
    */
   EList<String> getName();
 
-} // Comment
+} // TableCell

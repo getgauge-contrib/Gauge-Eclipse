@@ -4,34 +4,26 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate spec "http://www.getgauge.io/Spec"
 
 Model:
-	definitions+=AbstractEntity*
+	definitions+=(Spec | Scenario | Step | Comment)*
 ;
 
-AbstractEntity:
-	Spec | Scenario | Step | (Comment)
-;
-
+// Two formats of Markdown H1
 Spec:
-	('# ' name+=(WORD | SEPARATORS)+ SINGLE_NL+) | (name+=(WORD | SEPARATORS)+ SINGLE_NL ('='+ SINGLE_NL+))
+	('# ' name+=TextPart+ SINGLE_NL+) | (name+=TextPart+ SINGLE_NL '='+ SINGLE_NL+)
 ;
 
+// Two formats of Markdown H2
 Scenario:
-	('## ' name+=(WORD | SEPARATORS)+ SINGLE_NL+) | (name+=(WORD | SEPARATORS)+ SINGLE_NL ('-'+ SINGLE_NL+))
+	('## ' name+=TextPart+ SINGLE_NL+) | (name+=TextPart+ SINGLE_NL '-'+ SINGLE_NL+)
 ;
 
+// Markdown Unordered List - can contain parameters, Static (i.e. "foo") or Dynamic (i.e. <bar>)
+// Can also optionally have a Table associated
 Step:
 	{Step}
-	'* ' (((staticParams+=StaticParam) | (dynamicParams+=DynamicParam) | WORD | '-' | '=') SEPARATORS*)+ SINGLE_NL+
-;
-
-terminal SINGLE_NL:
-	'\r'? '\n'
-;
-
-terminal WORD: ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-
-terminal SEPARATORS:
-	!('\r' | '\n' | 'a'..'z' | 'A'..'Z' | '0'..'9' | '_' ) 
+	'* ' ((staticParams+=StaticParam | dynamicParams+=DynamicParam | WORD | '-' | '=' | WS) SEPARATORS*)+
+	(SINGLE_NL SINGLE_NL* table=Table)?
+	SINGLE_NL+
 ;
 
 StaticParam:
@@ -42,14 +34,39 @@ DynamicParam:
 	name=DYNAMIC_PARAM
 ;
 
+// Any text that is not a Spec, Scenario, Step or Tag
 Comment:
-	text+=(WORD | STATIC_PARAM | DYNAMIC_PARAM) text+=(WORD | SEPARATORS | STATIC_PARAM | DYNAMIC_PARAM | '-' | '=')+ SINGLE_NL+
+	name+=TextPart name+=(TextPart | '-' | '=' | '|')+ SINGLE_NL+
 ;
 
-terminal STATIC_PARAM:
-	'"' -> '"'
+TextPart:
+	WORD | SEPARATORS | STATIC_PARAM | DYNAMIC_PARAM | WS
 ;
 
-terminal DYNAMIC_PARAM:
-	'<' -> '>'
+Table:
+	WS* heading=TableRow
+	WS* ('|' '-'+)+ TABLE_ROW_END
+	WS* (rows += TableRow)+
 ;
+
+TableRow:
+	cells+=TableCell+ TABLE_ROW_END
+;
+
+TableCell:
+	'|' name+=(WORD | SEPARATORS | WS)+
+;
+
+terminal SINGLE_NL: '\r'? '\n';
+
+terminal WORD: ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+
+terminal STATIC_PARAM: '"' -> '"';
+
+terminal DYNAMIC_PARAM: '<' -> '>';
+
+terminal TABLE_ROW_END: '|' WS* SINGLE_NL;
+
+terminal WS: ' ' | '\t';
+
+terminal SEPARATORS: !('\r' | '\n' | 'a'..'z' | 'A'..'Z' | '0'..'9' | '_' | ' ' | '\t');
