@@ -20,7 +20,7 @@ Require-Bundle: io.getgauge;visibility:=reexport,
  org.eclipse.xtext,
  org.eclipse.emf.ecore
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: io.getgauge.ui.quickfix,
  io.getgauge.ui.contentassist,
  io.getgauge.ui.contentassist.antlr,
