@@ -1,2 +1,7 @@
 *.class
 *.jar
+.metadata
+*.settings
+**/bin/**
+.*.swp
+
