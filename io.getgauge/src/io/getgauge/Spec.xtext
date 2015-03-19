@@ -15,6 +15,7 @@ Spec:
 // Two formats of Markdown H2
 Scenario:
 	('## ' name+=TextPart+ SINGLE_NL+) | (name+=TextPart+ SINGLE_NL '-'+ SINGLE_NL+)
+	(tags=Tags SINGLE_NL+)?
 ;
 
 // Markdown Unordered List - can contain parameters, Static (i.e. "foo") or Dynamic (i.e. <bar>)
@@ -34,9 +35,13 @@ DynamicParam:
 	name=DYNAMIC_PARAM
 ;
 
+Tags:
+	'tags' WS* ':' WS* (WORD (WS|',')?)+ SINGLE_NL  
+;
+
 // Any text that is not a Spec, Scenario, Step or Tag
 Comment:
-	name+=TextPart name+=(TextPart | '-' | '=' | '|')+ SINGLE_NL+
+	name+=TextPart name+=(TextPart | '-' | '=' | '|' | ',' | ':')+ SINGLE_NL+
 ;
 
 TextPart:

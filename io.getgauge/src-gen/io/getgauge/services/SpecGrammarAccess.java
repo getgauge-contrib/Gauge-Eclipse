@@ -115,18 +115,27 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameTextPartParserRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
 		private final RuleCall cSINGLE_NLTerminalRuleCall_0_2 = (RuleCall)cGroup_0.eContents().get(2);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cNameAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cNameTextPartParserRuleCall_1_0_0 = (RuleCall)cNameAssignment_1_0.eContents().get(0);
-		private final RuleCall cSINGLE_NLTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Keyword cHyphenMinusKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final RuleCall cSINGLE_NLTerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_0_0 = (Assignment)cGroup_1_0.eContents().get(0);
+		private final RuleCall cNameTextPartParserRuleCall_1_0_0_0 = (RuleCall)cNameAssignment_1_0_0.eContents().get(0);
+		private final RuleCall cSINGLE_NLTerminalRuleCall_1_0_1 = (RuleCall)cGroup_1_0.eContents().get(1);
+		private final Keyword cHyphenMinusKeyword_1_0_2 = (Keyword)cGroup_1_0.eContents().get(2);
+		private final RuleCall cSINGLE_NLTerminalRuleCall_1_0_3 = (RuleCall)cGroup_1_0.eContents().get(3);
+		private final Assignment cCommentsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cCommentsCommentParserRuleCall_1_1_0 = (RuleCall)cCommentsAssignment_1_1.eContents().get(0);
+		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
+		private final Assignment cTagsAssignment_1_2_0 = (Assignment)cGroup_1_2.eContents().get(0);
+		private final RuleCall cTagsTagsParserRuleCall_1_2_0_0 = (RuleCall)cTagsAssignment_1_2_0.eContents().get(0);
+		private final RuleCall cSINGLE_NLTerminalRuleCall_1_2_1 = (RuleCall)cGroup_1_2.eContents().get(1);
 		
 		//// Two formats of Markdown H2
 		//Scenario:
-		//	"## " name+=TextPart+ SINGLE_NL+ | name+=TextPart+ SINGLE_NL "-"+ SINGLE_NL+;
+		//	"## " name+=TextPart+ SINGLE_NL+ | (name+=TextPart+ SINGLE_NL "-"+ SINGLE_NL+) comments+=Comment+ (tags=Tags
+		//	SINGLE_NL+)?;
 		public ParserRule getRule() { return rule; }
 
-		//"## " name+=TextPart+ SINGLE_NL+ | name+=TextPart+ SINGLE_NL "-"+ SINGLE_NL+
+		//"## " name+=TextPart+ SINGLE_NL+ | (name+=TextPart+ SINGLE_NL "-"+ SINGLE_NL+) comments+=Comment+ (tags=Tags
+		//SINGLE_NL+)?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"## " name+=TextPart+ SINGLE_NL+
@@ -144,23 +153,44 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		//SINGLE_NL+
 		public RuleCall getSINGLE_NLTerminalRuleCall_0_2() { return cSINGLE_NLTerminalRuleCall_0_2; }
 
-		//name+=TextPart+ SINGLE_NL "-"+ SINGLE_NL+
+		//(name+=TextPart+ SINGLE_NL "-"+ SINGLE_NL+) comments+=Comment+ (tags=Tags SINGLE_NL+)?
 		public Group getGroup_1() { return cGroup_1; }
 
+		//name+=TextPart+ SINGLE_NL "-"+ SINGLE_NL+
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
 		//name+=TextPart+
-		public Assignment getNameAssignment_1_0() { return cNameAssignment_1_0; }
+		public Assignment getNameAssignment_1_0_0() { return cNameAssignment_1_0_0; }
 
 		//TextPart
-		public RuleCall getNameTextPartParserRuleCall_1_0_0() { return cNameTextPartParserRuleCall_1_0_0; }
+		public RuleCall getNameTextPartParserRuleCall_1_0_0_0() { return cNameTextPartParserRuleCall_1_0_0_0; }
 
 		//SINGLE_NL
-		public RuleCall getSINGLE_NLTerminalRuleCall_1_1() { return cSINGLE_NLTerminalRuleCall_1_1; }
+		public RuleCall getSINGLE_NLTerminalRuleCall_1_0_1() { return cSINGLE_NLTerminalRuleCall_1_0_1; }
 
 		//"-"+
-		public Keyword getHyphenMinusKeyword_1_2() { return cHyphenMinusKeyword_1_2; }
+		public Keyword getHyphenMinusKeyword_1_0_2() { return cHyphenMinusKeyword_1_0_2; }
 
 		//SINGLE_NL+
-		public RuleCall getSINGLE_NLTerminalRuleCall_1_3() { return cSINGLE_NLTerminalRuleCall_1_3; }
+		public RuleCall getSINGLE_NLTerminalRuleCall_1_0_3() { return cSINGLE_NLTerminalRuleCall_1_0_3; }
+
+		//comments+=Comment+
+		public Assignment getCommentsAssignment_1_1() { return cCommentsAssignment_1_1; }
+
+		//Comment
+		public RuleCall getCommentsCommentParserRuleCall_1_1_0() { return cCommentsCommentParserRuleCall_1_1_0; }
+
+		//(tags=Tags SINGLE_NL+)?
+		public Group getGroup_1_2() { return cGroup_1_2; }
+
+		//tags=Tags
+		public Assignment getTagsAssignment_1_2_0() { return cTagsAssignment_1_2_0; }
+
+		//Tags
+		public RuleCall getTagsTagsParserRuleCall_1_2_0_0() { return cTagsTagsParserRuleCall_1_2_0_0; }
+
+		//SINGLE_NL+
+		public RuleCall getSINGLE_NLTerminalRuleCall_1_2_1() { return cSINGLE_NLTerminalRuleCall_1_2_1; }
 	}
 
 	public class StepElements extends AbstractParserRuleElementFinder {
@@ -287,6 +317,58 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNameDYNAMIC_PARAMTerminalRuleCall_0() { return cNameDYNAMIC_PARAMTerminalRuleCall_0; }
 	}
 
+	public class TagsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Tags");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTagsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final RuleCall cWORDTerminalRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
+		private final Alternatives cAlternatives_4_1 = (Alternatives)cGroup_4.eContents().get(1);
+		private final RuleCall cWSTerminalRuleCall_4_1_0 = (RuleCall)cAlternatives_4_1.eContents().get(0);
+		private final Keyword cCommaKeyword_4_1_1 = (Keyword)cAlternatives_4_1.eContents().get(1);
+		private final RuleCall cSINGLE_NLTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		
+		//Tags:
+		//	"tags" WS* ":" WS* (WORD (WS | ",")?)+ SINGLE_NL;
+		public ParserRule getRule() { return rule; }
+
+		//"tags" WS* ":" WS* (WORD (WS | ",")?)+ SINGLE_NL
+		public Group getGroup() { return cGroup; }
+
+		//"tags"
+		public Keyword getTagsKeyword_0() { return cTagsKeyword_0; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1() { return cWSTerminalRuleCall_1; }
+
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
+
+		//(WORD (WS | ",")?)+
+		public Group getGroup_4() { return cGroup_4; }
+
+		//WORD
+		public RuleCall getWORDTerminalRuleCall_4_0() { return cWORDTerminalRuleCall_4_0; }
+
+		//(WS | ",")?
+		public Alternatives getAlternatives_4_1() { return cAlternatives_4_1; }
+
+		//WS
+		public RuleCall getWSTerminalRuleCall_4_1_0() { return cWSTerminalRuleCall_4_1_0; }
+
+		//","
+		public Keyword getCommaKeyword_4_1_1() { return cCommaKeyword_4_1_1; }
+
+		//SINGLE_NL
+		public RuleCall getSINGLE_NLTerminalRuleCall_5() { return cSINGLE_NLTerminalRuleCall_5; }
+	}
+
 	public class CommentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Comment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -298,14 +380,16 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNameHyphenMinusKeyword_1_0_1 = (Keyword)cNameAlternatives_1_0.eContents().get(1);
 		private final Keyword cNameEqualsSignKeyword_1_0_2 = (Keyword)cNameAlternatives_1_0.eContents().get(2);
 		private final Keyword cNameVerticalLineKeyword_1_0_3 = (Keyword)cNameAlternatives_1_0.eContents().get(3);
+		private final Keyword cNameCommaKeyword_1_0_4 = (Keyword)cNameAlternatives_1_0.eContents().get(4);
+		private final Keyword cNameColonKeyword_1_0_5 = (Keyword)cNameAlternatives_1_0.eContents().get(5);
 		private final RuleCall cSINGLE_NLTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//// Any text that is not a Spec, Scenario, Step or Tag
 		//Comment:
-		//	name+=TextPart name+=(TextPart | "-" | "=" | "|")+ SINGLE_NL+;
+		//	name+=TextPart name+=(TextPart | "-" | "=" | "|" | "," | ":")+ SINGLE_NL+;
 		public ParserRule getRule() { return rule; }
 
-		//name+=TextPart name+=(TextPart | "-" | "=" | "|")+ SINGLE_NL+
+		//name+=TextPart name+=(TextPart | "-" | "=" | "|" | "," | ":")+ SINGLE_NL+
 		public Group getGroup() { return cGroup; }
 
 		//name+=TextPart
@@ -314,10 +398,10 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		//TextPart
 		public RuleCall getNameTextPartParserRuleCall_0_0() { return cNameTextPartParserRuleCall_0_0; }
 
-		//name+=(TextPart | "-" | "=" | "|")+
+		//name+=(TextPart | "-" | "=" | "|" | "," | ":")+
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//TextPart | "-" | "=" | "|"
+		//TextPart | "-" | "=" | "|" | "," | ":"
 		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
 
 		//TextPart
@@ -331,6 +415,12 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"|"
 		public Keyword getNameVerticalLineKeyword_1_0_3() { return cNameVerticalLineKeyword_1_0_3; }
+
+		//","
+		public Keyword getNameCommaKeyword_1_0_4() { return cNameCommaKeyword_1_0_4; }
+
+		//":"
+		public Keyword getNameColonKeyword_1_0_5() { return cNameColonKeyword_1_0_5; }
 
 		//SINGLE_NL+
 		public RuleCall getSINGLE_NLTerminalRuleCall_2() { return cSINGLE_NLTerminalRuleCall_2; }
@@ -491,6 +581,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	private final StepElements pStep;
 	private final StaticParamElements pStaticParam;
 	private final DynamicParamElements pDynamicParam;
+	private final TagsElements pTags;
 	private final CommentElements pComment;
 	private final TextPartElements pTextPart;
 	private final TableElements pTable;
@@ -515,6 +606,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		this.pStep = new StepElements();
 		this.pStaticParam = new StaticParamElements();
 		this.pDynamicParam = new DynamicParamElements();
+		this.pTags = new TagsElements();
 		this.pComment = new CommentElements();
 		this.pTextPart = new TextPartElements();
 		this.pTable = new TableElements();
@@ -575,7 +667,8 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// Two formats of Markdown H2
 	//Scenario:
-	//	"## " name+=TextPart+ SINGLE_NL+ | name+=TextPart+ SINGLE_NL "-"+ SINGLE_NL+;
+	//	"## " name+=TextPart+ SINGLE_NL+ | (name+=TextPart+ SINGLE_NL "-"+ SINGLE_NL+) comments+=Comment+ (tags=Tags
+	//	SINGLE_NL+)?;
 	public ScenarioElements getScenarioAccess() {
 		return pScenario;
 	}
@@ -617,9 +710,19 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		return getDynamicParamAccess().getRule();
 	}
 
+	//Tags:
+	//	"tags" WS* ":" WS* (WORD (WS | ",")?)+ SINGLE_NL;
+	public TagsElements getTagsAccess() {
+		return pTags;
+	}
+	
+	public ParserRule getTagsRule() {
+		return getTagsAccess().getRule();
+	}
+
 	//// Any text that is not a Spec, Scenario, Step or Tag
 	//Comment:
-	//	name+=TextPart name+=(TextPart | "-" | "=" | "|")+ SINGLE_NL+;
+	//	name+=TextPart name+=(TextPart | "-" | "=" | "|" | "," | ":")+ SINGLE_NL+;
 	public CommentElements getCommentAccess() {
 		return pComment;
 	}

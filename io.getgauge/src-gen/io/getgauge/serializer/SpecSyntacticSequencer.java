@@ -20,9 +20,10 @@ public class SpecSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SpecGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Comment_SINGLE_NLTerminalRuleCall_2_p;
-	protected AbstractElementAlias match_Scenario_HyphenMinusKeyword_1_2_p;
+	protected AbstractElementAlias match_Scenario_HyphenMinusKeyword_1_0_2_p;
 	protected AbstractElementAlias match_Scenario_SINGLE_NLTerminalRuleCall_0_2_p;
-	protected AbstractElementAlias match_Scenario_SINGLE_NLTerminalRuleCall_1_3_p;
+	protected AbstractElementAlias match_Scenario_SINGLE_NLTerminalRuleCall_1_0_3_p;
+	protected AbstractElementAlias match_Scenario_SINGLE_NLTerminalRuleCall_1_2_1_p;
 	protected AbstractElementAlias match_Spec_EqualsSignKeyword_1_2_p;
 	protected AbstractElementAlias match_Spec_SINGLE_NLTerminalRuleCall_0_2_p;
 	protected AbstractElementAlias match_Spec_SINGLE_NLTerminalRuleCall_1_3_p;
@@ -40,9 +41,10 @@ public class SpecSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SpecGrammarAccess) access;
 		match_Comment_SINGLE_NLTerminalRuleCall_2_p = new TokenAlias(true, false, grammarAccess.getCommentAccess().getSINGLE_NLTerminalRuleCall_2());
-		match_Scenario_HyphenMinusKeyword_1_2_p = new TokenAlias(true, false, grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_2());
+		match_Scenario_HyphenMinusKeyword_1_0_2_p = new TokenAlias(true, false, grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_0_2());
 		match_Scenario_SINGLE_NLTerminalRuleCall_0_2_p = new TokenAlias(true, false, grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_0_2());
-		match_Scenario_SINGLE_NLTerminalRuleCall_1_3_p = new TokenAlias(true, false, grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_3());
+		match_Scenario_SINGLE_NLTerminalRuleCall_1_0_3_p = new TokenAlias(true, false, grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_0_3());
+		match_Scenario_SINGLE_NLTerminalRuleCall_1_2_1_p = new TokenAlias(true, false, grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_2_1());
 		match_Spec_EqualsSignKeyword_1_2_p = new TokenAlias(true, false, grammarAccess.getSpecAccess().getEqualsSignKeyword_1_2());
 		match_Spec_SINGLE_NLTerminalRuleCall_0_2_p = new TokenAlias(true, false, grammarAccess.getSpecAccess().getSINGLE_NLTerminalRuleCall_0_2());
 		match_Spec_SINGLE_NLTerminalRuleCall_1_3_p = new TokenAlias(true, false, grammarAccess.getSpecAccess().getSINGLE_NLTerminalRuleCall_1_3());
@@ -125,12 +127,14 @@ public class SpecSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_Comment_SINGLE_NLTerminalRuleCall_2_p.equals(syntax))
 				emit_Comment_SINGLE_NLTerminalRuleCall_2_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Scenario_HyphenMinusKeyword_1_2_p.equals(syntax))
-				emit_Scenario_HyphenMinusKeyword_1_2_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Scenario_HyphenMinusKeyword_1_0_2_p.equals(syntax))
+				emit_Scenario_HyphenMinusKeyword_1_0_2_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Scenario_SINGLE_NLTerminalRuleCall_0_2_p.equals(syntax))
 				emit_Scenario_SINGLE_NLTerminalRuleCall_0_2_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Scenario_SINGLE_NLTerminalRuleCall_1_3_p.equals(syntax))
-				emit_Scenario_SINGLE_NLTerminalRuleCall_1_3_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Scenario_SINGLE_NLTerminalRuleCall_1_0_3_p.equals(syntax))
+				emit_Scenario_SINGLE_NLTerminalRuleCall_1_0_3_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Scenario_SINGLE_NLTerminalRuleCall_1_2_1_p.equals(syntax))
+				emit_Scenario_SINGLE_NLTerminalRuleCall_1_2_1_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Spec_EqualsSignKeyword_1_2_p.equals(syntax))
 				emit_Spec_EqualsSignKeyword_1_2_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Spec_SINGLE_NLTerminalRuleCall_0_2_p.equals(syntax))
@@ -171,7 +175,7 @@ public class SpecSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     '-'+
 	 */
-	protected void emit_Scenario_HyphenMinusKeyword_1_2_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Scenario_HyphenMinusKeyword_1_0_2_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -187,7 +191,15 @@ public class SpecSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     SINGLE_NL+
 	 */
-	protected void emit_Scenario_SINGLE_NLTerminalRuleCall_1_3_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Scenario_SINGLE_NLTerminalRuleCall_1_0_3_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
+	 *     SINGLE_NL+
+	 */
+	protected void emit_Scenario_SINGLE_NLTerminalRuleCall_1_2_1_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

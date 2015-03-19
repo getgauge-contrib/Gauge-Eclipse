@@ -132,13 +132,31 @@ public interface SpecPackage extends EPackage
   int SCENARIO__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Comments</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO__COMMENTS = 1;
+
+  /**
+   * The feature id for the '<em><b>Tags</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCENARIO__TAGS = 2;
+
+  /**
    * The number of structural features of the '<em>Scenario</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCENARIO_FEATURE_COUNT = 1;
+  int SCENARIO_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.StepImpl <em>Step</em>}' class.
@@ -428,6 +446,28 @@ public interface SpecPackage extends EPackage
   EAttribute getScenario_Name();
 
   /**
+   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Scenario#getComments <em>Comments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Comments</em>'.
+   * @see io.getgauge.spec.Scenario#getComments()
+   * @see #getScenario()
+   * @generated
+   */
+  EReference getScenario_Comments();
+
+  /**
+   * Returns the meta object for the attribute '{@link io.getgauge.spec.Scenario#getTags <em>Tags</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tags</em>'.
+   * @see io.getgauge.spec.Scenario#getTags()
+   * @see #getScenario()
+   * @generated
+   */
+  EAttribute getScenario_Tags();
+
+  /**
    * Returns the meta object for class '{@link io.getgauge.spec.Step <em>Step</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -683,6 +723,22 @@ public interface SpecPackage extends EPackage
      * @generated
      */
     EAttribute SCENARIO__NAME = eINSTANCE.getScenario_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Comments</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCENARIO__COMMENTS = eINSTANCE.getScenario_Comments();
+
+    /**
+     * The meta object literal for the '<em><b>Tags</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCENARIO__TAGS = eINSTANCE.getScenario_Tags();
 
     /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.StepImpl <em>Step</em>}' class.

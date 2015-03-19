@@ -12,19 +12,22 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalSpecLexer extends Lexer {
-    public static final int RULE_TABLE_ROW_END=10;
-    public static final int RULE_SINGLE_NL=9;
-    public static final int RULE_WS=5;
     public static final int RULE_STATIC_PARAM=7;
     public static final int RULE_WORD=4;
+    public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
     public static final int T__11=11;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int RULE_SEPARATORS=6;
+    public static final int RULE_TABLE_ROW_END=10;
+    public static final int RULE_SINGLE_NL=9;
+    public static final int RULE_WS=5;
     public static final int RULE_DYNAMIC_PARAM=8;
 
     // delegates
@@ -85,10 +88,10 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:13:7: ( '|' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:13:9: '|'
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:13:7: ( ',' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:13:9: ','
             {
-            match('|'); 
+            match(','); 
 
             }
 
@@ -105,11 +108,10 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:14:7: ( '# ' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:14:9: '# '
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:14:7: ( '|' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:14:9: '|'
             {
-            match("# "); 
-
+            match('|'); 
 
             }
 
@@ -126,11 +128,10 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:15:7: ( '## ' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:15:9: '## '
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:15:7: ( ':' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:15:9: ':'
             {
-            match("## "); 
-
+            match(':'); 
 
             }
 
@@ -147,10 +148,10 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:16:7: ( '* ' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:16:9: '* '
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:16:7: ( '# ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:16:9: '# '
             {
-            match("* "); 
+            match("# "); 
 
 
             }
@@ -163,15 +164,78 @@ public class InternalSpecLexer extends Lexer {
     }
     // $ANTLR end "T__16"
 
+    // $ANTLR start "T__17"
+    public final void mT__17() throws RecognitionException {
+        try {
+            int _type = T__17;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:17:7: ( '## ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:17:9: '## '
+            {
+            match("## "); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__17"
+
+    // $ANTLR start "T__18"
+    public final void mT__18() throws RecognitionException {
+        try {
+            int _type = T__18;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:18:7: ( '* ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:18:9: '* '
+            {
+            match("* "); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__18"
+
+    // $ANTLR start "T__19"
+    public final void mT__19() throws RecognitionException {
+        try {
+            int _type = T__19;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:19:7: ( 'tags' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:19:9: 'tags'
+            {
+            match("tags"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__19"
+
     // $ANTLR start "RULE_SINGLE_NL"
     public final void mRULE_SINGLE_NL() throws RecognitionException {
         try {
             int _type = RULE_SINGLE_NL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2236:16: ( ( '\\r' )? '\\n' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2236:18: ( '\\r' )? '\\n'
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2758:16: ( ( '\\r' )? '\\n' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2758:18: ( '\\r' )? '\\n'
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2236:18: ( '\\r' )?
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2758:18: ( '\\r' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -180,7 +244,7 @@ public class InternalSpecLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2236:18: '\\r'
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2758:18: '\\r'
                     {
                     match('\r'); 
 
@@ -206,8 +270,8 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = RULE_WORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2238:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2238:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2760:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2760:13: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -218,7 +282,7 @@ public class InternalSpecLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2238:37: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2760:37: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -267,11 +331,11 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = RULE_STATIC_PARAM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2240:19: ( '\"' ( options {greedy=false; } : . )* '\"' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2240:21: '\"' ( options {greedy=false; } : . )* '\"'
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2762:19: ( '\"' ( options {greedy=false; } : . )* '\"' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2762:21: '\"' ( options {greedy=false; } : . )* '\"'
             {
             match('\"'); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2240:25: ( options {greedy=false; } : . )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2762:25: ( options {greedy=false; } : . )*
             loop3:
             do {
                 int alt3=2;
@@ -287,7 +351,7 @@ public class InternalSpecLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2240:53: .
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2762:53: .
             	    {
             	    matchAny(); 
 
@@ -316,11 +380,11 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = RULE_DYNAMIC_PARAM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2242:20: ( '<' ( options {greedy=false; } : . )* '>' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2242:22: '<' ( options {greedy=false; } : . )* '>'
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2764:20: ( '<' ( options {greedy=false; } : . )* '>' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2764:22: '<' ( options {greedy=false; } : . )* '>'
             {
             match('<'); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2242:26: ( options {greedy=false; } : . )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2764:26: ( options {greedy=false; } : . )*
             loop4:
             do {
                 int alt4=2;
@@ -336,7 +400,7 @@ public class InternalSpecLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2242:54: .
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2764:54: .
             	    {
             	    matchAny(); 
 
@@ -365,11 +429,11 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = RULE_TABLE_ROW_END;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2244:20: ( '|' ( RULE_WS )* RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2244:22: '|' ( RULE_WS )* RULE_SINGLE_NL
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2766:20: ( '|' ( RULE_WS )* RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2766:22: '|' ( RULE_WS )* RULE_SINGLE_NL
             {
             match('|'); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2244:26: ( RULE_WS )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2766:26: ( RULE_WS )*
             loop5:
             do {
                 int alt5=2;
@@ -382,7 +446,7 @@ public class InternalSpecLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2244:26: RULE_WS
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2766:26: RULE_WS
             	    {
             	    mRULE_WS(); 
 
@@ -411,8 +475,8 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2246:9: ( ( ' ' | '\\t' ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2246:11: ( ' ' | '\\t' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2768:9: ( ( ' ' | '\\t' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2768:11: ( ' ' | '\\t' )
             {
             if ( input.LA(1)=='\t'||input.LA(1)==' ' ) {
                 input.consume();
@@ -439,8 +503,8 @@ public class InternalSpecLexer extends Lexer {
         try {
             int _type = RULE_SEPARATORS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2248:17: (~ ( ( '\\r' | '\\n' | 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | ' ' | '\\t' ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2248:19: ~ ( ( '\\r' | '\\n' | 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | ' ' | '\\t' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2770:17: (~ ( ( '\\r' | '\\n' | 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | ' ' | '\\t' ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2770:19: ~ ( ( '\\r' | '\\n' | 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' | ' ' | '\\t' ) )
             {
             if ( (input.LA(1)>='\u0000' && input.LA(1)<='\b')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\u001F')||(input.LA(1)>='!' && input.LA(1)<='/')||(input.LA(1)>=':' && input.LA(1)<='@')||(input.LA(1)>='[' && input.LA(1)<='^')||input.LA(1)=='`'||(input.LA(1)>='{' && input.LA(1)<='\uFFFF') ) {
                 input.consume();
@@ -463,8 +527,8 @@ public class InternalSpecLexer extends Lexer {
     // $ANTLR end "RULE_SEPARATORS"
 
     public void mTokens() throws RecognitionException {
-        // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | RULE_SINGLE_NL | RULE_WORD | RULE_STATIC_PARAM | RULE_DYNAMIC_PARAM | RULE_TABLE_ROW_END | RULE_WS | RULE_SEPARATORS )
-        int alt6=13;
+        // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_SINGLE_NL | RULE_WORD | RULE_STATIC_PARAM | RULE_DYNAMIC_PARAM | RULE_TABLE_ROW_END | RULE_WS | RULE_SEPARATORS )
+        int alt6=16;
         alt6 = dfa6.predict(input);
         switch (alt6) {
             case 1 :
@@ -510,49 +574,70 @@ public class InternalSpecLexer extends Lexer {
                 }
                 break;
             case 7 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:46: RULE_SINGLE_NL
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:46: T__17
+                {
+                mT__17(); 
+
+                }
+                break;
+            case 8 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:52: T__18
+                {
+                mT__18(); 
+
+                }
+                break;
+            case 9 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:58: T__19
+                {
+                mT__19(); 
+
+                }
+                break;
+            case 10 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:64: RULE_SINGLE_NL
                 {
                 mRULE_SINGLE_NL(); 
 
                 }
                 break;
-            case 8 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:61: RULE_WORD
+            case 11 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:79: RULE_WORD
                 {
                 mRULE_WORD(); 
 
                 }
                 break;
-            case 9 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:71: RULE_STATIC_PARAM
+            case 12 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:89: RULE_STATIC_PARAM
                 {
                 mRULE_STATIC_PARAM(); 
 
                 }
                 break;
-            case 10 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:89: RULE_DYNAMIC_PARAM
+            case 13 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:107: RULE_DYNAMIC_PARAM
                 {
                 mRULE_DYNAMIC_PARAM(); 
 
                 }
                 break;
-            case 11 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:108: RULE_TABLE_ROW_END
+            case 14 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:126: RULE_TABLE_ROW_END
                 {
                 mRULE_TABLE_ROW_END(); 
 
                 }
                 break;
-            case 12 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:127: RULE_WS
+            case 15 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:145: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 13 :
-                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:135: RULE_SEPARATORS
+            case 16 :
+                // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1:153: RULE_SEPARATORS
                 {
                 mRULE_SEPARATORS(); 
 
@@ -566,38 +651,47 @@ public class InternalSpecLexer extends Lexer {
 
     protected DFA6 dfa6 = new DFA6(this);
     static final String DFA6_eotS =
-        "\3\uffff\1\17\2\13\2\uffff\2\13\13\uffff";
+        "\4\uffff\1\23\1\uffff\2\16\1\12\2\uffff\2\16\13\uffff\1\12\2\uffff\1\12\1\35\1\uffff";
     static final String DFA6_eofS =
-        "\25\uffff";
+        "\36\uffff";
     static final String DFA6_minS =
-        "\1\0\2\uffff\1\11\2\40\2\uffff\2\0\13\uffff";
+        "\1\0\3\uffff\1\11\1\uffff\2\40\1\141\2\uffff\2\0\13\uffff\1\147\2\uffff\1\163\1\60\1\uffff";
     static final String DFA6_maxS =
-        "\1\uffff\2\uffff\1\40\1\43\1\40\2\uffff\2\uffff\13\uffff";
+        "\1\uffff\3\uffff\1\40\1\uffff\1\43\1\40\1\141\2\uffff\2\uffff\13\uffff\1\147\2\uffff\1\163\1\172\1\uffff";
     static final String DFA6_acceptS =
-        "\1\uffff\1\1\1\2\3\uffff\1\7\1\10\2\uffff\1\14\1\15\1\1\1\2\1\13\1\3\1\4\1\5\1\6\1\11\1\12";
+        "\1\uffff\1\1\1\2\1\3\1\uffff\1\5\3\uffff\1\12\1\13\2\uffff\1\17\1\20\1\1\1\2\1\3\1\16\1\4\1\5\1\6\1\7\1\10\1\uffff\1\14\1\15\2\uffff\1\11";
     static final String DFA6_specialS =
-        "\1\0\7\uffff\1\1\1\2\13\uffff}>";
+        "\1\0\12\uffff\1\1\1\2\21\uffff}>";
     static final String[] DFA6_transitionS = {
-            "\11\13\1\12\1\6\2\13\1\6\22\13\1\12\1\13\1\10\1\4\6\13\1\5\2\13\1\1\2\13\12\uffff\2\13\1\11\1\2\3\13\32\7\4\13\1\7\1\13\32\7\1\13\1\3\uff83\13",
-            "",
-            "",
-            "\2\16\2\uffff\1\16\22\uffff\1\16",
-            "\1\20\2\uffff\1\21",
-            "\1\22",
-            "",
-            "",
-            "\0\23",
-            "\0\24",
+            "\11\16\1\15\1\11\2\16\1\11\22\16\1\15\1\16\1\13\1\6\6\16\1\7\1\16\1\3\1\1\2\16\12\uffff\1\5\1\16\1\14\1\2\3\16\32\12\4\16\1\12\1\16\23\12\1\10\6\12\1\16\1\4\uff83\16",
             "",
             "",
             "",
+            "\2\22\2\uffff\1\22\22\uffff\1\22",
+            "",
+            "\1\25\2\uffff\1\26",
+            "\1\27",
+            "\1\30",
             "",
             "",
-            "",
+            "\0\31",
+            "\0\32",
             "",
             "",
             "",
             "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\33",
+            "",
+            "",
+            "\1\34",
+            "\12\12\7\uffff\32\12\4\uffff\1\12\1\uffff\32\12",
             ""
     };
 
@@ -631,7 +725,7 @@ public class InternalSpecLexer extends Lexer {
             this.transition = DFA6_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | RULE_SINGLE_NL | RULE_WORD | RULE_STATIC_PARAM | RULE_DYNAMIC_PARAM | RULE_TABLE_ROW_END | RULE_WS | RULE_SEPARATORS );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | RULE_SINGLE_NL | RULE_WORD | RULE_STATIC_PARAM | RULE_DYNAMIC_PARAM | RULE_TABLE_ROW_END | RULE_WS | RULE_SEPARATORS );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
@@ -645,43 +739,49 @@ public class InternalSpecLexer extends Lexer {
 
                         else if ( (LA6_0=='=') ) {s = 2;}
 
-                        else if ( (LA6_0=='|') ) {s = 3;}
+                        else if ( (LA6_0==',') ) {s = 3;}
 
-                        else if ( (LA6_0=='#') ) {s = 4;}
+                        else if ( (LA6_0=='|') ) {s = 4;}
 
-                        else if ( (LA6_0=='*') ) {s = 5;}
+                        else if ( (LA6_0==':') ) {s = 5;}
 
-                        else if ( (LA6_0=='\n'||LA6_0=='\r') ) {s = 6;}
+                        else if ( (LA6_0=='#') ) {s = 6;}
 
-                        else if ( ((LA6_0>='A' && LA6_0<='Z')||LA6_0=='_'||(LA6_0>='a' && LA6_0<='z')) ) {s = 7;}
+                        else if ( (LA6_0=='*') ) {s = 7;}
 
-                        else if ( (LA6_0=='\"') ) {s = 8;}
+                        else if ( (LA6_0=='t') ) {s = 8;}
 
-                        else if ( (LA6_0=='<') ) {s = 9;}
+                        else if ( (LA6_0=='\n'||LA6_0=='\r') ) {s = 9;}
 
-                        else if ( (LA6_0=='\t'||LA6_0==' ') ) {s = 10;}
+                        else if ( ((LA6_0>='A' && LA6_0<='Z')||LA6_0=='_'||(LA6_0>='a' && LA6_0<='s')||(LA6_0>='u' && LA6_0<='z')) ) {s = 10;}
 
-                        else if ( ((LA6_0>='\u0000' && LA6_0<='\b')||(LA6_0>='\u000B' && LA6_0<='\f')||(LA6_0>='\u000E' && LA6_0<='\u001F')||LA6_0=='!'||(LA6_0>='$' && LA6_0<=')')||(LA6_0>='+' && LA6_0<=',')||(LA6_0>='.' && LA6_0<='/')||(LA6_0>=':' && LA6_0<=';')||(LA6_0>='>' && LA6_0<='@')||(LA6_0>='[' && LA6_0<='^')||LA6_0=='`'||LA6_0=='{'||(LA6_0>='}' && LA6_0<='\uFFFF')) ) {s = 11;}
+                        else if ( (LA6_0=='\"') ) {s = 11;}
+
+                        else if ( (LA6_0=='<') ) {s = 12;}
+
+                        else if ( (LA6_0=='\t'||LA6_0==' ') ) {s = 13;}
+
+                        else if ( ((LA6_0>='\u0000' && LA6_0<='\b')||(LA6_0>='\u000B' && LA6_0<='\f')||(LA6_0>='\u000E' && LA6_0<='\u001F')||LA6_0=='!'||(LA6_0>='$' && LA6_0<=')')||LA6_0=='+'||(LA6_0>='.' && LA6_0<='/')||LA6_0==';'||(LA6_0>='>' && LA6_0<='@')||(LA6_0>='[' && LA6_0<='^')||LA6_0=='`'||LA6_0=='{'||(LA6_0>='}' && LA6_0<='\uFFFF')) ) {s = 14;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA6_8 = input.LA(1);
+                        int LA6_11 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA6_8>='\u0000' && LA6_8<='\uFFFF')) ) {s = 19;}
+                        if ( ((LA6_11>='\u0000' && LA6_11<='\uFFFF')) ) {s = 25;}
 
-                        else s = 11;
+                        else s = 14;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA6_9 = input.LA(1);
+                        int LA6_12 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA6_9>='\u0000' && LA6_9<='\uFFFF')) ) {s = 20;}
+                        if ( ((LA6_12>='\u0000' && LA6_12<='\uFFFF')) ) {s = 26;}
 
-                        else s = 11;
+                        else s = 14;
 
                         if ( s>=0 ) return s;
                         break;

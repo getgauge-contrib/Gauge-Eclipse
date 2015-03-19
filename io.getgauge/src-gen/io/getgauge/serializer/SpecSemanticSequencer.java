@@ -100,7 +100,17 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name+=TextPart (name+=TextPart | name+='-' | name+='=' | name+='|')+)
+	 *     (
+	 *         name+=TextPart 
+	 *         (
+	 *             name+=TextPart | 
+	 *             name+='-' | 
+	 *             name+='=' | 
+	 *             name+='|' | 
+	 *             name+=',' | 
+	 *             name+=':'
+	 *         )+
+	 *     )
 	 */
 	protected void sequence_Comment(EObject context, Comment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -134,7 +144,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name+=TextPart+ | name+=TextPart+)
+	 *     (name+=TextPart+ | (name+=TextPart+ comments+=Comment+ tags=Tags?))
 	 */
 	protected void sequence_Scenario(EObject context, Scenario semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

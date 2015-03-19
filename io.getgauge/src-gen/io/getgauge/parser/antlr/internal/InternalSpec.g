@@ -269,10 +269,10 @@ ruleScenario returns [EObject current=null]
     newLeafNode(this_SINGLE_NL_2, grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_0_2()); 
     }
 )+)
-    |((
+    |(((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getScenarioAccess().getNameTextPartParserRuleCall_1_0_0()); 
+	        newCompositeNode(grammarAccess.getScenarioAccess().getNameTextPartParserRuleCall_1_0_0_0()); 
 	    }
 		lv_name_3_0=ruleTextPart		{
 	        if ($current==null) {
@@ -289,17 +289,57 @@ ruleScenario returns [EObject current=null]
 )
 )+this_SINGLE_NL_4=RULE_SINGLE_NL
     { 
-    newLeafNode(this_SINGLE_NL_4, grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_1()); 
+    newLeafNode(this_SINGLE_NL_4, grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_0_1()); 
     }
 (	otherlv_5='-' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_2());
+    	newLeafNode(otherlv_5, grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_0_2());
     }
 )+(this_SINGLE_NL_6=RULE_SINGLE_NL
     { 
-    newLeafNode(this_SINGLE_NL_6, grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_3()); 
+    newLeafNode(this_SINGLE_NL_6, grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_0_3()); 
     }
-)+))
+)+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getScenarioAccess().getCommentsCommentParserRuleCall_1_1_0()); 
+	    }
+		lv_comments_7_0=ruleComment		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getScenarioRule());
+	        }
+       		add(
+       			$current, 
+       			"comments",
+        		lv_comments_7_0, 
+        		"Comment");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)+((
+(
+		{ 
+	        newCompositeNode(grammarAccess.getScenarioAccess().getTagsTagsParserRuleCall_1_2_0_0()); 
+	    }
+		lv_tags_8_0=ruleTags		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getScenarioRule());
+	        }
+       		set(
+       			$current, 
+       			"tags",
+        		lv_tags_8_0, 
+        		"Tags");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(this_SINGLE_NL_9=RULE_SINGLE_NL
+    { 
+    newLeafNode(this_SINGLE_NL_9, grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_2_1()); 
+    }
+)+)?))
 ;
 
 
@@ -506,6 +546,81 @@ ruleDynamicParam returns [EObject current=null]
 
 
 
+// Entry rule entryRuleTags
+entryRuleTags returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTagsRule()); } 
+	 iv_ruleTags=ruleTags 
+	 { $current=$iv_ruleTags.current.getText(); }  
+	 EOF 
+;
+
+// Rule Tags
+ruleTags returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='tags' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTagsAccess().getTagsKeyword_0()); 
+    }
+(    this_WS_1=RULE_WS    {
+		$current.merge(this_WS_1);
+    }
+
+    { 
+    newLeafNode(this_WS_1, grammarAccess.getTagsAccess().getWSTerminalRuleCall_1()); 
+    }
+)*
+	kw=':' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTagsAccess().getColonKeyword_2()); 
+    }
+(    this_WS_3=RULE_WS    {
+		$current.merge(this_WS_3);
+    }
+
+    { 
+    newLeafNode(this_WS_3, grammarAccess.getTagsAccess().getWSTerminalRuleCall_3()); 
+    }
+)*(    this_WORD_4=RULE_WORD    {
+		$current.merge(this_WORD_4);
+    }
+
+    { 
+    newLeafNode(this_WORD_4, grammarAccess.getTagsAccess().getWORDTerminalRuleCall_4_0()); 
+    }
+(    this_WS_5=RULE_WS    {
+		$current.merge(this_WS_5);
+    }
+
+    { 
+    newLeafNode(this_WS_5, grammarAccess.getTagsAccess().getWSTerminalRuleCall_4_1_0()); 
+    }
+
+    |
+	kw=',' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTagsAccess().getCommaKeyword_4_1_1()); 
+    }
+)?)+    this_SINGLE_NL_7=RULE_SINGLE_NL    {
+		$current.merge(this_SINGLE_NL_7);
+    }
+
+    { 
+    newLeafNode(this_SINGLE_NL_7, grammarAccess.getTagsAccess().getSINGLE_NLTerminalRuleCall_5()); 
+    }
+)
+    ;
+
+
+
+
+
 // Entry rule entryRuleComment
 entryRuleComment returns [EObject current=null] 
 	:
@@ -590,6 +705,30 @@ ruleComment returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getCommentRule());
 	        }
        		addWithLastConsumed($current, "name", lv_name_1_4, null);
+	    }
+
+    |		lv_name_1_5=	',' 
+    {
+        newLeafNode(lv_name_1_5, grammarAccess.getCommentAccess().getNameCommaKeyword_1_0_4());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getCommentRule());
+	        }
+       		addWithLastConsumed($current, "name", lv_name_1_5, null);
+	    }
+
+    |		lv_name_1_6=	':' 
+    {
+        newLeafNode(lv_name_1_6, grammarAccess.getCommentAccess().getNameColonKeyword_1_0_5());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getCommentRule());
+	        }
+       		addWithLastConsumed($current, "name", lv_name_1_6, null);
 	    }
 
 )
