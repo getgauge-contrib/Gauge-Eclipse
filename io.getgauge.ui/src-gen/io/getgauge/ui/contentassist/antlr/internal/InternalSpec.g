@@ -1339,9 +1339,16 @@ rule__Step__Group__4__Impl
     }
 :
 (
+(
+{ before(grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_4()); }
+(	RULE_SINGLE_NL)
+{ after(grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_4()); }
+)
+(
 { before(grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_4()); }
 (	RULE_SINGLE_NL)*
 { after(grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_4()); }
+)
 )
 
 ;

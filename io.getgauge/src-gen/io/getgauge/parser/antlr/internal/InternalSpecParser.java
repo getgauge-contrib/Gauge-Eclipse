@@ -1019,7 +1019,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStep"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:334:1: ruleStep returns [EObject current=null] : ( () otherlv_1= '* ' ( ( ( (lv_staticParams_2_0= ruleStaticParam ) ) | ( (lv_dynamicParams_3_0= ruleDynamicParam ) ) | this_WORD_4= RULE_WORD | otherlv_5= '-' | otherlv_6= '=' | this_WS_7= RULE_WS ) (this_SEPARATORS_8= RULE_SEPARATORS )* )+ (this_SINGLE_NL_9= RULE_SINGLE_NL (this_SINGLE_NL_10= RULE_SINGLE_NL )* ( (lv_table_11_0= ruleTable ) ) )? (this_SINGLE_NL_12= RULE_SINGLE_NL )* ) ;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:334:1: ruleStep returns [EObject current=null] : ( () otherlv_1= '* ' ( ( ( (lv_staticParams_2_0= ruleStaticParam ) ) | ( (lv_dynamicParams_3_0= ruleDynamicParam ) ) | this_WORD_4= RULE_WORD | otherlv_5= '-' | otherlv_6= '=' | this_WS_7= RULE_WS ) (this_SEPARATORS_8= RULE_SEPARATORS )* )+ (this_SINGLE_NL_9= RULE_SINGLE_NL (this_SINGLE_NL_10= RULE_SINGLE_NL )* ( (lv_table_11_0= ruleTable ) ) )? (this_SINGLE_NL_12= RULE_SINGLE_NL )+ ) ;
     public final EObject ruleStep() throws RecognitionException {
         EObject current = null;
 
@@ -1042,11 +1042,11 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:337:28: ( ( () otherlv_1= '* ' ( ( ( (lv_staticParams_2_0= ruleStaticParam ) ) | ( (lv_dynamicParams_3_0= ruleDynamicParam ) ) | this_WORD_4= RULE_WORD | otherlv_5= '-' | otherlv_6= '=' | this_WS_7= RULE_WS ) (this_SEPARATORS_8= RULE_SEPARATORS )* )+ (this_SINGLE_NL_9= RULE_SINGLE_NL (this_SINGLE_NL_10= RULE_SINGLE_NL )* ( (lv_table_11_0= ruleTable ) ) )? (this_SINGLE_NL_12= RULE_SINGLE_NL )* ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:338:1: ( () otherlv_1= '* ' ( ( ( (lv_staticParams_2_0= ruleStaticParam ) ) | ( (lv_dynamicParams_3_0= ruleDynamicParam ) ) | this_WORD_4= RULE_WORD | otherlv_5= '-' | otherlv_6= '=' | this_WS_7= RULE_WS ) (this_SEPARATORS_8= RULE_SEPARATORS )* )+ (this_SINGLE_NL_9= RULE_SINGLE_NL (this_SINGLE_NL_10= RULE_SINGLE_NL )* ( (lv_table_11_0= ruleTable ) ) )? (this_SINGLE_NL_12= RULE_SINGLE_NL )* )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:337:28: ( ( () otherlv_1= '* ' ( ( ( (lv_staticParams_2_0= ruleStaticParam ) ) | ( (lv_dynamicParams_3_0= ruleDynamicParam ) ) | this_WORD_4= RULE_WORD | otherlv_5= '-' | otherlv_6= '=' | this_WS_7= RULE_WS ) (this_SEPARATORS_8= RULE_SEPARATORS )* )+ (this_SINGLE_NL_9= RULE_SINGLE_NL (this_SINGLE_NL_10= RULE_SINGLE_NL )* ( (lv_table_11_0= ruleTable ) ) )? (this_SINGLE_NL_12= RULE_SINGLE_NL )+ ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:338:1: ( () otherlv_1= '* ' ( ( ( (lv_staticParams_2_0= ruleStaticParam ) ) | ( (lv_dynamicParams_3_0= ruleDynamicParam ) ) | this_WORD_4= RULE_WORD | otherlv_5= '-' | otherlv_6= '=' | this_WS_7= RULE_WS ) (this_SEPARATORS_8= RULE_SEPARATORS )* )+ (this_SINGLE_NL_9= RULE_SINGLE_NL (this_SINGLE_NL_10= RULE_SINGLE_NL )* ( (lv_table_11_0= ruleTable ) ) )? (this_SINGLE_NL_12= RULE_SINGLE_NL )+ )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:338:1: ( () otherlv_1= '* ' ( ( ( (lv_staticParams_2_0= ruleStaticParam ) ) | ( (lv_dynamicParams_3_0= ruleDynamicParam ) ) | this_WORD_4= RULE_WORD | otherlv_5= '-' | otherlv_6= '=' | this_WS_7= RULE_WS ) (this_SEPARATORS_8= RULE_SEPARATORS )* )+ (this_SINGLE_NL_9= RULE_SINGLE_NL (this_SINGLE_NL_10= RULE_SINGLE_NL )* ( (lv_table_11_0= ruleTable ) ) )? (this_SINGLE_NL_12= RULE_SINGLE_NL )* )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:338:2: () otherlv_1= '* ' ( ( ( (lv_staticParams_2_0= ruleStaticParam ) ) | ( (lv_dynamicParams_3_0= ruleDynamicParam ) ) | this_WORD_4= RULE_WORD | otherlv_5= '-' | otherlv_6= '=' | this_WS_7= RULE_WS ) (this_SEPARATORS_8= RULE_SEPARATORS )* )+ (this_SINGLE_NL_9= RULE_SINGLE_NL (this_SINGLE_NL_10= RULE_SINGLE_NL )* ( (lv_table_11_0= ruleTable ) ) )? (this_SINGLE_NL_12= RULE_SINGLE_NL )*
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:338:1: ( () otherlv_1= '* ' ( ( ( (lv_staticParams_2_0= ruleStaticParam ) ) | ( (lv_dynamicParams_3_0= ruleDynamicParam ) ) | this_WORD_4= RULE_WORD | otherlv_5= '-' | otherlv_6= '=' | this_WS_7= RULE_WS ) (this_SEPARATORS_8= RULE_SEPARATORS )* )+ (this_SINGLE_NL_9= RULE_SINGLE_NL (this_SINGLE_NL_10= RULE_SINGLE_NL )* ( (lv_table_11_0= ruleTable ) ) )? (this_SINGLE_NL_12= RULE_SINGLE_NL )+ )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:338:2: () otherlv_1= '* ' ( ( ( (lv_staticParams_2_0= ruleStaticParam ) ) | ( (lv_dynamicParams_3_0= ruleDynamicParam ) ) | this_WORD_4= RULE_WORD | otherlv_5= '-' | otherlv_6= '=' | this_WS_7= RULE_WS ) (this_SEPARATORS_8= RULE_SEPARATORS )* )+ (this_SINGLE_NL_9= RULE_SINGLE_NL (this_SINGLE_NL_10= RULE_SINGLE_NL )* ( (lv_table_11_0= ruleTable ) ) )? (this_SINGLE_NL_12= RULE_SINGLE_NL )+
             {
             // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:338:2: ()
             // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:339:5: 
@@ -1068,31 +1068,12 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
             loop17:
             do {
                 int alt17=2;
-                switch ( input.LA(1) ) {
-                case RULE_WORD:
-                    {
-                    alt17=1;
-                    }
-                    break;
-                case RULE_STATIC_PARAM:
-                    {
-                    alt17=1;
-                    }
-                    break;
-                case RULE_DYNAMIC_PARAM:
-                    {
-                    alt17=1;
-                    }
-                    break;
-                case RULE_WS:
-                case 12:
-                case 14:
-                    {
-                    alt17=1;
-                    }
-                    break;
+                int LA17_0 = input.LA(1);
 
+                if ( ((LA17_0>=RULE_WORD && LA17_0<=RULE_WS)||(LA17_0>=RULE_STATIC_PARAM && LA17_0<=RULE_DYNAMIC_PARAM)||LA17_0==12||LA17_0==14) ) {
+                    alt17=1;
                 }
+
 
                 switch (alt17) {
             	case 1 :
@@ -1373,7 +1354,8 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:435:4: (this_SINGLE_NL_12= RULE_SINGLE_NL )*
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:435:4: (this_SINGLE_NL_12= RULE_SINGLE_NL )+
+            int cnt20=0;
             loop20:
             do {
                 int alt20=2;
@@ -1397,8 +1379,12 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop20;
+            	    if ( cnt20 >= 1 ) break loop20;
+                        EarlyExitException eee =
+                            new EarlyExitException(20, input);
+                        throw eee;
                 }
+                cnt20++;
             } while (true);
 
 
@@ -2992,33 +2978,33 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
     static final String DFA1_eotS =
         "\21\uffff";
     static final String DFA1_eofS =
-        "\20\uffff\1\17";
+        "\12\uffff\1\20\6\uffff";
     static final String DFA1_minS =
-        "\1\5\1\uffff\5\4\3\uffff\5\4\1\uffff\1\4";
+        "\1\5\1\uffff\5\4\3\uffff\6\4\1\uffff";
     static final String DFA1_maxS =
-        "\1\20\1\uffff\5\23\3\uffff\5\23\1\uffff\1\20";
+        "\1\20\1\uffff\5\23\3\uffff\1\20\5\23\1\uffff";
     static final String DFA1_acceptS =
-        "\1\uffff\1\1\5\uffff\1\2\1\3\1\5\5\uffff\1\4\1\uffff";
+        "\1\uffff\1\1\5\uffff\1\2\1\3\1\5\6\uffff\1\4";
     static final String DFA1_specialS =
         "\21\uffff}>";
     static final String[] DFA1_transitionS = {
             "\1\2\1\6\1\3\1\4\1\5\1\uffff\1\1\1\uffff\1\7\1\uffff\1\10\1\11",
             "",
-            "\1\20\1\12\1\16\1\13\1\14\1\15\2\uffff\1\17\1\uffff\1\17\2\uffff\3\17",
-            "\1\20\1\12\1\16\1\13\1\14\1\15\2\uffff\1\17\1\uffff\1\17\2\uffff\3\17",
-            "\1\20\1\12\1\16\1\13\1\14\1\15\2\uffff\1\17\1\uffff\1\17\2\uffff\3\17",
-            "\1\20\1\12\1\16\1\13\1\14\1\15\2\uffff\1\17\1\uffff\1\17\2\uffff\3\17",
-            "\1\20\1\12\1\16\1\13\1\14\1\15\2\uffff\1\17\1\uffff\1\17\2\uffff\3\17",
+            "\1\12\1\13\1\17\1\14\1\15\1\16\2\uffff\1\20\1\uffff\1\20\2\uffff\3\20",
+            "\1\12\1\13\1\17\1\14\1\15\1\16\2\uffff\1\20\1\uffff\1\20\2\uffff\3\20",
+            "\1\12\1\13\1\17\1\14\1\15\1\16\2\uffff\1\20\1\uffff\1\20\2\uffff\3\20",
+            "\1\12\1\13\1\17\1\14\1\15\1\16\2\uffff\1\20\1\uffff\1\20\2\uffff\3\20",
+            "\1\12\1\13\1\17\1\14\1\15\1\16\2\uffff\1\20\1\uffff\1\20\2\uffff\3\20",
             "",
             "",
             "",
-            "\1\20\1\12\1\16\1\13\1\14\1\15\2\uffff\1\17\1\uffff\1\17\2\uffff\3\17",
-            "\1\20\1\12\1\16\1\13\1\14\1\15\2\uffff\1\17\1\uffff\1\17\2\uffff\3\17",
-            "\1\20\1\12\1\16\1\13\1\14\1\15\2\uffff\1\17\1\uffff\1\17\2\uffff\3\17",
-            "\1\20\1\12\1\16\1\13\1\14\1\15\2\uffff\1\17\1\uffff\1\17\2\uffff\3\17",
-            "\1\20\1\12\1\16\1\13\1\14\1\15\2\uffff\1\17\1\uffff\1\17\2\uffff\3\17",
-            "",
-            "\6\17\1\uffff\1\17\1\1\1\17\1\7\2\17"
+            "\6\20\1\uffff\1\20\1\1\1\20\1\7\2\20",
+            "\1\12\1\13\1\17\1\14\1\15\1\16\2\uffff\1\20\1\uffff\1\20\2\uffff\3\20",
+            "\1\12\1\13\1\17\1\14\1\15\1\16\2\uffff\1\20\1\uffff\1\20\2\uffff\3\20",
+            "\1\12\1\13\1\17\1\14\1\15\1\16\2\uffff\1\20\1\uffff\1\20\2\uffff\3\20",
+            "\1\12\1\13\1\17\1\14\1\15\1\16\2\uffff\1\20\1\uffff\1\20\2\uffff\3\20",
+            "\1\12\1\13\1\17\1\14\1\15\1\16\2\uffff\1\20\1\uffff\1\20\2\uffff\3\20",
+            ""
     };
 
     static final short[] DFA1_eot = DFA.unpackEncodedString(DFA1_eotS);
@@ -3057,17 +3043,17 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
     static final String DFA19_eotS =
         "\13\uffff";
     static final String DFA19_eofS =
-        "\2\2\2\uffff\1\2\6\uffff";
+        "\1\uffff\1\2\2\uffff\1\2\6\uffff";
     static final String DFA19_minS =
         "\2\4\1\uffff\2\4\1\uffff\5\4";
     static final String DFA19_maxS =
-        "\1\20\1\23\1\uffff\2\23\1\uffff\5\23";
+        "\1\4\1\23\1\uffff\2\23\1\uffff\5\23";
     static final String DFA19_acceptS =
         "\2\uffff\1\2\2\uffff\1\1\5\uffff";
     static final String DFA19_specialS =
         "\13\uffff}>";
     static final String[] DFA19_transitionS = {
-            "\1\1\5\2\1\uffff\1\2\1\uffff\1\2\1\uffff\2\2",
+            "\1\1",
             "\1\4\1\2\1\3\3\2\1\uffff\1\2\1\uffff\1\2\1\uffff\2\2\2\uffff\1\5",
             "",
             "\2\2\1\6\3\2\2\uffff\1\2\1\uffff\1\2\2\uffff\2\2\1\7",
@@ -3143,16 +3129,16 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleStep_in_entryRuleStep623 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStep633 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_15_in_ruleStep679 = new BitSet(new long[]{0x0000000000005360L});
-    public static final BitSet FOLLOW_ruleStaticParam_in_ruleStep702 = new BitSet(new long[]{0x00000000000053F2L});
-    public static final BitSet FOLLOW_ruleDynamicParam_in_ruleStep729 = new BitSet(new long[]{0x00000000000053F2L});
-    public static final BitSet FOLLOW_RULE_WORD_in_ruleStep746 = new BitSet(new long[]{0x00000000000053F2L});
-    public static final BitSet FOLLOW_14_in_ruleStep763 = new BitSet(new long[]{0x00000000000053F2L});
-    public static final BitSet FOLLOW_12_in_ruleStep781 = new BitSet(new long[]{0x00000000000053F2L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleStep798 = new BitSet(new long[]{0x00000000000053F2L});
-    public static final BitSet FOLLOW_RULE_SEPARATORS_in_ruleStep810 = new BitSet(new long[]{0x00000000000053F2L});
+    public static final BitSet FOLLOW_ruleStaticParam_in_ruleStep702 = new BitSet(new long[]{0x00000000000053F0L});
+    public static final BitSet FOLLOW_ruleDynamicParam_in_ruleStep729 = new BitSet(new long[]{0x00000000000053F0L});
+    public static final BitSet FOLLOW_RULE_WORD_in_ruleStep746 = new BitSet(new long[]{0x00000000000053F0L});
+    public static final BitSet FOLLOW_14_in_ruleStep763 = new BitSet(new long[]{0x00000000000053F0L});
+    public static final BitSet FOLLOW_12_in_ruleStep781 = new BitSet(new long[]{0x00000000000053F0L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleStep798 = new BitSet(new long[]{0x00000000000053F0L});
+    public static final BitSet FOLLOW_RULE_SEPARATORS_in_ruleStep810 = new BitSet(new long[]{0x00000000000053F0L});
     public static final BitSet FOLLOW_RULE_SINGLE_NL_in_ruleStep825 = new BitSet(new long[]{0x0000000000080050L});
     public static final BitSet FOLLOW_RULE_SINGLE_NL_in_ruleStep836 = new BitSet(new long[]{0x0000000000080050L});
-    public static final BitSet FOLLOW_ruleTable_in_ruleStep858 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_ruleTable_in_ruleStep858 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_SINGLE_NL_in_ruleStep872 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_ruleStaticParam_in_entryRuleStaticParam909 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStaticParam919 = new BitSet(new long[]{0x0000000000000002L});

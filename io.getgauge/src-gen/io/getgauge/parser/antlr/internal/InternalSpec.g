@@ -436,7 +436,7 @@ ruleStep returns [EObject current=null]
     { 
     newLeafNode(this_SINGLE_NL_12, grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_4()); 
     }
-)*)
+)+)
 ;
 
 

@@ -29,7 +29,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		
 		/// *
 		// * TODO
-		// * - Newline at begining of file is errored
+		// * - Newline at beginning of file has an error
 		// * - Errors if last line is not a newline
 		// * / Model:
 		//	definitions+=(Spec | Scenario | Step | Comment | Tags)*;
@@ -198,11 +198,11 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		//// Can also optionally have a Table associated
 		//Step:
 		//	{Step} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | WORD | "-" | "=" | WS) SEPARATORS*)+
-		//	(SINGLE_NL SINGLE_NL* table=Table)? SINGLE_NL*;
+		//	(SINGLE_NL SINGLE_NL* table=Table)? SINGLE_NL+;
 		public ParserRule getRule() { return rule; }
 
 		//{Step} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | WORD | "-" | "=" | WS) SEPARATORS*)+ (SINGLE_NL
-		//SINGLE_NL* table=Table)? SINGLE_NL*
+		//SINGLE_NL* table=Table)? SINGLE_NL+
 		public Group getGroup() { return cGroup; }
 
 		//{Step}
@@ -259,7 +259,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		//Table
 		public RuleCall getTableTableParserRuleCall_3_2_0() { return cTableTableParserRuleCall_3_2_0; }
 
-		//SINGLE_NL*
+		//SINGLE_NL+
 		public RuleCall getSINGLE_NLTerminalRuleCall_4() { return cSINGLE_NLTerminalRuleCall_4; }
 	}
 
@@ -620,7 +620,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	
 	/// *
 	// * TODO
-	// * - Newline at begining of file is errored
+	// * - Newline at beginning of file has an error
 	// * - Errors if last line is not a newline
 	// * / Model:
 	//	definitions+=(Spec | Scenario | Step | Comment | Tags)*;
@@ -658,7 +658,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//// Can also optionally have a Table associated
 	//Step:
 	//	{Step} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | WORD | "-" | "=" | WS) SEPARATORS*)+
-	//	(SINGLE_NL SINGLE_NL* table=Table)? SINGLE_NL*;
+	//	(SINGLE_NL SINGLE_NL* table=Table)? SINGLE_NL+;
 	public StepElements getStepAccess() {
 		return pStep;
 	}
