@@ -14,6 +14,7 @@ import io.getgauge.spec.Step;
 import io.getgauge.spec.Table;
 import io.getgauge.spec.TableCell;
 import io.getgauge.spec.TableRow;
+import io.getgauge.spec.Tags;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
@@ -94,6 +95,12 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 					return; 
 				}
 				else break;
+			case SpecPackage.TAGS:
+				if(context == grammarAccess.getTagsRule()) {
+					sequence_Tags(context, (Tags) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -109,7 +116,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *             name+='|' | 
 	 *             name+=',' | 
 	 *             name+=':'
-	 *         )+
+	 *         )*
 	 *     )
 	 */
 	protected void sequence_Comment(EObject context, Comment semanticObject) {
@@ -135,7 +142,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (definitions+=Spec | definitions+=Scenario | definitions+=Step | definitions+=Comment)*
+	 *     (definitions+=Spec | definitions+=Scenario | definitions+=Step | definitions+=Comment | definitions+=Tags)*
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -144,7 +151,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name+=TextPart+ | (name+=TextPart+ comments+=Comment+ tags=Tags?))
+	 *     (name+=TextPart+ | name+=TextPart+)
 	 */
 	protected void sequence_Scenario(EObject context, Scenario semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -208,6 +215,15 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (heading=TableRow rows+=TableRow+)
 	 */
 	protected void sequence_Table(EObject context, Table semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {Tags}
+	 */
+	protected void sequence_Tags(EObject context, Tags semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

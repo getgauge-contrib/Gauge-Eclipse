@@ -41,7 +41,7 @@ public class SpecParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSpecAccess().getAlternatives(), "rule__Spec__Alternatives");
 					put(grammarAccess.getScenarioAccess().getAlternatives(), "rule__Scenario__Alternatives");
 					put(grammarAccess.getStepAccess().getAlternatives_2_0(), "rule__Step__Alternatives_2_0");
-					put(grammarAccess.getTagsAccess().getAlternatives_4_1(), "rule__Tags__Alternatives_4_1");
+					put(grammarAccess.getTagsAccess().getAlternatives_4(), "rule__Tags__Alternatives_4");
 					put(grammarAccess.getCommentAccess().getNameAlternatives_1_0(), "rule__Comment__NameAlternatives_1_0");
 					put(grammarAccess.getTextPartAccess().getAlternatives(), "rule__TextPart__Alternatives");
 					put(grammarAccess.getTableCellAccess().getNameAlternatives_1_0(), "rule__TableCell__NameAlternatives_1_0");
@@ -49,13 +49,10 @@ public class SpecParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSpecAccess().getGroup_1(), "rule__Spec__Group_1__0");
 					put(grammarAccess.getScenarioAccess().getGroup_0(), "rule__Scenario__Group_0__0");
 					put(grammarAccess.getScenarioAccess().getGroup_1(), "rule__Scenario__Group_1__0");
-					put(grammarAccess.getScenarioAccess().getGroup_1_0(), "rule__Scenario__Group_1_0__0");
-					put(grammarAccess.getScenarioAccess().getGroup_1_2(), "rule__Scenario__Group_1_2__0");
 					put(grammarAccess.getStepAccess().getGroup(), "rule__Step__Group__0");
 					put(grammarAccess.getStepAccess().getGroup_2(), "rule__Step__Group_2__0");
 					put(grammarAccess.getStepAccess().getGroup_3(), "rule__Step__Group_3__0");
 					put(grammarAccess.getTagsAccess().getGroup(), "rule__Tags__Group__0");
-					put(grammarAccess.getTagsAccess().getGroup_4(), "rule__Tags__Group_4__0");
 					put(grammarAccess.getCommentAccess().getGroup(), "rule__Comment__Group__0");
 					put(grammarAccess.getTableAccess().getGroup(), "rule__Table__Group__0");
 					put(grammarAccess.getTableAccess().getGroup_3(), "rule__Table__Group_3__0");
@@ -65,9 +62,7 @@ public class SpecParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSpecAccess().getNameAssignment_0_1(), "rule__Spec__NameAssignment_0_1");
 					put(grammarAccess.getSpecAccess().getNameAssignment_1_0(), "rule__Spec__NameAssignment_1_0");
 					put(grammarAccess.getScenarioAccess().getNameAssignment_0_1(), "rule__Scenario__NameAssignment_0_1");
-					put(grammarAccess.getScenarioAccess().getNameAssignment_1_0_0(), "rule__Scenario__NameAssignment_1_0_0");
-					put(grammarAccess.getScenarioAccess().getCommentsAssignment_1_1(), "rule__Scenario__CommentsAssignment_1_1");
-					put(grammarAccess.getScenarioAccess().getTagsAssignment_1_2_0(), "rule__Scenario__TagsAssignment_1_2_0");
+					put(grammarAccess.getScenarioAccess().getNameAssignment_1_0(), "rule__Scenario__NameAssignment_1_0");
 					put(grammarAccess.getStepAccess().getStaticParamsAssignment_2_0_0(), "rule__Step__StaticParamsAssignment_2_0_0");
 					put(grammarAccess.getStepAccess().getDynamicParamsAssignment_2_0_1(), "rule__Step__DynamicParamsAssignment_2_0_1");
 					put(grammarAccess.getStepAccess().getTableAssignment_3_2(), "rule__Step__TableAssignment_3_2");

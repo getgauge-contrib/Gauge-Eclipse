@@ -114,6 +114,13 @@ public class SpecSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SpecPackage.TAGS:
+      {
+        Tags tags = (Tags)theEObject;
+        T result = caseTags(tags);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SpecPackage.COMMENT:
       {
         Comment comment = (Comment)theEObject;
@@ -238,6 +245,22 @@ public class SpecSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDynamicParam(DynamicParam object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tags</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tags</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTags(Tags object)
   {
     return null;
   }

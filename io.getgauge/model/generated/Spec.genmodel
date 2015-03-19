@@ -15,8 +15,6 @@
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//Scenario">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Scenario/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Scenario/comments"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Scenario/tags"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//Step">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Step/staticParams"/>
@@ -29,6 +27,7 @@
     <genClasses ecoreClass="Spec.ecore#//DynamicParam">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//DynamicParam/name"/>
     </genClasses>
+    <genClasses ecoreClass="Spec.ecore#//Tags"/>
     <genClasses ecoreClass="Spec.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Comment/name"/>
     </genClasses>

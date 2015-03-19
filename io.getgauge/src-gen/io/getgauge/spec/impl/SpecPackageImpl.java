@@ -14,6 +14,7 @@ import io.getgauge.spec.Step;
 import io.getgauge.spec.Table;
 import io.getgauge.spec.TableCell;
 import io.getgauge.spec.TableRow;
+import io.getgauge.spec.Tags;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -71,6 +72,13 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * @generated
    */
   private EClass dynamicParamEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tagsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -228,26 +236,6 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getScenario_Comments()
-  {
-    return (EReference)scenarioEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getScenario_Tags()
-  {
-    return (EAttribute)scenarioEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getStep()
   {
     return stepEClass;
@@ -321,6 +309,16 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
   public EAttribute getDynamicParam_Name()
   {
     return (EAttribute)dynamicParamEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTags()
+  {
+    return tagsEClass;
   }
 
   /**
@@ -451,8 +449,6 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
 
     scenarioEClass = createEClass(SCENARIO);
     createEAttribute(scenarioEClass, SCENARIO__NAME);
-    createEReference(scenarioEClass, SCENARIO__COMMENTS);
-    createEAttribute(scenarioEClass, SCENARIO__TAGS);
 
     stepEClass = createEClass(STEP);
     createEReference(stepEClass, STEP__STATIC_PARAMS);
@@ -464,6 +460,8 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
 
     dynamicParamEClass = createEClass(DYNAMIC_PARAM);
     createEAttribute(dynamicParamEClass, DYNAMIC_PARAM__NAME);
+
+    tagsEClass = createEClass(TAGS);
 
     commentEClass = createEClass(COMMENT);
     createEAttribute(commentEClass, COMMENT__NAME);
@@ -518,8 +516,6 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
 
     initEClass(scenarioEClass, Scenario.class, "Scenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScenario_Name(), ecorePackage.getEString(), "name", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getScenario_Comments(), this.getComment(), null, "comments", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getScenario_Tags(), ecorePackage.getEString(), "tags", null, 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStep_StaticParams(), this.getStaticParam(), null, "staticParams", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -531,6 +527,8 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
 
     initEClass(dynamicParamEClass, DynamicParam.class, "DynamicParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDynamicParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, DynamicParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tagsEClass, Tags.class, "Tags", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComment_Name(), ecorePackage.getEString(), "name", null, 0, -1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

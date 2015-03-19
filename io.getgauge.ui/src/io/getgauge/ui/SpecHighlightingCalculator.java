@@ -5,6 +5,7 @@ import io.getgauge.spec.Scenario;
 import io.getgauge.spec.Spec;
 import io.getgauge.spec.StaticParam;
 import io.getgauge.spec.Step;
+import io.getgauge.spec.Tags;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.nodemodel.BidiTreeIterator;
@@ -33,6 +34,8 @@ public class SpecHighlightingCalculator implements ISemanticHighlightingCalculat
         			nodeType=SpecHighlightingConfiguration.SPEC;
         		else if( semanticElement instanceof Scenario )
         			nodeType=SpecHighlightingConfiguration.SCENARIO;
+        		else if( semanticElement instanceof Tags)
+        			nodeType=SpecHighlightingConfiguration.TAGS;
         		else if( semanticElement instanceof StaticParam )
         			nodeType=SpecHighlightingConfiguration.STATIC_PARAM;
         		else if( semanticElement instanceof DynamicParam)

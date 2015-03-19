@@ -24,23 +24,23 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_WORD", "RULE_WS", "RULE_SEPARATORS", "RULE_STATIC_PARAM", "RULE_DYNAMIC_PARAM", "RULE_SINGLE_NL", "RULE_TABLE_ROW_END", "'-'", "'='", "','", "'|'", "':'", "'# '", "'## '", "'* '", "'tags'"
     };
-    public static final int RULE_STATIC_PARAM=7;
-    public static final int RULE_WORD=4;
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
-    public static final int T__11=11;
-    public static final int T__12=12;
-    public static final int T__13=13;
-    public static final int T__14=14;
-    public static final int EOF=-1;
-    public static final int RULE_SEPARATORS=6;
-    public static final int RULE_TABLE_ROW_END=10;
-    public static final int RULE_SINGLE_NL=9;
-    public static final int RULE_WS=5;
     public static final int RULE_DYNAMIC_PARAM=8;
+    public static final int EOF=-1;
+    public static final int RULE_SINGLE_NL=9;
+    public static final int T__19=19;
+    public static final int RULE_SEPARATORS=6;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__12=12;
+    public static final int T__11=11;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int RULE_STATIC_PARAM=7;
+    public static final int RULE_TABLE_ROW_END=10;
+    public static final int RULE_WS=5;
+    public static final int RULE_WORD=4;
 
     // delegates
     // delegators
@@ -129,7 +129,7 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0>=RULE_WORD && LA1_0<=RULE_DYNAMIC_PARAM)||(LA1_0>=16 && LA1_0<=18)) ) {
+                if ( ((LA1_0>=RULE_WORD && LA1_0<=RULE_DYNAMIC_PARAM)||(LA1_0>=16 && LA1_0<=19)) ) {
                     alt1=1;
                 }
 
@@ -1022,14 +1022,14 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__DefinitionsAlternatives_0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:396:1: rule__Model__DefinitionsAlternatives_0 : ( ( ruleSpec ) | ( ruleScenario ) | ( ruleStep ) | ( ruleComment ) );
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:396:1: rule__Model__DefinitionsAlternatives_0 : ( ( ruleSpec ) | ( ruleScenario ) | ( ruleStep ) | ( ruleComment ) | ( ruleTags ) );
     public final void rule__Model__DefinitionsAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:400:1: ( ( ruleSpec ) | ( ruleScenario ) | ( ruleStep ) | ( ruleComment ) )
-            int alt2=4;
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:400:1: ( ( ruleSpec ) | ( ruleScenario ) | ( ruleStep ) | ( ruleComment ) | ( ruleTags ) )
+            int alt2=5;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
@@ -1108,6 +1108,25 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
                     }
                     break;
+                case 5 :
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:425:6: ( ruleTags )
+                    {
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:425:6: ( ruleTags )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:426:1: ruleTags
+                    {
+                     before(grammarAccess.getModelAccess().getDefinitionsTagsParserRuleCall_0_4()); 
+                    pushFollow(FOLLOW_ruleTags_in_rule__Model__DefinitionsAlternatives_0859);
+                    ruleTags();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getModelAccess().getDefinitionsTagsParserRuleCall_0_4()); 
+
+                    }
+
+
+                    }
+                    break;
 
             }
         }
@@ -1126,13 +1145,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Alternatives"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:430:1: rule__Spec__Alternatives : ( ( ( rule__Spec__Group_0__0 ) ) | ( ( rule__Spec__Group_1__0 ) ) );
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:436:1: rule__Spec__Alternatives : ( ( ( rule__Spec__Group_0__0 ) ) | ( ( rule__Spec__Group_1__0 ) ) );
     public final void rule__Spec__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:434:1: ( ( ( rule__Spec__Group_0__0 ) ) | ( ( rule__Spec__Group_1__0 ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:440:1: ( ( ( rule__Spec__Group_0__0 ) ) | ( ( rule__Spec__Group_1__0 ) ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1150,16 +1169,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
             }
             switch (alt3) {
                 case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:435:1: ( ( rule__Spec__Group_0__0 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:441:1: ( ( rule__Spec__Group_0__0 ) )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:435:1: ( ( rule__Spec__Group_0__0 ) )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:436:1: ( rule__Spec__Group_0__0 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:441:1: ( ( rule__Spec__Group_0__0 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:442:1: ( rule__Spec__Group_0__0 )
                     {
                      before(grammarAccess.getSpecAccess().getGroup_0()); 
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:437:1: ( rule__Spec__Group_0__0 )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:437:2: rule__Spec__Group_0__0
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:443:1: ( rule__Spec__Group_0__0 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:443:2: rule__Spec__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__Spec__Group_0__0_in_rule__Spec__Alternatives874);
+                    pushFollow(FOLLOW_rule__Spec__Group_0__0_in_rule__Spec__Alternatives891);
                     rule__Spec__Group_0__0();
 
                     state._fsp--;
@@ -1175,16 +1194,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:441:6: ( ( rule__Spec__Group_1__0 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:447:6: ( ( rule__Spec__Group_1__0 ) )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:441:6: ( ( rule__Spec__Group_1__0 ) )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:442:1: ( rule__Spec__Group_1__0 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:447:6: ( ( rule__Spec__Group_1__0 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:448:1: ( rule__Spec__Group_1__0 )
                     {
                      before(grammarAccess.getSpecAccess().getGroup_1()); 
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:443:1: ( rule__Spec__Group_1__0 )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:443:2: rule__Spec__Group_1__0
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:449:1: ( rule__Spec__Group_1__0 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:449:2: rule__Spec__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__Spec__Group_1__0_in_rule__Spec__Alternatives892);
+                    pushFollow(FOLLOW_rule__Spec__Group_1__0_in_rule__Spec__Alternatives909);
                     rule__Spec__Group_1__0();
 
                     state._fsp--;
@@ -1217,13 +1236,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Alternatives"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:452:1: rule__Scenario__Alternatives : ( ( ( rule__Scenario__Group_0__0 ) ) | ( ( rule__Scenario__Group_1__0 ) ) );
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:458:1: rule__Scenario__Alternatives : ( ( ( rule__Scenario__Group_0__0 ) ) | ( ( rule__Scenario__Group_1__0 ) ) );
     public final void rule__Scenario__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:456:1: ( ( ( rule__Scenario__Group_0__0 ) ) | ( ( rule__Scenario__Group_1__0 ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:462:1: ( ( ( rule__Scenario__Group_0__0 ) ) | ( ( rule__Scenario__Group_1__0 ) ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1241,16 +1260,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:457:1: ( ( rule__Scenario__Group_0__0 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:463:1: ( ( rule__Scenario__Group_0__0 ) )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:457:1: ( ( rule__Scenario__Group_0__0 ) )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:458:1: ( rule__Scenario__Group_0__0 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:463:1: ( ( rule__Scenario__Group_0__0 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:464:1: ( rule__Scenario__Group_0__0 )
                     {
                      before(grammarAccess.getScenarioAccess().getGroup_0()); 
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:459:1: ( rule__Scenario__Group_0__0 )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:459:2: rule__Scenario__Group_0__0
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:465:1: ( rule__Scenario__Group_0__0 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:465:2: rule__Scenario__Group_0__0
                     {
-                    pushFollow(FOLLOW_rule__Scenario__Group_0__0_in_rule__Scenario__Alternatives925);
+                    pushFollow(FOLLOW_rule__Scenario__Group_0__0_in_rule__Scenario__Alternatives942);
                     rule__Scenario__Group_0__0();
 
                     state._fsp--;
@@ -1266,16 +1285,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:463:6: ( ( rule__Scenario__Group_1__0 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:469:6: ( ( rule__Scenario__Group_1__0 ) )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:463:6: ( ( rule__Scenario__Group_1__0 ) )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:464:1: ( rule__Scenario__Group_1__0 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:469:6: ( ( rule__Scenario__Group_1__0 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:470:1: ( rule__Scenario__Group_1__0 )
                     {
                      before(grammarAccess.getScenarioAccess().getGroup_1()); 
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:465:1: ( rule__Scenario__Group_1__0 )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:465:2: rule__Scenario__Group_1__0
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:471:1: ( rule__Scenario__Group_1__0 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:471:2: rule__Scenario__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__Scenario__Group_1__0_in_rule__Scenario__Alternatives943);
+                    pushFollow(FOLLOW_rule__Scenario__Group_1__0_in_rule__Scenario__Alternatives960);
                     rule__Scenario__Group_1__0();
 
                     state._fsp--;
@@ -1308,13 +1327,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Alternatives_2_0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:474:1: rule__Step__Alternatives_2_0 : ( ( ( rule__Step__StaticParamsAssignment_2_0_0 ) ) | ( ( rule__Step__DynamicParamsAssignment_2_0_1 ) ) | ( RULE_WORD ) | ( '-' ) | ( '=' ) | ( RULE_WS ) );
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:480:1: rule__Step__Alternatives_2_0 : ( ( ( rule__Step__StaticParamsAssignment_2_0_0 ) ) | ( ( rule__Step__DynamicParamsAssignment_2_0_1 ) ) | ( RULE_WORD ) | ( '-' ) | ( '=' ) | ( RULE_WS ) );
     public final void rule__Step__Alternatives_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:478:1: ( ( ( rule__Step__StaticParamsAssignment_2_0_0 ) ) | ( ( rule__Step__DynamicParamsAssignment_2_0_1 ) ) | ( RULE_WORD ) | ( '-' ) | ( '=' ) | ( RULE_WS ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:484:1: ( ( ( rule__Step__StaticParamsAssignment_2_0_0 ) ) | ( ( rule__Step__DynamicParamsAssignment_2_0_1 ) ) | ( RULE_WORD ) | ( '-' ) | ( '=' ) | ( RULE_WS ) )
             int alt5=6;
             switch ( input.LA(1) ) {
             case RULE_STATIC_PARAM:
@@ -1356,16 +1375,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             switch (alt5) {
                 case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:479:1: ( ( rule__Step__StaticParamsAssignment_2_0_0 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:485:1: ( ( rule__Step__StaticParamsAssignment_2_0_0 ) )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:479:1: ( ( rule__Step__StaticParamsAssignment_2_0_0 ) )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:480:1: ( rule__Step__StaticParamsAssignment_2_0_0 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:485:1: ( ( rule__Step__StaticParamsAssignment_2_0_0 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:486:1: ( rule__Step__StaticParamsAssignment_2_0_0 )
                     {
                      before(grammarAccess.getStepAccess().getStaticParamsAssignment_2_0_0()); 
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:481:1: ( rule__Step__StaticParamsAssignment_2_0_0 )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:481:2: rule__Step__StaticParamsAssignment_2_0_0
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:487:1: ( rule__Step__StaticParamsAssignment_2_0_0 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:487:2: rule__Step__StaticParamsAssignment_2_0_0
                     {
-                    pushFollow(FOLLOW_rule__Step__StaticParamsAssignment_2_0_0_in_rule__Step__Alternatives_2_0976);
+                    pushFollow(FOLLOW_rule__Step__StaticParamsAssignment_2_0_0_in_rule__Step__Alternatives_2_0993);
                     rule__Step__StaticParamsAssignment_2_0_0();
 
                     state._fsp--;
@@ -1381,16 +1400,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:485:6: ( ( rule__Step__DynamicParamsAssignment_2_0_1 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:491:6: ( ( rule__Step__DynamicParamsAssignment_2_0_1 ) )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:485:6: ( ( rule__Step__DynamicParamsAssignment_2_0_1 ) )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:486:1: ( rule__Step__DynamicParamsAssignment_2_0_1 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:491:6: ( ( rule__Step__DynamicParamsAssignment_2_0_1 ) )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:492:1: ( rule__Step__DynamicParamsAssignment_2_0_1 )
                     {
                      before(grammarAccess.getStepAccess().getDynamicParamsAssignment_2_0_1()); 
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:487:1: ( rule__Step__DynamicParamsAssignment_2_0_1 )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:487:2: rule__Step__DynamicParamsAssignment_2_0_1
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:493:1: ( rule__Step__DynamicParamsAssignment_2_0_1 )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:493:2: rule__Step__DynamicParamsAssignment_2_0_1
                     {
-                    pushFollow(FOLLOW_rule__Step__DynamicParamsAssignment_2_0_1_in_rule__Step__Alternatives_2_0994);
+                    pushFollow(FOLLOW_rule__Step__DynamicParamsAssignment_2_0_1_in_rule__Step__Alternatives_2_01011);
                     rule__Step__DynamicParamsAssignment_2_0_1();
 
                     state._fsp--;
@@ -1406,13 +1425,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:491:6: ( RULE_WORD )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:497:6: ( RULE_WORD )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:491:6: ( RULE_WORD )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:492:1: RULE_WORD
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:497:6: ( RULE_WORD )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:498:1: RULE_WORD
                     {
                      before(grammarAccess.getStepAccess().getWORDTerminalRuleCall_2_0_2()); 
-                    match(input,RULE_WORD,FOLLOW_RULE_WORD_in_rule__Step__Alternatives_2_01012); 
+                    match(input,RULE_WORD,FOLLOW_RULE_WORD_in_rule__Step__Alternatives_2_01029); 
                      after(grammarAccess.getStepAccess().getWORDTerminalRuleCall_2_0_2()); 
 
                     }
@@ -1421,13 +1440,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:497:6: ( '-' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:503:6: ( '-' )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:497:6: ( '-' )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:498:1: '-'
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:503:6: ( '-' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:504:1: '-'
                     {
                      before(grammarAccess.getStepAccess().getHyphenMinusKeyword_2_0_3()); 
-                    match(input,11,FOLLOW_11_in_rule__Step__Alternatives_2_01030); 
+                    match(input,11,FOLLOW_11_in_rule__Step__Alternatives_2_01047); 
                      after(grammarAccess.getStepAccess().getHyphenMinusKeyword_2_0_3()); 
 
                     }
@@ -1436,13 +1455,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:505:6: ( '=' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:511:6: ( '=' )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:505:6: ( '=' )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:506:1: '='
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:511:6: ( '=' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:512:1: '='
                     {
                      before(grammarAccess.getStepAccess().getEqualsSignKeyword_2_0_4()); 
-                    match(input,12,FOLLOW_12_in_rule__Step__Alternatives_2_01050); 
+                    match(input,12,FOLLOW_12_in_rule__Step__Alternatives_2_01067); 
                      after(grammarAccess.getStepAccess().getEqualsSignKeyword_2_0_4()); 
 
                     }
@@ -1451,13 +1470,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:513:6: ( RULE_WS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:519:6: ( RULE_WS )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:513:6: ( RULE_WS )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:514:1: RULE_WS
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:519:6: ( RULE_WS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:520:1: RULE_WS
                     {
                      before(grammarAccess.getStepAccess().getWSTerminalRuleCall_2_0_5()); 
-                    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Step__Alternatives_2_01069); 
+                    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Step__Alternatives_2_01086); 
                      after(grammarAccess.getStepAccess().getWSTerminalRuleCall_2_0_5()); 
 
                     }
@@ -1482,39 +1501,48 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Step__Alternatives_2_0"
 
 
-    // $ANTLR start "rule__Tags__Alternatives_4_1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:524:1: rule__Tags__Alternatives_4_1 : ( ( RULE_WS ) | ( ',' ) );
-    public final void rule__Tags__Alternatives_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Tags__Alternatives_4"
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:530:1: rule__Tags__Alternatives_4 : ( ( RULE_WORD ) | ( RULE_WS ) | ( ',' ) );
+    public final void rule__Tags__Alternatives_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:528:1: ( ( RULE_WS ) | ( ',' ) )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
-
-            if ( (LA6_0==RULE_WS) ) {
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:534:1: ( ( RULE_WORD ) | ( RULE_WS ) | ( ',' ) )
+            int alt6=3;
+            switch ( input.LA(1) ) {
+            case RULE_WORD:
+                {
                 alt6=1;
-            }
-            else if ( (LA6_0==13) ) {
+                }
+                break;
+            case RULE_WS:
+                {
                 alt6=2;
-            }
-            else {
+                }
+                break;
+            case 13:
+                {
+                alt6=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
+
             switch (alt6) {
                 case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:529:1: ( RULE_WS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:535:1: ( RULE_WORD )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:529:1: ( RULE_WS )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:530:1: RULE_WS
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:535:1: ( RULE_WORD )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:536:1: RULE_WORD
                     {
-                     before(grammarAccess.getTagsAccess().getWSTerminalRuleCall_4_1_0()); 
-                    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Tags__Alternatives_4_11101); 
-                     after(grammarAccess.getTagsAccess().getWSTerminalRuleCall_4_1_0()); 
+                     before(grammarAccess.getTagsAccess().getWORDTerminalRuleCall_4_0()); 
+                    match(input,RULE_WORD,FOLLOW_RULE_WORD_in_rule__Tags__Alternatives_41118); 
+                     after(grammarAccess.getTagsAccess().getWORDTerminalRuleCall_4_0()); 
 
                     }
 
@@ -1522,14 +1550,29 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:535:6: ( ',' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:541:6: ( RULE_WS )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:535:6: ( ',' )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:536:1: ','
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:541:6: ( RULE_WS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:542:1: RULE_WS
                     {
-                     before(grammarAccess.getTagsAccess().getCommaKeyword_4_1_1()); 
-                    match(input,13,FOLLOW_13_in_rule__Tags__Alternatives_4_11119); 
-                     after(grammarAccess.getTagsAccess().getCommaKeyword_4_1_1()); 
+                     before(grammarAccess.getTagsAccess().getWSTerminalRuleCall_4_1()); 
+                    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Tags__Alternatives_41135); 
+                     after(grammarAccess.getTagsAccess().getWSTerminalRuleCall_4_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:547:6: ( ',' )
+                    {
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:547:6: ( ',' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:548:1: ','
+                    {
+                     before(grammarAccess.getTagsAccess().getCommaKeyword_4_2()); 
+                    match(input,13,FOLLOW_13_in_rule__Tags__Alternatives_41153); 
+                     after(grammarAccess.getTagsAccess().getCommaKeyword_4_2()); 
 
                     }
 
@@ -1550,17 +1593,17 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Tags__Alternatives_4_1"
+    // $ANTLR end "rule__Tags__Alternatives_4"
 
 
     // $ANTLR start "rule__Comment__NameAlternatives_1_0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:548:1: rule__Comment__NameAlternatives_1_0 : ( ( ruleTextPart ) | ( '-' ) | ( '=' ) | ( '|' ) | ( ',' ) | ( ':' ) );
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:560:1: rule__Comment__NameAlternatives_1_0 : ( ( ruleTextPart ) | ( '-' ) | ( '=' ) | ( '|' ) | ( ',' ) | ( ':' ) );
     public final void rule__Comment__NameAlternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:552:1: ( ( ruleTextPart ) | ( '-' ) | ( '=' ) | ( '|' ) | ( ',' ) | ( ':' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:564:1: ( ( ruleTextPart ) | ( '-' ) | ( '=' ) | ( '|' ) | ( ',' ) | ( ':' ) )
             int alt7=6;
             switch ( input.LA(1) ) {
             case RULE_WORD:
@@ -1606,13 +1649,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             switch (alt7) {
                 case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:553:1: ( ruleTextPart )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:565:1: ( ruleTextPart )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:553:1: ( ruleTextPart )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:554:1: ruleTextPart
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:565:1: ( ruleTextPart )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:566:1: ruleTextPart
                     {
                      before(grammarAccess.getCommentAccess().getNameTextPartParserRuleCall_1_0_0()); 
-                    pushFollow(FOLLOW_ruleTextPart_in_rule__Comment__NameAlternatives_1_01153);
+                    pushFollow(FOLLOW_ruleTextPart_in_rule__Comment__NameAlternatives_1_01187);
                     ruleTextPart();
 
                     state._fsp--;
@@ -1625,13 +1668,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:559:6: ( '-' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:571:6: ( '-' )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:559:6: ( '-' )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:560:1: '-'
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:571:6: ( '-' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:572:1: '-'
                     {
                      before(grammarAccess.getCommentAccess().getNameHyphenMinusKeyword_1_0_1()); 
-                    match(input,11,FOLLOW_11_in_rule__Comment__NameAlternatives_1_01171); 
+                    match(input,11,FOLLOW_11_in_rule__Comment__NameAlternatives_1_01205); 
                      after(grammarAccess.getCommentAccess().getNameHyphenMinusKeyword_1_0_1()); 
 
                     }
@@ -1640,13 +1683,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:567:6: ( '=' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:579:6: ( '=' )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:567:6: ( '=' )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:568:1: '='
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:579:6: ( '=' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:580:1: '='
                     {
                      before(grammarAccess.getCommentAccess().getNameEqualsSignKeyword_1_0_2()); 
-                    match(input,12,FOLLOW_12_in_rule__Comment__NameAlternatives_1_01191); 
+                    match(input,12,FOLLOW_12_in_rule__Comment__NameAlternatives_1_01225); 
                      after(grammarAccess.getCommentAccess().getNameEqualsSignKeyword_1_0_2()); 
 
                     }
@@ -1655,13 +1698,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:575:6: ( '|' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:587:6: ( '|' )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:575:6: ( '|' )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:576:1: '|'
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:587:6: ( '|' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:588:1: '|'
                     {
                      before(grammarAccess.getCommentAccess().getNameVerticalLineKeyword_1_0_3()); 
-                    match(input,14,FOLLOW_14_in_rule__Comment__NameAlternatives_1_01211); 
+                    match(input,14,FOLLOW_14_in_rule__Comment__NameAlternatives_1_01245); 
                      after(grammarAccess.getCommentAccess().getNameVerticalLineKeyword_1_0_3()); 
 
                     }
@@ -1670,13 +1713,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:583:6: ( ',' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:595:6: ( ',' )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:583:6: ( ',' )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:584:1: ','
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:595:6: ( ',' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:596:1: ','
                     {
                      before(grammarAccess.getCommentAccess().getNameCommaKeyword_1_0_4()); 
-                    match(input,13,FOLLOW_13_in_rule__Comment__NameAlternatives_1_01231); 
+                    match(input,13,FOLLOW_13_in_rule__Comment__NameAlternatives_1_01265); 
                      after(grammarAccess.getCommentAccess().getNameCommaKeyword_1_0_4()); 
 
                     }
@@ -1685,13 +1728,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:591:6: ( ':' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:603:6: ( ':' )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:591:6: ( ':' )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:592:1: ':'
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:603:6: ( ':' )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:604:1: ':'
                     {
                      before(grammarAccess.getCommentAccess().getNameColonKeyword_1_0_5()); 
-                    match(input,15,FOLLOW_15_in_rule__Comment__NameAlternatives_1_01251); 
+                    match(input,15,FOLLOW_15_in_rule__Comment__NameAlternatives_1_01285); 
                      after(grammarAccess.getCommentAccess().getNameColonKeyword_1_0_5()); 
 
                     }
@@ -1717,13 +1760,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextPart__Alternatives"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:604:1: rule__TextPart__Alternatives : ( ( RULE_WORD ) | ( RULE_SEPARATORS ) | ( RULE_STATIC_PARAM ) | ( RULE_DYNAMIC_PARAM ) | ( RULE_WS ) );
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:616:1: rule__TextPart__Alternatives : ( ( RULE_WORD ) | ( RULE_SEPARATORS ) | ( RULE_STATIC_PARAM ) | ( RULE_DYNAMIC_PARAM ) | ( RULE_WS ) );
     public final void rule__TextPart__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:608:1: ( ( RULE_WORD ) | ( RULE_SEPARATORS ) | ( RULE_STATIC_PARAM ) | ( RULE_DYNAMIC_PARAM ) | ( RULE_WS ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:620:1: ( ( RULE_WORD ) | ( RULE_SEPARATORS ) | ( RULE_STATIC_PARAM ) | ( RULE_DYNAMIC_PARAM ) | ( RULE_WS ) )
             int alt8=5;
             switch ( input.LA(1) ) {
             case RULE_WORD:
@@ -1760,13 +1803,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             switch (alt8) {
                 case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:609:1: ( RULE_WORD )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:621:1: ( RULE_WORD )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:609:1: ( RULE_WORD )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:610:1: RULE_WORD
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:621:1: ( RULE_WORD )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:622:1: RULE_WORD
                     {
                      before(grammarAccess.getTextPartAccess().getWORDTerminalRuleCall_0()); 
-                    match(input,RULE_WORD,FOLLOW_RULE_WORD_in_rule__TextPart__Alternatives1285); 
+                    match(input,RULE_WORD,FOLLOW_RULE_WORD_in_rule__TextPart__Alternatives1319); 
                      after(grammarAccess.getTextPartAccess().getWORDTerminalRuleCall_0()); 
 
                     }
@@ -1775,13 +1818,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:615:6: ( RULE_SEPARATORS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:627:6: ( RULE_SEPARATORS )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:615:6: ( RULE_SEPARATORS )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:616:1: RULE_SEPARATORS
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:627:6: ( RULE_SEPARATORS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:628:1: RULE_SEPARATORS
                     {
                      before(grammarAccess.getTextPartAccess().getSEPARATORSTerminalRuleCall_1()); 
-                    match(input,RULE_SEPARATORS,FOLLOW_RULE_SEPARATORS_in_rule__TextPart__Alternatives1302); 
+                    match(input,RULE_SEPARATORS,FOLLOW_RULE_SEPARATORS_in_rule__TextPart__Alternatives1336); 
                      after(grammarAccess.getTextPartAccess().getSEPARATORSTerminalRuleCall_1()); 
 
                     }
@@ -1790,13 +1833,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:621:6: ( RULE_STATIC_PARAM )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:633:6: ( RULE_STATIC_PARAM )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:621:6: ( RULE_STATIC_PARAM )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:622:1: RULE_STATIC_PARAM
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:633:6: ( RULE_STATIC_PARAM )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:634:1: RULE_STATIC_PARAM
                     {
                      before(grammarAccess.getTextPartAccess().getSTATIC_PARAMTerminalRuleCall_2()); 
-                    match(input,RULE_STATIC_PARAM,FOLLOW_RULE_STATIC_PARAM_in_rule__TextPart__Alternatives1319); 
+                    match(input,RULE_STATIC_PARAM,FOLLOW_RULE_STATIC_PARAM_in_rule__TextPart__Alternatives1353); 
                      after(grammarAccess.getTextPartAccess().getSTATIC_PARAMTerminalRuleCall_2()); 
 
                     }
@@ -1805,13 +1848,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:627:6: ( RULE_DYNAMIC_PARAM )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:639:6: ( RULE_DYNAMIC_PARAM )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:627:6: ( RULE_DYNAMIC_PARAM )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:628:1: RULE_DYNAMIC_PARAM
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:639:6: ( RULE_DYNAMIC_PARAM )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:640:1: RULE_DYNAMIC_PARAM
                     {
                      before(grammarAccess.getTextPartAccess().getDYNAMIC_PARAMTerminalRuleCall_3()); 
-                    match(input,RULE_DYNAMIC_PARAM,FOLLOW_RULE_DYNAMIC_PARAM_in_rule__TextPart__Alternatives1336); 
+                    match(input,RULE_DYNAMIC_PARAM,FOLLOW_RULE_DYNAMIC_PARAM_in_rule__TextPart__Alternatives1370); 
                      after(grammarAccess.getTextPartAccess().getDYNAMIC_PARAMTerminalRuleCall_3()); 
 
                     }
@@ -1820,13 +1863,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:633:6: ( RULE_WS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:645:6: ( RULE_WS )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:633:6: ( RULE_WS )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:634:1: RULE_WS
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:645:6: ( RULE_WS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:646:1: RULE_WS
                     {
                      before(grammarAccess.getTextPartAccess().getWSTerminalRuleCall_4()); 
-                    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__TextPart__Alternatives1353); 
+                    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__TextPart__Alternatives1387); 
                      after(grammarAccess.getTextPartAccess().getWSTerminalRuleCall_4()); 
 
                     }
@@ -1852,13 +1895,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableCell__NameAlternatives_1_0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:644:1: rule__TableCell__NameAlternatives_1_0 : ( ( RULE_WORD ) | ( RULE_SEPARATORS ) | ( RULE_WS ) );
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:656:1: rule__TableCell__NameAlternatives_1_0 : ( ( RULE_WORD ) | ( RULE_SEPARATORS ) | ( RULE_WS ) );
     public final void rule__TableCell__NameAlternatives_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:648:1: ( ( RULE_WORD ) | ( RULE_SEPARATORS ) | ( RULE_WS ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:660:1: ( ( RULE_WORD ) | ( RULE_SEPARATORS ) | ( RULE_WS ) )
             int alt9=3;
             switch ( input.LA(1) ) {
             case RULE_WORD:
@@ -1885,13 +1928,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             switch (alt9) {
                 case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:649:1: ( RULE_WORD )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:661:1: ( RULE_WORD )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:649:1: ( RULE_WORD )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:650:1: RULE_WORD
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:661:1: ( RULE_WORD )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:662:1: RULE_WORD
                     {
                      before(grammarAccess.getTableCellAccess().getNameWORDTerminalRuleCall_1_0_0()); 
-                    match(input,RULE_WORD,FOLLOW_RULE_WORD_in_rule__TableCell__NameAlternatives_1_01385); 
+                    match(input,RULE_WORD,FOLLOW_RULE_WORD_in_rule__TableCell__NameAlternatives_1_01419); 
                      after(grammarAccess.getTableCellAccess().getNameWORDTerminalRuleCall_1_0_0()); 
 
                     }
@@ -1900,13 +1943,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:655:6: ( RULE_SEPARATORS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:667:6: ( RULE_SEPARATORS )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:655:6: ( RULE_SEPARATORS )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:656:1: RULE_SEPARATORS
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:667:6: ( RULE_SEPARATORS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:668:1: RULE_SEPARATORS
                     {
                      before(grammarAccess.getTableCellAccess().getNameSEPARATORSTerminalRuleCall_1_0_1()); 
-                    match(input,RULE_SEPARATORS,FOLLOW_RULE_SEPARATORS_in_rule__TableCell__NameAlternatives_1_01402); 
+                    match(input,RULE_SEPARATORS,FOLLOW_RULE_SEPARATORS_in_rule__TableCell__NameAlternatives_1_01436); 
                      after(grammarAccess.getTableCellAccess().getNameSEPARATORSTerminalRuleCall_1_0_1()); 
 
                     }
@@ -1915,13 +1958,13 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:661:6: ( RULE_WS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:673:6: ( RULE_WS )
                     {
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:661:6: ( RULE_WS )
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:662:1: RULE_WS
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:673:6: ( RULE_WS )
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:674:1: RULE_WS
                     {
                      before(grammarAccess.getTableCellAccess().getNameWSTerminalRuleCall_1_0_2()); 
-                    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__TableCell__NameAlternatives_1_01419); 
+                    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__TableCell__NameAlternatives_1_01453); 
                      after(grammarAccess.getTableCellAccess().getNameWSTerminalRuleCall_1_0_2()); 
 
                     }
@@ -1947,21 +1990,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_0__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:674:1: rule__Spec__Group_0__0 : rule__Spec__Group_0__0__Impl rule__Spec__Group_0__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:686:1: rule__Spec__Group_0__0 : rule__Spec__Group_0__0__Impl rule__Spec__Group_0__1 ;
     public final void rule__Spec__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:678:1: ( rule__Spec__Group_0__0__Impl rule__Spec__Group_0__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:679:2: rule__Spec__Group_0__0__Impl rule__Spec__Group_0__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:690:1: ( rule__Spec__Group_0__0__Impl rule__Spec__Group_0__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:691:2: rule__Spec__Group_0__0__Impl rule__Spec__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Spec__Group_0__0__Impl_in_rule__Spec__Group_0__01449);
+            pushFollow(FOLLOW_rule__Spec__Group_0__0__Impl_in_rule__Spec__Group_0__01483);
             rule__Spec__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Spec__Group_0__1_in_rule__Spec__Group_0__01452);
+            pushFollow(FOLLOW_rule__Spec__Group_0__1_in_rule__Spec__Group_0__01486);
             rule__Spec__Group_0__1();
 
             state._fsp--;
@@ -1985,20 +2028,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_0__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:686:1: rule__Spec__Group_0__0__Impl : ( '# ' ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:698:1: rule__Spec__Group_0__0__Impl : ( '# ' ) ;
     public final void rule__Spec__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:690:1: ( ( '# ' ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:691:1: ( '# ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:702:1: ( ( '# ' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:703:1: ( '# ' )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:691:1: ( '# ' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:692:1: '# '
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:703:1: ( '# ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:704:1: '# '
             {
              before(grammarAccess.getSpecAccess().getNumberSignSpaceKeyword_0_0()); 
-            match(input,16,FOLLOW_16_in_rule__Spec__Group_0__0__Impl1480); 
+            match(input,16,FOLLOW_16_in_rule__Spec__Group_0__0__Impl1514); 
              after(grammarAccess.getSpecAccess().getNumberSignSpaceKeyword_0_0()); 
 
             }
@@ -2022,21 +2065,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_0__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:705:1: rule__Spec__Group_0__1 : rule__Spec__Group_0__1__Impl rule__Spec__Group_0__2 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:717:1: rule__Spec__Group_0__1 : rule__Spec__Group_0__1__Impl rule__Spec__Group_0__2 ;
     public final void rule__Spec__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:709:1: ( rule__Spec__Group_0__1__Impl rule__Spec__Group_0__2 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:710:2: rule__Spec__Group_0__1__Impl rule__Spec__Group_0__2
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:721:1: ( rule__Spec__Group_0__1__Impl rule__Spec__Group_0__2 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:722:2: rule__Spec__Group_0__1__Impl rule__Spec__Group_0__2
             {
-            pushFollow(FOLLOW_rule__Spec__Group_0__1__Impl_in_rule__Spec__Group_0__11511);
+            pushFollow(FOLLOW_rule__Spec__Group_0__1__Impl_in_rule__Spec__Group_0__11545);
             rule__Spec__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Spec__Group_0__2_in_rule__Spec__Group_0__11514);
+            pushFollow(FOLLOW_rule__Spec__Group_0__2_in_rule__Spec__Group_0__11548);
             rule__Spec__Group_0__2();
 
             state._fsp--;
@@ -2060,26 +2103,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_0__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:717:1: rule__Spec__Group_0__1__Impl : ( ( ( rule__Spec__NameAssignment_0_1 ) ) ( ( rule__Spec__NameAssignment_0_1 )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:729:1: rule__Spec__Group_0__1__Impl : ( ( ( rule__Spec__NameAssignment_0_1 ) ) ( ( rule__Spec__NameAssignment_0_1 )* ) ) ;
     public final void rule__Spec__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:721:1: ( ( ( ( rule__Spec__NameAssignment_0_1 ) ) ( ( rule__Spec__NameAssignment_0_1 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:722:1: ( ( ( rule__Spec__NameAssignment_0_1 ) ) ( ( rule__Spec__NameAssignment_0_1 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:733:1: ( ( ( ( rule__Spec__NameAssignment_0_1 ) ) ( ( rule__Spec__NameAssignment_0_1 )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:734:1: ( ( ( rule__Spec__NameAssignment_0_1 ) ) ( ( rule__Spec__NameAssignment_0_1 )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:722:1: ( ( ( rule__Spec__NameAssignment_0_1 ) ) ( ( rule__Spec__NameAssignment_0_1 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:723:1: ( ( rule__Spec__NameAssignment_0_1 ) ) ( ( rule__Spec__NameAssignment_0_1 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:734:1: ( ( ( rule__Spec__NameAssignment_0_1 ) ) ( ( rule__Spec__NameAssignment_0_1 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:735:1: ( ( rule__Spec__NameAssignment_0_1 ) ) ( ( rule__Spec__NameAssignment_0_1 )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:723:1: ( ( rule__Spec__NameAssignment_0_1 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:724:1: ( rule__Spec__NameAssignment_0_1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:735:1: ( ( rule__Spec__NameAssignment_0_1 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:736:1: ( rule__Spec__NameAssignment_0_1 )
             {
              before(grammarAccess.getSpecAccess().getNameAssignment_0_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:725:1: ( rule__Spec__NameAssignment_0_1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:725:2: rule__Spec__NameAssignment_0_1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:737:1: ( rule__Spec__NameAssignment_0_1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:737:2: rule__Spec__NameAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__Spec__NameAssignment_0_1_in_rule__Spec__Group_0__1__Impl1543);
+            pushFollow(FOLLOW_rule__Spec__NameAssignment_0_1_in_rule__Spec__Group_0__1__Impl1577);
             rule__Spec__NameAssignment_0_1();
 
             state._fsp--;
@@ -2091,11 +2134,11 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:728:1: ( ( rule__Spec__NameAssignment_0_1 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:729:1: ( rule__Spec__NameAssignment_0_1 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:740:1: ( ( rule__Spec__NameAssignment_0_1 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:741:1: ( rule__Spec__NameAssignment_0_1 )*
             {
              before(grammarAccess.getSpecAccess().getNameAssignment_0_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:730:1: ( rule__Spec__NameAssignment_0_1 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:742:1: ( rule__Spec__NameAssignment_0_1 )*
             loop10:
             do {
                 int alt10=2;
@@ -2108,9 +2151,9 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:730:2: rule__Spec__NameAssignment_0_1
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:742:2: rule__Spec__NameAssignment_0_1
             	    {
-            	    pushFollow(FOLLOW_rule__Spec__NameAssignment_0_1_in_rule__Spec__Group_0__1__Impl1555);
+            	    pushFollow(FOLLOW_rule__Spec__NameAssignment_0_1_in_rule__Spec__Group_0__1__Impl1589);
             	    rule__Spec__NameAssignment_0_1();
 
             	    state._fsp--;
@@ -2150,16 +2193,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_0__2"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:741:1: rule__Spec__Group_0__2 : rule__Spec__Group_0__2__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:753:1: rule__Spec__Group_0__2 : rule__Spec__Group_0__2__Impl ;
     public final void rule__Spec__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:745:1: ( rule__Spec__Group_0__2__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:746:2: rule__Spec__Group_0__2__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:757:1: ( rule__Spec__Group_0__2__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:758:2: rule__Spec__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__Spec__Group_0__2__Impl_in_rule__Spec__Group_0__21588);
+            pushFollow(FOLLOW_rule__Spec__Group_0__2__Impl_in_rule__Spec__Group_0__21622);
             rule__Spec__Group_0__2__Impl();
 
             state._fsp--;
@@ -2183,26 +2226,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_0__2__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:752:1: rule__Spec__Group_0__2__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:764:1: rule__Spec__Group_0__2__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
     public final void rule__Spec__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:756:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:757:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:768:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:769:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:757:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:758:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:769:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:770:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:758:1: ( ( RULE_SINGLE_NL ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:759:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:770:1: ( ( RULE_SINGLE_NL ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:771:1: ( RULE_SINGLE_NL )
             {
              before(grammarAccess.getSpecAccess().getSINGLE_NLTerminalRuleCall_0_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:760:1: ( RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:760:3: RULE_SINGLE_NL
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:772:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:772:3: RULE_SINGLE_NL
             {
-            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_0__2__Impl1618); 
+            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_0__2__Impl1652); 
 
             }
 
@@ -2210,11 +2253,11 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:763:1: ( ( RULE_SINGLE_NL )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:764:1: ( RULE_SINGLE_NL )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:775:1: ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:776:1: ( RULE_SINGLE_NL )*
             {
              before(grammarAccess.getSpecAccess().getSINGLE_NLTerminalRuleCall_0_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:765:1: ( RULE_SINGLE_NL )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:777:1: ( RULE_SINGLE_NL )*
             loop11:
             do {
                 int alt11=2;
@@ -2227,9 +2270,9 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:765:3: RULE_SINGLE_NL
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:777:3: RULE_SINGLE_NL
             	    {
-            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_0__2__Impl1631); 
+            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_0__2__Impl1665); 
 
             	    }
             	    break;
@@ -2265,21 +2308,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_1__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:782:1: rule__Spec__Group_1__0 : rule__Spec__Group_1__0__Impl rule__Spec__Group_1__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:794:1: rule__Spec__Group_1__0 : rule__Spec__Group_1__0__Impl rule__Spec__Group_1__1 ;
     public final void rule__Spec__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:786:1: ( rule__Spec__Group_1__0__Impl rule__Spec__Group_1__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:787:2: rule__Spec__Group_1__0__Impl rule__Spec__Group_1__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:798:1: ( rule__Spec__Group_1__0__Impl rule__Spec__Group_1__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:799:2: rule__Spec__Group_1__0__Impl rule__Spec__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Spec__Group_1__0__Impl_in_rule__Spec__Group_1__01670);
+            pushFollow(FOLLOW_rule__Spec__Group_1__0__Impl_in_rule__Spec__Group_1__01704);
             rule__Spec__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Spec__Group_1__1_in_rule__Spec__Group_1__01673);
+            pushFollow(FOLLOW_rule__Spec__Group_1__1_in_rule__Spec__Group_1__01707);
             rule__Spec__Group_1__1();
 
             state._fsp--;
@@ -2303,26 +2346,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_1__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:794:1: rule__Spec__Group_1__0__Impl : ( ( ( rule__Spec__NameAssignment_1_0 ) ) ( ( rule__Spec__NameAssignment_1_0 )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:806:1: rule__Spec__Group_1__0__Impl : ( ( ( rule__Spec__NameAssignment_1_0 ) ) ( ( rule__Spec__NameAssignment_1_0 )* ) ) ;
     public final void rule__Spec__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:798:1: ( ( ( ( rule__Spec__NameAssignment_1_0 ) ) ( ( rule__Spec__NameAssignment_1_0 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:799:1: ( ( ( rule__Spec__NameAssignment_1_0 ) ) ( ( rule__Spec__NameAssignment_1_0 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:810:1: ( ( ( ( rule__Spec__NameAssignment_1_0 ) ) ( ( rule__Spec__NameAssignment_1_0 )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:811:1: ( ( ( rule__Spec__NameAssignment_1_0 ) ) ( ( rule__Spec__NameAssignment_1_0 )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:799:1: ( ( ( rule__Spec__NameAssignment_1_0 ) ) ( ( rule__Spec__NameAssignment_1_0 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:800:1: ( ( rule__Spec__NameAssignment_1_0 ) ) ( ( rule__Spec__NameAssignment_1_0 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:811:1: ( ( ( rule__Spec__NameAssignment_1_0 ) ) ( ( rule__Spec__NameAssignment_1_0 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:812:1: ( ( rule__Spec__NameAssignment_1_0 ) ) ( ( rule__Spec__NameAssignment_1_0 )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:800:1: ( ( rule__Spec__NameAssignment_1_0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:801:1: ( rule__Spec__NameAssignment_1_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:812:1: ( ( rule__Spec__NameAssignment_1_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:813:1: ( rule__Spec__NameAssignment_1_0 )
             {
              before(grammarAccess.getSpecAccess().getNameAssignment_1_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:802:1: ( rule__Spec__NameAssignment_1_0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:802:2: rule__Spec__NameAssignment_1_0
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:814:1: ( rule__Spec__NameAssignment_1_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:814:2: rule__Spec__NameAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__Spec__NameAssignment_1_0_in_rule__Spec__Group_1__0__Impl1702);
+            pushFollow(FOLLOW_rule__Spec__NameAssignment_1_0_in_rule__Spec__Group_1__0__Impl1736);
             rule__Spec__NameAssignment_1_0();
 
             state._fsp--;
@@ -2334,11 +2377,11 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:805:1: ( ( rule__Spec__NameAssignment_1_0 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:806:1: ( rule__Spec__NameAssignment_1_0 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:817:1: ( ( rule__Spec__NameAssignment_1_0 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:818:1: ( rule__Spec__NameAssignment_1_0 )*
             {
              before(grammarAccess.getSpecAccess().getNameAssignment_1_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:807:1: ( rule__Spec__NameAssignment_1_0 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:819:1: ( rule__Spec__NameAssignment_1_0 )*
             loop12:
             do {
                 int alt12=2;
@@ -2351,9 +2394,9 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:807:2: rule__Spec__NameAssignment_1_0
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:819:2: rule__Spec__NameAssignment_1_0
             	    {
-            	    pushFollow(FOLLOW_rule__Spec__NameAssignment_1_0_in_rule__Spec__Group_1__0__Impl1714);
+            	    pushFollow(FOLLOW_rule__Spec__NameAssignment_1_0_in_rule__Spec__Group_1__0__Impl1748);
             	    rule__Spec__NameAssignment_1_0();
 
             	    state._fsp--;
@@ -2393,21 +2436,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_1__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:818:1: rule__Spec__Group_1__1 : rule__Spec__Group_1__1__Impl rule__Spec__Group_1__2 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:830:1: rule__Spec__Group_1__1 : rule__Spec__Group_1__1__Impl rule__Spec__Group_1__2 ;
     public final void rule__Spec__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:822:1: ( rule__Spec__Group_1__1__Impl rule__Spec__Group_1__2 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:823:2: rule__Spec__Group_1__1__Impl rule__Spec__Group_1__2
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:834:1: ( rule__Spec__Group_1__1__Impl rule__Spec__Group_1__2 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:835:2: rule__Spec__Group_1__1__Impl rule__Spec__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Spec__Group_1__1__Impl_in_rule__Spec__Group_1__11747);
+            pushFollow(FOLLOW_rule__Spec__Group_1__1__Impl_in_rule__Spec__Group_1__11781);
             rule__Spec__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Spec__Group_1__2_in_rule__Spec__Group_1__11750);
+            pushFollow(FOLLOW_rule__Spec__Group_1__2_in_rule__Spec__Group_1__11784);
             rule__Spec__Group_1__2();
 
             state._fsp--;
@@ -2431,20 +2474,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_1__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:830:1: rule__Spec__Group_1__1__Impl : ( RULE_SINGLE_NL ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:842:1: rule__Spec__Group_1__1__Impl : ( RULE_SINGLE_NL ) ;
     public final void rule__Spec__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:834:1: ( ( RULE_SINGLE_NL ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:835:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:846:1: ( ( RULE_SINGLE_NL ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:847:1: ( RULE_SINGLE_NL )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:835:1: ( RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:836:1: RULE_SINGLE_NL
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:847:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:848:1: RULE_SINGLE_NL
             {
              before(grammarAccess.getSpecAccess().getSINGLE_NLTerminalRuleCall_1_1()); 
-            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__1__Impl1777); 
+            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__1__Impl1811); 
              after(grammarAccess.getSpecAccess().getSINGLE_NLTerminalRuleCall_1_1()); 
 
             }
@@ -2468,21 +2511,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_1__2"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:847:1: rule__Spec__Group_1__2 : rule__Spec__Group_1__2__Impl rule__Spec__Group_1__3 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:859:1: rule__Spec__Group_1__2 : rule__Spec__Group_1__2__Impl rule__Spec__Group_1__3 ;
     public final void rule__Spec__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:851:1: ( rule__Spec__Group_1__2__Impl rule__Spec__Group_1__3 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:852:2: rule__Spec__Group_1__2__Impl rule__Spec__Group_1__3
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:863:1: ( rule__Spec__Group_1__2__Impl rule__Spec__Group_1__3 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:864:2: rule__Spec__Group_1__2__Impl rule__Spec__Group_1__3
             {
-            pushFollow(FOLLOW_rule__Spec__Group_1__2__Impl_in_rule__Spec__Group_1__21806);
+            pushFollow(FOLLOW_rule__Spec__Group_1__2__Impl_in_rule__Spec__Group_1__21840);
             rule__Spec__Group_1__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Spec__Group_1__3_in_rule__Spec__Group_1__21809);
+            pushFollow(FOLLOW_rule__Spec__Group_1__3_in_rule__Spec__Group_1__21843);
             rule__Spec__Group_1__3();
 
             state._fsp--;
@@ -2506,26 +2549,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_1__2__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:859:1: rule__Spec__Group_1__2__Impl : ( ( ( '=' ) ) ( ( '=' )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:871:1: rule__Spec__Group_1__2__Impl : ( ( ( '=' ) ) ( ( '=' )* ) ) ;
     public final void rule__Spec__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:863:1: ( ( ( ( '=' ) ) ( ( '=' )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:864:1: ( ( ( '=' ) ) ( ( '=' )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:875:1: ( ( ( ( '=' ) ) ( ( '=' )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:876:1: ( ( ( '=' ) ) ( ( '=' )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:864:1: ( ( ( '=' ) ) ( ( '=' )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:865:1: ( ( '=' ) ) ( ( '=' )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:876:1: ( ( ( '=' ) ) ( ( '=' )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:877:1: ( ( '=' ) ) ( ( '=' )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:865:1: ( ( '=' ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:866:1: ( '=' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:877:1: ( ( '=' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:878:1: ( '=' )
             {
              before(grammarAccess.getSpecAccess().getEqualsSignKeyword_1_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:867:1: ( '=' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:868:2: '='
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:879:1: ( '=' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:880:2: '='
             {
-            match(input,12,FOLLOW_12_in_rule__Spec__Group_1__2__Impl1840); 
+            match(input,12,FOLLOW_12_in_rule__Spec__Group_1__2__Impl1874); 
 
             }
 
@@ -2533,11 +2576,11 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:872:1: ( ( '=' )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:873:1: ( '=' )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:884:1: ( ( '=' )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:885:1: ( '=' )*
             {
              before(grammarAccess.getSpecAccess().getEqualsSignKeyword_1_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:874:1: ( '=' )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:886:1: ( '=' )*
             loop13:
             do {
                 int alt13=2;
@@ -2550,9 +2593,9 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:875:2: '='
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:887:2: '='
             	    {
-            	    match(input,12,FOLLOW_12_in_rule__Spec__Group_1__2__Impl1856); 
+            	    match(input,12,FOLLOW_12_in_rule__Spec__Group_1__2__Impl1890); 
 
             	    }
             	    break;
@@ -2588,16 +2631,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_1__3"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:887:1: rule__Spec__Group_1__3 : rule__Spec__Group_1__3__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:899:1: rule__Spec__Group_1__3 : rule__Spec__Group_1__3__Impl ;
     public final void rule__Spec__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:891:1: ( rule__Spec__Group_1__3__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:892:2: rule__Spec__Group_1__3__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:903:1: ( rule__Spec__Group_1__3__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:904:2: rule__Spec__Group_1__3__Impl
             {
-            pushFollow(FOLLOW_rule__Spec__Group_1__3__Impl_in_rule__Spec__Group_1__31891);
+            pushFollow(FOLLOW_rule__Spec__Group_1__3__Impl_in_rule__Spec__Group_1__31925);
             rule__Spec__Group_1__3__Impl();
 
             state._fsp--;
@@ -2621,26 +2664,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__Group_1__3__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:898:1: rule__Spec__Group_1__3__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:910:1: rule__Spec__Group_1__3__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
     public final void rule__Spec__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:902:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:903:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:914:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:915:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:903:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:904:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:915:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:916:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:904:1: ( ( RULE_SINGLE_NL ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:905:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:916:1: ( ( RULE_SINGLE_NL ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:917:1: ( RULE_SINGLE_NL )
             {
              before(grammarAccess.getSpecAccess().getSINGLE_NLTerminalRuleCall_1_3()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:906:1: ( RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:906:3: RULE_SINGLE_NL
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:918:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:918:3: RULE_SINGLE_NL
             {
-            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__3__Impl1921); 
+            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__3__Impl1955); 
 
             }
 
@@ -2648,11 +2691,11 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:909:1: ( ( RULE_SINGLE_NL )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:910:1: ( RULE_SINGLE_NL )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:921:1: ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:922:1: ( RULE_SINGLE_NL )*
             {
              before(grammarAccess.getSpecAccess().getSINGLE_NLTerminalRuleCall_1_3()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:911:1: ( RULE_SINGLE_NL )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:923:1: ( RULE_SINGLE_NL )*
             loop14:
             do {
                 int alt14=2;
@@ -2665,9 +2708,9 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:911:3: RULE_SINGLE_NL
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:923:3: RULE_SINGLE_NL
             	    {
-            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__3__Impl1934); 
+            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__3__Impl1968); 
 
             	    }
             	    break;
@@ -2703,21 +2746,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_0__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:930:1: rule__Scenario__Group_0__0 : rule__Scenario__Group_0__0__Impl rule__Scenario__Group_0__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:942:1: rule__Scenario__Group_0__0 : rule__Scenario__Group_0__0__Impl rule__Scenario__Group_0__1 ;
     public final void rule__Scenario__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:934:1: ( rule__Scenario__Group_0__0__Impl rule__Scenario__Group_0__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:935:2: rule__Scenario__Group_0__0__Impl rule__Scenario__Group_0__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:946:1: ( rule__Scenario__Group_0__0__Impl rule__Scenario__Group_0__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:947:2: rule__Scenario__Group_0__0__Impl rule__Scenario__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Scenario__Group_0__0__Impl_in_rule__Scenario__Group_0__01975);
+            pushFollow(FOLLOW_rule__Scenario__Group_0__0__Impl_in_rule__Scenario__Group_0__02009);
             rule__Scenario__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Scenario__Group_0__1_in_rule__Scenario__Group_0__01978);
+            pushFollow(FOLLOW_rule__Scenario__Group_0__1_in_rule__Scenario__Group_0__02012);
             rule__Scenario__Group_0__1();
 
             state._fsp--;
@@ -2741,20 +2784,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_0__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:942:1: rule__Scenario__Group_0__0__Impl : ( '## ' ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:954:1: rule__Scenario__Group_0__0__Impl : ( '## ' ) ;
     public final void rule__Scenario__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:946:1: ( ( '## ' ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:947:1: ( '## ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:958:1: ( ( '## ' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:959:1: ( '## ' )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:947:1: ( '## ' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:948:1: '## '
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:959:1: ( '## ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:960:1: '## '
             {
              before(grammarAccess.getScenarioAccess().getNumberSignNumberSignSpaceKeyword_0_0()); 
-            match(input,17,FOLLOW_17_in_rule__Scenario__Group_0__0__Impl2006); 
+            match(input,17,FOLLOW_17_in_rule__Scenario__Group_0__0__Impl2040); 
              after(grammarAccess.getScenarioAccess().getNumberSignNumberSignSpaceKeyword_0_0()); 
 
             }
@@ -2778,21 +2821,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_0__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:961:1: rule__Scenario__Group_0__1 : rule__Scenario__Group_0__1__Impl rule__Scenario__Group_0__2 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:973:1: rule__Scenario__Group_0__1 : rule__Scenario__Group_0__1__Impl rule__Scenario__Group_0__2 ;
     public final void rule__Scenario__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:965:1: ( rule__Scenario__Group_0__1__Impl rule__Scenario__Group_0__2 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:966:2: rule__Scenario__Group_0__1__Impl rule__Scenario__Group_0__2
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:977:1: ( rule__Scenario__Group_0__1__Impl rule__Scenario__Group_0__2 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:978:2: rule__Scenario__Group_0__1__Impl rule__Scenario__Group_0__2
             {
-            pushFollow(FOLLOW_rule__Scenario__Group_0__1__Impl_in_rule__Scenario__Group_0__12037);
+            pushFollow(FOLLOW_rule__Scenario__Group_0__1__Impl_in_rule__Scenario__Group_0__12071);
             rule__Scenario__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Scenario__Group_0__2_in_rule__Scenario__Group_0__12040);
+            pushFollow(FOLLOW_rule__Scenario__Group_0__2_in_rule__Scenario__Group_0__12074);
             rule__Scenario__Group_0__2();
 
             state._fsp--;
@@ -2816,26 +2859,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_0__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:973:1: rule__Scenario__Group_0__1__Impl : ( ( ( rule__Scenario__NameAssignment_0_1 ) ) ( ( rule__Scenario__NameAssignment_0_1 )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:985:1: rule__Scenario__Group_0__1__Impl : ( ( ( rule__Scenario__NameAssignment_0_1 ) ) ( ( rule__Scenario__NameAssignment_0_1 )* ) ) ;
     public final void rule__Scenario__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:977:1: ( ( ( ( rule__Scenario__NameAssignment_0_1 ) ) ( ( rule__Scenario__NameAssignment_0_1 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:978:1: ( ( ( rule__Scenario__NameAssignment_0_1 ) ) ( ( rule__Scenario__NameAssignment_0_1 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:989:1: ( ( ( ( rule__Scenario__NameAssignment_0_1 ) ) ( ( rule__Scenario__NameAssignment_0_1 )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:990:1: ( ( ( rule__Scenario__NameAssignment_0_1 ) ) ( ( rule__Scenario__NameAssignment_0_1 )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:978:1: ( ( ( rule__Scenario__NameAssignment_0_1 ) ) ( ( rule__Scenario__NameAssignment_0_1 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:979:1: ( ( rule__Scenario__NameAssignment_0_1 ) ) ( ( rule__Scenario__NameAssignment_0_1 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:990:1: ( ( ( rule__Scenario__NameAssignment_0_1 ) ) ( ( rule__Scenario__NameAssignment_0_1 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:991:1: ( ( rule__Scenario__NameAssignment_0_1 ) ) ( ( rule__Scenario__NameAssignment_0_1 )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:979:1: ( ( rule__Scenario__NameAssignment_0_1 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:980:1: ( rule__Scenario__NameAssignment_0_1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:991:1: ( ( rule__Scenario__NameAssignment_0_1 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:992:1: ( rule__Scenario__NameAssignment_0_1 )
             {
              before(grammarAccess.getScenarioAccess().getNameAssignment_0_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:981:1: ( rule__Scenario__NameAssignment_0_1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:981:2: rule__Scenario__NameAssignment_0_1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:993:1: ( rule__Scenario__NameAssignment_0_1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:993:2: rule__Scenario__NameAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__Scenario__NameAssignment_0_1_in_rule__Scenario__Group_0__1__Impl2069);
+            pushFollow(FOLLOW_rule__Scenario__NameAssignment_0_1_in_rule__Scenario__Group_0__1__Impl2103);
             rule__Scenario__NameAssignment_0_1();
 
             state._fsp--;
@@ -2847,11 +2890,11 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:984:1: ( ( rule__Scenario__NameAssignment_0_1 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:985:1: ( rule__Scenario__NameAssignment_0_1 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:996:1: ( ( rule__Scenario__NameAssignment_0_1 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:997:1: ( rule__Scenario__NameAssignment_0_1 )*
             {
              before(grammarAccess.getScenarioAccess().getNameAssignment_0_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:986:1: ( rule__Scenario__NameAssignment_0_1 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:998:1: ( rule__Scenario__NameAssignment_0_1 )*
             loop15:
             do {
                 int alt15=2;
@@ -2864,9 +2907,9 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
                 switch (alt15) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:986:2: rule__Scenario__NameAssignment_0_1
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:998:2: rule__Scenario__NameAssignment_0_1
             	    {
-            	    pushFollow(FOLLOW_rule__Scenario__NameAssignment_0_1_in_rule__Scenario__Group_0__1__Impl2081);
+            	    pushFollow(FOLLOW_rule__Scenario__NameAssignment_0_1_in_rule__Scenario__Group_0__1__Impl2115);
             	    rule__Scenario__NameAssignment_0_1();
 
             	    state._fsp--;
@@ -2906,16 +2949,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_0__2"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:997:1: rule__Scenario__Group_0__2 : rule__Scenario__Group_0__2__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1009:1: rule__Scenario__Group_0__2 : rule__Scenario__Group_0__2__Impl ;
     public final void rule__Scenario__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1001:1: ( rule__Scenario__Group_0__2__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1002:2: rule__Scenario__Group_0__2__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1013:1: ( rule__Scenario__Group_0__2__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1014:2: rule__Scenario__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__Scenario__Group_0__2__Impl_in_rule__Scenario__Group_0__22114);
+            pushFollow(FOLLOW_rule__Scenario__Group_0__2__Impl_in_rule__Scenario__Group_0__22148);
             rule__Scenario__Group_0__2__Impl();
 
             state._fsp--;
@@ -2939,26 +2982,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_0__2__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1008:1: rule__Scenario__Group_0__2__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1020:1: rule__Scenario__Group_0__2__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
     public final void rule__Scenario__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1012:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1013:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1024:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1025:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1013:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1014:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1025:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1026:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1014:1: ( ( RULE_SINGLE_NL ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1015:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1026:1: ( ( RULE_SINGLE_NL ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1027:1: ( RULE_SINGLE_NL )
             {
              before(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_0_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1016:1: ( RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1016:3: RULE_SINGLE_NL
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1028:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1028:3: RULE_SINGLE_NL
             {
-            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_0__2__Impl2144); 
+            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_0__2__Impl2178); 
 
             }
 
@@ -2966,11 +3009,11 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1019:1: ( ( RULE_SINGLE_NL )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1020:1: ( RULE_SINGLE_NL )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1031:1: ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1032:1: ( RULE_SINGLE_NL )*
             {
              before(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_0_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1021:1: ( RULE_SINGLE_NL )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1033:1: ( RULE_SINGLE_NL )*
             loop16:
             do {
                 int alt16=2;
@@ -2983,9 +3026,9 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
                 switch (alt16) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1021:3: RULE_SINGLE_NL
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1033:3: RULE_SINGLE_NL
             	    {
-            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_0__2__Impl2157); 
+            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_0__2__Impl2191); 
 
             	    }
             	    break;
@@ -3021,21 +3064,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_1__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1038:1: rule__Scenario__Group_1__0 : rule__Scenario__Group_1__0__Impl rule__Scenario__Group_1__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1050:1: rule__Scenario__Group_1__0 : rule__Scenario__Group_1__0__Impl rule__Scenario__Group_1__1 ;
     public final void rule__Scenario__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1042:1: ( rule__Scenario__Group_1__0__Impl rule__Scenario__Group_1__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1043:2: rule__Scenario__Group_1__0__Impl rule__Scenario__Group_1__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1054:1: ( rule__Scenario__Group_1__0__Impl rule__Scenario__Group_1__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1055:2: rule__Scenario__Group_1__0__Impl rule__Scenario__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Scenario__Group_1__0__Impl_in_rule__Scenario__Group_1__02196);
+            pushFollow(FOLLOW_rule__Scenario__Group_1__0__Impl_in_rule__Scenario__Group_1__02230);
             rule__Scenario__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Scenario__Group_1__1_in_rule__Scenario__Group_1__02199);
+            pushFollow(FOLLOW_rule__Scenario__Group_1__1_in_rule__Scenario__Group_1__02233);
             rule__Scenario__Group_1__1();
 
             state._fsp--;
@@ -3059,31 +3102,74 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_1__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1050:1: rule__Scenario__Group_1__0__Impl : ( ( rule__Scenario__Group_1_0__0 ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1062:1: rule__Scenario__Group_1__0__Impl : ( ( ( rule__Scenario__NameAssignment_1_0 ) ) ( ( rule__Scenario__NameAssignment_1_0 )* ) ) ;
     public final void rule__Scenario__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1054:1: ( ( ( rule__Scenario__Group_1_0__0 ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1055:1: ( ( rule__Scenario__Group_1_0__0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1066:1: ( ( ( ( rule__Scenario__NameAssignment_1_0 ) ) ( ( rule__Scenario__NameAssignment_1_0 )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1067:1: ( ( ( rule__Scenario__NameAssignment_1_0 ) ) ( ( rule__Scenario__NameAssignment_1_0 )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1055:1: ( ( rule__Scenario__Group_1_0__0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1056:1: ( rule__Scenario__Group_1_0__0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1067:1: ( ( ( rule__Scenario__NameAssignment_1_0 ) ) ( ( rule__Scenario__NameAssignment_1_0 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1068:1: ( ( rule__Scenario__NameAssignment_1_0 ) ) ( ( rule__Scenario__NameAssignment_1_0 )* )
             {
-             before(grammarAccess.getScenarioAccess().getGroup_1_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1057:1: ( rule__Scenario__Group_1_0__0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1057:2: rule__Scenario__Group_1_0__0
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1068:1: ( ( rule__Scenario__NameAssignment_1_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1069:1: ( rule__Scenario__NameAssignment_1_0 )
             {
-            pushFollow(FOLLOW_rule__Scenario__Group_1_0__0_in_rule__Scenario__Group_1__0__Impl2226);
-            rule__Scenario__Group_1_0__0();
+             before(grammarAccess.getScenarioAccess().getNameAssignment_1_0()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1070:1: ( rule__Scenario__NameAssignment_1_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1070:2: rule__Scenario__NameAssignment_1_0
+            {
+            pushFollow(FOLLOW_rule__Scenario__NameAssignment_1_0_in_rule__Scenario__Group_1__0__Impl2262);
+            rule__Scenario__NameAssignment_1_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getScenarioAccess().getGroup_1_0()); 
+             after(grammarAccess.getScenarioAccess().getNameAssignment_1_0()); 
+
+            }
+
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1073:1: ( ( rule__Scenario__NameAssignment_1_0 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1074:1: ( rule__Scenario__NameAssignment_1_0 )*
+            {
+             before(grammarAccess.getScenarioAccess().getNameAssignment_1_0()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1075:1: ( rule__Scenario__NameAssignment_1_0 )*
+            loop17:
+            do {
+                int alt17=2;
+                int LA17_0 = input.LA(1);
+
+                if ( ((LA17_0>=RULE_WORD && LA17_0<=RULE_DYNAMIC_PARAM)) ) {
+                    alt17=1;
+                }
+
+
+                switch (alt17) {
+            	case 1 :
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1075:2: rule__Scenario__NameAssignment_1_0
+            	    {
+            	    pushFollow(FOLLOW_rule__Scenario__NameAssignment_1_0_in_rule__Scenario__Group_1__0__Impl2274);
+            	    rule__Scenario__NameAssignment_1_0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop17;
+                }
+            } while (true);
+
+             after(grammarAccess.getScenarioAccess().getNameAssignment_1_0()); 
+
+            }
+
 
             }
 
@@ -3106,21 +3192,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_1__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1067:1: rule__Scenario__Group_1__1 : rule__Scenario__Group_1__1__Impl rule__Scenario__Group_1__2 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1086:1: rule__Scenario__Group_1__1 : rule__Scenario__Group_1__1__Impl rule__Scenario__Group_1__2 ;
     public final void rule__Scenario__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1071:1: ( rule__Scenario__Group_1__1__Impl rule__Scenario__Group_1__2 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1072:2: rule__Scenario__Group_1__1__Impl rule__Scenario__Group_1__2
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1090:1: ( rule__Scenario__Group_1__1__Impl rule__Scenario__Group_1__2 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1091:2: rule__Scenario__Group_1__1__Impl rule__Scenario__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Scenario__Group_1__1__Impl_in_rule__Scenario__Group_1__12256);
+            pushFollow(FOLLOW_rule__Scenario__Group_1__1__Impl_in_rule__Scenario__Group_1__12307);
             rule__Scenario__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Scenario__Group_1__2_in_rule__Scenario__Group_1__12259);
+            pushFollow(FOLLOW_rule__Scenario__Group_1__2_in_rule__Scenario__Group_1__12310);
             rule__Scenario__Group_1__2();
 
             state._fsp--;
@@ -3144,68 +3230,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_1__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1079:1: rule__Scenario__Group_1__1__Impl : ( ( ( rule__Scenario__CommentsAssignment_1_1 ) ) ( ( rule__Scenario__CommentsAssignment_1_1 )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1098:1: rule__Scenario__Group_1__1__Impl : ( RULE_SINGLE_NL ) ;
     public final void rule__Scenario__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1083:1: ( ( ( ( rule__Scenario__CommentsAssignment_1_1 ) ) ( ( rule__Scenario__CommentsAssignment_1_1 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1084:1: ( ( ( rule__Scenario__CommentsAssignment_1_1 ) ) ( ( rule__Scenario__CommentsAssignment_1_1 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1102:1: ( ( RULE_SINGLE_NL ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1103:1: ( RULE_SINGLE_NL )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1084:1: ( ( ( rule__Scenario__CommentsAssignment_1_1 ) ) ( ( rule__Scenario__CommentsAssignment_1_1 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1085:1: ( ( rule__Scenario__CommentsAssignment_1_1 ) ) ( ( rule__Scenario__CommentsAssignment_1_1 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1103:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1104:1: RULE_SINGLE_NL
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1085:1: ( ( rule__Scenario__CommentsAssignment_1_1 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1086:1: ( rule__Scenario__CommentsAssignment_1_1 )
-            {
-             before(grammarAccess.getScenarioAccess().getCommentsAssignment_1_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1087:1: ( rule__Scenario__CommentsAssignment_1_1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1087:2: rule__Scenario__CommentsAssignment_1_1
-            {
-            pushFollow(FOLLOW_rule__Scenario__CommentsAssignment_1_1_in_rule__Scenario__Group_1__1__Impl2288);
-            rule__Scenario__CommentsAssignment_1_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getScenarioAccess().getCommentsAssignment_1_1()); 
-
-            }
-
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1090:1: ( ( rule__Scenario__CommentsAssignment_1_1 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1091:1: ( rule__Scenario__CommentsAssignment_1_1 )*
-            {
-             before(grammarAccess.getScenarioAccess().getCommentsAssignment_1_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1092:1: ( rule__Scenario__CommentsAssignment_1_1 )*
-            loop17:
-            do {
-                int alt17=2;
-                alt17 = dfa17.predict(input);
-                switch (alt17) {
-            	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1092:2: rule__Scenario__CommentsAssignment_1_1
-            	    {
-            	    pushFollow(FOLLOW_rule__Scenario__CommentsAssignment_1_1_in_rule__Scenario__Group_1__1__Impl2300);
-            	    rule__Scenario__CommentsAssignment_1_1();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop17;
-                }
-            } while (true);
-
-             after(grammarAccess.getScenarioAccess().getCommentsAssignment_1_1()); 
-
-            }
-
+             before(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_1()); 
+            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1__1__Impl2337); 
+             after(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_1()); 
 
             }
 
@@ -3228,17 +3267,22 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_1__2"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1103:1: rule__Scenario__Group_1__2 : rule__Scenario__Group_1__2__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1115:1: rule__Scenario__Group_1__2 : rule__Scenario__Group_1__2__Impl rule__Scenario__Group_1__3 ;
     public final void rule__Scenario__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1107:1: ( rule__Scenario__Group_1__2__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1108:2: rule__Scenario__Group_1__2__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1119:1: ( rule__Scenario__Group_1__2__Impl rule__Scenario__Group_1__3 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1120:2: rule__Scenario__Group_1__2__Impl rule__Scenario__Group_1__3
             {
-            pushFollow(FOLLOW_rule__Scenario__Group_1__2__Impl_in_rule__Scenario__Group_1__22333);
+            pushFollow(FOLLOW_rule__Scenario__Group_1__2__Impl_in_rule__Scenario__Group_1__22366);
             rule__Scenario__Group_1__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Scenario__Group_1__3_in_rule__Scenario__Group_1__22369);
+            rule__Scenario__Group_1__3();
 
             state._fsp--;
 
@@ -3261,42 +3305,66 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__Group_1__2__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1114:1: rule__Scenario__Group_1__2__Impl : ( ( rule__Scenario__Group_1_2__0 )? ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1127:1: rule__Scenario__Group_1__2__Impl : ( ( ( '-' ) ) ( ( '-' )* ) ) ;
     public final void rule__Scenario__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1118:1: ( ( ( rule__Scenario__Group_1_2__0 )? ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1119:1: ( ( rule__Scenario__Group_1_2__0 )? )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1131:1: ( ( ( ( '-' ) ) ( ( '-' )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1132:1: ( ( ( '-' ) ) ( ( '-' )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1119:1: ( ( rule__Scenario__Group_1_2__0 )? )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1120:1: ( rule__Scenario__Group_1_2__0 )?
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1132:1: ( ( ( '-' ) ) ( ( '-' )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1133:1: ( ( '-' ) ) ( ( '-' )* )
             {
-             before(grammarAccess.getScenarioAccess().getGroup_1_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1121:1: ( rule__Scenario__Group_1_2__0 )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
-
-            if ( (LA18_0==19) ) {
-                alt18=1;
-            }
-            switch (alt18) {
-                case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1121:2: rule__Scenario__Group_1_2__0
-                    {
-                    pushFollow(FOLLOW_rule__Scenario__Group_1_2__0_in_rule__Scenario__Group_1__2__Impl2360);
-                    rule__Scenario__Group_1_2__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1133:1: ( ( '-' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1134:1: ( '-' )
+            {
+             before(grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_2()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1135:1: ( '-' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1136:2: '-'
+            {
+            match(input,11,FOLLOW_11_in_rule__Scenario__Group_1__2__Impl2400); 
 
             }
 
-             after(grammarAccess.getScenarioAccess().getGroup_1_2()); 
+             after(grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_2()); 
+
+            }
+
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1140:1: ( ( '-' )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1141:1: ( '-' )*
+            {
+             before(grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_2()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1142:1: ( '-' )*
+            loop18:
+            do {
+                int alt18=2;
+                int LA18_0 = input.LA(1);
+
+                if ( (LA18_0==11) ) {
+                    alt18=1;
+                }
+
+
+                switch (alt18) {
+            	case 1 :
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1143:2: '-'
+            	    {
+            	    match(input,11,FOLLOW_11_in_rule__Scenario__Group_1__2__Impl2416); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop18;
+                }
+            } while (true);
+
+             after(grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_2()); 
+
+            }
+
 
             }
 
@@ -3318,23 +3386,18 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Scenario__Group_1__2__Impl"
 
 
-    // $ANTLR start "rule__Scenario__Group_1_0__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1137:1: rule__Scenario__Group_1_0__0 : rule__Scenario__Group_1_0__0__Impl rule__Scenario__Group_1_0__1 ;
-    public final void rule__Scenario__Group_1_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Scenario__Group_1__3"
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1155:1: rule__Scenario__Group_1__3 : rule__Scenario__Group_1__3__Impl ;
+    public final void rule__Scenario__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1141:1: ( rule__Scenario__Group_1_0__0__Impl rule__Scenario__Group_1_0__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1142:2: rule__Scenario__Group_1_0__0__Impl rule__Scenario__Group_1_0__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1159:1: ( rule__Scenario__Group_1__3__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1160:2: rule__Scenario__Group_1__3__Impl
             {
-            pushFollow(FOLLOW_rule__Scenario__Group_1_0__0__Impl_in_rule__Scenario__Group_1_0__02397);
-            rule__Scenario__Group_1_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Scenario__Group_1_0__1_in_rule__Scenario__Group_1_0__02400);
-            rule__Scenario__Group_1_0__1();
+            pushFollow(FOLLOW_rule__Scenario__Group_1__3__Impl_in_rule__Scenario__Group_1__32451);
+            rule__Scenario__Group_1__3__Impl();
 
             state._fsp--;
 
@@ -3353,65 +3416,57 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Scenario__Group_1_0__0"
+    // $ANTLR end "rule__Scenario__Group_1__3"
 
 
-    // $ANTLR start "rule__Scenario__Group_1_0__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1149:1: rule__Scenario__Group_1_0__0__Impl : ( ( ( rule__Scenario__NameAssignment_1_0_0 ) ) ( ( rule__Scenario__NameAssignment_1_0_0 )* ) ) ;
-    public final void rule__Scenario__Group_1_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Scenario__Group_1__3__Impl"
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1166:1: rule__Scenario__Group_1__3__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
+    public final void rule__Scenario__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1153:1: ( ( ( ( rule__Scenario__NameAssignment_1_0_0 ) ) ( ( rule__Scenario__NameAssignment_1_0_0 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1154:1: ( ( ( rule__Scenario__NameAssignment_1_0_0 ) ) ( ( rule__Scenario__NameAssignment_1_0_0 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1170:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1171:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1154:1: ( ( ( rule__Scenario__NameAssignment_1_0_0 ) ) ( ( rule__Scenario__NameAssignment_1_0_0 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1155:1: ( ( rule__Scenario__NameAssignment_1_0_0 ) ) ( ( rule__Scenario__NameAssignment_1_0_0 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1171:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1172:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1155:1: ( ( rule__Scenario__NameAssignment_1_0_0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1156:1: ( rule__Scenario__NameAssignment_1_0_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1172:1: ( ( RULE_SINGLE_NL ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1173:1: ( RULE_SINGLE_NL )
             {
-             before(grammarAccess.getScenarioAccess().getNameAssignment_1_0_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1157:1: ( rule__Scenario__NameAssignment_1_0_0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1157:2: rule__Scenario__NameAssignment_1_0_0
+             before(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_3()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1174:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1174:3: RULE_SINGLE_NL
             {
-            pushFollow(FOLLOW_rule__Scenario__NameAssignment_1_0_0_in_rule__Scenario__Group_1_0__0__Impl2429);
-            rule__Scenario__NameAssignment_1_0_0();
-
-            state._fsp--;
-
+            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1__3__Impl2481); 
 
             }
 
-             after(grammarAccess.getScenarioAccess().getNameAssignment_1_0_0()); 
+             after(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_3()); 
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1160:1: ( ( rule__Scenario__NameAssignment_1_0_0 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1161:1: ( rule__Scenario__NameAssignment_1_0_0 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1177:1: ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1178:1: ( RULE_SINGLE_NL )*
             {
-             before(grammarAccess.getScenarioAccess().getNameAssignment_1_0_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1162:1: ( rule__Scenario__NameAssignment_1_0_0 )*
+             before(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_3()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1179:1: ( RULE_SINGLE_NL )*
             loop19:
             do {
                 int alt19=2;
                 int LA19_0 = input.LA(1);
 
-                if ( ((LA19_0>=RULE_WORD && LA19_0<=RULE_DYNAMIC_PARAM)) ) {
+                if ( (LA19_0==RULE_SINGLE_NL) ) {
                     alt19=1;
                 }
 
 
                 switch (alt19) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1162:2: rule__Scenario__NameAssignment_1_0_0
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1179:3: RULE_SINGLE_NL
             	    {
-            	    pushFollow(FOLLOW_rule__Scenario__NameAssignment_1_0_0_in_rule__Scenario__Group_1_0__0__Impl2441);
-            	    rule__Scenario__NameAssignment_1_0_0();
-
-            	    state._fsp--;
-
+            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1__3__Impl2494); 
 
             	    }
             	    break;
@@ -3421,7 +3476,7 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getScenarioAccess().getNameAssignment_1_0_0()); 
+             after(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_3()); 
 
             }
 
@@ -3443,535 +3498,25 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Scenario__Group_1_0__0__Impl"
-
-
-    // $ANTLR start "rule__Scenario__Group_1_0__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1173:1: rule__Scenario__Group_1_0__1 : rule__Scenario__Group_1_0__1__Impl rule__Scenario__Group_1_0__2 ;
-    public final void rule__Scenario__Group_1_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1177:1: ( rule__Scenario__Group_1_0__1__Impl rule__Scenario__Group_1_0__2 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1178:2: rule__Scenario__Group_1_0__1__Impl rule__Scenario__Group_1_0__2
-            {
-            pushFollow(FOLLOW_rule__Scenario__Group_1_0__1__Impl_in_rule__Scenario__Group_1_0__12474);
-            rule__Scenario__Group_1_0__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Scenario__Group_1_0__2_in_rule__Scenario__Group_1_0__12477);
-            rule__Scenario__Group_1_0__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__Group_1_0__1"
-
-
-    // $ANTLR start "rule__Scenario__Group_1_0__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1185:1: rule__Scenario__Group_1_0__1__Impl : ( RULE_SINGLE_NL ) ;
-    public final void rule__Scenario__Group_1_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1189:1: ( ( RULE_SINGLE_NL ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1190:1: ( RULE_SINGLE_NL )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1190:1: ( RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1191:1: RULE_SINGLE_NL
-            {
-             before(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_0_1()); 
-            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1_0__1__Impl2504); 
-             after(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_0_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__Group_1_0__1__Impl"
-
-
-    // $ANTLR start "rule__Scenario__Group_1_0__2"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1202:1: rule__Scenario__Group_1_0__2 : rule__Scenario__Group_1_0__2__Impl rule__Scenario__Group_1_0__3 ;
-    public final void rule__Scenario__Group_1_0__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1206:1: ( rule__Scenario__Group_1_0__2__Impl rule__Scenario__Group_1_0__3 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1207:2: rule__Scenario__Group_1_0__2__Impl rule__Scenario__Group_1_0__3
-            {
-            pushFollow(FOLLOW_rule__Scenario__Group_1_0__2__Impl_in_rule__Scenario__Group_1_0__22533);
-            rule__Scenario__Group_1_0__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Scenario__Group_1_0__3_in_rule__Scenario__Group_1_0__22536);
-            rule__Scenario__Group_1_0__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__Group_1_0__2"
-
-
-    // $ANTLR start "rule__Scenario__Group_1_0__2__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1214:1: rule__Scenario__Group_1_0__2__Impl : ( ( ( '-' ) ) ( ( '-' )* ) ) ;
-    public final void rule__Scenario__Group_1_0__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1218:1: ( ( ( ( '-' ) ) ( ( '-' )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1219:1: ( ( ( '-' ) ) ( ( '-' )* ) )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1219:1: ( ( ( '-' ) ) ( ( '-' )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1220:1: ( ( '-' ) ) ( ( '-' )* )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1220:1: ( ( '-' ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1221:1: ( '-' )
-            {
-             before(grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_0_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1222:1: ( '-' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1223:2: '-'
-            {
-            match(input,11,FOLLOW_11_in_rule__Scenario__Group_1_0__2__Impl2567); 
-
-            }
-
-             after(grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_0_2()); 
-
-            }
-
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1227:1: ( ( '-' )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1228:1: ( '-' )*
-            {
-             before(grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_0_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1229:1: ( '-' )*
-            loop20:
-            do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
-
-                if ( (LA20_0==11) ) {
-                    alt20=1;
-                }
-
-
-                switch (alt20) {
-            	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1230:2: '-'
-            	    {
-            	    match(input,11,FOLLOW_11_in_rule__Scenario__Group_1_0__2__Impl2583); 
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop20;
-                }
-            } while (true);
-
-             after(grammarAccess.getScenarioAccess().getHyphenMinusKeyword_1_0_2()); 
-
-            }
-
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__Group_1_0__2__Impl"
-
-
-    // $ANTLR start "rule__Scenario__Group_1_0__3"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1242:1: rule__Scenario__Group_1_0__3 : rule__Scenario__Group_1_0__3__Impl ;
-    public final void rule__Scenario__Group_1_0__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1246:1: ( rule__Scenario__Group_1_0__3__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1247:2: rule__Scenario__Group_1_0__3__Impl
-            {
-            pushFollow(FOLLOW_rule__Scenario__Group_1_0__3__Impl_in_rule__Scenario__Group_1_0__32618);
-            rule__Scenario__Group_1_0__3__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__Group_1_0__3"
-
-
-    // $ANTLR start "rule__Scenario__Group_1_0__3__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1253:1: rule__Scenario__Group_1_0__3__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
-    public final void rule__Scenario__Group_1_0__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1257:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1258:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1258:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1259:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1259:1: ( ( RULE_SINGLE_NL ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1260:1: ( RULE_SINGLE_NL )
-            {
-             before(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_0_3()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1261:1: ( RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1261:3: RULE_SINGLE_NL
-            {
-            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1_0__3__Impl2648); 
-
-            }
-
-             after(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_0_3()); 
-
-            }
-
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1264:1: ( ( RULE_SINGLE_NL )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1265:1: ( RULE_SINGLE_NL )*
-            {
-             before(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_0_3()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1266:1: ( RULE_SINGLE_NL )*
-            loop21:
-            do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
-
-                if ( (LA21_0==RULE_SINGLE_NL) ) {
-                    alt21=1;
-                }
-
-
-                switch (alt21) {
-            	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1266:3: RULE_SINGLE_NL
-            	    {
-            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1_0__3__Impl2661); 
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop21;
-                }
-            } while (true);
-
-             after(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_0_3()); 
-
-            }
-
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__Group_1_0__3__Impl"
-
-
-    // $ANTLR start "rule__Scenario__Group_1_2__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1285:1: rule__Scenario__Group_1_2__0 : rule__Scenario__Group_1_2__0__Impl rule__Scenario__Group_1_2__1 ;
-    public final void rule__Scenario__Group_1_2__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1289:1: ( rule__Scenario__Group_1_2__0__Impl rule__Scenario__Group_1_2__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1290:2: rule__Scenario__Group_1_2__0__Impl rule__Scenario__Group_1_2__1
-            {
-            pushFollow(FOLLOW_rule__Scenario__Group_1_2__0__Impl_in_rule__Scenario__Group_1_2__02702);
-            rule__Scenario__Group_1_2__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Scenario__Group_1_2__1_in_rule__Scenario__Group_1_2__02705);
-            rule__Scenario__Group_1_2__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__Group_1_2__0"
-
-
-    // $ANTLR start "rule__Scenario__Group_1_2__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1297:1: rule__Scenario__Group_1_2__0__Impl : ( ( rule__Scenario__TagsAssignment_1_2_0 ) ) ;
-    public final void rule__Scenario__Group_1_2__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1301:1: ( ( ( rule__Scenario__TagsAssignment_1_2_0 ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1302:1: ( ( rule__Scenario__TagsAssignment_1_2_0 ) )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1302:1: ( ( rule__Scenario__TagsAssignment_1_2_0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1303:1: ( rule__Scenario__TagsAssignment_1_2_0 )
-            {
-             before(grammarAccess.getScenarioAccess().getTagsAssignment_1_2_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1304:1: ( rule__Scenario__TagsAssignment_1_2_0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1304:2: rule__Scenario__TagsAssignment_1_2_0
-            {
-            pushFollow(FOLLOW_rule__Scenario__TagsAssignment_1_2_0_in_rule__Scenario__Group_1_2__0__Impl2732);
-            rule__Scenario__TagsAssignment_1_2_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getScenarioAccess().getTagsAssignment_1_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__Group_1_2__0__Impl"
-
-
-    // $ANTLR start "rule__Scenario__Group_1_2__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1314:1: rule__Scenario__Group_1_2__1 : rule__Scenario__Group_1_2__1__Impl ;
-    public final void rule__Scenario__Group_1_2__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1318:1: ( rule__Scenario__Group_1_2__1__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1319:2: rule__Scenario__Group_1_2__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Scenario__Group_1_2__1__Impl_in_rule__Scenario__Group_1_2__12762);
-            rule__Scenario__Group_1_2__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__Group_1_2__1"
-
-
-    // $ANTLR start "rule__Scenario__Group_1_2__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1325:1: rule__Scenario__Group_1_2__1__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
-    public final void rule__Scenario__Group_1_2__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1329:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1330:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1330:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1331:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1331:1: ( ( RULE_SINGLE_NL ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1332:1: ( RULE_SINGLE_NL )
-            {
-             before(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_2_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1333:1: ( RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1333:3: RULE_SINGLE_NL
-            {
-            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1_2__1__Impl2792); 
-
-            }
-
-             after(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_2_1()); 
-
-            }
-
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1336:1: ( ( RULE_SINGLE_NL )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1337:1: ( RULE_SINGLE_NL )*
-            {
-             before(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_2_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1338:1: ( RULE_SINGLE_NL )*
-            loop22:
-            do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
-
-                if ( (LA22_0==RULE_SINGLE_NL) ) {
-                    alt22=1;
-                }
-
-
-                switch (alt22) {
-            	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1338:3: RULE_SINGLE_NL
-            	    {
-            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1_2__1__Impl2805); 
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop22;
-                }
-            } while (true);
-
-             after(grammarAccess.getScenarioAccess().getSINGLE_NLTerminalRuleCall_1_2_1()); 
-
-            }
-
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__Group_1_2__1__Impl"
+    // $ANTLR end "rule__Scenario__Group_1__3__Impl"
 
 
     // $ANTLR start "rule__Step__Group__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1353:1: rule__Step__Group__0 : rule__Step__Group__0__Impl rule__Step__Group__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1198:1: rule__Step__Group__0 : rule__Step__Group__0__Impl rule__Step__Group__1 ;
     public final void rule__Step__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1357:1: ( rule__Step__Group__0__Impl rule__Step__Group__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1358:2: rule__Step__Group__0__Impl rule__Step__Group__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1202:1: ( rule__Step__Group__0__Impl rule__Step__Group__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1203:2: rule__Step__Group__0__Impl rule__Step__Group__1
             {
-            pushFollow(FOLLOW_rule__Step__Group__0__Impl_in_rule__Step__Group__02842);
+            pushFollow(FOLLOW_rule__Step__Group__0__Impl_in_rule__Step__Group__02535);
             rule__Step__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Step__Group__1_in_rule__Step__Group__02845);
+            pushFollow(FOLLOW_rule__Step__Group__1_in_rule__Step__Group__02538);
             rule__Step__Group__1();
 
             state._fsp--;
@@ -3995,21 +3540,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1365:1: rule__Step__Group__0__Impl : ( () ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1210:1: rule__Step__Group__0__Impl : ( () ) ;
     public final void rule__Step__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1369:1: ( ( () ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1370:1: ( () )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1214:1: ( ( () ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1215:1: ( () )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1370:1: ( () )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1371:1: ()
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1215:1: ( () )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1216:1: ()
             {
              before(grammarAccess.getStepAccess().getStepAction_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1372:1: ()
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1374:1: 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1217:1: ()
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1219:1: 
             {
             }
 
@@ -4032,21 +3577,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1384:1: rule__Step__Group__1 : rule__Step__Group__1__Impl rule__Step__Group__2 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1229:1: rule__Step__Group__1 : rule__Step__Group__1__Impl rule__Step__Group__2 ;
     public final void rule__Step__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1388:1: ( rule__Step__Group__1__Impl rule__Step__Group__2 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1389:2: rule__Step__Group__1__Impl rule__Step__Group__2
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1233:1: ( rule__Step__Group__1__Impl rule__Step__Group__2 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1234:2: rule__Step__Group__1__Impl rule__Step__Group__2
             {
-            pushFollow(FOLLOW_rule__Step__Group__1__Impl_in_rule__Step__Group__12903);
+            pushFollow(FOLLOW_rule__Step__Group__1__Impl_in_rule__Step__Group__12596);
             rule__Step__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Step__Group__2_in_rule__Step__Group__12906);
+            pushFollow(FOLLOW_rule__Step__Group__2_in_rule__Step__Group__12599);
             rule__Step__Group__2();
 
             state._fsp--;
@@ -4070,20 +3615,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1396:1: rule__Step__Group__1__Impl : ( '* ' ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1241:1: rule__Step__Group__1__Impl : ( '* ' ) ;
     public final void rule__Step__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1400:1: ( ( '* ' ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1401:1: ( '* ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1245:1: ( ( '* ' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1246:1: ( '* ' )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1401:1: ( '* ' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1402:1: '* '
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1246:1: ( '* ' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1247:1: '* '
             {
              before(grammarAccess.getStepAccess().getAsteriskSpaceKeyword_1()); 
-            match(input,18,FOLLOW_18_in_rule__Step__Group__1__Impl2934); 
+            match(input,18,FOLLOW_18_in_rule__Step__Group__1__Impl2627); 
              after(grammarAccess.getStepAccess().getAsteriskSpaceKeyword_1()); 
 
             }
@@ -4107,21 +3652,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group__2"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1415:1: rule__Step__Group__2 : rule__Step__Group__2__Impl rule__Step__Group__3 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1260:1: rule__Step__Group__2 : rule__Step__Group__2__Impl rule__Step__Group__3 ;
     public final void rule__Step__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1419:1: ( rule__Step__Group__2__Impl rule__Step__Group__3 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1420:2: rule__Step__Group__2__Impl rule__Step__Group__3
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1264:1: ( rule__Step__Group__2__Impl rule__Step__Group__3 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1265:2: rule__Step__Group__2__Impl rule__Step__Group__3
             {
-            pushFollow(FOLLOW_rule__Step__Group__2__Impl_in_rule__Step__Group__22965);
+            pushFollow(FOLLOW_rule__Step__Group__2__Impl_in_rule__Step__Group__22658);
             rule__Step__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Step__Group__3_in_rule__Step__Group__22968);
+            pushFollow(FOLLOW_rule__Step__Group__3_in_rule__Step__Group__22661);
             rule__Step__Group__3();
 
             state._fsp--;
@@ -4145,26 +3690,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group__2__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1427:1: rule__Step__Group__2__Impl : ( ( ( rule__Step__Group_2__0 ) ) ( ( rule__Step__Group_2__0 )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1272:1: rule__Step__Group__2__Impl : ( ( ( rule__Step__Group_2__0 ) ) ( ( rule__Step__Group_2__0 )* ) ) ;
     public final void rule__Step__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1431:1: ( ( ( ( rule__Step__Group_2__0 ) ) ( ( rule__Step__Group_2__0 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1432:1: ( ( ( rule__Step__Group_2__0 ) ) ( ( rule__Step__Group_2__0 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1276:1: ( ( ( ( rule__Step__Group_2__0 ) ) ( ( rule__Step__Group_2__0 )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1277:1: ( ( ( rule__Step__Group_2__0 ) ) ( ( rule__Step__Group_2__0 )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1432:1: ( ( ( rule__Step__Group_2__0 ) ) ( ( rule__Step__Group_2__0 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1433:1: ( ( rule__Step__Group_2__0 ) ) ( ( rule__Step__Group_2__0 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1277:1: ( ( ( rule__Step__Group_2__0 ) ) ( ( rule__Step__Group_2__0 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1278:1: ( ( rule__Step__Group_2__0 ) ) ( ( rule__Step__Group_2__0 )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1433:1: ( ( rule__Step__Group_2__0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1434:1: ( rule__Step__Group_2__0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1278:1: ( ( rule__Step__Group_2__0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1279:1: ( rule__Step__Group_2__0 )
             {
              before(grammarAccess.getStepAccess().getGroup_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1435:1: ( rule__Step__Group_2__0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1435:2: rule__Step__Group_2__0
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1280:1: ( rule__Step__Group_2__0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1280:2: rule__Step__Group_2__0
             {
-            pushFollow(FOLLOW_rule__Step__Group_2__0_in_rule__Step__Group__2__Impl2997);
+            pushFollow(FOLLOW_rule__Step__Group_2__0_in_rule__Step__Group__2__Impl2690);
             rule__Step__Group_2__0();
 
             state._fsp--;
@@ -4176,26 +3721,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1438:1: ( ( rule__Step__Group_2__0 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1439:1: ( rule__Step__Group_2__0 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1283:1: ( ( rule__Step__Group_2__0 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1284:1: ( rule__Step__Group_2__0 )*
             {
              before(grammarAccess.getStepAccess().getGroup_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1440:1: ( rule__Step__Group_2__0 )*
-            loop23:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1285:1: ( rule__Step__Group_2__0 )*
+            loop20:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
-
-                if ( ((LA23_0>=RULE_WORD && LA23_0<=RULE_WS)||(LA23_0>=RULE_STATIC_PARAM && LA23_0<=RULE_DYNAMIC_PARAM)||(LA23_0>=11 && LA23_0<=12)) ) {
-                    alt23=1;
-                }
-
-
-                switch (alt23) {
+                int alt20=2;
+                alt20 = dfa20.predict(input);
+                switch (alt20) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1440:2: rule__Step__Group_2__0
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1285:2: rule__Step__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__Step__Group_2__0_in_rule__Step__Group__2__Impl3009);
+            	    pushFollow(FOLLOW_rule__Step__Group_2__0_in_rule__Step__Group__2__Impl2702);
             	    rule__Step__Group_2__0();
 
             	    state._fsp--;
@@ -4205,7 +3744,7 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop20;
                 }
             } while (true);
 
@@ -4235,21 +3774,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group__3"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1451:1: rule__Step__Group__3 : rule__Step__Group__3__Impl rule__Step__Group__4 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1296:1: rule__Step__Group__3 : rule__Step__Group__3__Impl rule__Step__Group__4 ;
     public final void rule__Step__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1455:1: ( rule__Step__Group__3__Impl rule__Step__Group__4 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1456:2: rule__Step__Group__3__Impl rule__Step__Group__4
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1300:1: ( rule__Step__Group__3__Impl rule__Step__Group__4 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1301:2: rule__Step__Group__3__Impl rule__Step__Group__4
             {
-            pushFollow(FOLLOW_rule__Step__Group__3__Impl_in_rule__Step__Group__33042);
+            pushFollow(FOLLOW_rule__Step__Group__3__Impl_in_rule__Step__Group__32735);
             rule__Step__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Step__Group__4_in_rule__Step__Group__33045);
+            pushFollow(FOLLOW_rule__Step__Group__4_in_rule__Step__Group__32738);
             rule__Step__Group__4();
 
             state._fsp--;
@@ -4273,27 +3812,27 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group__3__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1463:1: rule__Step__Group__3__Impl : ( ( rule__Step__Group_3__0 )? ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1308:1: rule__Step__Group__3__Impl : ( ( rule__Step__Group_3__0 )? ) ;
     public final void rule__Step__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1467:1: ( ( ( rule__Step__Group_3__0 )? ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1468:1: ( ( rule__Step__Group_3__0 )? )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1312:1: ( ( ( rule__Step__Group_3__0 )? ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1313:1: ( ( rule__Step__Group_3__0 )? )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1468:1: ( ( rule__Step__Group_3__0 )? )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1469:1: ( rule__Step__Group_3__0 )?
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1313:1: ( ( rule__Step__Group_3__0 )? )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1314:1: ( rule__Step__Group_3__0 )?
             {
              before(grammarAccess.getStepAccess().getGroup_3()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1470:1: ( rule__Step__Group_3__0 )?
-            int alt24=2;
-            alt24 = dfa24.predict(input);
-            switch (alt24) {
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1315:1: ( rule__Step__Group_3__0 )?
+            int alt21=2;
+            alt21 = dfa21.predict(input);
+            switch (alt21) {
                 case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1470:2: rule__Step__Group_3__0
+                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1315:2: rule__Step__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__Step__Group_3__0_in_rule__Step__Group__3__Impl3072);
+                    pushFollow(FOLLOW_rule__Step__Group_3__0_in_rule__Step__Group__3__Impl2765);
                     rule__Step__Group_3__0();
 
                     state._fsp--;
@@ -4327,16 +3866,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group__4"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1480:1: rule__Step__Group__4 : rule__Step__Group__4__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1325:1: rule__Step__Group__4 : rule__Step__Group__4__Impl ;
     public final void rule__Step__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1484:1: ( rule__Step__Group__4__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1485:2: rule__Step__Group__4__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1329:1: ( rule__Step__Group__4__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1330:2: rule__Step__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Step__Group__4__Impl_in_rule__Step__Group__43103);
+            pushFollow(FOLLOW_rule__Step__Group__4__Impl_in_rule__Step__Group__42796);
             rule__Step__Group__4__Impl();
 
             state._fsp--;
@@ -4360,66 +3899,45 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group__4__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1491:1: rule__Step__Group__4__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1336:1: rule__Step__Group__4__Impl : ( ( RULE_SINGLE_NL )* ) ;
     public final void rule__Step__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1495:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1496:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1340:1: ( ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1341:1: ( ( RULE_SINGLE_NL )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1496:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1497:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1497:1: ( ( RULE_SINGLE_NL ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1498:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1341:1: ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1342:1: ( RULE_SINGLE_NL )*
             {
              before(grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_4()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1499:1: ( RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1499:3: RULE_SINGLE_NL
-            {
-            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group__4__Impl3133); 
-
-            }
-
-             after(grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_4()); 
-
-            }
-
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1502:1: ( ( RULE_SINGLE_NL )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1503:1: ( RULE_SINGLE_NL )*
-            {
-             before(grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_4()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1504:1: ( RULE_SINGLE_NL )*
-            loop25:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1343:1: ( RULE_SINGLE_NL )*
+            loop22:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( (LA25_0==RULE_SINGLE_NL) ) {
-                    alt25=1;
+                if ( (LA22_0==RULE_SINGLE_NL) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt22) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1504:3: RULE_SINGLE_NL
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1343:3: RULE_SINGLE_NL
             	    {
-            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group__4__Impl3146); 
+            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group__4__Impl2824); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop22;
                 }
             } while (true);
 
              after(grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_4()); 
-
-            }
-
 
             }
 
@@ -4442,21 +3960,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group_2__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1525:1: rule__Step__Group_2__0 : rule__Step__Group_2__0__Impl rule__Step__Group_2__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1363:1: rule__Step__Group_2__0 : rule__Step__Group_2__0__Impl rule__Step__Group_2__1 ;
     public final void rule__Step__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1529:1: ( rule__Step__Group_2__0__Impl rule__Step__Group_2__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1530:2: rule__Step__Group_2__0__Impl rule__Step__Group_2__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1367:1: ( rule__Step__Group_2__0__Impl rule__Step__Group_2__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1368:2: rule__Step__Group_2__0__Impl rule__Step__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Step__Group_2__0__Impl_in_rule__Step__Group_2__03189);
+            pushFollow(FOLLOW_rule__Step__Group_2__0__Impl_in_rule__Step__Group_2__02865);
             rule__Step__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Step__Group_2__1_in_rule__Step__Group_2__03192);
+            pushFollow(FOLLOW_rule__Step__Group_2__1_in_rule__Step__Group_2__02868);
             rule__Step__Group_2__1();
 
             state._fsp--;
@@ -4480,23 +3998,23 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group_2__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1537:1: rule__Step__Group_2__0__Impl : ( ( rule__Step__Alternatives_2_0 ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1375:1: rule__Step__Group_2__0__Impl : ( ( rule__Step__Alternatives_2_0 ) ) ;
     public final void rule__Step__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1541:1: ( ( ( rule__Step__Alternatives_2_0 ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1542:1: ( ( rule__Step__Alternatives_2_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1379:1: ( ( ( rule__Step__Alternatives_2_0 ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1380:1: ( ( rule__Step__Alternatives_2_0 ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1542:1: ( ( rule__Step__Alternatives_2_0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1543:1: ( rule__Step__Alternatives_2_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1380:1: ( ( rule__Step__Alternatives_2_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1381:1: ( rule__Step__Alternatives_2_0 )
             {
              before(grammarAccess.getStepAccess().getAlternatives_2_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1544:1: ( rule__Step__Alternatives_2_0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1544:2: rule__Step__Alternatives_2_0
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1382:1: ( rule__Step__Alternatives_2_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1382:2: rule__Step__Alternatives_2_0
             {
-            pushFollow(FOLLOW_rule__Step__Alternatives_2_0_in_rule__Step__Group_2__0__Impl3219);
+            pushFollow(FOLLOW_rule__Step__Alternatives_2_0_in_rule__Step__Group_2__0__Impl2895);
             rule__Step__Alternatives_2_0();
 
             state._fsp--;
@@ -4527,16 +4045,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group_2__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1554:1: rule__Step__Group_2__1 : rule__Step__Group_2__1__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1392:1: rule__Step__Group_2__1 : rule__Step__Group_2__1__Impl ;
     public final void rule__Step__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1558:1: ( rule__Step__Group_2__1__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1559:2: rule__Step__Group_2__1__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1396:1: ( rule__Step__Group_2__1__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1397:2: rule__Step__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Step__Group_2__1__Impl_in_rule__Step__Group_2__13249);
+            pushFollow(FOLLOW_rule__Step__Group_2__1__Impl_in_rule__Step__Group_2__12925);
             rule__Step__Group_2__1__Impl();
 
             state._fsp--;
@@ -4560,41 +4078,35 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group_2__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1565:1: rule__Step__Group_2__1__Impl : ( ( RULE_SEPARATORS )* ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1403:1: rule__Step__Group_2__1__Impl : ( ( RULE_SEPARATORS )* ) ;
     public final void rule__Step__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1569:1: ( ( ( RULE_SEPARATORS )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1570:1: ( ( RULE_SEPARATORS )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1407:1: ( ( ( RULE_SEPARATORS )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1408:1: ( ( RULE_SEPARATORS )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1570:1: ( ( RULE_SEPARATORS )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1571:1: ( RULE_SEPARATORS )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1408:1: ( ( RULE_SEPARATORS )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1409:1: ( RULE_SEPARATORS )*
             {
              before(grammarAccess.getStepAccess().getSEPARATORSTerminalRuleCall_2_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1572:1: ( RULE_SEPARATORS )*
-            loop26:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1410:1: ( RULE_SEPARATORS )*
+            loop23:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
-
-                if ( (LA26_0==RULE_SEPARATORS) ) {
-                    alt26=1;
-                }
-
-
-                switch (alt26) {
+                int alt23=2;
+                alt23 = dfa23.predict(input);
+                switch (alt23) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1572:3: RULE_SEPARATORS
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1410:3: RULE_SEPARATORS
             	    {
-            	    match(input,RULE_SEPARATORS,FOLLOW_RULE_SEPARATORS_in_rule__Step__Group_2__1__Impl3277); 
+            	    match(input,RULE_SEPARATORS,FOLLOW_RULE_SEPARATORS_in_rule__Step__Group_2__1__Impl2953); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop23;
                 }
             } while (true);
 
@@ -4621,21 +4133,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group_3__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1586:1: rule__Step__Group_3__0 : rule__Step__Group_3__0__Impl rule__Step__Group_3__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1424:1: rule__Step__Group_3__0 : rule__Step__Group_3__0__Impl rule__Step__Group_3__1 ;
     public final void rule__Step__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1590:1: ( rule__Step__Group_3__0__Impl rule__Step__Group_3__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1591:2: rule__Step__Group_3__0__Impl rule__Step__Group_3__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1428:1: ( rule__Step__Group_3__0__Impl rule__Step__Group_3__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1429:2: rule__Step__Group_3__0__Impl rule__Step__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Step__Group_3__0__Impl_in_rule__Step__Group_3__03312);
+            pushFollow(FOLLOW_rule__Step__Group_3__0__Impl_in_rule__Step__Group_3__02988);
             rule__Step__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Step__Group_3__1_in_rule__Step__Group_3__03315);
+            pushFollow(FOLLOW_rule__Step__Group_3__1_in_rule__Step__Group_3__02991);
             rule__Step__Group_3__1();
 
             state._fsp--;
@@ -4659,20 +4171,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group_3__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1598:1: rule__Step__Group_3__0__Impl : ( RULE_SINGLE_NL ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1436:1: rule__Step__Group_3__0__Impl : ( RULE_SINGLE_NL ) ;
     public final void rule__Step__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1602:1: ( ( RULE_SINGLE_NL ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1603:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1440:1: ( ( RULE_SINGLE_NL ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1441:1: ( RULE_SINGLE_NL )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1603:1: ( RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1604:1: RULE_SINGLE_NL
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1441:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1442:1: RULE_SINGLE_NL
             {
              before(grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_3_0()); 
-            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group_3__0__Impl3342); 
+            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group_3__0__Impl3018); 
              after(grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_3_0()); 
 
             }
@@ -4696,21 +4208,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group_3__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1615:1: rule__Step__Group_3__1 : rule__Step__Group_3__1__Impl rule__Step__Group_3__2 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1453:1: rule__Step__Group_3__1 : rule__Step__Group_3__1__Impl rule__Step__Group_3__2 ;
     public final void rule__Step__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1619:1: ( rule__Step__Group_3__1__Impl rule__Step__Group_3__2 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1620:2: rule__Step__Group_3__1__Impl rule__Step__Group_3__2
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1457:1: ( rule__Step__Group_3__1__Impl rule__Step__Group_3__2 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1458:2: rule__Step__Group_3__1__Impl rule__Step__Group_3__2
             {
-            pushFollow(FOLLOW_rule__Step__Group_3__1__Impl_in_rule__Step__Group_3__13371);
+            pushFollow(FOLLOW_rule__Step__Group_3__1__Impl_in_rule__Step__Group_3__13047);
             rule__Step__Group_3__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Step__Group_3__2_in_rule__Step__Group_3__13374);
+            pushFollow(FOLLOW_rule__Step__Group_3__2_in_rule__Step__Group_3__13050);
             rule__Step__Group_3__2();
 
             state._fsp--;
@@ -4734,41 +4246,41 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group_3__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1627:1: rule__Step__Group_3__1__Impl : ( ( RULE_SINGLE_NL )* ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1465:1: rule__Step__Group_3__1__Impl : ( ( RULE_SINGLE_NL )* ) ;
     public final void rule__Step__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1631:1: ( ( ( RULE_SINGLE_NL )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1632:1: ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1469:1: ( ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1470:1: ( ( RULE_SINGLE_NL )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1632:1: ( ( RULE_SINGLE_NL )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1633:1: ( RULE_SINGLE_NL )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1470:1: ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1471:1: ( RULE_SINGLE_NL )*
             {
              before(grammarAccess.getStepAccess().getSINGLE_NLTerminalRuleCall_3_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1634:1: ( RULE_SINGLE_NL )*
-            loop27:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1472:1: ( RULE_SINGLE_NL )*
+            loop24:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( (LA27_0==RULE_SINGLE_NL) ) {
-                    alt27=1;
+                if ( (LA24_0==RULE_SINGLE_NL) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt24) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1634:3: RULE_SINGLE_NL
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1472:3: RULE_SINGLE_NL
             	    {
-            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group_3__1__Impl3402); 
+            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group_3__1__Impl3078); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop27;
+            	    break loop24;
                 }
             } while (true);
 
@@ -4795,16 +4307,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group_3__2"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1644:1: rule__Step__Group_3__2 : rule__Step__Group_3__2__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1482:1: rule__Step__Group_3__2 : rule__Step__Group_3__2__Impl ;
     public final void rule__Step__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1648:1: ( rule__Step__Group_3__2__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1649:2: rule__Step__Group_3__2__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1486:1: ( rule__Step__Group_3__2__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1487:2: rule__Step__Group_3__2__Impl
             {
-            pushFollow(FOLLOW_rule__Step__Group_3__2__Impl_in_rule__Step__Group_3__23433);
+            pushFollow(FOLLOW_rule__Step__Group_3__2__Impl_in_rule__Step__Group_3__23109);
             rule__Step__Group_3__2__Impl();
 
             state._fsp--;
@@ -4828,23 +4340,23 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__Group_3__2__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1655:1: rule__Step__Group_3__2__Impl : ( ( rule__Step__TableAssignment_3_2 ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1493:1: rule__Step__Group_3__2__Impl : ( ( rule__Step__TableAssignment_3_2 ) ) ;
     public final void rule__Step__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1659:1: ( ( ( rule__Step__TableAssignment_3_2 ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1660:1: ( ( rule__Step__TableAssignment_3_2 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1497:1: ( ( ( rule__Step__TableAssignment_3_2 ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1498:1: ( ( rule__Step__TableAssignment_3_2 ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1660:1: ( ( rule__Step__TableAssignment_3_2 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1661:1: ( rule__Step__TableAssignment_3_2 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1498:1: ( ( rule__Step__TableAssignment_3_2 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1499:1: ( rule__Step__TableAssignment_3_2 )
             {
              before(grammarAccess.getStepAccess().getTableAssignment_3_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1662:1: ( rule__Step__TableAssignment_3_2 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1662:2: rule__Step__TableAssignment_3_2
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1500:1: ( rule__Step__TableAssignment_3_2 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1500:2: rule__Step__TableAssignment_3_2
             {
-            pushFollow(FOLLOW_rule__Step__TableAssignment_3_2_in_rule__Step__Group_3__2__Impl3460);
+            pushFollow(FOLLOW_rule__Step__TableAssignment_3_2_in_rule__Step__Group_3__2__Impl3136);
             rule__Step__TableAssignment_3_2();
 
             state._fsp--;
@@ -4875,21 +4387,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1678:1: rule__Tags__Group__0 : rule__Tags__Group__0__Impl rule__Tags__Group__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1516:1: rule__Tags__Group__0 : rule__Tags__Group__0__Impl rule__Tags__Group__1 ;
     public final void rule__Tags__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1682:1: ( rule__Tags__Group__0__Impl rule__Tags__Group__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1683:2: rule__Tags__Group__0__Impl rule__Tags__Group__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1520:1: ( rule__Tags__Group__0__Impl rule__Tags__Group__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1521:2: rule__Tags__Group__0__Impl rule__Tags__Group__1
             {
-            pushFollow(FOLLOW_rule__Tags__Group__0__Impl_in_rule__Tags__Group__03496);
+            pushFollow(FOLLOW_rule__Tags__Group__0__Impl_in_rule__Tags__Group__03172);
             rule__Tags__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Tags__Group__1_in_rule__Tags__Group__03499);
+            pushFollow(FOLLOW_rule__Tags__Group__1_in_rule__Tags__Group__03175);
             rule__Tags__Group__1();
 
             state._fsp--;
@@ -4913,31 +4425,31 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1690:1: rule__Tags__Group__0__Impl : ( 'tags' ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1528:1: rule__Tags__Group__0__Impl : ( () ) ;
     public final void rule__Tags__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1694:1: ( ( 'tags' ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1695:1: ( 'tags' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1532:1: ( ( () ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1533:1: ( () )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1695:1: ( 'tags' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1696:1: 'tags'
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1533:1: ( () )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1534:1: ()
             {
-             before(grammarAccess.getTagsAccess().getTagsKeyword_0()); 
-            match(input,19,FOLLOW_19_in_rule__Tags__Group__0__Impl3527); 
-             after(grammarAccess.getTagsAccess().getTagsKeyword_0()); 
+             before(grammarAccess.getTagsAccess().getTagsAction_0()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1535:1: ()
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1537:1: 
+            {
+            }
+
+             after(grammarAccess.getTagsAccess().getTagsAction_0()); 
 
             }
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
         }
         finally {
 
@@ -4950,21 +4462,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1709:1: rule__Tags__Group__1 : rule__Tags__Group__1__Impl rule__Tags__Group__2 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1547:1: rule__Tags__Group__1 : rule__Tags__Group__1__Impl rule__Tags__Group__2 ;
     public final void rule__Tags__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1713:1: ( rule__Tags__Group__1__Impl rule__Tags__Group__2 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1714:2: rule__Tags__Group__1__Impl rule__Tags__Group__2
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1551:1: ( rule__Tags__Group__1__Impl rule__Tags__Group__2 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1552:2: rule__Tags__Group__1__Impl rule__Tags__Group__2
             {
-            pushFollow(FOLLOW_rule__Tags__Group__1__Impl_in_rule__Tags__Group__13558);
+            pushFollow(FOLLOW_rule__Tags__Group__1__Impl_in_rule__Tags__Group__13233);
             rule__Tags__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Tags__Group__2_in_rule__Tags__Group__13561);
+            pushFollow(FOLLOW_rule__Tags__Group__2_in_rule__Tags__Group__13236);
             rule__Tags__Group__2();
 
             state._fsp--;
@@ -4988,45 +4500,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1721:1: rule__Tags__Group__1__Impl : ( ( RULE_WS )* ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1559:1: rule__Tags__Group__1__Impl : ( 'tags' ) ;
     public final void rule__Tags__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1725:1: ( ( ( RULE_WS )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1726:1: ( ( RULE_WS )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1563:1: ( ( 'tags' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1564:1: ( 'tags' )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1726:1: ( ( RULE_WS )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1727:1: ( RULE_WS )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1564:1: ( 'tags' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1565:1: 'tags'
             {
-             before(grammarAccess.getTagsAccess().getWSTerminalRuleCall_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1728:1: ( RULE_WS )*
-            loop28:
-            do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
-
-                if ( (LA28_0==RULE_WS) ) {
-                    alt28=1;
-                }
-
-
-                switch (alt28) {
-            	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1728:3: RULE_WS
-            	    {
-            	    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Tags__Group__1__Impl3589); 
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop28;
-                }
-            } while (true);
-
-             after(grammarAccess.getTagsAccess().getWSTerminalRuleCall_1()); 
+             before(grammarAccess.getTagsAccess().getTagsKeyword_1()); 
+            match(input,19,FOLLOW_19_in_rule__Tags__Group__1__Impl3264); 
+             after(grammarAccess.getTagsAccess().getTagsKeyword_1()); 
 
             }
 
@@ -5049,21 +4537,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__2"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1738:1: rule__Tags__Group__2 : rule__Tags__Group__2__Impl rule__Tags__Group__3 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1578:1: rule__Tags__Group__2 : rule__Tags__Group__2__Impl rule__Tags__Group__3 ;
     public final void rule__Tags__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1742:1: ( rule__Tags__Group__2__Impl rule__Tags__Group__3 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1743:2: rule__Tags__Group__2__Impl rule__Tags__Group__3
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1582:1: ( rule__Tags__Group__2__Impl rule__Tags__Group__3 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1583:2: rule__Tags__Group__2__Impl rule__Tags__Group__3
             {
-            pushFollow(FOLLOW_rule__Tags__Group__2__Impl_in_rule__Tags__Group__23620);
+            pushFollow(FOLLOW_rule__Tags__Group__2__Impl_in_rule__Tags__Group__23295);
             rule__Tags__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Tags__Group__3_in_rule__Tags__Group__23623);
+            pushFollow(FOLLOW_rule__Tags__Group__3_in_rule__Tags__Group__23298);
             rule__Tags__Group__3();
 
             state._fsp--;
@@ -5087,21 +4575,45 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__2__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1750:1: rule__Tags__Group__2__Impl : ( ':' ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1590:1: rule__Tags__Group__2__Impl : ( ( RULE_WS )* ) ;
     public final void rule__Tags__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1754:1: ( ( ':' ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1755:1: ( ':' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1594:1: ( ( ( RULE_WS )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1595:1: ( ( RULE_WS )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1755:1: ( ':' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1756:1: ':'
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1595:1: ( ( RULE_WS )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1596:1: ( RULE_WS )*
             {
-             before(grammarAccess.getTagsAccess().getColonKeyword_2()); 
-            match(input,15,FOLLOW_15_in_rule__Tags__Group__2__Impl3651); 
-             after(grammarAccess.getTagsAccess().getColonKeyword_2()); 
+             before(grammarAccess.getTagsAccess().getWSTerminalRuleCall_2()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1597:1: ( RULE_WS )*
+            loop25:
+            do {
+                int alt25=2;
+                int LA25_0 = input.LA(1);
+
+                if ( (LA25_0==RULE_WS) ) {
+                    alt25=1;
+                }
+
+
+                switch (alt25) {
+            	case 1 :
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1597:3: RULE_WS
+            	    {
+            	    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Tags__Group__2__Impl3326); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop25;
+                }
+            } while (true);
+
+             after(grammarAccess.getTagsAccess().getWSTerminalRuleCall_2()); 
 
             }
 
@@ -5124,21 +4636,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__3"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1769:1: rule__Tags__Group__3 : rule__Tags__Group__3__Impl rule__Tags__Group__4 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1607:1: rule__Tags__Group__3 : rule__Tags__Group__3__Impl rule__Tags__Group__4 ;
     public final void rule__Tags__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1773:1: ( rule__Tags__Group__3__Impl rule__Tags__Group__4 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1774:2: rule__Tags__Group__3__Impl rule__Tags__Group__4
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1611:1: ( rule__Tags__Group__3__Impl rule__Tags__Group__4 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1612:2: rule__Tags__Group__3__Impl rule__Tags__Group__4
             {
-            pushFollow(FOLLOW_rule__Tags__Group__3__Impl_in_rule__Tags__Group__33682);
+            pushFollow(FOLLOW_rule__Tags__Group__3__Impl_in_rule__Tags__Group__33357);
             rule__Tags__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Tags__Group__4_in_rule__Tags__Group__33685);
+            pushFollow(FOLLOW_rule__Tags__Group__4_in_rule__Tags__Group__33360);
             rule__Tags__Group__4();
 
             state._fsp--;
@@ -5162,45 +4674,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__3__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1781:1: rule__Tags__Group__3__Impl : ( ( RULE_WS )* ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1619:1: rule__Tags__Group__3__Impl : ( ':' ) ;
     public final void rule__Tags__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1785:1: ( ( ( RULE_WS )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1786:1: ( ( RULE_WS )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1623:1: ( ( ':' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1624:1: ( ':' )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1786:1: ( ( RULE_WS )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1787:1: ( RULE_WS )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1624:1: ( ':' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1625:1: ':'
             {
-             before(grammarAccess.getTagsAccess().getWSTerminalRuleCall_3()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1788:1: ( RULE_WS )*
-            loop29:
-            do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
-
-                if ( (LA29_0==RULE_WS) ) {
-                    alt29=1;
-                }
-
-
-                switch (alt29) {
-            	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1788:3: RULE_WS
-            	    {
-            	    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Tags__Group__3__Impl3713); 
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop29;
-                }
-            } while (true);
-
-             after(grammarAccess.getTagsAccess().getWSTerminalRuleCall_3()); 
+             before(grammarAccess.getTagsAccess().getColonKeyword_3()); 
+            match(input,15,FOLLOW_15_in_rule__Tags__Group__3__Impl3388); 
+             after(grammarAccess.getTagsAccess().getColonKeyword_3()); 
 
             }
 
@@ -5223,21 +4711,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__4"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1798:1: rule__Tags__Group__4 : rule__Tags__Group__4__Impl rule__Tags__Group__5 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1638:1: rule__Tags__Group__4 : rule__Tags__Group__4__Impl rule__Tags__Group__5 ;
     public final void rule__Tags__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1802:1: ( rule__Tags__Group__4__Impl rule__Tags__Group__5 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1803:2: rule__Tags__Group__4__Impl rule__Tags__Group__5
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1642:1: ( rule__Tags__Group__4__Impl rule__Tags__Group__5 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1643:2: rule__Tags__Group__4__Impl rule__Tags__Group__5
             {
-            pushFollow(FOLLOW_rule__Tags__Group__4__Impl_in_rule__Tags__Group__43744);
+            pushFollow(FOLLOW_rule__Tags__Group__4__Impl_in_rule__Tags__Group__43419);
             rule__Tags__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Tags__Group__5_in_rule__Tags__Group__43747);
+            pushFollow(FOLLOW_rule__Tags__Group__5_in_rule__Tags__Group__43422);
             rule__Tags__Group__5();
 
             state._fsp--;
@@ -5261,58 +4749,58 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__4__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1810:1: rule__Tags__Group__4__Impl : ( ( ( rule__Tags__Group_4__0 ) ) ( ( rule__Tags__Group_4__0 )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1650:1: rule__Tags__Group__4__Impl : ( ( ( rule__Tags__Alternatives_4 ) ) ( ( rule__Tags__Alternatives_4 )* ) ) ;
     public final void rule__Tags__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1814:1: ( ( ( ( rule__Tags__Group_4__0 ) ) ( ( rule__Tags__Group_4__0 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1815:1: ( ( ( rule__Tags__Group_4__0 ) ) ( ( rule__Tags__Group_4__0 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1654:1: ( ( ( ( rule__Tags__Alternatives_4 ) ) ( ( rule__Tags__Alternatives_4 )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1655:1: ( ( ( rule__Tags__Alternatives_4 ) ) ( ( rule__Tags__Alternatives_4 )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1815:1: ( ( ( rule__Tags__Group_4__0 ) ) ( ( rule__Tags__Group_4__0 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1816:1: ( ( rule__Tags__Group_4__0 ) ) ( ( rule__Tags__Group_4__0 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1655:1: ( ( ( rule__Tags__Alternatives_4 ) ) ( ( rule__Tags__Alternatives_4 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1656:1: ( ( rule__Tags__Alternatives_4 ) ) ( ( rule__Tags__Alternatives_4 )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1816:1: ( ( rule__Tags__Group_4__0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1817:1: ( rule__Tags__Group_4__0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1656:1: ( ( rule__Tags__Alternatives_4 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1657:1: ( rule__Tags__Alternatives_4 )
             {
-             before(grammarAccess.getTagsAccess().getGroup_4()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1818:1: ( rule__Tags__Group_4__0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1818:2: rule__Tags__Group_4__0
+             before(grammarAccess.getTagsAccess().getAlternatives_4()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1658:1: ( rule__Tags__Alternatives_4 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1658:2: rule__Tags__Alternatives_4
             {
-            pushFollow(FOLLOW_rule__Tags__Group_4__0_in_rule__Tags__Group__4__Impl3776);
-            rule__Tags__Group_4__0();
+            pushFollow(FOLLOW_rule__Tags__Alternatives_4_in_rule__Tags__Group__4__Impl3451);
+            rule__Tags__Alternatives_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTagsAccess().getGroup_4()); 
+             after(grammarAccess.getTagsAccess().getAlternatives_4()); 
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1821:1: ( ( rule__Tags__Group_4__0 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1822:1: ( rule__Tags__Group_4__0 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1661:1: ( ( rule__Tags__Alternatives_4 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1662:1: ( rule__Tags__Alternatives_4 )*
             {
-             before(grammarAccess.getTagsAccess().getGroup_4()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1823:1: ( rule__Tags__Group_4__0 )*
-            loop30:
+             before(grammarAccess.getTagsAccess().getAlternatives_4()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1663:1: ( rule__Tags__Alternatives_4 )*
+            loop26:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( (LA30_0==RULE_WORD) ) {
-                    alt30=1;
+                if ( ((LA26_0>=RULE_WORD && LA26_0<=RULE_WS)||LA26_0==13) ) {
+                    alt26=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt26) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1823:2: rule__Tags__Group_4__0
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1663:2: rule__Tags__Alternatives_4
             	    {
-            	    pushFollow(FOLLOW_rule__Tags__Group_4__0_in_rule__Tags__Group__4__Impl3788);
-            	    rule__Tags__Group_4__0();
+            	    pushFollow(FOLLOW_rule__Tags__Alternatives_4_in_rule__Tags__Group__4__Impl3463);
+            	    rule__Tags__Alternatives_4();
 
             	    state._fsp--;
 
@@ -5321,11 +4809,11 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop26;
                 }
             } while (true);
 
-             after(grammarAccess.getTagsAccess().getGroup_4()); 
+             after(grammarAccess.getTagsAccess().getAlternatives_4()); 
 
             }
 
@@ -5351,16 +4839,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__5"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1834:1: rule__Tags__Group__5 : rule__Tags__Group__5__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1674:1: rule__Tags__Group__5 : rule__Tags__Group__5__Impl ;
     public final void rule__Tags__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1838:1: ( rule__Tags__Group__5__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1839:2: rule__Tags__Group__5__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1678:1: ( rule__Tags__Group__5__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1679:2: rule__Tags__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__Tags__Group__5__Impl_in_rule__Tags__Group__53821);
+            pushFollow(FOLLOW_rule__Tags__Group__5__Impl_in_rule__Tags__Group__53496);
             rule__Tags__Group__5__Impl();
 
             state._fsp--;
@@ -5384,21 +4872,66 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Tags__Group__5__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1845:1: rule__Tags__Group__5__Impl : ( RULE_SINGLE_NL ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1685:1: rule__Tags__Group__5__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
     public final void rule__Tags__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1849:1: ( ( RULE_SINGLE_NL ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1850:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1689:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1690:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1850:1: ( RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1851:1: RULE_SINGLE_NL
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1690:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1691:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
+            {
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1691:1: ( ( RULE_SINGLE_NL ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1692:1: ( RULE_SINGLE_NL )
             {
              before(grammarAccess.getTagsAccess().getSINGLE_NLTerminalRuleCall_5()); 
-            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Tags__Group__5__Impl3848); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1693:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1693:3: RULE_SINGLE_NL
+            {
+            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Tags__Group__5__Impl3526); 
+
+            }
+
              after(grammarAccess.getTagsAccess().getSINGLE_NLTerminalRuleCall_5()); 
+
+            }
+
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1696:1: ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1697:1: ( RULE_SINGLE_NL )*
+            {
+             before(grammarAccess.getTagsAccess().getSINGLE_NLTerminalRuleCall_5()); 
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1698:1: ( RULE_SINGLE_NL )*
+            loop27:
+            do {
+                int alt27=2;
+                int LA27_0 = input.LA(1);
+
+                if ( (LA27_0==RULE_SINGLE_NL) ) {
+                    alt27=1;
+                }
+
+
+                switch (alt27) {
+            	case 1 :
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1698:3: RULE_SINGLE_NL
+            	    {
+            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Tags__Group__5__Impl3539); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop27;
+                }
+            } while (true);
+
+             after(grammarAccess.getTagsAccess().getSINGLE_NLTerminalRuleCall_5()); 
+
+            }
+
 
             }
 
@@ -5420,188 +4953,22 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Tags__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Tags__Group_4__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1874:1: rule__Tags__Group_4__0 : rule__Tags__Group_4__0__Impl rule__Tags__Group_4__1 ;
-    public final void rule__Tags__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1878:1: ( rule__Tags__Group_4__0__Impl rule__Tags__Group_4__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1879:2: rule__Tags__Group_4__0__Impl rule__Tags__Group_4__1
-            {
-            pushFollow(FOLLOW_rule__Tags__Group_4__0__Impl_in_rule__Tags__Group_4__03889);
-            rule__Tags__Group_4__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Tags__Group_4__1_in_rule__Tags__Group_4__03892);
-            rule__Tags__Group_4__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Tags__Group_4__0"
-
-
-    // $ANTLR start "rule__Tags__Group_4__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1886:1: rule__Tags__Group_4__0__Impl : ( RULE_WORD ) ;
-    public final void rule__Tags__Group_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1890:1: ( ( RULE_WORD ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1891:1: ( RULE_WORD )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1891:1: ( RULE_WORD )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1892:1: RULE_WORD
-            {
-             before(grammarAccess.getTagsAccess().getWORDTerminalRuleCall_4_0()); 
-            match(input,RULE_WORD,FOLLOW_RULE_WORD_in_rule__Tags__Group_4__0__Impl3919); 
-             after(grammarAccess.getTagsAccess().getWORDTerminalRuleCall_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Tags__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__Tags__Group_4__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1903:1: rule__Tags__Group_4__1 : rule__Tags__Group_4__1__Impl ;
-    public final void rule__Tags__Group_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1907:1: ( rule__Tags__Group_4__1__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1908:2: rule__Tags__Group_4__1__Impl
-            {
-            pushFollow(FOLLOW_rule__Tags__Group_4__1__Impl_in_rule__Tags__Group_4__13948);
-            rule__Tags__Group_4__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Tags__Group_4__1"
-
-
-    // $ANTLR start "rule__Tags__Group_4__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1914:1: rule__Tags__Group_4__1__Impl : ( ( rule__Tags__Alternatives_4_1 )? ) ;
-    public final void rule__Tags__Group_4__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1918:1: ( ( ( rule__Tags__Alternatives_4_1 )? ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1919:1: ( ( rule__Tags__Alternatives_4_1 )? )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1919:1: ( ( rule__Tags__Alternatives_4_1 )? )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1920:1: ( rule__Tags__Alternatives_4_1 )?
-            {
-             before(grammarAccess.getTagsAccess().getAlternatives_4_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1921:1: ( rule__Tags__Alternatives_4_1 )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
-
-            if ( (LA31_0==RULE_WS||LA31_0==13) ) {
-                alt31=1;
-            }
-            switch (alt31) {
-                case 1 :
-                    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1921:2: rule__Tags__Alternatives_4_1
-                    {
-                    pushFollow(FOLLOW_rule__Tags__Alternatives_4_1_in_rule__Tags__Group_4__1__Impl3975);
-                    rule__Tags__Alternatives_4_1();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getTagsAccess().getAlternatives_4_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Tags__Group_4__1__Impl"
-
-
     // $ANTLR start "rule__Comment__Group__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1935:1: rule__Comment__Group__0 : rule__Comment__Group__0__Impl rule__Comment__Group__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1721:1: rule__Comment__Group__0 : rule__Comment__Group__0__Impl rule__Comment__Group__1 ;
     public final void rule__Comment__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1939:1: ( rule__Comment__Group__0__Impl rule__Comment__Group__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1940:2: rule__Comment__Group__0__Impl rule__Comment__Group__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1725:1: ( rule__Comment__Group__0__Impl rule__Comment__Group__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1726:2: rule__Comment__Group__0__Impl rule__Comment__Group__1
             {
-            pushFollow(FOLLOW_rule__Comment__Group__0__Impl_in_rule__Comment__Group__04010);
+            pushFollow(FOLLOW_rule__Comment__Group__0__Impl_in_rule__Comment__Group__03584);
             rule__Comment__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Comment__Group__1_in_rule__Comment__Group__04013);
+            pushFollow(FOLLOW_rule__Comment__Group__1_in_rule__Comment__Group__03587);
             rule__Comment__Group__1();
 
             state._fsp--;
@@ -5625,23 +4992,23 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__Group__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1947:1: rule__Comment__Group__0__Impl : ( ( rule__Comment__NameAssignment_0 ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1733:1: rule__Comment__Group__0__Impl : ( ( rule__Comment__NameAssignment_0 ) ) ;
     public final void rule__Comment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1951:1: ( ( ( rule__Comment__NameAssignment_0 ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1952:1: ( ( rule__Comment__NameAssignment_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1737:1: ( ( ( rule__Comment__NameAssignment_0 ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1738:1: ( ( rule__Comment__NameAssignment_0 ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1952:1: ( ( rule__Comment__NameAssignment_0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1953:1: ( rule__Comment__NameAssignment_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1738:1: ( ( rule__Comment__NameAssignment_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1739:1: ( rule__Comment__NameAssignment_0 )
             {
              before(grammarAccess.getCommentAccess().getNameAssignment_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1954:1: ( rule__Comment__NameAssignment_0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1954:2: rule__Comment__NameAssignment_0
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1740:1: ( rule__Comment__NameAssignment_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1740:2: rule__Comment__NameAssignment_0
             {
-            pushFollow(FOLLOW_rule__Comment__NameAssignment_0_in_rule__Comment__Group__0__Impl4040);
+            pushFollow(FOLLOW_rule__Comment__NameAssignment_0_in_rule__Comment__Group__0__Impl3614);
             rule__Comment__NameAssignment_0();
 
             state._fsp--;
@@ -5672,21 +5039,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__Group__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1964:1: rule__Comment__Group__1 : rule__Comment__Group__1__Impl rule__Comment__Group__2 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1750:1: rule__Comment__Group__1 : rule__Comment__Group__1__Impl rule__Comment__Group__2 ;
     public final void rule__Comment__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1968:1: ( rule__Comment__Group__1__Impl rule__Comment__Group__2 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1969:2: rule__Comment__Group__1__Impl rule__Comment__Group__2
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1754:1: ( rule__Comment__Group__1__Impl rule__Comment__Group__2 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1755:2: rule__Comment__Group__1__Impl rule__Comment__Group__2
             {
-            pushFollow(FOLLOW_rule__Comment__Group__1__Impl_in_rule__Comment__Group__14070);
+            pushFollow(FOLLOW_rule__Comment__Group__1__Impl_in_rule__Comment__Group__13644);
             rule__Comment__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Comment__Group__2_in_rule__Comment__Group__14073);
+            pushFollow(FOLLOW_rule__Comment__Group__2_in_rule__Comment__Group__13647);
             rule__Comment__Group__2();
 
             state._fsp--;
@@ -5710,57 +5077,35 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__Group__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1976:1: rule__Comment__Group__1__Impl : ( ( ( rule__Comment__NameAssignment_1 ) ) ( ( rule__Comment__NameAssignment_1 )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1762:1: rule__Comment__Group__1__Impl : ( ( rule__Comment__NameAssignment_1 )* ) ;
     public final void rule__Comment__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1980:1: ( ( ( ( rule__Comment__NameAssignment_1 ) ) ( ( rule__Comment__NameAssignment_1 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1981:1: ( ( ( rule__Comment__NameAssignment_1 ) ) ( ( rule__Comment__NameAssignment_1 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1766:1: ( ( ( rule__Comment__NameAssignment_1 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1767:1: ( ( rule__Comment__NameAssignment_1 )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1981:1: ( ( ( rule__Comment__NameAssignment_1 ) ) ( ( rule__Comment__NameAssignment_1 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1982:1: ( ( rule__Comment__NameAssignment_1 ) ) ( ( rule__Comment__NameAssignment_1 )* )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1982:1: ( ( rule__Comment__NameAssignment_1 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1983:1: ( rule__Comment__NameAssignment_1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1767:1: ( ( rule__Comment__NameAssignment_1 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1768:1: ( rule__Comment__NameAssignment_1 )*
             {
              before(grammarAccess.getCommentAccess().getNameAssignment_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1984:1: ( rule__Comment__NameAssignment_1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1984:2: rule__Comment__NameAssignment_1
-            {
-            pushFollow(FOLLOW_rule__Comment__NameAssignment_1_in_rule__Comment__Group__1__Impl4102);
-            rule__Comment__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getCommentAccess().getNameAssignment_1()); 
-
-            }
-
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1987:1: ( ( rule__Comment__NameAssignment_1 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1988:1: ( rule__Comment__NameAssignment_1 )*
-            {
-             before(grammarAccess.getCommentAccess().getNameAssignment_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1989:1: ( rule__Comment__NameAssignment_1 )*
-            loop32:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1769:1: ( rule__Comment__NameAssignment_1 )*
+            loop28:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt28=2;
+                int LA28_0 = input.LA(1);
 
-                if ( ((LA32_0>=RULE_WORD && LA32_0<=RULE_DYNAMIC_PARAM)||(LA32_0>=11 && LA32_0<=15)) ) {
-                    alt32=1;
+                if ( ((LA28_0>=RULE_WORD && LA28_0<=RULE_DYNAMIC_PARAM)||(LA28_0>=11 && LA28_0<=15)) ) {
+                    alt28=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt28) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1989:2: rule__Comment__NameAssignment_1
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1769:2: rule__Comment__NameAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Comment__NameAssignment_1_in_rule__Comment__Group__1__Impl4114);
+            	    pushFollow(FOLLOW_rule__Comment__NameAssignment_1_in_rule__Comment__Group__1__Impl3674);
             	    rule__Comment__NameAssignment_1();
 
             	    state._fsp--;
@@ -5770,14 +5115,11 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop28;
                 }
             } while (true);
 
              after(grammarAccess.getCommentAccess().getNameAssignment_1()); 
-
-            }
-
 
             }
 
@@ -5800,16 +5142,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__Group__2"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2000:1: rule__Comment__Group__2 : rule__Comment__Group__2__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1779:1: rule__Comment__Group__2 : rule__Comment__Group__2__Impl ;
     public final void rule__Comment__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2004:1: ( rule__Comment__Group__2__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2005:2: rule__Comment__Group__2__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1783:1: ( rule__Comment__Group__2__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1784:2: rule__Comment__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Comment__Group__2__Impl_in_rule__Comment__Group__24147);
+            pushFollow(FOLLOW_rule__Comment__Group__2__Impl_in_rule__Comment__Group__23705);
             rule__Comment__Group__2__Impl();
 
             state._fsp--;
@@ -5833,26 +5175,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__Group__2__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2011:1: rule__Comment__Group__2__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1790:1: rule__Comment__Group__2__Impl : ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) ;
     public final void rule__Comment__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2015:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2016:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1794:1: ( ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1795:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2016:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2017:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1795:1: ( ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1796:1: ( ( RULE_SINGLE_NL ) ) ( ( RULE_SINGLE_NL )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2017:1: ( ( RULE_SINGLE_NL ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2018:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1796:1: ( ( RULE_SINGLE_NL ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1797:1: ( RULE_SINGLE_NL )
             {
              before(grammarAccess.getCommentAccess().getSINGLE_NLTerminalRuleCall_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2019:1: ( RULE_SINGLE_NL )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2019:3: RULE_SINGLE_NL
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1798:1: ( RULE_SINGLE_NL )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1798:3: RULE_SINGLE_NL
             {
-            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Comment__Group__2__Impl4177); 
+            match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Comment__Group__2__Impl3735); 
 
             }
 
@@ -5860,32 +5202,32 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2022:1: ( ( RULE_SINGLE_NL )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2023:1: ( RULE_SINGLE_NL )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1801:1: ( ( RULE_SINGLE_NL )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1802:1: ( RULE_SINGLE_NL )*
             {
              before(grammarAccess.getCommentAccess().getSINGLE_NLTerminalRuleCall_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2024:1: ( RULE_SINGLE_NL )*
-            loop33:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1803:1: ( RULE_SINGLE_NL )*
+            loop29:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( (LA33_0==RULE_SINGLE_NL) ) {
-                    alt33=1;
+                if ( (LA29_0==RULE_SINGLE_NL) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt29) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2024:3: RULE_SINGLE_NL
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1803:3: RULE_SINGLE_NL
             	    {
-            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Comment__Group__2__Impl4190); 
+            	    match(input,RULE_SINGLE_NL,FOLLOW_RULE_SINGLE_NL_in_rule__Comment__Group__2__Impl3748); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop33;
+            	    break loop29;
                 }
             } while (true);
 
@@ -5915,21 +5257,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2041:1: rule__Table__Group__0 : rule__Table__Group__0__Impl rule__Table__Group__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1820:1: rule__Table__Group__0 : rule__Table__Group__0__Impl rule__Table__Group__1 ;
     public final void rule__Table__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2045:1: ( rule__Table__Group__0__Impl rule__Table__Group__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2046:2: rule__Table__Group__0__Impl rule__Table__Group__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1824:1: ( rule__Table__Group__0__Impl rule__Table__Group__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1825:2: rule__Table__Group__0__Impl rule__Table__Group__1
             {
-            pushFollow(FOLLOW_rule__Table__Group__0__Impl_in_rule__Table__Group__04229);
+            pushFollow(FOLLOW_rule__Table__Group__0__Impl_in_rule__Table__Group__03787);
             rule__Table__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Table__Group__1_in_rule__Table__Group__04232);
+            pushFollow(FOLLOW_rule__Table__Group__1_in_rule__Table__Group__03790);
             rule__Table__Group__1();
 
             state._fsp--;
@@ -5953,41 +5295,41 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2053:1: rule__Table__Group__0__Impl : ( ( RULE_WS )* ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1832:1: rule__Table__Group__0__Impl : ( ( RULE_WS )* ) ;
     public final void rule__Table__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2057:1: ( ( ( RULE_WS )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2058:1: ( ( RULE_WS )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1836:1: ( ( ( RULE_WS )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1837:1: ( ( RULE_WS )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2058:1: ( ( RULE_WS )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2059:1: ( RULE_WS )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1837:1: ( ( RULE_WS )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1838:1: ( RULE_WS )*
             {
              before(grammarAccess.getTableAccess().getWSTerminalRuleCall_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2060:1: ( RULE_WS )*
-            loop34:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1839:1: ( RULE_WS )*
+            loop30:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt30=2;
+                int LA30_0 = input.LA(1);
 
-                if ( (LA34_0==RULE_WS) ) {
-                    alt34=1;
+                if ( (LA30_0==RULE_WS) ) {
+                    alt30=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt30) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2060:3: RULE_WS
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1839:3: RULE_WS
             	    {
-            	    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Table__Group__0__Impl4260); 
+            	    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Table__Group__0__Impl3818); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop34;
+            	    break loop30;
                 }
             } while (true);
 
@@ -6014,21 +5356,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2070:1: rule__Table__Group__1 : rule__Table__Group__1__Impl rule__Table__Group__2 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1849:1: rule__Table__Group__1 : rule__Table__Group__1__Impl rule__Table__Group__2 ;
     public final void rule__Table__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2074:1: ( rule__Table__Group__1__Impl rule__Table__Group__2 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2075:2: rule__Table__Group__1__Impl rule__Table__Group__2
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1853:1: ( rule__Table__Group__1__Impl rule__Table__Group__2 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1854:2: rule__Table__Group__1__Impl rule__Table__Group__2
             {
-            pushFollow(FOLLOW_rule__Table__Group__1__Impl_in_rule__Table__Group__14291);
+            pushFollow(FOLLOW_rule__Table__Group__1__Impl_in_rule__Table__Group__13849);
             rule__Table__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Table__Group__2_in_rule__Table__Group__14294);
+            pushFollow(FOLLOW_rule__Table__Group__2_in_rule__Table__Group__13852);
             rule__Table__Group__2();
 
             state._fsp--;
@@ -6052,23 +5394,23 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2082:1: rule__Table__Group__1__Impl : ( ( rule__Table__HeadingAssignment_1 ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1861:1: rule__Table__Group__1__Impl : ( ( rule__Table__HeadingAssignment_1 ) ) ;
     public final void rule__Table__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2086:1: ( ( ( rule__Table__HeadingAssignment_1 ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2087:1: ( ( rule__Table__HeadingAssignment_1 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1865:1: ( ( ( rule__Table__HeadingAssignment_1 ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1866:1: ( ( rule__Table__HeadingAssignment_1 ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2087:1: ( ( rule__Table__HeadingAssignment_1 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2088:1: ( rule__Table__HeadingAssignment_1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1866:1: ( ( rule__Table__HeadingAssignment_1 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1867:1: ( rule__Table__HeadingAssignment_1 )
             {
              before(grammarAccess.getTableAccess().getHeadingAssignment_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2089:1: ( rule__Table__HeadingAssignment_1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2089:2: rule__Table__HeadingAssignment_1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1868:1: ( rule__Table__HeadingAssignment_1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1868:2: rule__Table__HeadingAssignment_1
             {
-            pushFollow(FOLLOW_rule__Table__HeadingAssignment_1_in_rule__Table__Group__1__Impl4321);
+            pushFollow(FOLLOW_rule__Table__HeadingAssignment_1_in_rule__Table__Group__1__Impl3879);
             rule__Table__HeadingAssignment_1();
 
             state._fsp--;
@@ -6099,21 +5441,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__2"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2099:1: rule__Table__Group__2 : rule__Table__Group__2__Impl rule__Table__Group__3 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1878:1: rule__Table__Group__2 : rule__Table__Group__2__Impl rule__Table__Group__3 ;
     public final void rule__Table__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2103:1: ( rule__Table__Group__2__Impl rule__Table__Group__3 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2104:2: rule__Table__Group__2__Impl rule__Table__Group__3
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1882:1: ( rule__Table__Group__2__Impl rule__Table__Group__3 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1883:2: rule__Table__Group__2__Impl rule__Table__Group__3
             {
-            pushFollow(FOLLOW_rule__Table__Group__2__Impl_in_rule__Table__Group__24351);
+            pushFollow(FOLLOW_rule__Table__Group__2__Impl_in_rule__Table__Group__23909);
             rule__Table__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Table__Group__3_in_rule__Table__Group__24354);
+            pushFollow(FOLLOW_rule__Table__Group__3_in_rule__Table__Group__23912);
             rule__Table__Group__3();
 
             state._fsp--;
@@ -6137,41 +5479,41 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__2__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2111:1: rule__Table__Group__2__Impl : ( ( RULE_WS )* ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1890:1: rule__Table__Group__2__Impl : ( ( RULE_WS )* ) ;
     public final void rule__Table__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2115:1: ( ( ( RULE_WS )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2116:1: ( ( RULE_WS )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1894:1: ( ( ( RULE_WS )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1895:1: ( ( RULE_WS )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2116:1: ( ( RULE_WS )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2117:1: ( RULE_WS )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1895:1: ( ( RULE_WS )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1896:1: ( RULE_WS )*
             {
              before(grammarAccess.getTableAccess().getWSTerminalRuleCall_2()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2118:1: ( RULE_WS )*
-            loop35:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1897:1: ( RULE_WS )*
+            loop31:
             do {
-                int alt35=2;
-                int LA35_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( (LA35_0==RULE_WS) ) {
-                    alt35=1;
+                if ( (LA31_0==RULE_WS) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt35) {
+                switch (alt31) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2118:3: RULE_WS
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1897:3: RULE_WS
             	    {
-            	    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Table__Group__2__Impl4382); 
+            	    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Table__Group__2__Impl3940); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop35;
+            	    break loop31;
                 }
             } while (true);
 
@@ -6198,21 +5540,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__3"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2128:1: rule__Table__Group__3 : rule__Table__Group__3__Impl rule__Table__Group__4 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1907:1: rule__Table__Group__3 : rule__Table__Group__3__Impl rule__Table__Group__4 ;
     public final void rule__Table__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2132:1: ( rule__Table__Group__3__Impl rule__Table__Group__4 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2133:2: rule__Table__Group__3__Impl rule__Table__Group__4
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1911:1: ( rule__Table__Group__3__Impl rule__Table__Group__4 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1912:2: rule__Table__Group__3__Impl rule__Table__Group__4
             {
-            pushFollow(FOLLOW_rule__Table__Group__3__Impl_in_rule__Table__Group__34413);
+            pushFollow(FOLLOW_rule__Table__Group__3__Impl_in_rule__Table__Group__33971);
             rule__Table__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Table__Group__4_in_rule__Table__Group__34416);
+            pushFollow(FOLLOW_rule__Table__Group__4_in_rule__Table__Group__33974);
             rule__Table__Group__4();
 
             state._fsp--;
@@ -6236,26 +5578,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__3__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2140:1: rule__Table__Group__3__Impl : ( ( ( rule__Table__Group_3__0 ) ) ( ( rule__Table__Group_3__0 )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1919:1: rule__Table__Group__3__Impl : ( ( ( rule__Table__Group_3__0 ) ) ( ( rule__Table__Group_3__0 )* ) ) ;
     public final void rule__Table__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2144:1: ( ( ( ( rule__Table__Group_3__0 ) ) ( ( rule__Table__Group_3__0 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2145:1: ( ( ( rule__Table__Group_3__0 ) ) ( ( rule__Table__Group_3__0 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1923:1: ( ( ( ( rule__Table__Group_3__0 ) ) ( ( rule__Table__Group_3__0 )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1924:1: ( ( ( rule__Table__Group_3__0 ) ) ( ( rule__Table__Group_3__0 )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2145:1: ( ( ( rule__Table__Group_3__0 ) ) ( ( rule__Table__Group_3__0 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2146:1: ( ( rule__Table__Group_3__0 ) ) ( ( rule__Table__Group_3__0 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1924:1: ( ( ( rule__Table__Group_3__0 ) ) ( ( rule__Table__Group_3__0 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1925:1: ( ( rule__Table__Group_3__0 ) ) ( ( rule__Table__Group_3__0 )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2146:1: ( ( rule__Table__Group_3__0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2147:1: ( rule__Table__Group_3__0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1925:1: ( ( rule__Table__Group_3__0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1926:1: ( rule__Table__Group_3__0 )
             {
              before(grammarAccess.getTableAccess().getGroup_3()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2148:1: ( rule__Table__Group_3__0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2148:2: rule__Table__Group_3__0
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1927:1: ( rule__Table__Group_3__0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1927:2: rule__Table__Group_3__0
             {
-            pushFollow(FOLLOW_rule__Table__Group_3__0_in_rule__Table__Group__3__Impl4445);
+            pushFollow(FOLLOW_rule__Table__Group_3__0_in_rule__Table__Group__3__Impl4003);
             rule__Table__Group_3__0();
 
             state._fsp--;
@@ -6267,26 +5609,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2151:1: ( ( rule__Table__Group_3__0 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2152:1: ( rule__Table__Group_3__0 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1930:1: ( ( rule__Table__Group_3__0 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1931:1: ( rule__Table__Group_3__0 )*
             {
              before(grammarAccess.getTableAccess().getGroup_3()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2153:1: ( rule__Table__Group_3__0 )*
-            loop36:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1932:1: ( rule__Table__Group_3__0 )*
+            loop32:
             do {
-                int alt36=2;
-                int LA36_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( (LA36_0==14) ) {
-                    alt36=1;
+                if ( (LA32_0==14) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt36) {
+                switch (alt32) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2153:2: rule__Table__Group_3__0
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1932:2: rule__Table__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__Table__Group_3__0_in_rule__Table__Group__3__Impl4457);
+            	    pushFollow(FOLLOW_rule__Table__Group_3__0_in_rule__Table__Group__3__Impl4015);
             	    rule__Table__Group_3__0();
 
             	    state._fsp--;
@@ -6296,7 +5638,7 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop36;
+            	    break loop32;
                 }
             } while (true);
 
@@ -6326,21 +5668,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__4"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2164:1: rule__Table__Group__4 : rule__Table__Group__4__Impl rule__Table__Group__5 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1943:1: rule__Table__Group__4 : rule__Table__Group__4__Impl rule__Table__Group__5 ;
     public final void rule__Table__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2168:1: ( rule__Table__Group__4__Impl rule__Table__Group__5 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2169:2: rule__Table__Group__4__Impl rule__Table__Group__5
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1947:1: ( rule__Table__Group__4__Impl rule__Table__Group__5 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1948:2: rule__Table__Group__4__Impl rule__Table__Group__5
             {
-            pushFollow(FOLLOW_rule__Table__Group__4__Impl_in_rule__Table__Group__44490);
+            pushFollow(FOLLOW_rule__Table__Group__4__Impl_in_rule__Table__Group__44048);
             rule__Table__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Table__Group__5_in_rule__Table__Group__44493);
+            pushFollow(FOLLOW_rule__Table__Group__5_in_rule__Table__Group__44051);
             rule__Table__Group__5();
 
             state._fsp--;
@@ -6364,20 +5706,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__4__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2176:1: rule__Table__Group__4__Impl : ( RULE_TABLE_ROW_END ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1955:1: rule__Table__Group__4__Impl : ( RULE_TABLE_ROW_END ) ;
     public final void rule__Table__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2180:1: ( ( RULE_TABLE_ROW_END ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2181:1: ( RULE_TABLE_ROW_END )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1959:1: ( ( RULE_TABLE_ROW_END ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1960:1: ( RULE_TABLE_ROW_END )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2181:1: ( RULE_TABLE_ROW_END )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2182:1: RULE_TABLE_ROW_END
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1960:1: ( RULE_TABLE_ROW_END )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1961:1: RULE_TABLE_ROW_END
             {
              before(grammarAccess.getTableAccess().getTABLE_ROW_ENDTerminalRuleCall_4()); 
-            match(input,RULE_TABLE_ROW_END,FOLLOW_RULE_TABLE_ROW_END_in_rule__Table__Group__4__Impl4520); 
+            match(input,RULE_TABLE_ROW_END,FOLLOW_RULE_TABLE_ROW_END_in_rule__Table__Group__4__Impl4078); 
              after(grammarAccess.getTableAccess().getTABLE_ROW_ENDTerminalRuleCall_4()); 
 
             }
@@ -6401,21 +5743,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__5"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2193:1: rule__Table__Group__5 : rule__Table__Group__5__Impl rule__Table__Group__6 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1972:1: rule__Table__Group__5 : rule__Table__Group__5__Impl rule__Table__Group__6 ;
     public final void rule__Table__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2197:1: ( rule__Table__Group__5__Impl rule__Table__Group__6 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2198:2: rule__Table__Group__5__Impl rule__Table__Group__6
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1976:1: ( rule__Table__Group__5__Impl rule__Table__Group__6 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1977:2: rule__Table__Group__5__Impl rule__Table__Group__6
             {
-            pushFollow(FOLLOW_rule__Table__Group__5__Impl_in_rule__Table__Group__54549);
+            pushFollow(FOLLOW_rule__Table__Group__5__Impl_in_rule__Table__Group__54107);
             rule__Table__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Table__Group__6_in_rule__Table__Group__54552);
+            pushFollow(FOLLOW_rule__Table__Group__6_in_rule__Table__Group__54110);
             rule__Table__Group__6();
 
             state._fsp--;
@@ -6439,41 +5781,41 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__5__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2205:1: rule__Table__Group__5__Impl : ( ( RULE_WS )* ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1984:1: rule__Table__Group__5__Impl : ( ( RULE_WS )* ) ;
     public final void rule__Table__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2209:1: ( ( ( RULE_WS )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2210:1: ( ( RULE_WS )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1988:1: ( ( ( RULE_WS )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1989:1: ( ( RULE_WS )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2210:1: ( ( RULE_WS )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2211:1: ( RULE_WS )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1989:1: ( ( RULE_WS )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1990:1: ( RULE_WS )*
             {
              before(grammarAccess.getTableAccess().getWSTerminalRuleCall_5()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2212:1: ( RULE_WS )*
-            loop37:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1991:1: ( RULE_WS )*
+            loop33:
             do {
-                int alt37=2;
-                int LA37_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( (LA37_0==RULE_WS) ) {
-                    alt37=1;
+                if ( (LA33_0==RULE_WS) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt37) {
+                switch (alt33) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2212:3: RULE_WS
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:1991:3: RULE_WS
             	    {
-            	    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Table__Group__5__Impl4580); 
+            	    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Table__Group__5__Impl4138); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop37;
+            	    break loop33;
                 }
             } while (true);
 
@@ -6500,16 +5842,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__6"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2222:1: rule__Table__Group__6 : rule__Table__Group__6__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2001:1: rule__Table__Group__6 : rule__Table__Group__6__Impl ;
     public final void rule__Table__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2226:1: ( rule__Table__Group__6__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2227:2: rule__Table__Group__6__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2005:1: ( rule__Table__Group__6__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2006:2: rule__Table__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__Table__Group__6__Impl_in_rule__Table__Group__64611);
+            pushFollow(FOLLOW_rule__Table__Group__6__Impl_in_rule__Table__Group__64169);
             rule__Table__Group__6__Impl();
 
             state._fsp--;
@@ -6533,26 +5875,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group__6__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2233:1: rule__Table__Group__6__Impl : ( ( ( rule__Table__RowsAssignment_6 ) ) ( ( rule__Table__RowsAssignment_6 )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2012:1: rule__Table__Group__6__Impl : ( ( ( rule__Table__RowsAssignment_6 ) ) ( ( rule__Table__RowsAssignment_6 )* ) ) ;
     public final void rule__Table__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2237:1: ( ( ( ( rule__Table__RowsAssignment_6 ) ) ( ( rule__Table__RowsAssignment_6 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2238:1: ( ( ( rule__Table__RowsAssignment_6 ) ) ( ( rule__Table__RowsAssignment_6 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2016:1: ( ( ( ( rule__Table__RowsAssignment_6 ) ) ( ( rule__Table__RowsAssignment_6 )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2017:1: ( ( ( rule__Table__RowsAssignment_6 ) ) ( ( rule__Table__RowsAssignment_6 )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2238:1: ( ( ( rule__Table__RowsAssignment_6 ) ) ( ( rule__Table__RowsAssignment_6 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2239:1: ( ( rule__Table__RowsAssignment_6 ) ) ( ( rule__Table__RowsAssignment_6 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2017:1: ( ( ( rule__Table__RowsAssignment_6 ) ) ( ( rule__Table__RowsAssignment_6 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2018:1: ( ( rule__Table__RowsAssignment_6 ) ) ( ( rule__Table__RowsAssignment_6 )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2239:1: ( ( rule__Table__RowsAssignment_6 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2240:1: ( rule__Table__RowsAssignment_6 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2018:1: ( ( rule__Table__RowsAssignment_6 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2019:1: ( rule__Table__RowsAssignment_6 )
             {
              before(grammarAccess.getTableAccess().getRowsAssignment_6()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2241:1: ( rule__Table__RowsAssignment_6 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2241:2: rule__Table__RowsAssignment_6
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2020:1: ( rule__Table__RowsAssignment_6 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2020:2: rule__Table__RowsAssignment_6
             {
-            pushFollow(FOLLOW_rule__Table__RowsAssignment_6_in_rule__Table__Group__6__Impl4640);
+            pushFollow(FOLLOW_rule__Table__RowsAssignment_6_in_rule__Table__Group__6__Impl4198);
             rule__Table__RowsAssignment_6();
 
             state._fsp--;
@@ -6564,26 +5906,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2244:1: ( ( rule__Table__RowsAssignment_6 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2245:1: ( rule__Table__RowsAssignment_6 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2023:1: ( ( rule__Table__RowsAssignment_6 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2024:1: ( rule__Table__RowsAssignment_6 )*
             {
              before(grammarAccess.getTableAccess().getRowsAssignment_6()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2246:1: ( rule__Table__RowsAssignment_6 )*
-            loop38:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2025:1: ( rule__Table__RowsAssignment_6 )*
+            loop34:
             do {
-                int alt38=2;
-                int LA38_0 = input.LA(1);
+                int alt34=2;
+                int LA34_0 = input.LA(1);
 
-                if ( (LA38_0==14) ) {
-                    alt38=1;
+                if ( (LA34_0==14) ) {
+                    alt34=1;
                 }
 
 
-                switch (alt38) {
+                switch (alt34) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2246:2: rule__Table__RowsAssignment_6
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2025:2: rule__Table__RowsAssignment_6
             	    {
-            	    pushFollow(FOLLOW_rule__Table__RowsAssignment_6_in_rule__Table__Group__6__Impl4652);
+            	    pushFollow(FOLLOW_rule__Table__RowsAssignment_6_in_rule__Table__Group__6__Impl4210);
             	    rule__Table__RowsAssignment_6();
 
             	    state._fsp--;
@@ -6593,7 +5935,7 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop38;
+            	    break loop34;
                 }
             } while (true);
 
@@ -6623,21 +5965,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group_3__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2271:1: rule__Table__Group_3__0 : rule__Table__Group_3__0__Impl rule__Table__Group_3__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2050:1: rule__Table__Group_3__0 : rule__Table__Group_3__0__Impl rule__Table__Group_3__1 ;
     public final void rule__Table__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2275:1: ( rule__Table__Group_3__0__Impl rule__Table__Group_3__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2276:2: rule__Table__Group_3__0__Impl rule__Table__Group_3__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2054:1: ( rule__Table__Group_3__0__Impl rule__Table__Group_3__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2055:2: rule__Table__Group_3__0__Impl rule__Table__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Table__Group_3__0__Impl_in_rule__Table__Group_3__04699);
+            pushFollow(FOLLOW_rule__Table__Group_3__0__Impl_in_rule__Table__Group_3__04257);
             rule__Table__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Table__Group_3__1_in_rule__Table__Group_3__04702);
+            pushFollow(FOLLOW_rule__Table__Group_3__1_in_rule__Table__Group_3__04260);
             rule__Table__Group_3__1();
 
             state._fsp--;
@@ -6661,20 +6003,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group_3__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2283:1: rule__Table__Group_3__0__Impl : ( '|' ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2062:1: rule__Table__Group_3__0__Impl : ( '|' ) ;
     public final void rule__Table__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2287:1: ( ( '|' ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2288:1: ( '|' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2066:1: ( ( '|' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2067:1: ( '|' )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2288:1: ( '|' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2289:1: '|'
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2067:1: ( '|' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2068:1: '|'
             {
              before(grammarAccess.getTableAccess().getVerticalLineKeyword_3_0()); 
-            match(input,14,FOLLOW_14_in_rule__Table__Group_3__0__Impl4730); 
+            match(input,14,FOLLOW_14_in_rule__Table__Group_3__0__Impl4288); 
              after(grammarAccess.getTableAccess().getVerticalLineKeyword_3_0()); 
 
             }
@@ -6698,16 +6040,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group_3__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2302:1: rule__Table__Group_3__1 : rule__Table__Group_3__1__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2081:1: rule__Table__Group_3__1 : rule__Table__Group_3__1__Impl ;
     public final void rule__Table__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2306:1: ( rule__Table__Group_3__1__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2307:2: rule__Table__Group_3__1__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2085:1: ( rule__Table__Group_3__1__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2086:2: rule__Table__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Table__Group_3__1__Impl_in_rule__Table__Group_3__14761);
+            pushFollow(FOLLOW_rule__Table__Group_3__1__Impl_in_rule__Table__Group_3__14319);
             rule__Table__Group_3__1__Impl();
 
             state._fsp--;
@@ -6731,26 +6073,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__Group_3__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2313:1: rule__Table__Group_3__1__Impl : ( ( ( '-' ) ) ( ( '-' )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2092:1: rule__Table__Group_3__1__Impl : ( ( ( '-' ) ) ( ( '-' )* ) ) ;
     public final void rule__Table__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2317:1: ( ( ( ( '-' ) ) ( ( '-' )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2318:1: ( ( ( '-' ) ) ( ( '-' )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2096:1: ( ( ( ( '-' ) ) ( ( '-' )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2097:1: ( ( ( '-' ) ) ( ( '-' )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2318:1: ( ( ( '-' ) ) ( ( '-' )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2319:1: ( ( '-' ) ) ( ( '-' )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2097:1: ( ( ( '-' ) ) ( ( '-' )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2098:1: ( ( '-' ) ) ( ( '-' )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2319:1: ( ( '-' ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2320:1: ( '-' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2098:1: ( ( '-' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2099:1: ( '-' )
             {
              before(grammarAccess.getTableAccess().getHyphenMinusKeyword_3_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2321:1: ( '-' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2322:2: '-'
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2100:1: ( '-' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2101:2: '-'
             {
-            match(input,11,FOLLOW_11_in_rule__Table__Group_3__1__Impl4792); 
+            match(input,11,FOLLOW_11_in_rule__Table__Group_3__1__Impl4350); 
 
             }
 
@@ -6758,32 +6100,32 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2326:1: ( ( '-' )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2327:1: ( '-' )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2105:1: ( ( '-' )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2106:1: ( '-' )*
             {
              before(grammarAccess.getTableAccess().getHyphenMinusKeyword_3_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2328:1: ( '-' )*
-            loop39:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2107:1: ( '-' )*
+            loop35:
             do {
-                int alt39=2;
-                int LA39_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( (LA39_0==11) ) {
-                    alt39=1;
+                if ( (LA35_0==11) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt39) {
+                switch (alt35) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2329:2: '-'
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2108:2: '-'
             	    {
-            	    match(input,11,FOLLOW_11_in_rule__Table__Group_3__1__Impl4808); 
+            	    match(input,11,FOLLOW_11_in_rule__Table__Group_3__1__Impl4366); 
 
             	    }
             	    break;
 
             	default :
-            	    break loop39;
+            	    break loop35;
                 }
             } while (true);
 
@@ -6813,21 +6155,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableRow__Group__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2345:1: rule__TableRow__Group__0 : rule__TableRow__Group__0__Impl rule__TableRow__Group__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2124:1: rule__TableRow__Group__0 : rule__TableRow__Group__0__Impl rule__TableRow__Group__1 ;
     public final void rule__TableRow__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2349:1: ( rule__TableRow__Group__0__Impl rule__TableRow__Group__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2350:2: rule__TableRow__Group__0__Impl rule__TableRow__Group__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2128:1: ( rule__TableRow__Group__0__Impl rule__TableRow__Group__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2129:2: rule__TableRow__Group__0__Impl rule__TableRow__Group__1
             {
-            pushFollow(FOLLOW_rule__TableRow__Group__0__Impl_in_rule__TableRow__Group__04847);
+            pushFollow(FOLLOW_rule__TableRow__Group__0__Impl_in_rule__TableRow__Group__04405);
             rule__TableRow__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TableRow__Group__1_in_rule__TableRow__Group__04850);
+            pushFollow(FOLLOW_rule__TableRow__Group__1_in_rule__TableRow__Group__04408);
             rule__TableRow__Group__1();
 
             state._fsp--;
@@ -6851,26 +6193,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableRow__Group__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2357:1: rule__TableRow__Group__0__Impl : ( ( ( rule__TableRow__CellsAssignment_0 ) ) ( ( rule__TableRow__CellsAssignment_0 )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2136:1: rule__TableRow__Group__0__Impl : ( ( ( rule__TableRow__CellsAssignment_0 ) ) ( ( rule__TableRow__CellsAssignment_0 )* ) ) ;
     public final void rule__TableRow__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2361:1: ( ( ( ( rule__TableRow__CellsAssignment_0 ) ) ( ( rule__TableRow__CellsAssignment_0 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2362:1: ( ( ( rule__TableRow__CellsAssignment_0 ) ) ( ( rule__TableRow__CellsAssignment_0 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2140:1: ( ( ( ( rule__TableRow__CellsAssignment_0 ) ) ( ( rule__TableRow__CellsAssignment_0 )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2141:1: ( ( ( rule__TableRow__CellsAssignment_0 ) ) ( ( rule__TableRow__CellsAssignment_0 )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2362:1: ( ( ( rule__TableRow__CellsAssignment_0 ) ) ( ( rule__TableRow__CellsAssignment_0 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2363:1: ( ( rule__TableRow__CellsAssignment_0 ) ) ( ( rule__TableRow__CellsAssignment_0 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2141:1: ( ( ( rule__TableRow__CellsAssignment_0 ) ) ( ( rule__TableRow__CellsAssignment_0 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2142:1: ( ( rule__TableRow__CellsAssignment_0 ) ) ( ( rule__TableRow__CellsAssignment_0 )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2363:1: ( ( rule__TableRow__CellsAssignment_0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2364:1: ( rule__TableRow__CellsAssignment_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2142:1: ( ( rule__TableRow__CellsAssignment_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2143:1: ( rule__TableRow__CellsAssignment_0 )
             {
              before(grammarAccess.getTableRowAccess().getCellsAssignment_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2365:1: ( rule__TableRow__CellsAssignment_0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2365:2: rule__TableRow__CellsAssignment_0
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2144:1: ( rule__TableRow__CellsAssignment_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2144:2: rule__TableRow__CellsAssignment_0
             {
-            pushFollow(FOLLOW_rule__TableRow__CellsAssignment_0_in_rule__TableRow__Group__0__Impl4879);
+            pushFollow(FOLLOW_rule__TableRow__CellsAssignment_0_in_rule__TableRow__Group__0__Impl4437);
             rule__TableRow__CellsAssignment_0();
 
             state._fsp--;
@@ -6882,26 +6224,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2368:1: ( ( rule__TableRow__CellsAssignment_0 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2369:1: ( rule__TableRow__CellsAssignment_0 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2147:1: ( ( rule__TableRow__CellsAssignment_0 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2148:1: ( rule__TableRow__CellsAssignment_0 )*
             {
              before(grammarAccess.getTableRowAccess().getCellsAssignment_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2370:1: ( rule__TableRow__CellsAssignment_0 )*
-            loop40:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2149:1: ( rule__TableRow__CellsAssignment_0 )*
+            loop36:
             do {
-                int alt40=2;
-                int LA40_0 = input.LA(1);
+                int alt36=2;
+                int LA36_0 = input.LA(1);
 
-                if ( (LA40_0==14) ) {
-                    alt40=1;
+                if ( (LA36_0==14) ) {
+                    alt36=1;
                 }
 
 
-                switch (alt40) {
+                switch (alt36) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2370:2: rule__TableRow__CellsAssignment_0
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2149:2: rule__TableRow__CellsAssignment_0
             	    {
-            	    pushFollow(FOLLOW_rule__TableRow__CellsAssignment_0_in_rule__TableRow__Group__0__Impl4891);
+            	    pushFollow(FOLLOW_rule__TableRow__CellsAssignment_0_in_rule__TableRow__Group__0__Impl4449);
             	    rule__TableRow__CellsAssignment_0();
 
             	    state._fsp--;
@@ -6911,7 +6253,7 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop40;
+            	    break loop36;
                 }
             } while (true);
 
@@ -6941,16 +6283,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableRow__Group__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2381:1: rule__TableRow__Group__1 : rule__TableRow__Group__1__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2160:1: rule__TableRow__Group__1 : rule__TableRow__Group__1__Impl ;
     public final void rule__TableRow__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2385:1: ( rule__TableRow__Group__1__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2386:2: rule__TableRow__Group__1__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2164:1: ( rule__TableRow__Group__1__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2165:2: rule__TableRow__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__TableRow__Group__1__Impl_in_rule__TableRow__Group__14924);
+            pushFollow(FOLLOW_rule__TableRow__Group__1__Impl_in_rule__TableRow__Group__14482);
             rule__TableRow__Group__1__Impl();
 
             state._fsp--;
@@ -6974,20 +6316,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableRow__Group__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2392:1: rule__TableRow__Group__1__Impl : ( RULE_TABLE_ROW_END ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2171:1: rule__TableRow__Group__1__Impl : ( RULE_TABLE_ROW_END ) ;
     public final void rule__TableRow__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2396:1: ( ( RULE_TABLE_ROW_END ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2397:1: ( RULE_TABLE_ROW_END )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2175:1: ( ( RULE_TABLE_ROW_END ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2176:1: ( RULE_TABLE_ROW_END )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2397:1: ( RULE_TABLE_ROW_END )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2398:1: RULE_TABLE_ROW_END
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2176:1: ( RULE_TABLE_ROW_END )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2177:1: RULE_TABLE_ROW_END
             {
              before(grammarAccess.getTableRowAccess().getTABLE_ROW_ENDTerminalRuleCall_1()); 
-            match(input,RULE_TABLE_ROW_END,FOLLOW_RULE_TABLE_ROW_END_in_rule__TableRow__Group__1__Impl4951); 
+            match(input,RULE_TABLE_ROW_END,FOLLOW_RULE_TABLE_ROW_END_in_rule__TableRow__Group__1__Impl4509); 
              after(grammarAccess.getTableRowAccess().getTABLE_ROW_ENDTerminalRuleCall_1()); 
 
             }
@@ -7011,21 +6353,21 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableCell__Group__0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2413:1: rule__TableCell__Group__0 : rule__TableCell__Group__0__Impl rule__TableCell__Group__1 ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2192:1: rule__TableCell__Group__0 : rule__TableCell__Group__0__Impl rule__TableCell__Group__1 ;
     public final void rule__TableCell__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2417:1: ( rule__TableCell__Group__0__Impl rule__TableCell__Group__1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2418:2: rule__TableCell__Group__0__Impl rule__TableCell__Group__1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2196:1: ( rule__TableCell__Group__0__Impl rule__TableCell__Group__1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2197:2: rule__TableCell__Group__0__Impl rule__TableCell__Group__1
             {
-            pushFollow(FOLLOW_rule__TableCell__Group__0__Impl_in_rule__TableCell__Group__04984);
+            pushFollow(FOLLOW_rule__TableCell__Group__0__Impl_in_rule__TableCell__Group__04542);
             rule__TableCell__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TableCell__Group__1_in_rule__TableCell__Group__04987);
+            pushFollow(FOLLOW_rule__TableCell__Group__1_in_rule__TableCell__Group__04545);
             rule__TableCell__Group__1();
 
             state._fsp--;
@@ -7049,20 +6391,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableCell__Group__0__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2425:1: rule__TableCell__Group__0__Impl : ( '|' ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2204:1: rule__TableCell__Group__0__Impl : ( '|' ) ;
     public final void rule__TableCell__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2429:1: ( ( '|' ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2430:1: ( '|' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2208:1: ( ( '|' ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2209:1: ( '|' )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2430:1: ( '|' )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2431:1: '|'
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2209:1: ( '|' )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2210:1: '|'
             {
              before(grammarAccess.getTableCellAccess().getVerticalLineKeyword_0()); 
-            match(input,14,FOLLOW_14_in_rule__TableCell__Group__0__Impl5015); 
+            match(input,14,FOLLOW_14_in_rule__TableCell__Group__0__Impl4573); 
              after(grammarAccess.getTableCellAccess().getVerticalLineKeyword_0()); 
 
             }
@@ -7086,16 +6428,16 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableCell__Group__1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2444:1: rule__TableCell__Group__1 : rule__TableCell__Group__1__Impl ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2223:1: rule__TableCell__Group__1 : rule__TableCell__Group__1__Impl ;
     public final void rule__TableCell__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2448:1: ( rule__TableCell__Group__1__Impl )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2449:2: rule__TableCell__Group__1__Impl
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2227:1: ( rule__TableCell__Group__1__Impl )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2228:2: rule__TableCell__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__TableCell__Group__1__Impl_in_rule__TableCell__Group__15046);
+            pushFollow(FOLLOW_rule__TableCell__Group__1__Impl_in_rule__TableCell__Group__14604);
             rule__TableCell__Group__1__Impl();
 
             state._fsp--;
@@ -7119,26 +6461,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableCell__Group__1__Impl"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2455:1: rule__TableCell__Group__1__Impl : ( ( ( rule__TableCell__NameAssignment_1 ) ) ( ( rule__TableCell__NameAssignment_1 )* ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2234:1: rule__TableCell__Group__1__Impl : ( ( ( rule__TableCell__NameAssignment_1 ) ) ( ( rule__TableCell__NameAssignment_1 )* ) ) ;
     public final void rule__TableCell__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2459:1: ( ( ( ( rule__TableCell__NameAssignment_1 ) ) ( ( rule__TableCell__NameAssignment_1 )* ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2460:1: ( ( ( rule__TableCell__NameAssignment_1 ) ) ( ( rule__TableCell__NameAssignment_1 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2238:1: ( ( ( ( rule__TableCell__NameAssignment_1 ) ) ( ( rule__TableCell__NameAssignment_1 )* ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2239:1: ( ( ( rule__TableCell__NameAssignment_1 ) ) ( ( rule__TableCell__NameAssignment_1 )* ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2460:1: ( ( ( rule__TableCell__NameAssignment_1 ) ) ( ( rule__TableCell__NameAssignment_1 )* ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2461:1: ( ( rule__TableCell__NameAssignment_1 ) ) ( ( rule__TableCell__NameAssignment_1 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2239:1: ( ( ( rule__TableCell__NameAssignment_1 ) ) ( ( rule__TableCell__NameAssignment_1 )* ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2240:1: ( ( rule__TableCell__NameAssignment_1 ) ) ( ( rule__TableCell__NameAssignment_1 )* )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2461:1: ( ( rule__TableCell__NameAssignment_1 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2462:1: ( rule__TableCell__NameAssignment_1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2240:1: ( ( rule__TableCell__NameAssignment_1 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2241:1: ( rule__TableCell__NameAssignment_1 )
             {
              before(grammarAccess.getTableCellAccess().getNameAssignment_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2463:1: ( rule__TableCell__NameAssignment_1 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2463:2: rule__TableCell__NameAssignment_1
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2242:1: ( rule__TableCell__NameAssignment_1 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2242:2: rule__TableCell__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__TableCell__NameAssignment_1_in_rule__TableCell__Group__1__Impl5075);
+            pushFollow(FOLLOW_rule__TableCell__NameAssignment_1_in_rule__TableCell__Group__1__Impl4633);
             rule__TableCell__NameAssignment_1();
 
             state._fsp--;
@@ -7150,26 +6492,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2466:1: ( ( rule__TableCell__NameAssignment_1 )* )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2467:1: ( rule__TableCell__NameAssignment_1 )*
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2245:1: ( ( rule__TableCell__NameAssignment_1 )* )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2246:1: ( rule__TableCell__NameAssignment_1 )*
             {
              before(grammarAccess.getTableCellAccess().getNameAssignment_1()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2468:1: ( rule__TableCell__NameAssignment_1 )*
-            loop41:
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2247:1: ( rule__TableCell__NameAssignment_1 )*
+            loop37:
             do {
-                int alt41=2;
-                int LA41_0 = input.LA(1);
+                int alt37=2;
+                int LA37_0 = input.LA(1);
 
-                if ( ((LA41_0>=RULE_WORD && LA41_0<=RULE_SEPARATORS)) ) {
-                    alt41=1;
+                if ( ((LA37_0>=RULE_WORD && LA37_0<=RULE_SEPARATORS)) ) {
+                    alt37=1;
                 }
 
 
-                switch (alt41) {
+                switch (alt37) {
             	case 1 :
-            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2468:2: rule__TableCell__NameAssignment_1
+            	    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2247:2: rule__TableCell__NameAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__TableCell__NameAssignment_1_in_rule__TableCell__Group__1__Impl5087);
+            	    pushFollow(FOLLOW_rule__TableCell__NameAssignment_1_in_rule__TableCell__Group__1__Impl4645);
             	    rule__TableCell__NameAssignment_1();
 
             	    state._fsp--;
@@ -7179,7 +6521,7 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop41;
+            	    break loop37;
                 }
             } while (true);
 
@@ -7209,23 +6551,23 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__DefinitionsAssignment"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2484:1: rule__Model__DefinitionsAssignment : ( ( rule__Model__DefinitionsAlternatives_0 ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2263:1: rule__Model__DefinitionsAssignment : ( ( rule__Model__DefinitionsAlternatives_0 ) ) ;
     public final void rule__Model__DefinitionsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2488:1: ( ( ( rule__Model__DefinitionsAlternatives_0 ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2489:1: ( ( rule__Model__DefinitionsAlternatives_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2267:1: ( ( ( rule__Model__DefinitionsAlternatives_0 ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2268:1: ( ( rule__Model__DefinitionsAlternatives_0 ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2489:1: ( ( rule__Model__DefinitionsAlternatives_0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2490:1: ( rule__Model__DefinitionsAlternatives_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2268:1: ( ( rule__Model__DefinitionsAlternatives_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2269:1: ( rule__Model__DefinitionsAlternatives_0 )
             {
              before(grammarAccess.getModelAccess().getDefinitionsAlternatives_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2491:1: ( rule__Model__DefinitionsAlternatives_0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2491:2: rule__Model__DefinitionsAlternatives_0
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2270:1: ( rule__Model__DefinitionsAlternatives_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2270:2: rule__Model__DefinitionsAlternatives_0
             {
-            pushFollow(FOLLOW_rule__Model__DefinitionsAlternatives_0_in_rule__Model__DefinitionsAssignment5129);
+            pushFollow(FOLLOW_rule__Model__DefinitionsAlternatives_0_in_rule__Model__DefinitionsAssignment4687);
             rule__Model__DefinitionsAlternatives_0();
 
             state._fsp--;
@@ -7256,20 +6598,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__NameAssignment_0_1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2500:1: rule__Spec__NameAssignment_0_1 : ( ruleTextPart ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2279:1: rule__Spec__NameAssignment_0_1 : ( ruleTextPart ) ;
     public final void rule__Spec__NameAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2504:1: ( ( ruleTextPart ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2505:1: ( ruleTextPart )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2283:1: ( ( ruleTextPart ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2284:1: ( ruleTextPart )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2505:1: ( ruleTextPart )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2506:1: ruleTextPart
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2284:1: ( ruleTextPart )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2285:1: ruleTextPart
             {
              before(grammarAccess.getSpecAccess().getNameTextPartParserRuleCall_0_1_0()); 
-            pushFollow(FOLLOW_ruleTextPart_in_rule__Spec__NameAssignment_0_15162);
+            pushFollow(FOLLOW_ruleTextPart_in_rule__Spec__NameAssignment_0_14720);
             ruleTextPart();
 
             state._fsp--;
@@ -7297,20 +6639,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Spec__NameAssignment_1_0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2515:1: rule__Spec__NameAssignment_1_0 : ( ruleTextPart ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2294:1: rule__Spec__NameAssignment_1_0 : ( ruleTextPart ) ;
     public final void rule__Spec__NameAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2519:1: ( ( ruleTextPart ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2520:1: ( ruleTextPart )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2298:1: ( ( ruleTextPart ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2299:1: ( ruleTextPart )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2520:1: ( ruleTextPart )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2521:1: ruleTextPart
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2299:1: ( ruleTextPart )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2300:1: ruleTextPart
             {
              before(grammarAccess.getSpecAccess().getNameTextPartParserRuleCall_1_0_0()); 
-            pushFollow(FOLLOW_ruleTextPart_in_rule__Spec__NameAssignment_1_05193);
+            pushFollow(FOLLOW_ruleTextPart_in_rule__Spec__NameAssignment_1_04751);
             ruleTextPart();
 
             state._fsp--;
@@ -7338,20 +6680,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Scenario__NameAssignment_0_1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2530:1: rule__Scenario__NameAssignment_0_1 : ( ruleTextPart ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2309:1: rule__Scenario__NameAssignment_0_1 : ( ruleTextPart ) ;
     public final void rule__Scenario__NameAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2534:1: ( ( ruleTextPart ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2535:1: ( ruleTextPart )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2313:1: ( ( ruleTextPart ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2314:1: ( ruleTextPart )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2535:1: ( ruleTextPart )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2536:1: ruleTextPart
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2314:1: ( ruleTextPart )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2315:1: ruleTextPart
             {
              before(grammarAccess.getScenarioAccess().getNameTextPartParserRuleCall_0_1_0()); 
-            pushFollow(FOLLOW_ruleTextPart_in_rule__Scenario__NameAssignment_0_15224);
+            pushFollow(FOLLOW_ruleTextPart_in_rule__Scenario__NameAssignment_0_14782);
             ruleTextPart();
 
             state._fsp--;
@@ -7378,26 +6720,26 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Scenario__NameAssignment_0_1"
 
 
-    // $ANTLR start "rule__Scenario__NameAssignment_1_0_0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2545:1: rule__Scenario__NameAssignment_1_0_0 : ( ruleTextPart ) ;
-    public final void rule__Scenario__NameAssignment_1_0_0() throws RecognitionException {
+    // $ANTLR start "rule__Scenario__NameAssignment_1_0"
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2324:1: rule__Scenario__NameAssignment_1_0 : ( ruleTextPart ) ;
+    public final void rule__Scenario__NameAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2549:1: ( ( ruleTextPart ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2550:1: ( ruleTextPart )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2328:1: ( ( ruleTextPart ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2329:1: ( ruleTextPart )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2550:1: ( ruleTextPart )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2551:1: ruleTextPart
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2329:1: ( ruleTextPart )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2330:1: ruleTextPart
             {
-             before(grammarAccess.getScenarioAccess().getNameTextPartParserRuleCall_1_0_0_0()); 
-            pushFollow(FOLLOW_ruleTextPart_in_rule__Scenario__NameAssignment_1_0_05255);
+             before(grammarAccess.getScenarioAccess().getNameTextPartParserRuleCall_1_0_0()); 
+            pushFollow(FOLLOW_ruleTextPart_in_rule__Scenario__NameAssignment_1_04813);
             ruleTextPart();
 
             state._fsp--;
 
-             after(grammarAccess.getScenarioAccess().getNameTextPartParserRuleCall_1_0_0_0()); 
+             after(grammarAccess.getScenarioAccess().getNameTextPartParserRuleCall_1_0_0()); 
 
             }
 
@@ -7416,106 +6758,24 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Scenario__NameAssignment_1_0_0"
-
-
-    // $ANTLR start "rule__Scenario__CommentsAssignment_1_1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2560:1: rule__Scenario__CommentsAssignment_1_1 : ( ruleComment ) ;
-    public final void rule__Scenario__CommentsAssignment_1_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2564:1: ( ( ruleComment ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2565:1: ( ruleComment )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2565:1: ( ruleComment )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2566:1: ruleComment
-            {
-             before(grammarAccess.getScenarioAccess().getCommentsCommentParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleComment_in_rule__Scenario__CommentsAssignment_1_15286);
-            ruleComment();
-
-            state._fsp--;
-
-             after(grammarAccess.getScenarioAccess().getCommentsCommentParserRuleCall_1_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__CommentsAssignment_1_1"
-
-
-    // $ANTLR start "rule__Scenario__TagsAssignment_1_2_0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2575:1: rule__Scenario__TagsAssignment_1_2_0 : ( ruleTags ) ;
-    public final void rule__Scenario__TagsAssignment_1_2_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2579:1: ( ( ruleTags ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2580:1: ( ruleTags )
-            {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2580:1: ( ruleTags )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2581:1: ruleTags
-            {
-             before(grammarAccess.getScenarioAccess().getTagsTagsParserRuleCall_1_2_0_0()); 
-            pushFollow(FOLLOW_ruleTags_in_rule__Scenario__TagsAssignment_1_2_05317);
-            ruleTags();
-
-            state._fsp--;
-
-             after(grammarAccess.getScenarioAccess().getTagsTagsParserRuleCall_1_2_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Scenario__TagsAssignment_1_2_0"
+    // $ANTLR end "rule__Scenario__NameAssignment_1_0"
 
 
     // $ANTLR start "rule__Step__StaticParamsAssignment_2_0_0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2590:1: rule__Step__StaticParamsAssignment_2_0_0 : ( ruleStaticParam ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2339:1: rule__Step__StaticParamsAssignment_2_0_0 : ( ruleStaticParam ) ;
     public final void rule__Step__StaticParamsAssignment_2_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2594:1: ( ( ruleStaticParam ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2595:1: ( ruleStaticParam )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2343:1: ( ( ruleStaticParam ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2344:1: ( ruleStaticParam )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2595:1: ( ruleStaticParam )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2596:1: ruleStaticParam
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2344:1: ( ruleStaticParam )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2345:1: ruleStaticParam
             {
              before(grammarAccess.getStepAccess().getStaticParamsStaticParamParserRuleCall_2_0_0_0()); 
-            pushFollow(FOLLOW_ruleStaticParam_in_rule__Step__StaticParamsAssignment_2_0_05348);
+            pushFollow(FOLLOW_ruleStaticParam_in_rule__Step__StaticParamsAssignment_2_0_04844);
             ruleStaticParam();
 
             state._fsp--;
@@ -7543,20 +6803,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__DynamicParamsAssignment_2_0_1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2605:1: rule__Step__DynamicParamsAssignment_2_0_1 : ( ruleDynamicParam ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2354:1: rule__Step__DynamicParamsAssignment_2_0_1 : ( ruleDynamicParam ) ;
     public final void rule__Step__DynamicParamsAssignment_2_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2609:1: ( ( ruleDynamicParam ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2610:1: ( ruleDynamicParam )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2358:1: ( ( ruleDynamicParam ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2359:1: ( ruleDynamicParam )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2610:1: ( ruleDynamicParam )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2611:1: ruleDynamicParam
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2359:1: ( ruleDynamicParam )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2360:1: ruleDynamicParam
             {
              before(grammarAccess.getStepAccess().getDynamicParamsDynamicParamParserRuleCall_2_0_1_0()); 
-            pushFollow(FOLLOW_ruleDynamicParam_in_rule__Step__DynamicParamsAssignment_2_0_15379);
+            pushFollow(FOLLOW_ruleDynamicParam_in_rule__Step__DynamicParamsAssignment_2_0_14875);
             ruleDynamicParam();
 
             state._fsp--;
@@ -7584,20 +6844,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Step__TableAssignment_3_2"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2620:1: rule__Step__TableAssignment_3_2 : ( ruleTable ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2369:1: rule__Step__TableAssignment_3_2 : ( ruleTable ) ;
     public final void rule__Step__TableAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2624:1: ( ( ruleTable ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2625:1: ( ruleTable )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2373:1: ( ( ruleTable ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2374:1: ( ruleTable )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2625:1: ( ruleTable )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2626:1: ruleTable
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2374:1: ( ruleTable )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2375:1: ruleTable
             {
              before(grammarAccess.getStepAccess().getTableTableParserRuleCall_3_2_0()); 
-            pushFollow(FOLLOW_ruleTable_in_rule__Step__TableAssignment_3_25410);
+            pushFollow(FOLLOW_ruleTable_in_rule__Step__TableAssignment_3_24906);
             ruleTable();
 
             state._fsp--;
@@ -7625,20 +6885,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StaticParam__NameAssignment"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2635:1: rule__StaticParam__NameAssignment : ( RULE_STATIC_PARAM ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2384:1: rule__StaticParam__NameAssignment : ( RULE_STATIC_PARAM ) ;
     public final void rule__StaticParam__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2639:1: ( ( RULE_STATIC_PARAM ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2640:1: ( RULE_STATIC_PARAM )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2388:1: ( ( RULE_STATIC_PARAM ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2389:1: ( RULE_STATIC_PARAM )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2640:1: ( RULE_STATIC_PARAM )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2641:1: RULE_STATIC_PARAM
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2389:1: ( RULE_STATIC_PARAM )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2390:1: RULE_STATIC_PARAM
             {
              before(grammarAccess.getStaticParamAccess().getNameSTATIC_PARAMTerminalRuleCall_0()); 
-            match(input,RULE_STATIC_PARAM,FOLLOW_RULE_STATIC_PARAM_in_rule__StaticParam__NameAssignment5441); 
+            match(input,RULE_STATIC_PARAM,FOLLOW_RULE_STATIC_PARAM_in_rule__StaticParam__NameAssignment4937); 
              after(grammarAccess.getStaticParamAccess().getNameSTATIC_PARAMTerminalRuleCall_0()); 
 
             }
@@ -7662,20 +6922,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DynamicParam__NameAssignment"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2650:1: rule__DynamicParam__NameAssignment : ( RULE_DYNAMIC_PARAM ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2399:1: rule__DynamicParam__NameAssignment : ( RULE_DYNAMIC_PARAM ) ;
     public final void rule__DynamicParam__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2654:1: ( ( RULE_DYNAMIC_PARAM ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2655:1: ( RULE_DYNAMIC_PARAM )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2403:1: ( ( RULE_DYNAMIC_PARAM ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2404:1: ( RULE_DYNAMIC_PARAM )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2655:1: ( RULE_DYNAMIC_PARAM )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2656:1: RULE_DYNAMIC_PARAM
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2404:1: ( RULE_DYNAMIC_PARAM )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2405:1: RULE_DYNAMIC_PARAM
             {
              before(grammarAccess.getDynamicParamAccess().getNameDYNAMIC_PARAMTerminalRuleCall_0()); 
-            match(input,RULE_DYNAMIC_PARAM,FOLLOW_RULE_DYNAMIC_PARAM_in_rule__DynamicParam__NameAssignment5472); 
+            match(input,RULE_DYNAMIC_PARAM,FOLLOW_RULE_DYNAMIC_PARAM_in_rule__DynamicParam__NameAssignment4968); 
              after(grammarAccess.getDynamicParamAccess().getNameDYNAMIC_PARAMTerminalRuleCall_0()); 
 
             }
@@ -7699,20 +6959,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__NameAssignment_0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2665:1: rule__Comment__NameAssignment_0 : ( ruleTextPart ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2414:1: rule__Comment__NameAssignment_0 : ( ruleTextPart ) ;
     public final void rule__Comment__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2669:1: ( ( ruleTextPart ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2670:1: ( ruleTextPart )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2418:1: ( ( ruleTextPart ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2419:1: ( ruleTextPart )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2670:1: ( ruleTextPart )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2671:1: ruleTextPart
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2419:1: ( ruleTextPart )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2420:1: ruleTextPart
             {
              before(grammarAccess.getCommentAccess().getNameTextPartParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleTextPart_in_rule__Comment__NameAssignment_05503);
+            pushFollow(FOLLOW_ruleTextPart_in_rule__Comment__NameAssignment_04999);
             ruleTextPart();
 
             state._fsp--;
@@ -7740,23 +7000,23 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comment__NameAssignment_1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2680:1: rule__Comment__NameAssignment_1 : ( ( rule__Comment__NameAlternatives_1_0 ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2429:1: rule__Comment__NameAssignment_1 : ( ( rule__Comment__NameAlternatives_1_0 ) ) ;
     public final void rule__Comment__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2684:1: ( ( ( rule__Comment__NameAlternatives_1_0 ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2685:1: ( ( rule__Comment__NameAlternatives_1_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2433:1: ( ( ( rule__Comment__NameAlternatives_1_0 ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2434:1: ( ( rule__Comment__NameAlternatives_1_0 ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2685:1: ( ( rule__Comment__NameAlternatives_1_0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2686:1: ( rule__Comment__NameAlternatives_1_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2434:1: ( ( rule__Comment__NameAlternatives_1_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2435:1: ( rule__Comment__NameAlternatives_1_0 )
             {
              before(grammarAccess.getCommentAccess().getNameAlternatives_1_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2687:1: ( rule__Comment__NameAlternatives_1_0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2687:2: rule__Comment__NameAlternatives_1_0
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2436:1: ( rule__Comment__NameAlternatives_1_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2436:2: rule__Comment__NameAlternatives_1_0
             {
-            pushFollow(FOLLOW_rule__Comment__NameAlternatives_1_0_in_rule__Comment__NameAssignment_15534);
+            pushFollow(FOLLOW_rule__Comment__NameAlternatives_1_0_in_rule__Comment__NameAssignment_15030);
             rule__Comment__NameAlternatives_1_0();
 
             state._fsp--;
@@ -7787,20 +7047,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__HeadingAssignment_1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2696:1: rule__Table__HeadingAssignment_1 : ( ruleTableRow ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2445:1: rule__Table__HeadingAssignment_1 : ( ruleTableRow ) ;
     public final void rule__Table__HeadingAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2700:1: ( ( ruleTableRow ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2701:1: ( ruleTableRow )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2449:1: ( ( ruleTableRow ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2450:1: ( ruleTableRow )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2701:1: ( ruleTableRow )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2702:1: ruleTableRow
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2450:1: ( ruleTableRow )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2451:1: ruleTableRow
             {
              before(grammarAccess.getTableAccess().getHeadingTableRowParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleTableRow_in_rule__Table__HeadingAssignment_15567);
+            pushFollow(FOLLOW_ruleTableRow_in_rule__Table__HeadingAssignment_15063);
             ruleTableRow();
 
             state._fsp--;
@@ -7828,20 +7088,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Table__RowsAssignment_6"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2711:1: rule__Table__RowsAssignment_6 : ( ruleTableRow ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2460:1: rule__Table__RowsAssignment_6 : ( ruleTableRow ) ;
     public final void rule__Table__RowsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2715:1: ( ( ruleTableRow ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2716:1: ( ruleTableRow )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2464:1: ( ( ruleTableRow ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2465:1: ( ruleTableRow )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2716:1: ( ruleTableRow )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2717:1: ruleTableRow
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2465:1: ( ruleTableRow )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2466:1: ruleTableRow
             {
              before(grammarAccess.getTableAccess().getRowsTableRowParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleTableRow_in_rule__Table__RowsAssignment_65598);
+            pushFollow(FOLLOW_ruleTableRow_in_rule__Table__RowsAssignment_65094);
             ruleTableRow();
 
             state._fsp--;
@@ -7869,20 +7129,20 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableRow__CellsAssignment_0"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2726:1: rule__TableRow__CellsAssignment_0 : ( ruleTableCell ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2475:1: rule__TableRow__CellsAssignment_0 : ( ruleTableCell ) ;
     public final void rule__TableRow__CellsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2730:1: ( ( ruleTableCell ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2731:1: ( ruleTableCell )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2479:1: ( ( ruleTableCell ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2480:1: ( ruleTableCell )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2731:1: ( ruleTableCell )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2732:1: ruleTableCell
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2480:1: ( ruleTableCell )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2481:1: ruleTableCell
             {
              before(grammarAccess.getTableRowAccess().getCellsTableCellParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleTableCell_in_rule__TableRow__CellsAssignment_05629);
+            pushFollow(FOLLOW_ruleTableCell_in_rule__TableRow__CellsAssignment_05125);
             ruleTableCell();
 
             state._fsp--;
@@ -7910,23 +7170,23 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TableCell__NameAssignment_1"
-    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2741:1: rule__TableCell__NameAssignment_1 : ( ( rule__TableCell__NameAlternatives_1_0 ) ) ;
+    // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2490:1: rule__TableCell__NameAssignment_1 : ( ( rule__TableCell__NameAlternatives_1_0 ) ) ;
     public final void rule__TableCell__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2745:1: ( ( ( rule__TableCell__NameAlternatives_1_0 ) ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2746:1: ( ( rule__TableCell__NameAlternatives_1_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2494:1: ( ( ( rule__TableCell__NameAlternatives_1_0 ) ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2495:1: ( ( rule__TableCell__NameAlternatives_1_0 ) )
             {
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2746:1: ( ( rule__TableCell__NameAlternatives_1_0 ) )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2747:1: ( rule__TableCell__NameAlternatives_1_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2495:1: ( ( rule__TableCell__NameAlternatives_1_0 ) )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2496:1: ( rule__TableCell__NameAlternatives_1_0 )
             {
              before(grammarAccess.getTableCellAccess().getNameAlternatives_1_0()); 
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2748:1: ( rule__TableCell__NameAlternatives_1_0 )
-            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2748:2: rule__TableCell__NameAlternatives_1_0
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2497:1: ( rule__TableCell__NameAlternatives_1_0 )
+            // ../io.getgauge.ui/src-gen/io/getgauge/ui/contentassist/antlr/internal/InternalSpec.g:2497:2: rule__TableCell__NameAlternatives_1_0
             {
-            pushFollow(FOLLOW_rule__TableCell__NameAlternatives_1_0_in_rule__TableCell__NameAssignment_15660);
+            pushFollow(FOLLOW_rule__TableCell__NameAlternatives_1_0_in_rule__TableCell__NameAssignment_15156);
             rule__TableCell__NameAlternatives_1_0();
 
             state._fsp--;
@@ -7959,43 +7219,39 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
 
 
     protected DFA2 dfa2 = new DFA2(this);
-    protected DFA17 dfa17 = new DFA17(this);
-    protected DFA24 dfa24 = new DFA24(this);
+    protected DFA20 dfa20 = new DFA20(this);
+    protected DFA21 dfa21 = new DFA21(this);
+    protected DFA23 dfa23 = new DFA23(this);
     static final String DFA2_eotS =
-        "\26\uffff";
+        "\21\uffff";
     static final String DFA2_eofS =
-        "\25\uffff\1\17";
+        "\17\uffff\1\20\1\uffff";
     static final String DFA2_minS =
-        "\1\4\1\uffff\5\4\2\uffff\5\4\1\13\1\uffff\6\4";
+        "\1\4\1\uffff\5\4\3\uffff\6\4\1\uffff";
     static final String DFA2_maxS =
-        "\1\22\1\uffff\5\17\2\uffff\5\17\1\14\1\uffff\5\17\1\22";
+        "\1\23\1\uffff\5\17\3\uffff\5\17\1\23\1\uffff";
     static final String DFA2_acceptS =
-        "\1\uffff\1\1\5\uffff\1\2\1\3\6\uffff\1\4\6\uffff";
+        "\1\uffff\1\1\5\uffff\1\2\1\3\1\5\6\uffff\1\4";
     static final String DFA2_specialS =
-        "\26\uffff}>";
+        "\21\uffff}>";
     static final String[] DFA2_transitionS = {
-            "\1\2\1\6\1\3\1\4\1\5\7\uffff\1\1\1\7\1\10",
+            "\1\2\1\6\1\3\1\4\1\5\7\uffff\1\1\1\7\1\10\1\11",
             "",
-            "\1\11\1\15\1\12\1\13\1\14\1\16\1\uffff\5\17",
-            "\1\11\1\15\1\12\1\13\1\14\1\16\1\uffff\5\17",
-            "\1\11\1\15\1\12\1\13\1\14\1\16\1\uffff\5\17",
-            "\1\11\1\15\1\12\1\13\1\14\1\16\1\uffff\5\17",
-            "\1\11\1\15\1\12\1\13\1\14\1\16\1\uffff\5\17",
+            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
+            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
+            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
+            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
+            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
             "",
             "",
-            "\1\20\1\24\1\21\1\22\1\23\1\25\1\uffff\5\17",
-            "\1\20\1\24\1\21\1\22\1\23\1\25\1\uffff\5\17",
-            "\1\20\1\24\1\21\1\22\1\23\1\25\1\uffff\5\17",
-            "\1\20\1\24\1\21\1\22\1\23\1\25\1\uffff\5\17",
-            "\1\20\1\24\1\21\1\22\1\23\1\25\1\uffff\5\17",
-            "\1\7\1\1",
             "",
-            "\1\20\1\24\1\21\1\22\1\23\1\25\1\uffff\5\17",
-            "\1\20\1\24\1\21\1\22\1\23\1\25\1\uffff\5\17",
-            "\1\20\1\24\1\21\1\22\1\23\1\25\1\uffff\5\17",
-            "\1\20\1\24\1\21\1\22\1\23\1\25\1\uffff\5\17",
-            "\1\20\1\24\1\21\1\22\1\23\1\25\1\uffff\5\17",
-            "\6\17\1\uffff\1\7\1\1\3\uffff\3\17"
+            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
+            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
+            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
+            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
+            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
+            "\6\20\1\uffff\1\7\1\1\3\uffff\4\20",
+            ""
     };
 
     static final short[] DFA2_eot = DFA.unpackEncodedString(DFA2_eotS);
@@ -8028,167 +7284,217 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "396:1: rule__Model__DefinitionsAlternatives_0 : ( ( ruleSpec ) | ( ruleScenario ) | ( ruleStep ) | ( ruleComment ) );";
+            return "396:1: rule__Model__DefinitionsAlternatives_0 : ( ( ruleSpec ) | ( ruleScenario ) | ( ruleStep ) | ( ruleComment ) | ( ruleTags ) );";
         }
     }
-    static final String DFA17_eotS =
-        "\42\uffff";
-    static final String DFA17_eofS =
-        "\1\1\41\uffff";
-    static final String DFA17_minS =
-        "\1\4\1\uffff\31\4\1\uffff\5\4\1\uffff";
-    static final String DFA17_maxS =
-        "\1\23\1\uffff\31\17\1\uffff\5\17\1\uffff";
-    static final String DFA17_acceptS =
-        "\1\uffff\1\2\31\uffff\1\1\5\uffff\1\1";
-    static final String DFA17_specialS =
-        "\42\uffff}>";
-    static final String[] DFA17_transitionS = {
-            "\1\2\1\6\1\3\1\4\1\5\7\uffff\4\1",
+    static final String DFA20_eotS =
+        "\25\uffff";
+    static final String DFA20_eofS =
+        "\1\1\1\uffff\4\16\6\uffff\1\20\1\24\7\uffff";
+    static final String DFA20_minS =
+        "\1\4\1\uffff\4\4\6\uffff\2\4\7\uffff";
+    static final String DFA20_maxS =
+        "\1\23\1\uffff\4\23\6\uffff\2\23\7\uffff";
+    static final String DFA20_acceptS =
+        "\1\uffff\1\2\4\uffff\6\1\2\uffff\7\1";
+    static final String DFA20_specialS =
+        "\25\uffff}>";
+    static final String[] DFA20_transitionS = {
+            "\1\2\1\5\1\1\1\3\1\4\1\1\1\uffff\2\6\3\uffff\4\1",
             "",
-            "\1\7\1\13\1\10\1\11\1\12\1\1\1\uffff\1\14\1\15\1\17\1\16\1\20",
-            "\1\7\1\13\1\10\1\11\1\12\1\1\1\uffff\1\14\1\15\1\17\1\16\1\20",
-            "\1\7\1\13\1\10\1\11\1\12\1\1\1\uffff\1\14\1\15\1\17\1\16\1\20",
-            "\1\7\1\13\1\10\1\11\1\12\1\1\1\uffff\1\14\1\15\1\17\1\16\1\20",
-            "\1\7\1\13\1\10\1\11\1\12\1\1\1\uffff\1\14\1\15\1\17\1\16\1\20",
-            "\1\21\1\25\1\22\1\23\1\24\1\33\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\21\1\25\1\22\1\23\1\24\1\33\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\21\1\25\1\22\1\23\1\24\1\33\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\21\1\25\1\22\1\23\1\24\1\33\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\21\1\25\1\22\1\23\1\24\1\33\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\21\1\25\1\22\1\23\1\24\1\33\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\21\1\25\1\22\1\23\1\24\1\33\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\21\1\25\1\22\1\23\1\24\1\33\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\21\1\25\1\22\1\23\1\24\1\33\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\21\1\25\1\22\1\23\1\24\1\33\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
+            "\1\7\1\13\1\10\1\11\1\12\1\16\1\uffff\1\14\1\15\3\1\4\16",
+            "\1\7\1\13\1\10\1\11\1\12\1\16\1\uffff\1\14\1\15\3\1\4\16",
+            "\1\7\1\13\1\10\1\11\1\12\1\16\1\uffff\1\14\1\15\3\1\4\16",
+            "\1\7\1\13\1\10\1\11\1\12\1\16\1\uffff\1\14\1\15\3\1\4\16",
             "",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
-            "\1\34\1\40\1\35\1\36\1\37\1\41\1\uffff\1\26\1\27\1\31\1\30\1\32",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\21\1\24\1\17\1\22\1\23\1\20\1\uffff\1\14\1\15\3\1\1\20\3\24",
+            "\1\21\1\24\1\17\1\22\1\23\1\20\1\uffff\1\14\1\15\3\1\4\24",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             ""
     };
 
-    static final short[] DFA17_eot = DFA.unpackEncodedString(DFA17_eotS);
-    static final short[] DFA17_eof = DFA.unpackEncodedString(DFA17_eofS);
-    static final char[] DFA17_min = DFA.unpackEncodedStringToUnsignedChars(DFA17_minS);
-    static final char[] DFA17_max = DFA.unpackEncodedStringToUnsignedChars(DFA17_maxS);
-    static final short[] DFA17_accept = DFA.unpackEncodedString(DFA17_acceptS);
-    static final short[] DFA17_special = DFA.unpackEncodedString(DFA17_specialS);
-    static final short[][] DFA17_transition;
+    static final short[] DFA20_eot = DFA.unpackEncodedString(DFA20_eotS);
+    static final short[] DFA20_eof = DFA.unpackEncodedString(DFA20_eofS);
+    static final char[] DFA20_min = DFA.unpackEncodedStringToUnsignedChars(DFA20_minS);
+    static final char[] DFA20_max = DFA.unpackEncodedStringToUnsignedChars(DFA20_maxS);
+    static final short[] DFA20_accept = DFA.unpackEncodedString(DFA20_acceptS);
+    static final short[] DFA20_special = DFA.unpackEncodedString(DFA20_specialS);
+    static final short[][] DFA20_transition;
 
     static {
-        int numStates = DFA17_transitionS.length;
-        DFA17_transition = new short[numStates][];
+        int numStates = DFA20_transitionS.length;
+        DFA20_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA17_transition[i] = DFA.unpackEncodedString(DFA17_transitionS[i]);
+            DFA20_transition[i] = DFA.unpackEncodedString(DFA20_transitionS[i]);
         }
     }
 
-    class DFA17 extends DFA {
+    class DFA20 extends DFA {
 
-        public DFA17(BaseRecognizer recognizer) {
+        public DFA20(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 17;
-            this.eot = DFA17_eot;
-            this.eof = DFA17_eof;
-            this.min = DFA17_min;
-            this.max = DFA17_max;
-            this.accept = DFA17_accept;
-            this.special = DFA17_special;
-            this.transition = DFA17_transition;
+            this.decisionNumber = 20;
+            this.eot = DFA20_eot;
+            this.eof = DFA20_eof;
+            this.min = DFA20_min;
+            this.max = DFA20_max;
+            this.accept = DFA20_accept;
+            this.special = DFA20_special;
+            this.transition = DFA20_transition;
         }
         public String getDescription() {
-            return "()* loopback of 1092:1: ( rule__Scenario__CommentsAssignment_1_1 )*";
+            return "()* loopback of 1285:1: ( rule__Step__Group_2__0 )*";
         }
     }
-    static final String DFA24_eotS =
-        "\27\uffff";
-    static final String DFA24_eofS =
-        "\1\uffff\2\3\24\uffff";
-    static final String DFA24_minS =
-        "\1\11\2\4\1\uffff\1\4\1\uffff\21\4";
-    static final String DFA24_maxS =
-        "\1\11\2\22\1\uffff\1\17\1\uffff\21\17";
-    static final String DFA24_acceptS =
-        "\3\uffff\1\2\1\uffff\1\1\21\uffff";
-    static final String DFA24_specialS =
-        "\27\uffff}>";
-    static final String[] DFA24_transitionS = {
-            "\1\1",
-            "\1\3\1\4\3\3\1\2\4\uffff\1\5\1\uffff\3\3",
-            "\1\3\1\4\3\3\1\2\4\uffff\1\5\1\uffff\3\3",
+    static final String DFA21_eotS =
+        "\25\uffff";
+    static final String DFA21_eofS =
+        "\2\2\2\uffff\1\2\20\uffff";
+    static final String DFA21_minS =
+        "\2\4\1\uffff\2\4\1\uffff\17\4";
+    static final String DFA21_maxS =
+        "\2\23\1\uffff\1\17\1\23\1\uffff\17\17";
+    static final String DFA21_acceptS =
+        "\2\uffff\1\2\2\uffff\1\1\17\uffff";
+    static final String DFA21_specialS =
+        "\25\uffff}>";
+    static final String[] DFA21_transitionS = {
+            "\5\2\1\1\6\uffff\4\2",
+            "\1\2\1\3\3\2\1\4\4\uffff\1\5\1\uffff\4\2",
             "",
-            "\1\3\1\6\4\3\1\uffff\3\3\1\7\1\3",
+            "\1\2\1\6\4\2\1\uffff\3\2\1\7\1\2",
+            "\1\2\1\3\3\2\1\4\4\uffff\1\5\1\uffff\4\2",
             "",
-            "\1\3\1\10\4\3\1\uffff\3\3\1\11\1\3",
-            "\1\12\1\14\1\13\3\3\1\uffff\5\3",
-            "\1\3\1\10\4\3\1\uffff\3\3\1\11\1\3",
-            "\1\12\1\14\1\13\3\3\1\uffff\5\3",
-            "\1\15\1\17\1\16\3\3\1\5\3\3\1\20\1\3",
-            "\1\15\1\17\1\16\3\3\1\5\3\3\1\20\1\3",
-            "\1\15\1\17\1\16\3\3\1\5\3\3\1\20\1\3",
-            "\1\15\1\17\1\16\3\3\1\5\3\3\1\20\1\3",
-            "\1\15\1\17\1\16\3\3\1\5\3\3\1\20\1\3",
-            "\1\15\1\17\1\16\3\3\1\5\3\3\1\20\1\3",
-            "\1\21\1\23\1\22\3\3\1\uffff\5\3",
-            "\1\24\1\26\1\25\3\3\1\5\3\3\1\20\1\3",
-            "\1\24\1\26\1\25\3\3\1\5\3\3\1\20\1\3",
-            "\1\24\1\26\1\25\3\3\1\5\3\3\1\20\1\3",
-            "\1\24\1\26\1\25\3\3\1\5\3\3\1\20\1\3",
-            "\1\24\1\26\1\25\3\3\1\5\3\3\1\20\1\3",
-            "\1\24\1\26\1\25\3\3\1\5\3\3\1\20\1\3"
+            "\1\2\1\6\4\2\1\uffff\3\2\1\7\1\2",
+            "\1\10\1\12\1\11\3\2\1\uffff\5\2",
+            "\1\13\1\15\1\14\3\2\1\5\3\2\1\16\1\2",
+            "\1\13\1\15\1\14\3\2\1\5\3\2\1\16\1\2",
+            "\1\13\1\15\1\14\3\2\1\5\3\2\1\16\1\2",
+            "\1\13\1\15\1\14\3\2\1\5\3\2\1\16\1\2",
+            "\1\13\1\15\1\14\3\2\1\5\3\2\1\16\1\2",
+            "\1\13\1\15\1\14\3\2\1\5\3\2\1\16\1\2",
+            "\1\17\1\21\1\20\3\2\1\uffff\5\2",
+            "\1\22\1\24\1\23\3\2\1\5\3\2\1\16\1\2",
+            "\1\22\1\24\1\23\3\2\1\5\3\2\1\16\1\2",
+            "\1\22\1\24\1\23\3\2\1\5\3\2\1\16\1\2",
+            "\1\22\1\24\1\23\3\2\1\5\3\2\1\16\1\2",
+            "\1\22\1\24\1\23\3\2\1\5\3\2\1\16\1\2",
+            "\1\22\1\24\1\23\3\2\1\5\3\2\1\16\1\2"
     };
 
-    static final short[] DFA24_eot = DFA.unpackEncodedString(DFA24_eotS);
-    static final short[] DFA24_eof = DFA.unpackEncodedString(DFA24_eofS);
-    static final char[] DFA24_min = DFA.unpackEncodedStringToUnsignedChars(DFA24_minS);
-    static final char[] DFA24_max = DFA.unpackEncodedStringToUnsignedChars(DFA24_maxS);
-    static final short[] DFA24_accept = DFA.unpackEncodedString(DFA24_acceptS);
-    static final short[] DFA24_special = DFA.unpackEncodedString(DFA24_specialS);
-    static final short[][] DFA24_transition;
+    static final short[] DFA21_eot = DFA.unpackEncodedString(DFA21_eotS);
+    static final short[] DFA21_eof = DFA.unpackEncodedString(DFA21_eofS);
+    static final char[] DFA21_min = DFA.unpackEncodedStringToUnsignedChars(DFA21_minS);
+    static final char[] DFA21_max = DFA.unpackEncodedStringToUnsignedChars(DFA21_maxS);
+    static final short[] DFA21_accept = DFA.unpackEncodedString(DFA21_acceptS);
+    static final short[] DFA21_special = DFA.unpackEncodedString(DFA21_specialS);
+    static final short[][] DFA21_transition;
 
     static {
-        int numStates = DFA24_transitionS.length;
-        DFA24_transition = new short[numStates][];
+        int numStates = DFA21_transitionS.length;
+        DFA21_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA24_transition[i] = DFA.unpackEncodedString(DFA24_transitionS[i]);
+            DFA21_transition[i] = DFA.unpackEncodedString(DFA21_transitionS[i]);
         }
     }
 
-    class DFA24 extends DFA {
+    class DFA21 extends DFA {
 
-        public DFA24(BaseRecognizer recognizer) {
+        public DFA21(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 24;
-            this.eot = DFA24_eot;
-            this.eof = DFA24_eof;
-            this.min = DFA24_min;
-            this.max = DFA24_max;
-            this.accept = DFA24_accept;
-            this.special = DFA24_special;
-            this.transition = DFA24_transition;
+            this.decisionNumber = 21;
+            this.eot = DFA21_eot;
+            this.eof = DFA21_eof;
+            this.min = DFA21_min;
+            this.max = DFA21_max;
+            this.accept = DFA21_accept;
+            this.special = DFA21_special;
+            this.transition = DFA21_transition;
         }
         public String getDescription() {
-            return "1470:1: ( rule__Step__Group_3__0 )?";
+            return "1315:1: ( rule__Step__Group_3__0 )?";
+        }
+    }
+    static final String DFA23_eotS =
+        "\21\uffff";
+    static final String DFA23_eofS =
+        "\1\1\1\uffff\1\10\6\uffff\1\14\1\20\6\uffff";
+    static final String DFA23_minS =
+        "\1\4\1\uffff\1\4\6\uffff\2\4\6\uffff";
+    static final String DFA23_maxS =
+        "\1\23\1\uffff\1\23\6\uffff\2\23\6\uffff";
+    static final String DFA23_acceptS =
+        "\1\uffff\1\2\1\uffff\6\1\2\uffff\6\1";
+    static final String DFA23_specialS =
+        "\21\uffff}>";
+    static final String[] DFA23_transitionS = {
+            "\2\1\1\2\3\1\1\uffff\2\1\3\uffff\4\1",
+            "",
+            "\1\3\1\7\1\4\1\5\1\6\1\10\1\uffff\1\11\1\12\3\1\4\10",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\15\1\20\1\13\1\16\1\17\1\14\1\uffff\1\11\1\12\3\1\1\14\3\20",
+            "\1\15\1\20\1\13\1\16\1\17\1\14\1\uffff\1\11\1\12\3\1\4\20",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] DFA23_eot = DFA.unpackEncodedString(DFA23_eotS);
+    static final short[] DFA23_eof = DFA.unpackEncodedString(DFA23_eofS);
+    static final char[] DFA23_min = DFA.unpackEncodedStringToUnsignedChars(DFA23_minS);
+    static final char[] DFA23_max = DFA.unpackEncodedStringToUnsignedChars(DFA23_maxS);
+    static final short[] DFA23_accept = DFA.unpackEncodedString(DFA23_acceptS);
+    static final short[] DFA23_special = DFA.unpackEncodedString(DFA23_specialS);
+    static final short[][] DFA23_transition;
+
+    static {
+        int numStates = DFA23_transitionS.length;
+        DFA23_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA23_transition[i] = DFA.unpackEncodedString(DFA23_transitionS[i]);
+        }
+    }
+
+    class DFA23 extends DFA {
+
+        public DFA23(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 23;
+            this.eot = DFA23_eot;
+            this.eof = DFA23_eof;
+            this.min = DFA23_min;
+            this.max = DFA23_max;
+            this.accept = DFA23_accept;
+            this.special = DFA23_special;
+            this.transition = DFA23_transition;
+        }
+        public String getDescription() {
+            return "()* loopback of 1410:1: ( RULE_SEPARATORS )*";
         }
     }
  
 
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel61 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel68 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__DefinitionsAssignment_in_ruleModel94 = new BitSet(new long[]{0x00000000000701F2L});
+    public static final BitSet FOLLOW_rule__Model__DefinitionsAssignment_in_ruleModel94 = new BitSet(new long[]{0x00000000000F01F2L});
     public static final BitSet FOLLOW_ruleSpec_in_entryRuleSpec122 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSpec129 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Spec__Alternatives_in_ruleSpec155 = new BitSet(new long[]{0x0000000000000002L});
@@ -8226,213 +7532,191 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleScenario_in_rule__Model__DefinitionsAlternatives_0808 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStep_in_rule__Model__DefinitionsAlternatives_0825 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleComment_in_rule__Model__DefinitionsAlternatives_0842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Spec__Group_0__0_in_rule__Spec__Alternatives874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Spec__Group_1__0_in_rule__Spec__Alternatives892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_0__0_in_rule__Scenario__Alternatives925 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1__0_in_rule__Scenario__Alternatives943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Step__StaticParamsAssignment_2_0_0_in_rule__Step__Alternatives_2_0976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Step__DynamicParamsAssignment_2_0_1_in_rule__Step__Alternatives_2_0994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WORD_in_rule__Step__Alternatives_2_01012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__Step__Alternatives_2_01030 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Step__Alternatives_2_01050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_rule__Step__Alternatives_2_01069 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_rule__Tags__Alternatives_4_11101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Tags__Alternatives_4_11119 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextPart_in_rule__Comment__NameAlternatives_1_01153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__Comment__NameAlternatives_1_01171 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Comment__NameAlternatives_1_01191 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Comment__NameAlternatives_1_01211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__Comment__NameAlternatives_1_01231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Comment__NameAlternatives_1_01251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WORD_in_rule__TextPart__Alternatives1285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SEPARATORS_in_rule__TextPart__Alternatives1302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STATIC_PARAM_in_rule__TextPart__Alternatives1319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DYNAMIC_PARAM_in_rule__TextPart__Alternatives1336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_rule__TextPart__Alternatives1353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WORD_in_rule__TableCell__NameAlternatives_1_01385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SEPARATORS_in_rule__TableCell__NameAlternatives_1_01402 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_rule__TableCell__NameAlternatives_1_01419 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Spec__Group_0__0__Impl_in_rule__Spec__Group_0__01449 = new BitSet(new long[]{0x00000000000101F0L});
-    public static final BitSet FOLLOW_rule__Spec__Group_0__1_in_rule__Spec__Group_0__01452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Spec__Group_0__0__Impl1480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Spec__Group_0__1__Impl_in_rule__Spec__Group_0__11511 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__Spec__Group_0__2_in_rule__Spec__Group_0__11514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Spec__NameAssignment_0_1_in_rule__Spec__Group_0__1__Impl1543 = new BitSet(new long[]{0x00000000000101F2L});
-    public static final BitSet FOLLOW_rule__Spec__NameAssignment_0_1_in_rule__Spec__Group_0__1__Impl1555 = new BitSet(new long[]{0x00000000000101F2L});
-    public static final BitSet FOLLOW_rule__Spec__Group_0__2__Impl_in_rule__Spec__Group_0__21588 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_0__2__Impl1618 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_0__2__Impl1631 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_rule__Spec__Group_1__0__Impl_in_rule__Spec__Group_1__01670 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__Spec__Group_1__1_in_rule__Spec__Group_1__01673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Spec__NameAssignment_1_0_in_rule__Spec__Group_1__0__Impl1702 = new BitSet(new long[]{0x00000000000101F2L});
-    public static final BitSet FOLLOW_rule__Spec__NameAssignment_1_0_in_rule__Spec__Group_1__0__Impl1714 = new BitSet(new long[]{0x00000000000101F2L});
-    public static final BitSet FOLLOW_rule__Spec__Group_1__1__Impl_in_rule__Spec__Group_1__11747 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__Spec__Group_1__2_in_rule__Spec__Group_1__11750 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__1__Impl1777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Spec__Group_1__2__Impl_in_rule__Spec__Group_1__21806 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__Spec__Group_1__3_in_rule__Spec__Group_1__21809 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Spec__Group_1__2__Impl1840 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_12_in_rule__Spec__Group_1__2__Impl1856 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_rule__Spec__Group_1__3__Impl_in_rule__Spec__Group_1__31891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__3__Impl1921 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__3__Impl1934 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_0__0__Impl_in_rule__Scenario__Group_0__01975 = new BitSet(new long[]{0x00000000000101F0L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_0__1_in_rule__Scenario__Group_0__01978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Scenario__Group_0__0__Impl2006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_0__1__Impl_in_rule__Scenario__Group_0__12037 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_0__2_in_rule__Scenario__Group_0__12040 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__NameAssignment_0_1_in_rule__Scenario__Group_0__1__Impl2069 = new BitSet(new long[]{0x00000000000101F2L});
-    public static final BitSet FOLLOW_rule__Scenario__NameAssignment_0_1_in_rule__Scenario__Group_0__1__Impl2081 = new BitSet(new long[]{0x00000000000101F2L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_0__2__Impl_in_rule__Scenario__Group_0__22114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_0__2__Impl2144 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_0__2__Impl2157 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1__0__Impl_in_rule__Scenario__Group_1__02196 = new BitSet(new long[]{0x00000000000701F0L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1__1_in_rule__Scenario__Group_1__02199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_0__0_in_rule__Scenario__Group_1__0__Impl2226 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1__1__Impl_in_rule__Scenario__Group_1__12256 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1__2_in_rule__Scenario__Group_1__12259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__CommentsAssignment_1_1_in_rule__Scenario__Group_1__1__Impl2288 = new BitSet(new long[]{0x00000000000701F2L});
-    public static final BitSet FOLLOW_rule__Scenario__CommentsAssignment_1_1_in_rule__Scenario__Group_1__1__Impl2300 = new BitSet(new long[]{0x00000000000701F2L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1__2__Impl_in_rule__Scenario__Group_1__22333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_2__0_in_rule__Scenario__Group_1__2__Impl2360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_0__0__Impl_in_rule__Scenario__Group_1_0__02397 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_0__1_in_rule__Scenario__Group_1_0__02400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__NameAssignment_1_0_0_in_rule__Scenario__Group_1_0__0__Impl2429 = new BitSet(new long[]{0x00000000000301F2L});
-    public static final BitSet FOLLOW_rule__Scenario__NameAssignment_1_0_0_in_rule__Scenario__Group_1_0__0__Impl2441 = new BitSet(new long[]{0x00000000000301F2L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_0__1__Impl_in_rule__Scenario__Group_1_0__12474 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_0__2_in_rule__Scenario__Group_1_0__12477 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1_0__1__Impl2504 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_0__2__Impl_in_rule__Scenario__Group_1_0__22533 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_0__3_in_rule__Scenario__Group_1_0__22536 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__Scenario__Group_1_0__2__Impl2567 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_11_in_rule__Scenario__Group_1_0__2__Impl2583 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_0__3__Impl_in_rule__Scenario__Group_1_0__32618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1_0__3__Impl2648 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1_0__3__Impl2661 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_2__0__Impl_in_rule__Scenario__Group_1_2__02702 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_2__1_in_rule__Scenario__Group_1_2__02705 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__TagsAssignment_1_2_0_in_rule__Scenario__Group_1_2__0__Impl2732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Scenario__Group_1_2__1__Impl_in_rule__Scenario__Group_1_2__12762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1_2__1__Impl2792 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1_2__1__Impl2805 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_rule__Step__Group__0__Impl_in_rule__Step__Group__02842 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__Step__Group__1_in_rule__Step__Group__02845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Step__Group__1__Impl_in_rule__Step__Group__12903 = new BitSet(new long[]{0x00000000000019B0L});
-    public static final BitSet FOLLOW_rule__Step__Group__2_in_rule__Step__Group__12906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Step__Group__1__Impl2934 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Step__Group__2__Impl_in_rule__Step__Group__22965 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__Step__Group__3_in_rule__Step__Group__22968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Step__Group_2__0_in_rule__Step__Group__2__Impl2997 = new BitSet(new long[]{0x00000000000019B2L});
-    public static final BitSet FOLLOW_rule__Step__Group_2__0_in_rule__Step__Group__2__Impl3009 = new BitSet(new long[]{0x00000000000019B2L});
-    public static final BitSet FOLLOW_rule__Step__Group__3__Impl_in_rule__Step__Group__33042 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__Step__Group__4_in_rule__Step__Group__33045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Step__Group_3__0_in_rule__Step__Group__3__Impl3072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Step__Group__4__Impl_in_rule__Step__Group__43103 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group__4__Impl3133 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group__4__Impl3146 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_rule__Step__Group_2__0__Impl_in_rule__Step__Group_2__03189 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_rule__Step__Group_2__1_in_rule__Step__Group_2__03192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Step__Alternatives_2_0_in_rule__Step__Group_2__0__Impl3219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Step__Group_2__1__Impl_in_rule__Step__Group_2__13249 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SEPARATORS_in_rule__Step__Group_2__1__Impl3277 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_rule__Step__Group_3__0__Impl_in_rule__Step__Group_3__03312 = new BitSet(new long[]{0x0000000000004220L});
-    public static final BitSet FOLLOW_rule__Step__Group_3__1_in_rule__Step__Group_3__03315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group_3__0__Impl3342 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Step__Group_3__1__Impl_in_rule__Step__Group_3__13371 = new BitSet(new long[]{0x0000000000004220L});
-    public static final BitSet FOLLOW_rule__Step__Group_3__2_in_rule__Step__Group_3__13374 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group_3__1__Impl3402 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_rule__Step__Group_3__2__Impl_in_rule__Step__Group_3__23433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Step__TableAssignment_3_2_in_rule__Step__Group_3__2__Impl3460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Tags__Group__0__Impl_in_rule__Tags__Group__03496 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_rule__Tags__Group__1_in_rule__Tags__Group__03499 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__Tags__Group__0__Impl3527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Tags__Group__1__Impl_in_rule__Tags__Group__13558 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_rule__Tags__Group__2_in_rule__Tags__Group__13561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_rule__Tags__Group__1__Impl3589 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__Tags__Group__2__Impl_in_rule__Tags__Group__23620 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_rule__Tags__Group__3_in_rule__Tags__Group__23623 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Tags__Group__2__Impl3651 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Tags__Group__3__Impl_in_rule__Tags__Group__33682 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_rule__Tags__Group__4_in_rule__Tags__Group__33685 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_rule__Tags__Group__3__Impl3713 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__Tags__Group__4__Impl_in_rule__Tags__Group__43744 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__Tags__Group__5_in_rule__Tags__Group__43747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Tags__Group_4__0_in_rule__Tags__Group__4__Impl3776 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_rule__Tags__Group_4__0_in_rule__Tags__Group__4__Impl3788 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_rule__Tags__Group__5__Impl_in_rule__Tags__Group__53821 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Tags__Group__5__Impl3848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Tags__Group_4__0__Impl_in_rule__Tags__Group_4__03889 = new BitSet(new long[]{0x0000000000002020L});
-    public static final BitSet FOLLOW_rule__Tags__Group_4__1_in_rule__Tags__Group_4__03892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WORD_in_rule__Tags__Group_4__0__Impl3919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Tags__Group_4__1__Impl_in_rule__Tags__Group_4__13948 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Tags__Alternatives_4_1_in_rule__Tags__Group_4__1__Impl3975 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comment__Group__0__Impl_in_rule__Comment__Group__04010 = new BitSet(new long[]{0x000000000001F9F0L});
-    public static final BitSet FOLLOW_rule__Comment__Group__1_in_rule__Comment__Group__04013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comment__NameAssignment_0_in_rule__Comment__Group__0__Impl4040 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comment__Group__1__Impl_in_rule__Comment__Group__14070 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__Comment__Group__2_in_rule__Comment__Group__14073 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comment__NameAssignment_1_in_rule__Comment__Group__1__Impl4102 = new BitSet(new long[]{0x000000000001F9F2L});
-    public static final BitSet FOLLOW_rule__Comment__NameAssignment_1_in_rule__Comment__Group__1__Impl4114 = new BitSet(new long[]{0x000000000001F9F2L});
-    public static final BitSet FOLLOW_rule__Comment__Group__2__Impl_in_rule__Comment__Group__24147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Comment__Group__2__Impl4177 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Comment__Group__2__Impl4190 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_rule__Table__Group__0__Impl_in_rule__Table__Group__04229 = new BitSet(new long[]{0x0000000000004220L});
-    public static final BitSet FOLLOW_rule__Table__Group__1_in_rule__Table__Group__04232 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_rule__Table__Group__0__Impl4260 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__Table__Group__1__Impl_in_rule__Table__Group__14291 = new BitSet(new long[]{0x0000000000004020L});
-    public static final BitSet FOLLOW_rule__Table__Group__2_in_rule__Table__Group__14294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Table__HeadingAssignment_1_in_rule__Table__Group__1__Impl4321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Table__Group__2__Impl_in_rule__Table__Group__24351 = new BitSet(new long[]{0x0000000000004020L});
-    public static final BitSet FOLLOW_rule__Table__Group__3_in_rule__Table__Group__24354 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_rule__Table__Group__2__Impl4382 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__Table__Group__3__Impl_in_rule__Table__Group__34413 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_rule__Table__Group__4_in_rule__Table__Group__34416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Table__Group_3__0_in_rule__Table__Group__3__Impl4445 = new BitSet(new long[]{0x0000000000004022L});
-    public static final BitSet FOLLOW_rule__Table__Group_3__0_in_rule__Table__Group__3__Impl4457 = new BitSet(new long[]{0x0000000000004022L});
-    public static final BitSet FOLLOW_rule__Table__Group__4__Impl_in_rule__Table__Group__44490 = new BitSet(new long[]{0x0000000000004220L});
-    public static final BitSet FOLLOW_rule__Table__Group__5_in_rule__Table__Group__44493 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_TABLE_ROW_END_in_rule__Table__Group__4__Impl4520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Table__Group__5__Impl_in_rule__Table__Group__54549 = new BitSet(new long[]{0x0000000000004220L});
-    public static final BitSet FOLLOW_rule__Table__Group__6_in_rule__Table__Group__54552 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_rule__Table__Group__5__Impl4580 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__Table__Group__6__Impl_in_rule__Table__Group__64611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Table__RowsAssignment_6_in_rule__Table__Group__6__Impl4640 = new BitSet(new long[]{0x0000000000004222L});
-    public static final BitSet FOLLOW_rule__Table__RowsAssignment_6_in_rule__Table__Group__6__Impl4652 = new BitSet(new long[]{0x0000000000004222L});
-    public static final BitSet FOLLOW_rule__Table__Group_3__0__Impl_in_rule__Table__Group_3__04699 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__Table__Group_3__1_in_rule__Table__Group_3__04702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__Table__Group_3__0__Impl4730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Table__Group_3__1__Impl_in_rule__Table__Group_3__14761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__Table__Group_3__1__Impl4792 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_11_in_rule__Table__Group_3__1__Impl4808 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_rule__TableRow__Group__0__Impl_in_rule__TableRow__Group__04847 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_rule__TableRow__Group__1_in_rule__TableRow__Group__04850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TableRow__CellsAssignment_0_in_rule__TableRow__Group__0__Impl4879 = new BitSet(new long[]{0x0000000000004222L});
-    public static final BitSet FOLLOW_rule__TableRow__CellsAssignment_0_in_rule__TableRow__Group__0__Impl4891 = new BitSet(new long[]{0x0000000000004222L});
-    public static final BitSet FOLLOW_rule__TableRow__Group__1__Impl_in_rule__TableRow__Group__14924 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_TABLE_ROW_END_in_rule__TableRow__Group__1__Impl4951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TableCell__Group__0__Impl_in_rule__TableCell__Group__04984 = new BitSet(new long[]{0x0000000000000070L});
-    public static final BitSet FOLLOW_rule__TableCell__Group__1_in_rule__TableCell__Group__04987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__TableCell__Group__0__Impl5015 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TableCell__Group__1__Impl_in_rule__TableCell__Group__15046 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TableCell__NameAssignment_1_in_rule__TableCell__Group__1__Impl5075 = new BitSet(new long[]{0x0000000000000072L});
-    public static final BitSet FOLLOW_rule__TableCell__NameAssignment_1_in_rule__TableCell__Group__1__Impl5087 = new BitSet(new long[]{0x0000000000000072L});
-    public static final BitSet FOLLOW_rule__Model__DefinitionsAlternatives_0_in_rule__Model__DefinitionsAssignment5129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextPart_in_rule__Spec__NameAssignment_0_15162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextPart_in_rule__Spec__NameAssignment_1_05193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextPart_in_rule__Scenario__NameAssignment_0_15224 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextPart_in_rule__Scenario__NameAssignment_1_0_05255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComment_in_rule__Scenario__CommentsAssignment_1_15286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTags_in_rule__Scenario__TagsAssignment_1_2_05317 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStaticParam_in_rule__Step__StaticParamsAssignment_2_0_05348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDynamicParam_in_rule__Step__DynamicParamsAssignment_2_0_15379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTable_in_rule__Step__TableAssignment_3_25410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STATIC_PARAM_in_rule__StaticParam__NameAssignment5441 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DYNAMIC_PARAM_in_rule__DynamicParam__NameAssignment5472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextPart_in_rule__Comment__NameAssignment_05503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Comment__NameAlternatives_1_0_in_rule__Comment__NameAssignment_15534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTableRow_in_rule__Table__HeadingAssignment_15567 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTableRow_in_rule__Table__RowsAssignment_65598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTableCell_in_rule__TableRow__CellsAssignment_05629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TableCell__NameAlternatives_1_0_in_rule__TableCell__NameAssignment_15660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTags_in_rule__Model__DefinitionsAlternatives_0859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0__0_in_rule__Spec__Alternatives891 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_1__0_in_rule__Spec__Alternatives909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0__0_in_rule__Scenario__Alternatives942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_1__0_in_rule__Scenario__Alternatives960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__StaticParamsAssignment_2_0_0_in_rule__Step__Alternatives_2_0993 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__DynamicParamsAssignment_2_0_1_in_rule__Step__Alternatives_2_01011 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WORD_in_rule__Step__Alternatives_2_01029 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__Step__Alternatives_2_01047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Step__Alternatives_2_01067 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_rule__Step__Alternatives_2_01086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WORD_in_rule__Tags__Alternatives_41118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_rule__Tags__Alternatives_41135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Tags__Alternatives_41153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextPart_in_rule__Comment__NameAlternatives_1_01187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__Comment__NameAlternatives_1_01205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Comment__NameAlternatives_1_01225 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Comment__NameAlternatives_1_01245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__Comment__NameAlternatives_1_01265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Comment__NameAlternatives_1_01285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WORD_in_rule__TextPart__Alternatives1319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SEPARATORS_in_rule__TextPart__Alternatives1336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STATIC_PARAM_in_rule__TextPart__Alternatives1353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DYNAMIC_PARAM_in_rule__TextPart__Alternatives1370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_rule__TextPart__Alternatives1387 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WORD_in_rule__TableCell__NameAlternatives_1_01419 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SEPARATORS_in_rule__TableCell__NameAlternatives_1_01436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_rule__TableCell__NameAlternatives_1_01453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0__0__Impl_in_rule__Spec__Group_0__01483 = new BitSet(new long[]{0x00000000000101F0L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0__1_in_rule__Spec__Group_0__01486 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Spec__Group_0__0__Impl1514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0__1__Impl_in_rule__Spec__Group_0__11545 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0__2_in_rule__Spec__Group_0__11548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__NameAssignment_0_1_in_rule__Spec__Group_0__1__Impl1577 = new BitSet(new long[]{0x00000000000101F2L});
+    public static final BitSet FOLLOW_rule__Spec__NameAssignment_0_1_in_rule__Spec__Group_0__1__Impl1589 = new BitSet(new long[]{0x00000000000101F2L});
+    public static final BitSet FOLLOW_rule__Spec__Group_0__2__Impl_in_rule__Spec__Group_0__21622 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_0__2__Impl1652 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_0__2__Impl1665 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_rule__Spec__Group_1__0__Impl_in_rule__Spec__Group_1__01704 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__Spec__Group_1__1_in_rule__Spec__Group_1__01707 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__NameAssignment_1_0_in_rule__Spec__Group_1__0__Impl1736 = new BitSet(new long[]{0x00000000000101F2L});
+    public static final BitSet FOLLOW_rule__Spec__NameAssignment_1_0_in_rule__Spec__Group_1__0__Impl1748 = new BitSet(new long[]{0x00000000000101F2L});
+    public static final BitSet FOLLOW_rule__Spec__Group_1__1__Impl_in_rule__Spec__Group_1__11781 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__Spec__Group_1__2_in_rule__Spec__Group_1__11784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__1__Impl1811 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_1__2__Impl_in_rule__Spec__Group_1__21840 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__Spec__Group_1__3_in_rule__Spec__Group_1__21843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__Spec__Group_1__2__Impl1874 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_12_in_rule__Spec__Group_1__2__Impl1890 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_rule__Spec__Group_1__3__Impl_in_rule__Spec__Group_1__31925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__3__Impl1955 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Spec__Group_1__3__Impl1968 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0__0__Impl_in_rule__Scenario__Group_0__02009 = new BitSet(new long[]{0x00000000000101F0L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0__1_in_rule__Scenario__Group_0__02012 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Scenario__Group_0__0__Impl2040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0__1__Impl_in_rule__Scenario__Group_0__12071 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0__2_in_rule__Scenario__Group_0__12074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__NameAssignment_0_1_in_rule__Scenario__Group_0__1__Impl2103 = new BitSet(new long[]{0x00000000000101F2L});
+    public static final BitSet FOLLOW_rule__Scenario__NameAssignment_0_1_in_rule__Scenario__Group_0__1__Impl2115 = new BitSet(new long[]{0x00000000000101F2L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_0__2__Impl_in_rule__Scenario__Group_0__22148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_0__2__Impl2178 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_0__2__Impl2191 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_1__0__Impl_in_rule__Scenario__Group_1__02230 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_1__1_in_rule__Scenario__Group_1__02233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__NameAssignment_1_0_in_rule__Scenario__Group_1__0__Impl2262 = new BitSet(new long[]{0x00000000000301F2L});
+    public static final BitSet FOLLOW_rule__Scenario__NameAssignment_1_0_in_rule__Scenario__Group_1__0__Impl2274 = new BitSet(new long[]{0x00000000000301F2L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_1__1__Impl_in_rule__Scenario__Group_1__12307 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_1__2_in_rule__Scenario__Group_1__12310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1__1__Impl2337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_1__2__Impl_in_rule__Scenario__Group_1__22366 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_1__3_in_rule__Scenario__Group_1__22369 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__Scenario__Group_1__2__Impl2400 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_11_in_rule__Scenario__Group_1__2__Impl2416 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_rule__Scenario__Group_1__3__Impl_in_rule__Scenario__Group_1__32451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1__3__Impl2481 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Scenario__Group_1__3__Impl2494 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_rule__Step__Group__0__Impl_in_rule__Step__Group__02535 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__Step__Group__1_in_rule__Step__Group__02538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__Group__1__Impl_in_rule__Step__Group__12596 = new BitSet(new long[]{0x00000000000019B0L});
+    public static final BitSet FOLLOW_rule__Step__Group__2_in_rule__Step__Group__12599 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Step__Group__1__Impl2627 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__Group__2__Impl_in_rule__Step__Group__22658 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__Step__Group__3_in_rule__Step__Group__22661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__Group_2__0_in_rule__Step__Group__2__Impl2690 = new BitSet(new long[]{0x00000000000019B2L});
+    public static final BitSet FOLLOW_rule__Step__Group_2__0_in_rule__Step__Group__2__Impl2702 = new BitSet(new long[]{0x00000000000019B2L});
+    public static final BitSet FOLLOW_rule__Step__Group__3__Impl_in_rule__Step__Group__32735 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__Step__Group__4_in_rule__Step__Group__32738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__Group_3__0_in_rule__Step__Group__3__Impl2765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__Group__4__Impl_in_rule__Step__Group__42796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group__4__Impl2824 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_rule__Step__Group_2__0__Impl_in_rule__Step__Group_2__02865 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_rule__Step__Group_2__1_in_rule__Step__Group_2__02868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__Alternatives_2_0_in_rule__Step__Group_2__0__Impl2895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__Group_2__1__Impl_in_rule__Step__Group_2__12925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SEPARATORS_in_rule__Step__Group_2__1__Impl2953 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_rule__Step__Group_3__0__Impl_in_rule__Step__Group_3__02988 = new BitSet(new long[]{0x0000000000004220L});
+    public static final BitSet FOLLOW_rule__Step__Group_3__1_in_rule__Step__Group_3__02991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group_3__0__Impl3018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__Group_3__1__Impl_in_rule__Step__Group_3__13047 = new BitSet(new long[]{0x0000000000004220L});
+    public static final BitSet FOLLOW_rule__Step__Group_3__2_in_rule__Step__Group_3__13050 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Step__Group_3__1__Impl3078 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_rule__Step__Group_3__2__Impl_in_rule__Step__Group_3__23109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Step__TableAssignment_3_2_in_rule__Step__Group_3__2__Impl3136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Tags__Group__0__Impl_in_rule__Tags__Group__03172 = new BitSet(new long[]{0x00000000000F01F0L});
+    public static final BitSet FOLLOW_rule__Tags__Group__1_in_rule__Tags__Group__03175 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Tags__Group__1__Impl_in_rule__Tags__Group__13233 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_rule__Tags__Group__2_in_rule__Tags__Group__13236 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__Tags__Group__1__Impl3264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Tags__Group__2__Impl_in_rule__Tags__Group__23295 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_rule__Tags__Group__3_in_rule__Tags__Group__23298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_rule__Tags__Group__2__Impl3326 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rule__Tags__Group__3__Impl_in_rule__Tags__Group__33357 = new BitSet(new long[]{0x0000000000002030L});
+    public static final BitSet FOLLOW_rule__Tags__Group__4_in_rule__Tags__Group__33360 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__Tags__Group__3__Impl3388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Tags__Group__4__Impl_in_rule__Tags__Group__43419 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__Tags__Group__5_in_rule__Tags__Group__43422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Tags__Alternatives_4_in_rule__Tags__Group__4__Impl3451 = new BitSet(new long[]{0x0000000000002032L});
+    public static final BitSet FOLLOW_rule__Tags__Alternatives_4_in_rule__Tags__Group__4__Impl3463 = new BitSet(new long[]{0x0000000000002032L});
+    public static final BitSet FOLLOW_rule__Tags__Group__5__Impl_in_rule__Tags__Group__53496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Tags__Group__5__Impl3526 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Tags__Group__5__Impl3539 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_rule__Comment__Group__0__Impl_in_rule__Comment__Group__03584 = new BitSet(new long[]{0x000000000001FBF0L});
+    public static final BitSet FOLLOW_rule__Comment__Group__1_in_rule__Comment__Group__03587 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comment__NameAssignment_0_in_rule__Comment__Group__0__Impl3614 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comment__Group__1__Impl_in_rule__Comment__Group__13644 = new BitSet(new long[]{0x000000000001FBF0L});
+    public static final BitSet FOLLOW_rule__Comment__Group__2_in_rule__Comment__Group__13647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comment__NameAssignment_1_in_rule__Comment__Group__1__Impl3674 = new BitSet(new long[]{0x000000000001F9F2L});
+    public static final BitSet FOLLOW_rule__Comment__Group__2__Impl_in_rule__Comment__Group__23705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Comment__Group__2__Impl3735 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_RULE_SINGLE_NL_in_rule__Comment__Group__2__Impl3748 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_rule__Table__Group__0__Impl_in_rule__Table__Group__03787 = new BitSet(new long[]{0x0000000000004220L});
+    public static final BitSet FOLLOW_rule__Table__Group__1_in_rule__Table__Group__03790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_rule__Table__Group__0__Impl3818 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rule__Table__Group__1__Impl_in_rule__Table__Group__13849 = new BitSet(new long[]{0x0000000000004020L});
+    public static final BitSet FOLLOW_rule__Table__Group__2_in_rule__Table__Group__13852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Table__HeadingAssignment_1_in_rule__Table__Group__1__Impl3879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Table__Group__2__Impl_in_rule__Table__Group__23909 = new BitSet(new long[]{0x0000000000004020L});
+    public static final BitSet FOLLOW_rule__Table__Group__3_in_rule__Table__Group__23912 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_rule__Table__Group__2__Impl3940 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rule__Table__Group__3__Impl_in_rule__Table__Group__33971 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_rule__Table__Group__4_in_rule__Table__Group__33974 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Table__Group_3__0_in_rule__Table__Group__3__Impl4003 = new BitSet(new long[]{0x0000000000004022L});
+    public static final BitSet FOLLOW_rule__Table__Group_3__0_in_rule__Table__Group__3__Impl4015 = new BitSet(new long[]{0x0000000000004022L});
+    public static final BitSet FOLLOW_rule__Table__Group__4__Impl_in_rule__Table__Group__44048 = new BitSet(new long[]{0x0000000000004220L});
+    public static final BitSet FOLLOW_rule__Table__Group__5_in_rule__Table__Group__44051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TABLE_ROW_END_in_rule__Table__Group__4__Impl4078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Table__Group__5__Impl_in_rule__Table__Group__54107 = new BitSet(new long[]{0x0000000000004220L});
+    public static final BitSet FOLLOW_rule__Table__Group__6_in_rule__Table__Group__54110 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_rule__Table__Group__5__Impl4138 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rule__Table__Group__6__Impl_in_rule__Table__Group__64169 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Table__RowsAssignment_6_in_rule__Table__Group__6__Impl4198 = new BitSet(new long[]{0x0000000000004222L});
+    public static final BitSet FOLLOW_rule__Table__RowsAssignment_6_in_rule__Table__Group__6__Impl4210 = new BitSet(new long[]{0x0000000000004222L});
+    public static final BitSet FOLLOW_rule__Table__Group_3__0__Impl_in_rule__Table__Group_3__04257 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__Table__Group_3__1_in_rule__Table__Group_3__04260 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Table__Group_3__0__Impl4288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Table__Group_3__1__Impl_in_rule__Table__Group_3__14319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__Table__Group_3__1__Impl4350 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_11_in_rule__Table__Group_3__1__Impl4366 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_rule__TableRow__Group__0__Impl_in_rule__TableRow__Group__04405 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_rule__TableRow__Group__1_in_rule__TableRow__Group__04408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TableRow__CellsAssignment_0_in_rule__TableRow__Group__0__Impl4437 = new BitSet(new long[]{0x0000000000004222L});
+    public static final BitSet FOLLOW_rule__TableRow__CellsAssignment_0_in_rule__TableRow__Group__0__Impl4449 = new BitSet(new long[]{0x0000000000004222L});
+    public static final BitSet FOLLOW_rule__TableRow__Group__1__Impl_in_rule__TableRow__Group__14482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TABLE_ROW_END_in_rule__TableRow__Group__1__Impl4509 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TableCell__Group__0__Impl_in_rule__TableCell__Group__04542 = new BitSet(new long[]{0x0000000000000070L});
+    public static final BitSet FOLLOW_rule__TableCell__Group__1_in_rule__TableCell__Group__04545 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__TableCell__Group__0__Impl4573 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TableCell__Group__1__Impl_in_rule__TableCell__Group__14604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TableCell__NameAssignment_1_in_rule__TableCell__Group__1__Impl4633 = new BitSet(new long[]{0x0000000000000072L});
+    public static final BitSet FOLLOW_rule__TableCell__NameAssignment_1_in_rule__TableCell__Group__1__Impl4645 = new BitSet(new long[]{0x0000000000000072L});
+    public static final BitSet FOLLOW_rule__Model__DefinitionsAlternatives_0_in_rule__Model__DefinitionsAssignment4687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextPart_in_rule__Spec__NameAssignment_0_14720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextPart_in_rule__Spec__NameAssignment_1_04751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextPart_in_rule__Scenario__NameAssignment_0_14782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextPart_in_rule__Scenario__NameAssignment_1_04813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStaticParam_in_rule__Step__StaticParamsAssignment_2_0_04844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDynamicParam_in_rule__Step__DynamicParamsAssignment_2_0_14875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTable_in_rule__Step__TableAssignment_3_24906 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STATIC_PARAM_in_rule__StaticParam__NameAssignment4937 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DYNAMIC_PARAM_in_rule__DynamicParam__NameAssignment4968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextPart_in_rule__Comment__NameAssignment_04999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Comment__NameAlternatives_1_0_in_rule__Comment__NameAssignment_15030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTableRow_in_rule__Table__HeadingAssignment_15063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTableRow_in_rule__Table__RowsAssignment_65094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTableCell_in_rule__TableRow__CellsAssignment_05125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TableCell__NameAlternatives_1_0_in_rule__TableCell__NameAssignment_15156 = new BitSet(new long[]{0x0000000000000002L});
 
 }

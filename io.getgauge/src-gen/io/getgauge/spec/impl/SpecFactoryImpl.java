@@ -70,6 +70,7 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
       case SpecPackage.STEP: return createStep();
       case SpecPackage.STATIC_PARAM: return createStaticParam();
       case SpecPackage.DYNAMIC_PARAM: return createDynamicParam();
+      case SpecPackage.TAGS: return createTags();
       case SpecPackage.COMMENT: return createComment();
       case SpecPackage.TABLE: return createTable();
       case SpecPackage.TABLE_ROW: return createTableRow();
@@ -143,6 +144,17 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
   {
     DynamicParamImpl dynamicParam = new DynamicParamImpl();
     return dynamicParam;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Tags createTags()
+  {
+    TagsImpl tags = new TagsImpl();
+    return tags;
   }
 
   /**

@@ -105,6 +105,11 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
         return createDynamicParamAdapter();
       }
       @Override
+      public Adapter caseTags(Tags object)
+      {
+        return createTagsAdapter();
+      }
+      @Override
       public Adapter caseComment(Comment object)
       {
         return createCommentAdapter();
@@ -232,6 +237,21 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDynamicParamAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.Tags <em>Tags</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.Tags
+   * @generated
+   */
+  public Adapter createTagsAdapter()
   {
     return null;
   }

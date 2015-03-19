@@ -132,31 +132,13 @@ public interface SpecPackage extends EPackage
   int SCENARIO__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Comments</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCENARIO__COMMENTS = 1;
-
-  /**
-   * The feature id for the '<em><b>Tags</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SCENARIO__TAGS = 2;
-
-  /**
    * The number of structural features of the '<em>Scenario</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCENARIO_FEATURE_COUNT = 3;
+  int SCENARIO_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.StepImpl <em>Step</em>}' class.
@@ -261,6 +243,25 @@ public interface SpecPackage extends EPackage
   int DYNAMIC_PARAM_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.TagsImpl <em>Tags</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.TagsImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getTags()
+   * @generated
+   */
+  int TAGS = 6;
+
+  /**
+   * The number of structural features of the '<em>Tags</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TAGS_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -268,7 +269,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getComment()
    * @generated
    */
-  int COMMENT = 6;
+  int COMMENT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute list.
@@ -296,7 +297,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getTable()
    * @generated
    */
-  int TABLE = 7;
+  int TABLE = 8;
 
   /**
    * The feature id for the '<em><b>Heading</b></em>' containment reference.
@@ -333,7 +334,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getTableRow()
    * @generated
    */
-  int TABLE_ROW = 8;
+  int TABLE_ROW = 9;
 
   /**
    * The feature id for the '<em><b>Cells</b></em>' containment reference list.
@@ -361,7 +362,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getTableCell()
    * @generated
    */
-  int TABLE_CELL = 9;
+  int TABLE_CELL = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute list.
@@ -444,28 +445,6 @@ public interface SpecPackage extends EPackage
    * @generated
    */
   EAttribute getScenario_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Scenario#getComments <em>Comments</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Comments</em>'.
-   * @see io.getgauge.spec.Scenario#getComments()
-   * @see #getScenario()
-   * @generated
-   */
-  EReference getScenario_Comments();
-
-  /**
-   * Returns the meta object for the attribute '{@link io.getgauge.spec.Scenario#getTags <em>Tags</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tags</em>'.
-   * @see io.getgauge.spec.Scenario#getTags()
-   * @see #getScenario()
-   * @generated
-   */
-  EAttribute getScenario_Tags();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.Step <em>Step</em>}'.
@@ -551,6 +530,16 @@ public interface SpecPackage extends EPackage
    * @generated
    */
   EAttribute getDynamicParam_Name();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.Tags <em>Tags</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Tags</em>'.
+   * @see io.getgauge.spec.Tags
+   * @generated
+   */
+  EClass getTags();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.Comment <em>Comment</em>}'.
@@ -725,22 +714,6 @@ public interface SpecPackage extends EPackage
     EAttribute SCENARIO__NAME = eINSTANCE.getScenario_Name();
 
     /**
-     * The meta object literal for the '<em><b>Comments</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SCENARIO__COMMENTS = eINSTANCE.getScenario_Comments();
-
-    /**
-     * The meta object literal for the '<em><b>Tags</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SCENARIO__TAGS = eINSTANCE.getScenario_Tags();
-
-    /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.StepImpl <em>Step</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -809,6 +782,16 @@ public interface SpecPackage extends EPackage
      * @generated
      */
     EAttribute DYNAMIC_PARAM__NAME = eINSTANCE.getDynamicParam_Name();
+
+    /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.TagsImpl <em>Tags</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.TagsImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getTags()
+     * @generated
+     */
+    EClass TAGS = eINSTANCE.getTags();
 
     /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.

@@ -12,9 +12,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Scenario">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="comments" upperBound="-1"
-        eType="#//Comment" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tags" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Step">
     <eStructuralFeatures xsi:type="ecore:EReference" name="staticParams" upperBound="-1"
@@ -30,6 +27,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="DynamicParam">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tags"/>
   <eClassifiers xsi:type="ecore:EClass" name="Comment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

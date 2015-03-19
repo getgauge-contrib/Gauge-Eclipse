@@ -77,6 +77,15 @@ public interface SpecFactory extends EFactory
   DynamicParam createDynamicParam();
 
   /**
+   * Returns a new object of class '<em>Tags</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tags</em>'.
+   * @generated
+   */
+  Tags createTags();
+
+  /**
    * Returns a new object of class '<em>Comment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
