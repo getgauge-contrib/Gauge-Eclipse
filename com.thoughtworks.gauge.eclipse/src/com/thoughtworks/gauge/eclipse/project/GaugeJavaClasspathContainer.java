@@ -1,4 +1,4 @@
-package io.getgauge.ui.project;
+package com.thoughtworks.gauge.eclipse.project;
 
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;

@@ -1,4 +1,4 @@
-package io.getgauge.ui.project;
+package com.thoughtworks.gauge.eclipse.project;
 
 import com.thoughtworks.gauge.GaugeConnection;
 

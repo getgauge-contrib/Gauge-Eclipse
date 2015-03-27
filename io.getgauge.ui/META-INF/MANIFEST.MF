@@ -18,9 +18,7 @@ Require-Bundle: io.getgauge;visibility:=reexport,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.compare,
  org.eclipse.xtext,
- org.eclipse.emf.ecore,
- org.eclipse.jdt.core,
- org.eclipse.jdt.ui
+ org.eclipse.emf.ecore
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: io.getgauge.ui.quickfix,
@@ -28,6 +26,4 @@ Export-Package: io.getgauge.ui.quickfix,
  io.getgauge.ui.contentassist.antlr,
  io.getgauge.ui.internal
 Bundle-Activator: io.getgauge.ui.internal.SpecActivator
-Bundle-ClassPath: libs/gaugert-0.0.3.jar,
- .,
- libs/commons-io-2.4.jar
+Bundle-ClassPath: .

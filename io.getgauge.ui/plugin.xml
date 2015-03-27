@@ -394,26 +394,5 @@
             extensions="spec">
     </provider>
   </extension>
-  <extension
-        point="org.eclipse.ui.newWizards">
-     <category
-           id="io.getgauge.ui.category.wizards"
-           name="Gauge Project">
-     </category>
-     <wizard
-           category="io.getgauge.ui.category.wizards"
-           class="io.getgauge.ui.wizards.NewGaugeProjectWizard"
-           id="io.getgauge.ui.wizards.new.gaugeproject"
-           name="Gauge Spec Project"
-           project="true">
-     </wizard>
-  </extension>
-  <extension
-        point="org.eclipse.jdt.core.classpathContainerInitializer">
-     <classpathContainerInitializer
-           class="io.getgauge.ui.project.GaugeClasspathContainerInitializer"
-           id="com.thoughtworks.gauge.java.container">
-     </classpathContainerInitializer>
-  </extension>
 
 </plugin>

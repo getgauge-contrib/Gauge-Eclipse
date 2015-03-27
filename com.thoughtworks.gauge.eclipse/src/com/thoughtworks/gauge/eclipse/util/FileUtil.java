@@ -1,4 +1,4 @@
-package io.getgauge.ui.util;
+package com.thoughtworks.gauge.eclipse.util;
 
 import java.io.File;
 import java.io.FileFilter;

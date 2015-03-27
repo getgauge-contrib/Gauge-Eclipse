@@ -1,6 +1,4 @@
-package io.getgauge.ui.wizards;
-
-import io.getgauge.ui.project.GaugeProjectCreator;
+package om.thoughtworks.gauge.eclipse.ui.wizards;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -11,6 +9,8 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.dialogs.WizardNewProjectCreationPage;
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
+
+import com.thoughtworks.gauge.eclipse.project.GaugeProjectCreator;
 
 public class NewGaugeProjectWizard extends Wizard implements INewWizard,
 		IExecutableExtension {

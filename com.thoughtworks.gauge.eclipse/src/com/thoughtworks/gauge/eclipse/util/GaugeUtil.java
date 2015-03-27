@@ -1,10 +1,11 @@
-package io.getgauge.ui.util;
-
-import io.getgauge.ui.exceptions.GaugeNotFoundException;
+package com.thoughtworks.gauge.eclipse.util;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
+
+import com.thoughtworks.gauge.GaugeConstant;
+import com.thoughtworks.gauge.eclipse.exception.GaugeNotFoundException;
 
 public class GaugeUtil {
 	private static String gaugePath = null;
@@ -82,6 +83,22 @@ public class GaugeUtil {
 			throw new RuntimeException("Gauge Project initialization failed");
 		}
 	}
+	
+	public static Process initializeGaugeProcess(File workingDir, int port) {
+		try {
+			String path = GaugeUtil.getGaugeExecPath();
+			ProcessBuilder gauge = new ProcessBuilder(path, GaugeConstant.DAEMONIZE_FLAG);
+			gauge.environment().put(GaugeConstant.GAUGE_API_PORT, String.valueOf(port));
+			gauge.directory(workingDir);
+			return gauge.start();
+		} catch (IOException e) {
+			System.err.println("could not start gauge api:" + e.getMessage());
+		} catch (GaugeNotFoundException e) {
+			System.err.println("Could not start gauge api:" + e.getMessage());
+		}
+		return null;
+	}
+
 
 	public static int findFreePortForApi() {
 		ServerSocket socket = null;

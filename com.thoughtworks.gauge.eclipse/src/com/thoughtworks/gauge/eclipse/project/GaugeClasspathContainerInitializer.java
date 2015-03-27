@@ -1,6 +1,4 @@
-package io.getgauge.ui.project;
-
-import io.getgauge.ui.util.FileUtil;
+package com.thoughtworks.gauge.eclipse.project;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,6 +16,7 @@ import org.eclipse.jdt.core.JavaCore;
 
 import com.thoughtworks.gauge.GaugeConnection;
 import com.thoughtworks.gauge.PluginNotInstalledException;
+import com.thoughtworks.gauge.eclipse.util.FileUtil;
 
 public class GaugeClasspathContainerInitializer extends
 		ClasspathContainerInitializer {

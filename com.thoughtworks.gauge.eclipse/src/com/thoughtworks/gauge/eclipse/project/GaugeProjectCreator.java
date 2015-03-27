@@ -1,7 +1,4 @@
-package io.getgauge.ui.project;
-
-import io.getgauge.ui.exceptions.GaugeNotFoundException;
-import io.getgauge.ui.util.GaugeUtil;
+package com.thoughtworks.gauge.eclipse.project;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,6 +17,9 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.ui.PreferenceConstants;
+
+import com.thoughtworks.gauge.eclipse.exception.GaugeNotFoundException;
+import com.thoughtworks.gauge.eclipse.util.GaugeUtil;
 
 public class GaugeProjectCreator {
 
