@@ -1,4 +1,4 @@
-package om.thoughtworks.gauge.eclipse.ui.wizards;
+package com.thoughtworks.gauge.eclipse.ui.wizards;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;

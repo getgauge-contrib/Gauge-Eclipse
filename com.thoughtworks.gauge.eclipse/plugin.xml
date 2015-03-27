@@ -9,7 +9,7 @@
      </category>
      <wizard
            category="com.thoughtworks.gauge.eclipse.ui.category.wizards"
-           class="om.thoughtworks.gauge.eclipse.ui.wizards.NewGaugeProjectWizard"
+           class="com.thoughtworks.gauge.eclipse.ui.wizards.NewGaugeProjectWizard"
            id="com.thoughtworks.gauge.eclipse.ui.new.gaugeproject"
            name="Gauge Spec Project"
            project="true">
