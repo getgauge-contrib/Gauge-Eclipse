@@ -408,5 +408,12 @@
            project="true">
      </wizard>
   </extension>
+  <extension
+        point="org.eclipse.jdt.core.classpathContainerInitializer">
+     <classpathContainerInitializer
+           class="io.getgauge.ui.project.GaugeClasspathContainerInitializer"
+           id="com.thoughtworks.gauge.java.container">
+     </classpathContainerInitializer>
+  </extension>
 
 </plugin>

@@ -1,9 +1,11 @@
 package io.getgauge.ui.project;
 
-import java.io.IOException;
-
 import io.getgauge.ui.exceptions.GaugeNotFoundException;
 import io.getgauge.ui.util.GaugeUtil;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -17,6 +19,7 @@ import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jdt.ui.PreferenceConstants;
 
 public class GaugeProjectCreator {
 
@@ -30,42 +33,62 @@ public class GaugeProjectCreator {
 		IWorkspaceRoot root = root();
 		try {
 			IPath rootLocation = root.getLocation();
-			GaugeUtil.createProject(rootLocation.toFile(), projectName);
-			
-			IProject project = root.getProject(projectName);
-			project.create(null);
-			project.open(null);
-			project.refreshLocal(IResource.DEPTH_INFINITE, null);
-						
-			setupJavaProject(rootLocation, project);
+			GaugeUtil.initializeProject(rootLocation.toFile(), projectName);
+			IJavaProject gaugeJavaProject = createJavaProject(root);
+			GaugeWorkspace.createGaugeService(gaugeJavaProject.getProject());
+			setupJavaProject(gaugeJavaProject);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (GaugeNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (CoreException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	private void setupJavaProject(IPath rootLocation, IProject project)
-			throws CoreException {
+	private IJavaProject createJavaProject(IWorkspaceRoot root) throws CoreException {
+		IProject project = root.getProject(projectName);
+		project.create(null);
+		project.open(null);
+		project.refreshLocal(IResource.DEPTH_INFINITE, null);
+		
 		IProjectDescription desc = project.getDescription();
 		desc.setNatureIds(new String[] { JavaCore.NATURE_ID });
 		project.setDescription(desc, null);
-			
 		IJavaProject javaProject = JavaCore.create(project);
+		return javaProject;
+	}
+
+	private void setupJavaProject(IJavaProject project)
+			throws CoreException {
+		markSrcAndOutputDirectory(project);
+		addGaugeJavaDependencies(project);
+	}
+
+
+	private void addGaugeJavaDependencies(IJavaProject javaProject) {
+		try {
+			IClasspathEntry[] rawClasspath = javaProject.getRawClasspath();
+			ArrayList<IClasspathEntry> classpath = new ArrayList<IClasspathEntry>(Arrays.asList(rawClasspath));
+			classpath.add(JavaCore.newContainerEntry(GaugeJavaClasspathContainer.GAUGE_JAVA_LIB_PATH));
+			classpath.addAll(Arrays.asList(PreferenceConstants.getDefaultJRELibrary()));
+			javaProject.setRawClasspath(classpath.toArray(new IClasspathEntry[] {}), null);
+        	javaProject.save(null, true);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private void markSrcAndOutputDirectory(IJavaProject javaProject) throws JavaModelException {
+		IProject project = javaProject.getProject();
 		IPath srcPath = project.getFolder("src").getFullPath().append("test").append("java");
-		IPath libsPath = project.getFolder("libs").getLocation();
 		IClasspathEntry sourceEntry = JavaCore.newSourceEntry(srcPath);
-		IClasspathEntry libraryEntry = JavaCore.newLibraryEntry(libsPath, null, null);
 		
-		javaProject.setRawClasspath(new IClasspathEntry[] {sourceEntry,  libraryEntry}, null);
+		javaProject.setRawClasspath(new IClasspathEntry[] {sourceEntry}, null);
 		IFolder binDir = project.getFolder("bin");
 		IPath binPath = binDir.getFullPath();
 		javaProject.setOutputLocation(binPath, null);
+		
 	}
 
 	private IWorkspaceRoot root() {
