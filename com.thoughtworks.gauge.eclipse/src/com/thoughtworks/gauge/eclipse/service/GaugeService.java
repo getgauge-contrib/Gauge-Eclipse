@@ -1,4 +1,4 @@
-package com.thoughtworks.gauge.eclipse.project;
+package com.thoughtworks.gauge.eclipse.service;
 
 import com.thoughtworks.gauge.GaugeConnection;
 
@@ -14,6 +14,17 @@ public class GaugeService {
 
 	public GaugeConnection getGaugeConnection() {
 		return this.gaugeConnection;
+	}
+
+	public void kill() {
+		try {
+			if (process != null) {
+				process.destroy();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 
 }

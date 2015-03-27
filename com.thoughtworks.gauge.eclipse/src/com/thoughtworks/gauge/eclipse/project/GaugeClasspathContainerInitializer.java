@@ -3,8 +3,10 @@ package com.thoughtworks.gauge.eclipse.project;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
@@ -16,6 +18,8 @@ import org.eclipse.jdt.core.JavaCore;
 
 import com.thoughtworks.gauge.GaugeConnection;
 import com.thoughtworks.gauge.PluginNotInstalledException;
+import com.thoughtworks.gauge.eclipse.GaugePlugin;
+import com.thoughtworks.gauge.eclipse.service.GaugeService;
 import com.thoughtworks.gauge.eclipse.util.FileUtil;
 
 public class GaugeClasspathContainerInitializer extends
@@ -23,6 +27,7 @@ public class GaugeClasspathContainerInitializer extends
 
 	private static final String JAR = "jar";
 	private static final String JAVA = "java";
+	private static HashMap<IJavaProject, IPath> libsCache = new HashMap<IJavaProject, IPath>();
 
 	public GaugeClasspathContainerInitializer() {
 	}
@@ -51,7 +56,10 @@ public class GaugeClasspathContainerInitializer extends
 	}
 
 	private IPath getLibsPath(IJavaProject project) {
-		GaugeService service = GaugeWorkspace.getGaugeService(project.getProject());
+		if (libsCache.containsKey(project)) {
+			return libsCache.get(project);
+		}
+		GaugeService service = GaugePlugin.getDefault().getGaugeWorkspace().getGaugeService(project.getProject());
 		GaugeConnection connection = service.getGaugeConnection();
 		String libPath = "";
 		try {
@@ -60,7 +68,10 @@ public class GaugeClasspathContainerInitializer extends
 			throw new RuntimeException(String.format("Could not find lib path: %s", e.getMessage()));
 		} catch (PluginNotInstalledException e) {
 			throw new RuntimeException("Gauge java plugin not installed.");
-		}		
-		return new Path(libPath);
+		}
+		
+		Path path = new Path(libPath);
+		GaugeClasspathContainerInitializer.libsCache.put(project, path);
+		return path;
 	}
 }

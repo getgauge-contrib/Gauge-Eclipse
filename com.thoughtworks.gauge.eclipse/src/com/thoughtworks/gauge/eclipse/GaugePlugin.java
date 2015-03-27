@@ -3,21 +3,27 @@ package com.thoughtworks.gauge.eclipse;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import com.thoughtworks.gauge.eclipse.project.GaugeWorkspace;
+
 /**
  * The activator class controls the plug-in life cycle
  */
-public class GaugePluginActivator extends AbstractUIPlugin {
+public class GaugePlugin extends AbstractUIPlugin {
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "com.thoughtworks.gauge.eclipse"; //$NON-NLS-1$
 
 	// The shared instance
-	private static GaugePluginActivator plugin;
+	private static GaugePlugin plugin;
+
+	private boolean initialized = false;
+
+	private GaugeWorkspace workspace;
 	
 	/**
 	 * The constructor
 	 */
-	public GaugePluginActivator() {
+	public GaugePlugin() {
 	}
 
 	/*
@@ -27,6 +33,14 @@ public class GaugePluginActivator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
+		initializeProjects();
+	}
+
+	private void initializeProjects() {
+		if (!this.initialized) {
+			getGaugeWorkspace().createGaugeServicesForProjects();
+			this.initialized = true;
+		}
 	}
 
 	/*
@@ -35,6 +49,7 @@ public class GaugePluginActivator extends AbstractUIPlugin {
 	 */
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
+		getGaugeWorkspace().killAllGaugeServices();
 		super.stop(context);
 	}
 
@@ -43,8 +58,15 @@ public class GaugePluginActivator extends AbstractUIPlugin {
 	 *
 	 * @return the shared instance
 	 */
-	public static GaugePluginActivator getDefault() {
+	public static GaugePlugin getDefault() {
 		return plugin;
+	}
+	
+	public GaugeWorkspace getGaugeWorkspace() {
+		if (this.workspace == null) {
+			this.workspace = new GaugeWorkspace();
+		}
+		return this.workspace;
 	}
 
 }

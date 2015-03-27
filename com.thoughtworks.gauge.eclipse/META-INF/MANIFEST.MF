@@ -3,14 +3,15 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Eclipse
 Bundle-SymbolicName: com.thoughtworks.gauge.eclipse;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.thoughtworks.gauge.eclipse.GaugePluginActivator
+Bundle-Activator: com.thoughtworks.gauge.eclipse.GaugePlugin
 Bundle-Vendor: THOUGHTWORKS
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.jdt.core,
  org.eclipse.core.resources,
  org.eclipse.jdt.ui,
- org.eclipse.ui.ide
+ org.eclipse.ui.ide,
+ org.eclipse.xtext.xtext.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,

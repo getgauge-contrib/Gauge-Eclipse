@@ -17,7 +17,9 @@ import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.ui.PreferenceConstants;
+import org.eclipse.xtext.ui.XtextProjectHelper;
 
+import com.thoughtworks.gauge.eclipse.GaugePlugin;
 import com.thoughtworks.gauge.eclipse.exception.GaugeNotFoundException;
 import com.thoughtworks.gauge.eclipse.util.GaugeUtil;
 
@@ -34,8 +36,8 @@ public class GaugeProjectCreator {
 		try {
 			IPath rootLocation = root.getLocation();
 			GaugeUtil.initializeProject(rootLocation.toFile(), projectName);
-			IJavaProject gaugeJavaProject = createJavaProject(root);
-			GaugeWorkspace.createGaugeService(gaugeJavaProject.getProject());
+			IJavaProject gaugeJavaProject = createGaugeJavaProject(root);
+			GaugePlugin.getDefault().getGaugeWorkspace().createGaugeService(gaugeJavaProject.getProject());
 			setupJavaProject(gaugeJavaProject);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -46,17 +48,20 @@ public class GaugeProjectCreator {
 		}
 	}
 
-	private IJavaProject createJavaProject(IWorkspaceRoot root) throws CoreException {
+	private IJavaProject createGaugeJavaProject(IWorkspaceRoot root) throws CoreException {
 		IProject project = root.getProject(projectName);
 		project.create(null);
 		project.open(null);
 		project.refreshLocal(IResource.DEPTH_INFINITE, null);
-		
 		IProjectDescription desc = project.getDescription();
-		desc.setNatureIds(new String[] { JavaCore.NATURE_ID });
+		desc.setNatureIds(natureIds());
 		project.setDescription(desc, null);
 		IJavaProject javaProject = JavaCore.create(project);
 		return javaProject;
+	}
+
+	private String[] natureIds() {
+		return new String[] { JavaCore.NATURE_ID, GaugeProjectNature.NATURE_ID, XtextProjectHelper.NATURE_ID };
 	}
 
 	private void setupJavaProject(IJavaProject project)

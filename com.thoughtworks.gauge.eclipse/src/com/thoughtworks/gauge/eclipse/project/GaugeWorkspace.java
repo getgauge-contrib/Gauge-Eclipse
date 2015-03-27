@@ -1,29 +1,31 @@
 package com.thoughtworks.gauge.eclipse.project;
 
-import java.io.File;
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
 
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 
 import com.thoughtworks.gauge.GaugeConnection;
-import com.thoughtworks.gauge.GaugeConstant;
-import com.thoughtworks.gauge.eclipse.exception.GaugeNotFoundException;
+import com.thoughtworks.gauge.eclipse.service.GaugeService;
 import com.thoughtworks.gauge.eclipse.util.GaugeUtil;
 
 public class GaugeWorkspace {
 
-	private static HashMap<IProject, GaugeService> gaugeProjectHandles = new HashMap<IProject, GaugeService>();
+	private HashMap<IProject, GaugeService> gaugeProjectHandles = new HashMap<IProject, GaugeService>();
 
-	public static GaugeService getGaugeService(IProject project) {
+	public GaugeService getGaugeService(IProject project) {
 		return gaugeProjectHandles.get(project);
 	}
 
-	public static void setGaugeService(IProject project, GaugeService service) {
+	public void setGaugeService(IProject project, GaugeService service) {
 		gaugeProjectHandles.put(project, service);
 	}
 
-	public static void createGaugeService(IProject project) {
+	public void createGaugeService(IProject project) {
 		int port = GaugeUtil.findFreePortForApi();
 		Process gaugeProcess;
 		gaugeProcess = GaugeUtil.initializeGaugeProcess(project.getLocation().toFile(), port);
@@ -35,11 +37,44 @@ public class GaugeWorkspace {
 		}
 	}
 
-	private static GaugeConnection initializeGaugeConnection(int port) {
+	private  GaugeConnection initializeGaugeConnection(int port) {
 		if (port != -1) {
 			return new GaugeConnection(port);
 		} else {
 			return null;
+		}
+	}
+
+	public List<IProject> getGaugeProjects() {
+		ArrayList<IProject> gaugeProjects = new ArrayList<IProject>();
+		IProject[] projects = ResourcesPlugin.getWorkspace().getRoot().getProjects();
+		for (IProject project : projects) {
+			if (isGaugeProject(project)) {
+				gaugeProjects.add(project);
+			}
+		}
+		return gaugeProjects;
+	}
+
+	public boolean isGaugeProject(IProject project) {
+		boolean isGaugeProject = false;
+		try {
+			isGaugeProject = project.hasNature(GaugeProjectNature.NATURE_ID);
+		} catch (CoreException e) {
+			return isGaugeProject;
+		}
+		return isGaugeProject;
+	}
+
+	public void killAllGaugeServices() {
+		for (Entry<IProject, GaugeService> entry : gaugeProjectHandles.entrySet()) {
+			entry.getValue().kill();
+		}
+	}
+
+	public void createGaugeServicesForProjects() {
+		for (IProject project : getGaugeProjects()) {
+			createGaugeService(project);
 		}
 	}
 

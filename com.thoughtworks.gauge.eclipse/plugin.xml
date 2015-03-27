@@ -22,5 +22,15 @@
            id="com.thoughtworks.gauge.java.container">
      </classpathContainerInitializer>
   </extension>
+  <extension
+        id="com.thoughtworks.gauge.eclipse.project.NatureID"
+        name="Gauge Nature"
+        point="org.eclipse.core.resources.natures">
+     <runtime>
+        <run
+              class="com.thoughtworks.gauge.eclipse.project.GaugeProjectNature">
+        </run>
+     </runtime>
+  </extension>
 
 </plugin>
