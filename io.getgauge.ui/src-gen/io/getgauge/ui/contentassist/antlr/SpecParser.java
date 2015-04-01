@@ -56,6 +56,7 @@ public class SpecParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCommentAccess().getGroup(), "rule__Comment__Group__0");
 					put(grammarAccess.getTableAccess().getGroup(), "rule__Table__Group__0");
 					put(grammarAccess.getTableAccess().getGroup_3(), "rule__Table__Group_3__0");
+					put(grammarAccess.getTableAccess().getGroup_5(), "rule__Table__Group_5__0");
 					put(grammarAccess.getTableRowAccess().getGroup(), "rule__TableRow__Group__0");
 					put(grammarAccess.getTableCellAccess().getGroup(), "rule__TableCell__Group__0");
 					put(grammarAccess.getModelAccess().getDefinitionsAssignment(), "rule__Model__DefinitionsAssignment");
@@ -71,7 +72,7 @@ public class SpecParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCommentAccess().getNameAssignment_0(), "rule__Comment__NameAssignment_0");
 					put(grammarAccess.getCommentAccess().getNameAssignment_1(), "rule__Comment__NameAssignment_1");
 					put(grammarAccess.getTableAccess().getHeadingAssignment_1(), "rule__Table__HeadingAssignment_1");
-					put(grammarAccess.getTableAccess().getRowsAssignment_6(), "rule__Table__RowsAssignment_6");
+					put(grammarAccess.getTableAccess().getRowsAssignment_5_1(), "rule__Table__RowsAssignment_5_1");
 					put(grammarAccess.getTableRowAccess().getCellsAssignment_0(), "rule__TableRow__CellsAssignment_0");
 					put(grammarAccess.getTableCellAccess().getNameAssignment_1(), "rule__TableCell__NameAssignment_1");
 				}

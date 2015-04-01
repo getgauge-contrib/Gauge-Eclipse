@@ -56,7 +56,7 @@ TextPart:
 Table:
 	WS* heading=TableRow
 	WS* ('|' '-'+)+ TABLE_ROW_END
-	WS* (rows += TableRow)+
+	(WS* rows += TableRow)+
 ;
 
 TableRow:
@@ -67,7 +67,7 @@ TableCell:
 	'|' name+=(WORD | SEPARATORS | WS)+
 ;
 
-terminal SINGLE_NL: '\r'? '\n';
+terminal SINGLE_NL: ('\r'? '\n') | EOF;
 
 terminal WORD: ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
@@ -75,7 +75,7 @@ terminal STATIC_PARAM: '"' -> '"';
 
 terminal DYNAMIC_PARAM: '<' -> '>';
 
-terminal TABLE_ROW_END: '|' WS* SINGLE_NL;
+terminal TABLE_ROW_END: '|' SINGLE_NL;
 
 terminal WS: ' ' | '\t';
 

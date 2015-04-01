@@ -443,15 +443,16 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cVerticalLineKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Keyword cHyphenMinusKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final RuleCall cTABLE_ROW_ENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final RuleCall cWSTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
-		private final Assignment cRowsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cRowsTableRowParserRuleCall_6_0 = (RuleCall)cRowsAssignment_6.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final RuleCall cWSTerminalRuleCall_5_0 = (RuleCall)cGroup_5.eContents().get(0);
+		private final Assignment cRowsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cRowsTableRowParserRuleCall_5_1_0 = (RuleCall)cRowsAssignment_5_1.eContents().get(0);
 		
 		//Table:
-		//	WS* heading=TableRow WS* ("|" "-"+)+ TABLE_ROW_END WS* rows+=TableRow+;
+		//	WS* heading=TableRow WS* ("|" "-"+)+ TABLE_ROW_END (WS* rows+=TableRow)+;
 		public ParserRule getRule() { return rule; }
 
-		//WS* heading=TableRow WS* ("|" "-"+)+ TABLE_ROW_END WS* rows+=TableRow+
+		//WS* heading=TableRow WS* ("|" "-"+)+ TABLE_ROW_END (WS* rows+=TableRow)+
 		public Group getGroup() { return cGroup; }
 
 		//WS*
@@ -478,14 +479,17 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		//TABLE_ROW_END
 		public RuleCall getTABLE_ROW_ENDTerminalRuleCall_4() { return cTABLE_ROW_ENDTerminalRuleCall_4; }
 
-		//WS*
-		public RuleCall getWSTerminalRuleCall_5() { return cWSTerminalRuleCall_5; }
+		//(WS* rows+=TableRow)+
+		public Group getGroup_5() { return cGroup_5; }
 
-		//rows+=TableRow+
-		public Assignment getRowsAssignment_6() { return cRowsAssignment_6; }
+		//WS*
+		public RuleCall getWSTerminalRuleCall_5_0() { return cWSTerminalRuleCall_5_0; }
+
+		//rows+=TableRow
+		public Assignment getRowsAssignment_5_1() { return cRowsAssignment_5_1; }
 
 		//TableRow
-		public RuleCall getRowsTableRowParserRuleCall_6_0() { return cRowsTableRowParserRuleCall_6_0; }
+		public RuleCall getRowsTableRowParserRuleCall_5_1_0() { return cRowsTableRowParserRuleCall_5_1_0; }
 	}
 
 	public class TableRowElements extends AbstractParserRuleElementFinder {
@@ -719,7 +723,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Table:
-	//	WS* heading=TableRow WS* ("|" "-"+)+ TABLE_ROW_END WS* rows+=TableRow+;
+	//	WS* heading=TableRow WS* ("|" "-"+)+ TABLE_ROW_END (WS* rows+=TableRow)+;
 	public TableElements getTableAccess() {
 		return pTable;
 	}
@@ -749,7 +753,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal SINGLE_NL:
-	//	"\r"? "\n";
+	//	"\r"? "\n" | EOF;
 	public TerminalRule getSINGLE_NLRule() {
 		return tSINGLE_NL;
 	} 
@@ -773,7 +777,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal TABLE_ROW_END:
-	//	"|" WS* SINGLE_NL;
+	//	"|" SINGLE_NL;
 	public TerminalRule getTABLE_ROW_ENDRule() {
 		return tTABLE_ROW_END;
 	} 

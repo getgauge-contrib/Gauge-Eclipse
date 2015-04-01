@@ -814,14 +814,14 @@ ruleTable returns [EObject current=null]
     { 
     newLeafNode(this_TABLE_ROW_END_5, grammarAccess.getTableAccess().getTABLE_ROW_ENDTerminalRuleCall_4()); 
     }
-(this_WS_6=RULE_WS
+((this_WS_6=RULE_WS
     { 
-    newLeafNode(this_WS_6, grammarAccess.getTableAccess().getWSTerminalRuleCall_5()); 
+    newLeafNode(this_WS_6, grammarAccess.getTableAccess().getWSTerminalRuleCall_5_0()); 
     }
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTableAccess().getRowsTableRowParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getTableAccess().getRowsTableRowParserRuleCall_5_1_0()); 
 	    }
 		lv_rows_7_0=ruleTableRow		{
 	        if ($current==null) {
@@ -836,7 +836,7 @@ ruleTable returns [EObject current=null]
 	    }
 
 )
-)+)
+))+)
 ;
 
 
@@ -962,7 +962,7 @@ ruleTableCell returns [EObject current=null]
 
 
 
-RULE_SINGLE_NL : '\r'? '\n';
+RULE_SINGLE_NL : ('\r'? '\n'|EOF);
 
 RULE_WORD : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
@@ -970,7 +970,7 @@ RULE_STATIC_PARAM : '"' ( options {greedy=false;} : . )*'"';
 
 RULE_DYNAMIC_PARAM : '<' ( options {greedy=false;} : . )*'>';
 
-RULE_TABLE_ROW_END : '|' RULE_WS* RULE_SINGLE_NL;
+RULE_TABLE_ROW_END : '|' RULE_SINGLE_NL;
 
 RULE_WS : (' '|'\t');
 

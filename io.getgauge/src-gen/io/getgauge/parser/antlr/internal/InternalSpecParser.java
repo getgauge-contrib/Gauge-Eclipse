@@ -23,23 +23,23 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SINGLE_NL", "RULE_WORD", "RULE_WS", "RULE_SEPARATORS", "RULE_STATIC_PARAM", "RULE_DYNAMIC_PARAM", "RULE_TABLE_ROW_END", "'# '", "'='", "'## '", "'-'", "'* '", "'tags'", "':'", "','", "'|'"
     };
-    public static final int RULE_DYNAMIC_PARAM=9;
-    public static final int EOF=-1;
-    public static final int RULE_SINGLE_NL=4;
-    public static final int T__19=19;
-    public static final int RULE_SEPARATORS=7;
-    public static final int T__16=16;
-    public static final int T__15=15;
-    public static final int T__18=18;
-    public static final int T__17=17;
-    public static final int T__12=12;
-    public static final int T__11=11;
-    public static final int T__14=14;
-    public static final int T__13=13;
     public static final int RULE_STATIC_PARAM=8;
-    public static final int RULE_TABLE_ROW_END=10;
-    public static final int RULE_WS=6;
     public static final int RULE_WORD=5;
+    public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__11=11;
+    public static final int T__12=12;
+    public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int EOF=-1;
+    public static final int RULE_SEPARATORS=7;
+    public static final int RULE_TABLE_ROW_END=10;
+    public static final int RULE_SINGLE_NL=4;
+    public static final int RULE_WS=6;
+    public static final int RULE_DYNAMIC_PARAM=9;
 
     // delegates
     // delegators
@@ -2353,7 +2353,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTable"
-    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:775:1: ruleTable returns [EObject current=null] : ( (this_WS_0= RULE_WS )* ( (lv_heading_1_0= ruleTableRow ) ) (this_WS_2= RULE_WS )* (otherlv_3= '|' (otherlv_4= '-' )+ )+ this_TABLE_ROW_END_5= RULE_TABLE_ROW_END (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) )+ ) ;
+    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:775:1: ruleTable returns [EObject current=null] : ( (this_WS_0= RULE_WS )* ( (lv_heading_1_0= ruleTableRow ) ) (this_WS_2= RULE_WS )* (otherlv_3= '|' (otherlv_4= '-' )+ )+ this_TABLE_ROW_END_5= RULE_TABLE_ROW_END ( (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) ) )+ ) ;
     public final EObject ruleTable() throws RecognitionException {
         EObject current = null;
 
@@ -2371,11 +2371,11 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:778:28: ( ( (this_WS_0= RULE_WS )* ( (lv_heading_1_0= ruleTableRow ) ) (this_WS_2= RULE_WS )* (otherlv_3= '|' (otherlv_4= '-' )+ )+ this_TABLE_ROW_END_5= RULE_TABLE_ROW_END (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) )+ ) )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:779:1: ( (this_WS_0= RULE_WS )* ( (lv_heading_1_0= ruleTableRow ) ) (this_WS_2= RULE_WS )* (otherlv_3= '|' (otherlv_4= '-' )+ )+ this_TABLE_ROW_END_5= RULE_TABLE_ROW_END (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) )+ )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:778:28: ( ( (this_WS_0= RULE_WS )* ( (lv_heading_1_0= ruleTableRow ) ) (this_WS_2= RULE_WS )* (otherlv_3= '|' (otherlv_4= '-' )+ )+ this_TABLE_ROW_END_5= RULE_TABLE_ROW_END ( (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) ) )+ ) )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:779:1: ( (this_WS_0= RULE_WS )* ( (lv_heading_1_0= ruleTableRow ) ) (this_WS_2= RULE_WS )* (otherlv_3= '|' (otherlv_4= '-' )+ )+ this_TABLE_ROW_END_5= RULE_TABLE_ROW_END ( (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) ) )+ )
             {
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:779:1: ( (this_WS_0= RULE_WS )* ( (lv_heading_1_0= ruleTableRow ) ) (this_WS_2= RULE_WS )* (otherlv_3= '|' (otherlv_4= '-' )+ )+ this_TABLE_ROW_END_5= RULE_TABLE_ROW_END (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) )+ )
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:779:2: (this_WS_0= RULE_WS )* ( (lv_heading_1_0= ruleTableRow ) ) (this_WS_2= RULE_WS )* (otherlv_3= '|' (otherlv_4= '-' )+ )+ this_TABLE_ROW_END_5= RULE_TABLE_ROW_END (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) )+
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:779:1: ( (this_WS_0= RULE_WS )* ( (lv_heading_1_0= ruleTableRow ) ) (this_WS_2= RULE_WS )* (otherlv_3= '|' (otherlv_4= '-' )+ )+ this_TABLE_ROW_END_5= RULE_TABLE_ROW_END ( (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) ) )+ )
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:779:2: (this_WS_0= RULE_WS )* ( (lv_heading_1_0= ruleTableRow ) ) (this_WS_2= RULE_WS )* (otherlv_3= '|' (otherlv_4= '-' )+ )+ this_TABLE_ROW_END_5= RULE_TABLE_ROW_END ( (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) ) )+
             {
             // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:779:2: (this_WS_0= RULE_WS )*
             loop28:
@@ -2534,57 +2534,60 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
              
                 newLeafNode(this_TABLE_ROW_END_5, grammarAccess.getTableAccess().getTABLE_ROW_ENDTerminalRuleCall_4()); 
                 
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:817:1: (this_WS_6= RULE_WS )*
-            loop32:
-            do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
-
-                if ( (LA32_0==RULE_WS) ) {
-                    alt32=1;
-                }
-
-
-                switch (alt32) {
-            	case 1 :
-            	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:817:2: this_WS_6= RULE_WS
-            	    {
-            	    this_WS_6=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleTable1880); 
-            	     
-            	        newLeafNode(this_WS_6, grammarAccess.getTableAccess().getWSTerminalRuleCall_5()); 
-            	        
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop32;
-                }
-            } while (true);
-
-            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:821:3: ( (lv_rows_7_0= ruleTableRow ) )+
+            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:817:1: ( (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) ) )+
             int cnt33=0;
             loop33:
             do {
                 int alt33=2;
                 int LA33_0 = input.LA(1);
 
-                if ( (LA33_0==19) ) {
+                if ( (LA33_0==RULE_WS||LA33_0==19) ) {
                     alt33=1;
                 }
 
 
                 switch (alt33) {
             	case 1 :
+            	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:817:2: (this_WS_6= RULE_WS )* ( (lv_rows_7_0= ruleTableRow ) )
+            	    {
+            	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:817:2: (this_WS_6= RULE_WS )*
+            	    loop32:
+            	    do {
+            	        int alt32=2;
+            	        int LA32_0 = input.LA(1);
+
+            	        if ( (LA32_0==RULE_WS) ) {
+            	            alt32=1;
+            	        }
+
+
+            	        switch (alt32) {
+            	    	case 1 :
+            	    	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:817:3: this_WS_6= RULE_WS
+            	    	    {
+            	    	    this_WS_6=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleTable1881); 
+            	    	     
+            	    	        newLeafNode(this_WS_6, grammarAccess.getTableAccess().getWSTerminalRuleCall_5_0()); 
+            	    	        
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop32;
+            	        }
+            	    } while (true);
+
+            	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:821:3: ( (lv_rows_7_0= ruleTableRow ) )
             	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:822:1: (lv_rows_7_0= ruleTableRow )
             	    {
             	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:822:1: (lv_rows_7_0= ruleTableRow )
             	    // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:823:3: lv_rows_7_0= ruleTableRow
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getTableAccess().getRowsTableRowParserRuleCall_6_0()); 
+            	    	        newCompositeNode(grammarAccess.getTableAccess().getRowsTableRowParserRuleCall_5_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleTableRow_in_ruleTable1902);
+            	    pushFollow(FOLLOW_ruleTableRow_in_ruleTable1903);
             	    lv_rows_7_0=ruleTableRow();
 
             	    state._fsp--;
@@ -2600,6 +2603,9 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
             	            		"TableRow");
             	    	        afterParserOrEnumRuleCall();
             	    	    
+
+            	    }
+
 
             	    }
 
@@ -2649,13 +2655,13 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
             // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:849:2: iv_ruleTableRow= ruleTableRow EOF
             {
              newCompositeNode(grammarAccess.getTableRowRule()); 
-            pushFollow(FOLLOW_ruleTableRow_in_entryRuleTableRow1939);
+            pushFollow(FOLLOW_ruleTableRow_in_entryRuleTableRow1941);
             iv_ruleTableRow=ruleTableRow();
 
             state._fsp--;
 
              current =iv_ruleTableRow; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTableRow1949); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTableRow1951); 
 
             }
 
@@ -2712,7 +2718,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getTableRowAccess().getCellsTableCellParserRuleCall_0_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleTableCell_in_ruleTableRow1995);
+            	    pushFollow(FOLLOW_ruleTableCell_in_ruleTableRow1997);
             	    lv_cells_0_0=ruleTableCell();
 
             	    state._fsp--;
@@ -2744,7 +2750,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
                 cnt34++;
             } while (true);
 
-            this_TABLE_ROW_END_1=(Token)match(input,RULE_TABLE_ROW_END,FOLLOW_RULE_TABLE_ROW_END_in_ruleTableRow2007); 
+            this_TABLE_ROW_END_1=(Token)match(input,RULE_TABLE_ROW_END,FOLLOW_RULE_TABLE_ROW_END_in_ruleTableRow2009); 
              
                 newLeafNode(this_TABLE_ROW_END_1, grammarAccess.getTableRowAccess().getTABLE_ROW_ENDTerminalRuleCall_1()); 
                 
@@ -2781,13 +2787,13 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
             // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:892:2: iv_ruleTableCell= ruleTableCell EOF
             {
              newCompositeNode(grammarAccess.getTableCellRule()); 
-            pushFollow(FOLLOW_ruleTableCell_in_entryRuleTableCell2042);
+            pushFollow(FOLLOW_ruleTableCell_in_entryRuleTableCell2044);
             iv_ruleTableCell=ruleTableCell();
 
             state._fsp--;
 
              current =iv_ruleTableCell; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTableCell2052); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTableCell2054); 
 
             }
 
@@ -2823,7 +2829,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
             // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:903:1: (otherlv_0= '|' ( ( (lv_name_1_1= RULE_WORD | lv_name_1_2= RULE_SEPARATORS | lv_name_1_3= RULE_WS ) ) )+ )
             // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:903:3: otherlv_0= '|' ( ( (lv_name_1_1= RULE_WORD | lv_name_1_2= RULE_SEPARATORS | lv_name_1_3= RULE_WS ) ) )+
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleTableCell2089); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleTableCell2091); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTableCellAccess().getVerticalLineKeyword_0());
                 
@@ -2875,7 +2881,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
             	        case 1 :
             	            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:910:3: lv_name_1_1= RULE_WORD
             	            {
-            	            lv_name_1_1=(Token)match(input,RULE_WORD,FOLLOW_RULE_WORD_in_ruleTableCell2108); 
+            	            lv_name_1_1=(Token)match(input,RULE_WORD,FOLLOW_RULE_WORD_in_ruleTableCell2110); 
 
             	            			newLeafNode(lv_name_1_1, grammarAccess.getTableCellAccess().getNameWORDTerminalRuleCall_1_0_0()); 
             	            		
@@ -2895,7 +2901,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
             	        case 2 :
             	            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:925:8: lv_name_1_2= RULE_SEPARATORS
             	            {
-            	            lv_name_1_2=(Token)match(input,RULE_SEPARATORS,FOLLOW_RULE_SEPARATORS_in_ruleTableCell2128); 
+            	            lv_name_1_2=(Token)match(input,RULE_SEPARATORS,FOLLOW_RULE_SEPARATORS_in_ruleTableCell2130); 
 
             	            			newLeafNode(lv_name_1_2, grammarAccess.getTableCellAccess().getNameSEPARATORSTerminalRuleCall_1_0_1()); 
             	            		
@@ -2915,7 +2921,7 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
             	        case 3 :
             	            // ../io.getgauge/src-gen/io/getgauge/parser/antlr/internal/InternalSpec.g:940:8: lv_name_1_3= RULE_WS
             	            {
-            	            lv_name_1_3=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleTableCell2148); 
+            	            lv_name_1_3=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleTableCell2150); 
 
             	            			newLeafNode(lv_name_1_3, grammarAccess.getTableCellAccess().getNameWSTerminalRuleCall_1_0_2()); 
             	            		
@@ -3180,17 +3186,17 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_19_in_ruleTable1841 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_14_in_ruleTable1854 = new BitSet(new long[]{0x0000000000084400L});
     public static final BitSet FOLLOW_RULE_TABLE_ROW_END_in_ruleTable1869 = new BitSet(new long[]{0x0000000000080050L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleTable1880 = new BitSet(new long[]{0x0000000000080050L});
-    public static final BitSet FOLLOW_ruleTableRow_in_ruleTable1902 = new BitSet(new long[]{0x0000000000080052L});
-    public static final BitSet FOLLOW_ruleTableRow_in_entryRuleTableRow1939 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTableRow1949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTableCell_in_ruleTableRow1995 = new BitSet(new long[]{0x0000000000080450L});
-    public static final BitSet FOLLOW_RULE_TABLE_ROW_END_in_ruleTableRow2007 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTableCell_in_entryRuleTableCell2042 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTableCell2052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleTableCell2089 = new BitSet(new long[]{0x00000000000000E0L});
-    public static final BitSet FOLLOW_RULE_WORD_in_ruleTableCell2108 = new BitSet(new long[]{0x00000000000000E2L});
-    public static final BitSet FOLLOW_RULE_SEPARATORS_in_ruleTableCell2128 = new BitSet(new long[]{0x00000000000000E2L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleTableCell2148 = new BitSet(new long[]{0x00000000000000E2L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleTable1881 = new BitSet(new long[]{0x0000000000080050L});
+    public static final BitSet FOLLOW_ruleTableRow_in_ruleTable1903 = new BitSet(new long[]{0x0000000000080052L});
+    public static final BitSet FOLLOW_ruleTableRow_in_entryRuleTableRow1941 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTableRow1951 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTableCell_in_ruleTableRow1997 = new BitSet(new long[]{0x0000000000080450L});
+    public static final BitSet FOLLOW_RULE_TABLE_ROW_END_in_ruleTableRow2009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTableCell_in_entryRuleTableCell2044 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTableCell2054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleTableCell2091 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_RULE_WORD_in_ruleTableCell2110 = new BitSet(new long[]{0x00000000000000E2L});
+    public static final BitSet FOLLOW_RULE_SEPARATORS_in_ruleTableCell2130 = new BitSet(new long[]{0x00000000000000E2L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleTableCell2150 = new BitSet(new long[]{0x00000000000000E2L});
 
 }

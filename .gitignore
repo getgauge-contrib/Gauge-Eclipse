@@ -3,4 +3,4 @@
 *.settings
 **/bin/**
 .*.swp
-
+io.getgauge/.antlr-generator-3.2.0-patch.jar
