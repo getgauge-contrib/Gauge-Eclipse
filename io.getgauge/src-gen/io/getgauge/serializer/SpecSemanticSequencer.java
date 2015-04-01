@@ -142,7 +142,7 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (definitions+=Spec | definitions+=Scenario | definitions+=Step | definitions+=Comment | definitions+=Tags)*
+	 *     ((definitions+=Spec | definitions+=Scenario | definitions+=Step | definitions+=Comment | definitions+=Tags)*)
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
