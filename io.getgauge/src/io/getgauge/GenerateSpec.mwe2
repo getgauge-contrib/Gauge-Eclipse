@@ -74,7 +74,6 @@ Workflow {
     		fragment = validation.ValidatorFragment auto-inject {
     		//    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
     		//    composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
-    			generateStub = false
     		}
     
     		// old scoping and exporting API
@@ -87,9 +86,7 @@ Workflow {
     		fragment = builder.BuilderIntegrationFragment auto-inject {}
     
     		// generator API
-    		fragment = generator.GeneratorFragment auto-inject {
-    			generateStub = false
-    		}
+    		fragment = generator.GeneratorFragment auto-inject {}
     
     		// formatter API
     		fragment = formatting.FormatterFragment auto-inject {}
