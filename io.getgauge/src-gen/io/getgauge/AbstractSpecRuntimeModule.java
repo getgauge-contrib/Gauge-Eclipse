@@ -134,11 +134,6 @@ public abstract class AbstractSpecRuntimeModule extends DefaultRuntimeModule {
 		binder.bind(org.eclipse.xtext.resource.IResourceDescriptions.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider.PERSISTED_DESCRIPTIONS)).to(org.eclipse.xtext.resource.impl.ResourceSetBasedResourceDescriptions.class);
 	}
 
-	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
-	public Class<? extends org.eclipse.xtext.generator.IGenerator> bindIGenerator() {
-		return io.getgauge.generator.SpecGenerator.class;
-	}
-
 	// contributed by org.eclipse.xtext.generator.formatting.FormatterFragment
 	public Class<? extends org.eclipse.xtext.formatting.IFormatter> bindIFormatter() {
 		return io.getgauge.formatting.SpecFormatter.class;
