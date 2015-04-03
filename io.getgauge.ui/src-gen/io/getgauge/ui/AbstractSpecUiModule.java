@@ -105,7 +105,7 @@ public abstract class AbstractSpecUiModule extends DefaultUiModule {
 
 	// contributed by org.eclipse.xtext.ui.generator.contentAssist.ContentAssistFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.IContentProposalProvider> bindIContentProposalProvider() {
-		return io.getgauge.ui.contentassist.AbstractSpecProposalProvider.class;
+		return io.getgauge.ui.contentassist.SpecProposalProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.parser.antlr.XtextAntlrUiGeneratorFragment

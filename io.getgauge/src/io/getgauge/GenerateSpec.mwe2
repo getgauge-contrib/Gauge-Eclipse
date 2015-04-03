@@ -103,7 +103,6 @@ Workflow {
     
     		// content assist API
     		fragment = contentAssist.ContentAssistFragment auto-inject {             
-    			generateStub = false
 			}
     
     		// generates a more lightweight Antlr parser and lexer tailored for content assist

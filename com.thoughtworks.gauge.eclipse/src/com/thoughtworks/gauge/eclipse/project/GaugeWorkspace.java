@@ -1,5 +1,6 @@
 package com.thoughtworks.gauge.eclipse.project;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,7 +10,10 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 
+import com.thoughtworks.gauge.ConceptInfo;
 import com.thoughtworks.gauge.GaugeConnection;
+import com.thoughtworks.gauge.StepValue;
+import com.thoughtworks.gauge.eclipse.GaugePlugin;
 import com.thoughtworks.gauge.eclipse.service.GaugeService;
 import com.thoughtworks.gauge.eclipse.util.GaugeUtil;
 
@@ -78,4 +82,29 @@ public class GaugeWorkspace {
 		}
 	}
 
+    public List<String> getSteps(IProject project) {
+        List<String> steps = new ArrayList<String>();
+        try {
+        	GaugeWorkspace workbench = GaugePlugin.getDefault().getGaugeWorkspace();
+        	
+            GaugeService gaugeService = workbench.getGaugeService(project);
+            if (gaugeService == null)
+                return steps;
+            GaugeConnection gaugeConnection = gaugeService.getGaugeConnection();
+            if (gaugeConnection != null) {
+                List<StepValue> stepValues = gaugeConnection.fetchAllSteps();
+                for (StepValue stepValue : stepValues) {
+                    steps.add(stepValue.getStepAnnotationText());
+                }
+                for (ConceptInfo conceptInfo : gaugeConnection.fetchAllConcepts()) {
+                    steps.add(conceptInfo.getStepValue().getStepAnnotationText());
+                }
+                return steps;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return steps;
+    }
+	
 }

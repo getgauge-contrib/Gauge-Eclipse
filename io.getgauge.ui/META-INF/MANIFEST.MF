@@ -19,7 +19,9 @@ Require-Bundle: io.getgauge;visibility:=reexport,
  org.eclipse.compare,
  org.eclipse.xtext,
  org.eclipse.emf.ecore
-Import-Package: org.apache.log4j
+Import-Package: com.thoughtworks.gauge.eclipse,
+ com.thoughtworks.gauge.eclipse.project,
+ org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: io.getgauge.ui.quickfix,
  io.getgauge.ui.contentassist,
