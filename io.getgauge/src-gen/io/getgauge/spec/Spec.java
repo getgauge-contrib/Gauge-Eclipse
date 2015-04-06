@@ -4,8 +4,6 @@ package io.getgauge.spec;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Spec</b></em>'.
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Spec extends EObject
+public interface Spec extends Element
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute list.

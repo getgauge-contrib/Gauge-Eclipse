@@ -80,6 +80,11 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseElement(Element object)
+      {
+        return createElementAdapter();
+      }
+      @Override
       public Adapter caseSpec(Spec object)
       {
         return createSpecAdapter();
@@ -93,6 +98,11 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
       public Adapter caseStep(Step object)
       {
         return createStepAdapter();
+      }
+      @Override
+      public Adapter caseStepDefinition(StepDefinition object)
+      {
+        return createStepDefinitionAdapter();
       }
       @Override
       public Adapter caseStaticParam(StaticParam object)
@@ -167,6 +177,21 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.Element <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.Element
+   * @generated
+   */
+  public Adapter createElementAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link io.getgauge.spec.Spec <em>Spec</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -207,6 +232,21 @@ public class SpecAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStepAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link io.getgauge.spec.StepDefinition <em>Step Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see io.getgauge.spec.StepDefinition
+   * @generated
+   */
+  public Adapter createStepDefinitionAdapter()
   {
     return null;
   }

@@ -10,6 +10,7 @@
     <genClasses ecoreClass="Spec.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Model/definitions"/>
     </genClasses>
+    <genClasses ecoreClass="Spec.ecore#//Element"/>
     <genClasses ecoreClass="Spec.ecore#//Spec">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Spec/name"/>
     </genClasses>
@@ -17,9 +18,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//Scenario/name"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//Step">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Step/staticParams"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Step/dynamicParams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Step/definition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Step/table"/>
+    </genClasses>
+    <genClasses ecoreClass="Spec.ecore#//StepDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//StepDefinition/staticParams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//StepDefinition/dynamicParams"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//StepDefinition/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//StepDefinition/separators"/>
     </genClasses>
     <genClasses ecoreClass="Spec.ecore#//StaticParam">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Spec.ecore#//StaticParam/name"/>

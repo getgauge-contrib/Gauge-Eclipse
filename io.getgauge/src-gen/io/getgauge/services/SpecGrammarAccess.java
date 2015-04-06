@@ -23,21 +23,16 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cModelAction_0 = (Action)cGroup.eContents().get(0);
 		private final RuleCall cSINGLE_NLTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Assignment cDefinitionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Alternatives cDefinitionsAlternatives_2_0 = (Alternatives)cDefinitionsAssignment_2.eContents().get(0);
-		private final RuleCall cDefinitionsSpecParserRuleCall_2_0_0 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(0);
-		private final RuleCall cDefinitionsScenarioParserRuleCall_2_0_1 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(1);
-		private final RuleCall cDefinitionsStepParserRuleCall_2_0_2 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(2);
-		private final RuleCall cDefinitionsCommentParserRuleCall_2_0_3 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(3);
-		private final RuleCall cDefinitionsTagsParserRuleCall_2_0_4 = (RuleCall)cDefinitionsAlternatives_2_0.eContents().get(4);
+		private final RuleCall cDefinitionsElementParserRuleCall_2_0 = (RuleCall)cDefinitionsAssignment_2.eContents().get(0);
 		
 		/// *
 		// * TODO
 		// * - Errors if last line is not a newline
 		// * / Model:
-		//	{Model} SINGLE_NL* definitions+=(Spec | Scenario | Step | Comment | Tags)*;
+		//	{Model} SINGLE_NL* definitions+=Element*;
 		public ParserRule getRule() { return rule; }
 
-		//{Model} SINGLE_NL* definitions+=(Spec | Scenario | Step | Comment | Tags)*
+		//{Model} SINGLE_NL* definitions+=Element*
 		public Group getGroup() { return cGroup; }
 
 		//{Model}
@@ -46,26 +41,43 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		//SINGLE_NL*
 		public RuleCall getSINGLE_NLTerminalRuleCall_1() { return cSINGLE_NLTerminalRuleCall_1; }
 
-		//definitions+=(Spec | Scenario | Step | Comment | Tags)*
+		//definitions+=Element*
 		public Assignment getDefinitionsAssignment_2() { return cDefinitionsAssignment_2; }
 
+		//Element
+		public RuleCall getDefinitionsElementParserRuleCall_2_0() { return cDefinitionsElementParserRuleCall_2_0; }
+	}
+
+	public class ElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Element");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSpecParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cScenarioParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cStepParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cCommentParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cTagsParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		
+		//Element:
+		//	Spec | Scenario | Step | Comment | Tags;
+		public ParserRule getRule() { return rule; }
+
 		//Spec | Scenario | Step | Comment | Tags
-		public Alternatives getDefinitionsAlternatives_2_0() { return cDefinitionsAlternatives_2_0; }
+		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Spec
-		public RuleCall getDefinitionsSpecParserRuleCall_2_0_0() { return cDefinitionsSpecParserRuleCall_2_0_0; }
+		public RuleCall getSpecParserRuleCall_0() { return cSpecParserRuleCall_0; }
 
 		//Scenario
-		public RuleCall getDefinitionsScenarioParserRuleCall_2_0_1() { return cDefinitionsScenarioParserRuleCall_2_0_1; }
+		public RuleCall getScenarioParserRuleCall_1() { return cScenarioParserRuleCall_1; }
 
 		//Step
-		public RuleCall getDefinitionsStepParserRuleCall_2_0_2() { return cDefinitionsStepParserRuleCall_2_0_2; }
+		public RuleCall getStepParserRuleCall_2() { return cStepParserRuleCall_2; }
 
 		//Comment
-		public RuleCall getDefinitionsCommentParserRuleCall_2_0_3() { return cDefinitionsCommentParserRuleCall_2_0_3; }
+		public RuleCall getCommentParserRuleCall_3() { return cCommentParserRuleCall_3; }
 
 		//Tags
-		public RuleCall getDefinitionsTagsParserRuleCall_2_0_4() { return cDefinitionsTagsParserRuleCall_2_0_4; }
+		public RuleCall getTagsParserRuleCall_4() { return cTagsParserRuleCall_4; }
 	}
 
 	public class SpecElements extends AbstractParserRuleElementFinder {
@@ -186,6 +198,56 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Step");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cStepAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cDefinitionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cDefinitionStepDefinitionParserRuleCall_1_0 = (RuleCall)cDefinitionAssignment_1.eContents().get(0);
+		private final RuleCall cSINGLE_NLTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final RuleCall cSINGLE_NLTerminalRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
+		private final Assignment cTableAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTableTableParserRuleCall_3_1_0 = (RuleCall)cTableAssignment_3_1.eContents().get(0);
+		private final RuleCall cSINGLE_NLTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		
+		//// Markdown Unordered List - can contain parameters, Static (i.e. "foo") or Dynamic (i.e. <bar>)
+		//// Can also optionally have a Table associated
+		//Step:
+		//	{Step} definition=StepDefinition SINGLE_NL (SINGLE_NL* table=Table)? SINGLE_NL*;
+		public ParserRule getRule() { return rule; }
+
+		//{Step} definition=StepDefinition SINGLE_NL (SINGLE_NL* table=Table)? SINGLE_NL*
+		public Group getGroup() { return cGroup; }
+
+		//{Step}
+		public Action getStepAction_0() { return cStepAction_0; }
+
+		//definition=StepDefinition
+		public Assignment getDefinitionAssignment_1() { return cDefinitionAssignment_1; }
+
+		//StepDefinition
+		public RuleCall getDefinitionStepDefinitionParserRuleCall_1_0() { return cDefinitionStepDefinitionParserRuleCall_1_0; }
+
+		//SINGLE_NL
+		public RuleCall getSINGLE_NLTerminalRuleCall_2() { return cSINGLE_NLTerminalRuleCall_2; }
+
+		//(SINGLE_NL* table=Table)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//SINGLE_NL*
+		public RuleCall getSINGLE_NLTerminalRuleCall_3_0() { return cSINGLE_NLTerminalRuleCall_3_0; }
+
+		//table=Table
+		public Assignment getTableAssignment_3_1() { return cTableAssignment_3_1; }
+
+		//Table
+		public RuleCall getTableTableParserRuleCall_3_1_0() { return cTableTableParserRuleCall_3_1_0; }
+
+		//SINGLE_NL*
+		public RuleCall getSINGLE_NLTerminalRuleCall_4() { return cSINGLE_NLTerminalRuleCall_4; }
+	}
+
+	public class StepDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StepDefinition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cStepDefinitionAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cAsteriskSpaceKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_2_0 = (Alternatives)cGroup_2.eContents().get(0);
@@ -193,39 +255,34 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cStaticParamsStaticParamParserRuleCall_2_0_0_0 = (RuleCall)cStaticParamsAssignment_2_0_0.eContents().get(0);
 		private final Assignment cDynamicParamsAssignment_2_0_1 = (Assignment)cAlternatives_2_0.eContents().get(1);
 		private final RuleCall cDynamicParamsDynamicParamParserRuleCall_2_0_1_0 = (RuleCall)cDynamicParamsAssignment_2_0_1.eContents().get(0);
-		private final RuleCall cWORDTerminalRuleCall_2_0_2 = (RuleCall)cAlternatives_2_0.eContents().get(2);
-		private final Keyword cHyphenMinusKeyword_2_0_3 = (Keyword)cAlternatives_2_0.eContents().get(3);
-		private final Keyword cEqualsSignKeyword_2_0_4 = (Keyword)cAlternatives_2_0.eContents().get(4);
-		private final RuleCall cWSTerminalRuleCall_2_0_5 = (RuleCall)cAlternatives_2_0.eContents().get(5);
-		private final RuleCall cSEPARATORSTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
-		private final RuleCall cSINGLE_NLTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final RuleCall cSINGLE_NLTerminalRuleCall_4_0 = (RuleCall)cGroup_4.eContents().get(0);
-		private final Assignment cTableAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cTableTableParserRuleCall_4_1_0 = (RuleCall)cTableAssignment_4_1.eContents().get(0);
-		private final RuleCall cSINGLE_NLTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final Assignment cTextAssignment_2_0_2 = (Assignment)cAlternatives_2_0.eContents().get(2);
+		private final Alternatives cTextAlternatives_2_0_2_0 = (Alternatives)cTextAssignment_2_0_2.eContents().get(0);
+		private final RuleCall cTextWORDTerminalRuleCall_2_0_2_0_0 = (RuleCall)cTextAlternatives_2_0_2_0.eContents().get(0);
+		private final Keyword cTextHyphenMinusKeyword_2_0_2_0_1 = (Keyword)cTextAlternatives_2_0_2_0.eContents().get(1);
+		private final Keyword cTextEqualsSignKeyword_2_0_2_0_2 = (Keyword)cTextAlternatives_2_0_2_0.eContents().get(2);
+		private final RuleCall cTextWSTerminalRuleCall_2_0_2_0_3 = (RuleCall)cTextAlternatives_2_0_2_0.eContents().get(3);
+		private final Assignment cSeparatorsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cSeparatorsSEPARATORSTerminalRuleCall_2_1_0 = (RuleCall)cSeparatorsAssignment_2_1.eContents().get(0);
 		
-		//// Markdown Unordered List - can contain parameters, Static (i.e. "foo") or Dynamic (i.e. <bar>)
-		//// Can also optionally have a Table associated
-		//Step:
-		//	{Step} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | WORD | "-" | "=" | WS) SEPARATORS*)+ SINGLE_NL
-		//	(SINGLE_NL* table=Table)? SINGLE_NL*;
+		//StepDefinition:
+		//	{StepDefinition} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS))
+		//	separators+=SEPARATORS*)+;
 		public ParserRule getRule() { return rule; }
 
-		//{Step} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | WORD | "-" | "=" | WS) SEPARATORS*)+ SINGLE_NL
-		//(SINGLE_NL* table=Table)? SINGLE_NL*
+		//{StepDefinition} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS))
+		//separators+=SEPARATORS*)+
 		public Group getGroup() { return cGroup; }
 
-		//{Step}
-		public Action getStepAction_0() { return cStepAction_0; }
+		//{StepDefinition}
+		public Action getStepDefinitionAction_0() { return cStepDefinitionAction_0; }
 
 		//"* "
 		public Keyword getAsteriskSpaceKeyword_1() { return cAsteriskSpaceKeyword_1; }
 
-		//((staticParams+=StaticParam | dynamicParams+=DynamicParam | WORD | "-" | "=" | WS) SEPARATORS*)+
+		//((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS)) separators+=SEPARATORS*)+
 		public Group getGroup_2() { return cGroup_2; }
 
-		//staticParams+=StaticParam | dynamicParams+=DynamicParam | WORD | "-" | "=" | WS
+		//staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS)
 		public Alternatives getAlternatives_2_0() { return cAlternatives_2_0; }
 
 		//staticParams+=StaticParam
@@ -240,38 +297,29 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		//DynamicParam
 		public RuleCall getDynamicParamsDynamicParamParserRuleCall_2_0_1_0() { return cDynamicParamsDynamicParamParserRuleCall_2_0_1_0; }
 
+		//text+=(WORD | "-" | "=" | WS)
+		public Assignment getTextAssignment_2_0_2() { return cTextAssignment_2_0_2; }
+
+		//WORD | "-" | "=" | WS
+		public Alternatives getTextAlternatives_2_0_2_0() { return cTextAlternatives_2_0_2_0; }
+
 		//WORD
-		public RuleCall getWORDTerminalRuleCall_2_0_2() { return cWORDTerminalRuleCall_2_0_2; }
+		public RuleCall getTextWORDTerminalRuleCall_2_0_2_0_0() { return cTextWORDTerminalRuleCall_2_0_2_0_0; }
 
 		//"-"
-		public Keyword getHyphenMinusKeyword_2_0_3() { return cHyphenMinusKeyword_2_0_3; }
+		public Keyword getTextHyphenMinusKeyword_2_0_2_0_1() { return cTextHyphenMinusKeyword_2_0_2_0_1; }
 
 		//"="
-		public Keyword getEqualsSignKeyword_2_0_4() { return cEqualsSignKeyword_2_0_4; }
+		public Keyword getTextEqualsSignKeyword_2_0_2_0_2() { return cTextEqualsSignKeyword_2_0_2_0_2; }
 
 		//WS
-		public RuleCall getWSTerminalRuleCall_2_0_5() { return cWSTerminalRuleCall_2_0_5; }
+		public RuleCall getTextWSTerminalRuleCall_2_0_2_0_3() { return cTextWSTerminalRuleCall_2_0_2_0_3; }
 
-		//SEPARATORS*
-		public RuleCall getSEPARATORSTerminalRuleCall_2_1() { return cSEPARATORSTerminalRuleCall_2_1; }
+		//separators+=SEPARATORS*
+		public Assignment getSeparatorsAssignment_2_1() { return cSeparatorsAssignment_2_1; }
 
-		//SINGLE_NL
-		public RuleCall getSINGLE_NLTerminalRuleCall_3() { return cSINGLE_NLTerminalRuleCall_3; }
-
-		//(SINGLE_NL* table=Table)?
-		public Group getGroup_4() { return cGroup_4; }
-
-		//SINGLE_NL*
-		public RuleCall getSINGLE_NLTerminalRuleCall_4_0() { return cSINGLE_NLTerminalRuleCall_4_0; }
-
-		//table=Table
-		public Assignment getTableAssignment_4_1() { return cTableAssignment_4_1; }
-
-		//Table
-		public RuleCall getTableTableParserRuleCall_4_1_0() { return cTableTableParserRuleCall_4_1_0; }
-
-		//SINGLE_NL*
-		public RuleCall getSINGLE_NLTerminalRuleCall_5() { return cSINGLE_NLTerminalRuleCall_5; }
+		//SEPARATORS
+		public RuleCall getSeparatorsSEPARATORSTerminalRuleCall_2_1_0() { return cSeparatorsSEPARATORSTerminalRuleCall_2_1_0; }
 	}
 
 	public class StaticParamElements extends AbstractParserRuleElementFinder {
@@ -565,9 +613,11 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private final ModelElements pModel;
+	private final ElementElements pElement;
 	private final SpecElements pSpec;
 	private final ScenarioElements pScenario;
 	private final StepElements pStep;
+	private final StepDefinitionElements pStepDefinition;
 	private final StaticParamElements pStaticParam;
 	private final DynamicParamElements pDynamicParam;
 	private final TagsElements pTags;
@@ -590,9 +640,11 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	public SpecGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.pModel = new ModelElements();
+		this.pElement = new ElementElements();
 		this.pSpec = new SpecElements();
 		this.pScenario = new ScenarioElements();
 		this.pStep = new StepElements();
+		this.pStepDefinition = new StepDefinitionElements();
 		this.pStaticParam = new StaticParamElements();
 		this.pDynamicParam = new DynamicParamElements();
 		this.pTags = new TagsElements();
@@ -637,13 +689,23 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	// * TODO
 	// * - Errors if last line is not a newline
 	// * / Model:
-	//	{Model} SINGLE_NL* definitions+=(Spec | Scenario | Step | Comment | Tags)*;
+	//	{Model} SINGLE_NL* definitions+=Element*;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
 	
 	public ParserRule getModelRule() {
 		return getModelAccess().getRule();
+	}
+
+	//Element:
+	//	Spec | Scenario | Step | Comment | Tags;
+	public ElementElements getElementAccess() {
+		return pElement;
+	}
+	
+	public ParserRule getElementRule() {
+		return getElementAccess().getRule();
 	}
 
 	//// Two formats of Markdown H1
@@ -671,14 +733,24 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//// Markdown Unordered List - can contain parameters, Static (i.e. "foo") or Dynamic (i.e. <bar>)
 	//// Can also optionally have a Table associated
 	//Step:
-	//	{Step} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | WORD | "-" | "=" | WS) SEPARATORS*)+ SINGLE_NL
-	//	(SINGLE_NL* table=Table)? SINGLE_NL*;
+	//	{Step} definition=StepDefinition SINGLE_NL (SINGLE_NL* table=Table)? SINGLE_NL*;
 	public StepElements getStepAccess() {
 		return pStep;
 	}
 	
 	public ParserRule getStepRule() {
 		return getStepAccess().getRule();
+	}
+
+	//StepDefinition:
+	//	{StepDefinition} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS))
+	//	separators+=SEPARATORS*)+;
+	public StepDefinitionElements getStepDefinitionAccess() {
+		return pStepDefinition;
+	}
+	
+	public ParserRule getStepDefinitionRule() {
+		return getStepDefinitionAccess().getRule();
 	}
 
 	//StaticParam:

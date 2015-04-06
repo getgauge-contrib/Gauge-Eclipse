@@ -17,6 +17,7 @@ public class SpecLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObject
 		super(delegate);
 	}
 
+
 	// Labels and icons can be computed like this:
 	
 //	String text(Greeting ele) {

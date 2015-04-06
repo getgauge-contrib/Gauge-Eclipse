@@ -11,8 +11,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
@@ -28,7 +26,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class SpecImpl extends MinimalEObjectImpl.Container implements Spec
+public class SpecImpl extends ElementImpl implements Spec
 {
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' attribute list.

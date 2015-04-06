@@ -79,10 +79,18 @@ public class SpecSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SpecPackage.ELEMENT:
+      {
+        Element element = (Element)theEObject;
+        T result = caseElement(element);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SpecPackage.SPEC:
       {
         Spec spec = (Spec)theEObject;
         T result = caseSpec(spec);
+        if (result == null) result = caseElement(spec);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -90,6 +98,7 @@ public class SpecSwitch<T> extends Switch<T>
       {
         Scenario scenario = (Scenario)theEObject;
         T result = caseScenario(scenario);
+        if (result == null) result = caseElement(scenario);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -97,6 +106,14 @@ public class SpecSwitch<T> extends Switch<T>
       {
         Step step = (Step)theEObject;
         T result = caseStep(step);
+        if (result == null) result = caseElement(step);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SpecPackage.STEP_DEFINITION:
+      {
+        StepDefinition stepDefinition = (StepDefinition)theEObject;
+        T result = caseStepDefinition(stepDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -118,6 +135,7 @@ public class SpecSwitch<T> extends Switch<T>
       {
         Tags tags = (Tags)theEObject;
         T result = caseTags(tags);
+        if (result == null) result = caseElement(tags);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -125,6 +143,7 @@ public class SpecSwitch<T> extends Switch<T>
       {
         Comment comment = (Comment)theEObject;
         T result = caseComment(comment);
+        if (result == null) result = caseElement(comment);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -165,6 +184,22 @@ public class SpecSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModel(Model object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElement(Element object)
   {
     return null;
   }
@@ -213,6 +248,22 @@ public class SpecSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseStep(Step object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Step Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Step Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStepDefinition(StepDefinition object)
   {
     return null;
   }

@@ -65,9 +65,11 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
     switch (eClass.getClassifierID())
     {
       case SpecPackage.MODEL: return createModel();
+      case SpecPackage.ELEMENT: return createElement();
       case SpecPackage.SPEC: return createSpec();
       case SpecPackage.SCENARIO: return createScenario();
       case SpecPackage.STEP: return createStep();
+      case SpecPackage.STEP_DEFINITION: return createStepDefinition();
       case SpecPackage.STATIC_PARAM: return createStaticParam();
       case SpecPackage.DYNAMIC_PARAM: return createDynamicParam();
       case SpecPackage.TAGS: return createTags();
@@ -89,6 +91,17 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Element createElement()
+  {
+    ElementImpl element = new ElementImpl();
+    return element;
   }
 
   /**
@@ -122,6 +135,17 @@ public class SpecFactoryImpl extends EFactoryImpl implements SpecFactory
   {
     StepImpl step = new StepImpl();
     return step;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StepDefinition createStepDefinition()
+  {
+    StepDefinitionImpl stepDefinition = new StepDefinitionImpl();
+    return stepDefinition;
   }
 
   /**

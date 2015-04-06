@@ -85,6 +85,25 @@ public interface SpecPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.ElementImpl <em>Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.ElementImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getElement()
+   * @generated
+   */
+  int ELEMENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link io.getgauge.spec.impl.SpecImpl <em>Spec</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -92,7 +111,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getSpec()
    * @generated
    */
-  int SPEC = 1;
+  int SPEC = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute list.
@@ -101,7 +120,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPEC__NAME = 0;
+  int SPEC__NAME = ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Spec</em>' class.
@@ -110,7 +129,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPEC_FEATURE_COUNT = 1;
+  int SPEC_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.ScenarioImpl <em>Scenario</em>}' class.
@@ -120,7 +139,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getScenario()
    * @generated
    */
-  int SCENARIO = 2;
+  int SCENARIO = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute list.
@@ -129,7 +148,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO__NAME = 0;
+  int SCENARIO__NAME = ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Scenario</em>' class.
@@ -138,7 +157,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCENARIO_FEATURE_COUNT = 1;
+  int SCENARIO_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.StepImpl <em>Step</em>}' class.
@@ -148,25 +167,16 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getStep()
    * @generated
    */
-  int STEP = 3;
+  int STEP = 4;
 
   /**
-   * The feature id for the '<em><b>Static Params</b></em>' containment reference list.
+   * The feature id for the '<em><b>Definition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STEP__STATIC_PARAMS = 0;
-
-  /**
-   * The feature id for the '<em><b>Dynamic Params</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STEP__DYNAMIC_PARAMS = 1;
+  int STEP__DEFINITION = ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Table</b></em>' containment reference.
@@ -175,7 +185,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STEP__TABLE = 2;
+  int STEP__TABLE = ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Step</em>' class.
@@ -184,7 +194,62 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STEP_FEATURE_COUNT = 3;
+  int STEP_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link io.getgauge.spec.impl.StepDefinitionImpl <em>Step Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see io.getgauge.spec.impl.StepDefinitionImpl
+   * @see io.getgauge.spec.impl.SpecPackageImpl#getStepDefinition()
+   * @generated
+   */
+  int STEP_DEFINITION = 5;
+
+  /**
+   * The feature id for the '<em><b>Static Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP_DEFINITION__STATIC_PARAMS = 0;
+
+  /**
+   * The feature id for the '<em><b>Dynamic Params</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP_DEFINITION__DYNAMIC_PARAMS = 1;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP_DEFINITION__TEXT = 2;
+
+  /**
+   * The feature id for the '<em><b>Separators</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP_DEFINITION__SEPARATORS = 3;
+
+  /**
+   * The number of structural features of the '<em>Step Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STEP_DEFINITION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.StaticParamImpl <em>Static Param</em>}' class.
@@ -194,7 +259,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getStaticParam()
    * @generated
    */
-  int STATIC_PARAM = 4;
+  int STATIC_PARAM = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -222,7 +287,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getDynamicParam()
    * @generated
    */
-  int DYNAMIC_PARAM = 5;
+  int DYNAMIC_PARAM = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -250,7 +315,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getTags()
    * @generated
    */
-  int TAGS = 6;
+  int TAGS = 8;
 
   /**
    * The number of structural features of the '<em>Tags</em>' class.
@@ -259,7 +324,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TAGS_FEATURE_COUNT = 0;
+  int TAGS_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.CommentImpl <em>Comment</em>}' class.
@@ -269,7 +334,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getComment()
    * @generated
    */
-  int COMMENT = 7;
+  int COMMENT = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute list.
@@ -278,7 +343,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMENT__NAME = 0;
+  int COMMENT__NAME = ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Comment</em>' class.
@@ -287,7 +352,7 @@ public interface SpecPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMENT_FEATURE_COUNT = 1;
+  int COMMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link io.getgauge.spec.impl.TableImpl <em>Table</em>}' class.
@@ -297,7 +362,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getTable()
    * @generated
    */
-  int TABLE = 8;
+  int TABLE = 10;
 
   /**
    * The feature id for the '<em><b>Heading</b></em>' containment reference.
@@ -334,7 +399,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getTableRow()
    * @generated
    */
-  int TABLE_ROW = 9;
+  int TABLE_ROW = 11;
 
   /**
    * The feature id for the '<em><b>Cells</b></em>' containment reference list.
@@ -362,7 +427,7 @@ public interface SpecPackage extends EPackage
    * @see io.getgauge.spec.impl.SpecPackageImpl#getTableCell()
    * @generated
    */
-  int TABLE_CELL = 10;
+  int TABLE_CELL = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute list.
@@ -403,6 +468,16 @@ public interface SpecPackage extends EPackage
    * @generated
    */
   EReference getModel_Definitions();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.Element <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element</em>'.
+   * @see io.getgauge.spec.Element
+   * @generated
+   */
+  EClass getElement();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.Spec <em>Spec</em>}'.
@@ -457,26 +532,15 @@ public interface SpecPackage extends EPackage
   EClass getStep();
 
   /**
-   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Step#getStaticParams <em>Static Params</em>}'.
+   * Returns the meta object for the containment reference '{@link io.getgauge.spec.Step#getDefinition <em>Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Static Params</em>'.
-   * @see io.getgauge.spec.Step#getStaticParams()
+   * @return the meta object for the containment reference '<em>Definition</em>'.
+   * @see io.getgauge.spec.Step#getDefinition()
    * @see #getStep()
    * @generated
    */
-  EReference getStep_StaticParams();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.Step#getDynamicParams <em>Dynamic Params</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Dynamic Params</em>'.
-   * @see io.getgauge.spec.Step#getDynamicParams()
-   * @see #getStep()
-   * @generated
-   */
-  EReference getStep_DynamicParams();
+  EReference getStep_Definition();
 
   /**
    * Returns the meta object for the containment reference '{@link io.getgauge.spec.Step#getTable <em>Table</em>}'.
@@ -488,6 +552,60 @@ public interface SpecPackage extends EPackage
    * @generated
    */
   EReference getStep_Table();
+
+  /**
+   * Returns the meta object for class '{@link io.getgauge.spec.StepDefinition <em>Step Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Step Definition</em>'.
+   * @see io.getgauge.spec.StepDefinition
+   * @generated
+   */
+  EClass getStepDefinition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.StepDefinition#getStaticParams <em>Static Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Static Params</em>'.
+   * @see io.getgauge.spec.StepDefinition#getStaticParams()
+   * @see #getStepDefinition()
+   * @generated
+   */
+  EReference getStepDefinition_StaticParams();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link io.getgauge.spec.StepDefinition#getDynamicParams <em>Dynamic Params</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Dynamic Params</em>'.
+   * @see io.getgauge.spec.StepDefinition#getDynamicParams()
+   * @see #getStepDefinition()
+   * @generated
+   */
+  EReference getStepDefinition_DynamicParams();
+
+  /**
+   * Returns the meta object for the attribute list '{@link io.getgauge.spec.StepDefinition#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Text</em>'.
+   * @see io.getgauge.spec.StepDefinition#getText()
+   * @see #getStepDefinition()
+   * @generated
+   */
+  EAttribute getStepDefinition_Text();
+
+  /**
+   * Returns the meta object for the attribute list '{@link io.getgauge.spec.StepDefinition#getSeparators <em>Separators</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Separators</em>'.
+   * @see io.getgauge.spec.StepDefinition#getSeparators()
+   * @see #getStepDefinition()
+   * @generated
+   */
+  EAttribute getStepDefinition_Separators();
 
   /**
    * Returns the meta object for class '{@link io.getgauge.spec.StaticParam <em>Static Param</em>}'.
@@ -678,6 +796,16 @@ public interface SpecPackage extends EPackage
     EReference MODEL__DEFINITIONS = eINSTANCE.getModel_Definitions();
 
     /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.ElementImpl <em>Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.ElementImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getElement()
+     * @generated
+     */
+    EClass ELEMENT = eINSTANCE.getElement();
+
+    /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.SpecImpl <em>Spec</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -724,20 +852,12 @@ public interface SpecPackage extends EPackage
     EClass STEP = eINSTANCE.getStep();
 
     /**
-     * The meta object literal for the '<em><b>Static Params</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Definition</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STEP__STATIC_PARAMS = eINSTANCE.getStep_StaticParams();
-
-    /**
-     * The meta object literal for the '<em><b>Dynamic Params</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STEP__DYNAMIC_PARAMS = eINSTANCE.getStep_DynamicParams();
+    EReference STEP__DEFINITION = eINSTANCE.getStep_Definition();
 
     /**
      * The meta object literal for the '<em><b>Table</b></em>' containment reference feature.
@@ -746,6 +866,48 @@ public interface SpecPackage extends EPackage
      * @generated
      */
     EReference STEP__TABLE = eINSTANCE.getStep_Table();
+
+    /**
+     * The meta object literal for the '{@link io.getgauge.spec.impl.StepDefinitionImpl <em>Step Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see io.getgauge.spec.impl.StepDefinitionImpl
+     * @see io.getgauge.spec.impl.SpecPackageImpl#getStepDefinition()
+     * @generated
+     */
+    EClass STEP_DEFINITION = eINSTANCE.getStepDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Static Params</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STEP_DEFINITION__STATIC_PARAMS = eINSTANCE.getStepDefinition_StaticParams();
+
+    /**
+     * The meta object literal for the '<em><b>Dynamic Params</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STEP_DEFINITION__DYNAMIC_PARAMS = eINSTANCE.getStepDefinition_DynamicParams();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STEP_DEFINITION__TEXT = eINSTANCE.getStepDefinition_Text();
+
+    /**
+     * The meta object literal for the '<em><b>Separators</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STEP_DEFINITION__SEPARATORS = eINSTANCE.getStepDefinition_Separators();
 
     /**
      * The meta object literal for the '{@link io.getgauge.spec.impl.StaticParamImpl <em>Static Param</em>}' class.

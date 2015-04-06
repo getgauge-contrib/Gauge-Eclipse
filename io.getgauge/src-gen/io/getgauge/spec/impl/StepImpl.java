@@ -2,27 +2,18 @@
  */
 package io.getgauge.spec.impl;
 
-import io.getgauge.spec.DynamicParam;
 import io.getgauge.spec.SpecPackage;
-import io.getgauge.spec.StaticParam;
 import io.getgauge.spec.Step;
+import io.getgauge.spec.StepDefinition;
 import io.getgauge.spec.Table;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,35 +22,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link io.getgauge.spec.impl.StepImpl#getStaticParams <em>Static Params</em>}</li>
- *   <li>{@link io.getgauge.spec.impl.StepImpl#getDynamicParams <em>Dynamic Params</em>}</li>
+ *   <li>{@link io.getgauge.spec.impl.StepImpl#getDefinition <em>Definition</em>}</li>
  *   <li>{@link io.getgauge.spec.impl.StepImpl#getTable <em>Table</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StepImpl extends MinimalEObjectImpl.Container implements Step
+public class StepImpl extends ElementImpl implements Step
 {
   /**
-   * The cached value of the '{@link #getStaticParams() <em>Static Params</em>}' containment reference list.
+   * The cached value of the '{@link #getDefinition() <em>Definition</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStaticParams()
+   * @see #getDefinition()
    * @generated
    * @ordered
    */
-  protected EList<StaticParam> staticParams;
-
-  /**
-   * The cached value of the '{@link #getDynamicParams() <em>Dynamic Params</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDynamicParams()
-   * @generated
-   * @ordered
-   */
-  protected EList<DynamicParam> dynamicParams;
+  protected StepDefinition definition;
 
   /**
    * The cached value of the '{@link #getTable() <em>Table</em>}' containment reference.
@@ -97,13 +77,9 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StaticParam> getStaticParams()
+  public StepDefinition getDefinition()
   {
-    if (staticParams == null)
-    {
-      staticParams = new EObjectContainmentEList<StaticParam>(StaticParam.class, this, SpecPackage.STEP__STATIC_PARAMS);
-    }
-    return staticParams;
+    return definition;
   }
 
   /**
@@ -111,13 +87,37 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<DynamicParam> getDynamicParams()
+  public NotificationChain basicSetDefinition(StepDefinition newDefinition, NotificationChain msgs)
   {
-    if (dynamicParams == null)
+    StepDefinition oldDefinition = definition;
+    definition = newDefinition;
+    if (eNotificationRequired())
     {
-      dynamicParams = new EObjectContainmentEList<DynamicParam>(DynamicParam.class, this, SpecPackage.STEP__DYNAMIC_PARAMS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpecPackage.STEP__DEFINITION, oldDefinition, newDefinition);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return dynamicParams;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDefinition(StepDefinition newDefinition)
+  {
+    if (newDefinition != definition)
+    {
+      NotificationChain msgs = null;
+      if (definition != null)
+        msgs = ((InternalEObject)definition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpecPackage.STEP__DEFINITION, null, msgs);
+      if (newDefinition != null)
+        msgs = ((InternalEObject)newDefinition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpecPackage.STEP__DEFINITION, null, msgs);
+      msgs = basicSetDefinition(newDefinition, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SpecPackage.STEP__DEFINITION, newDefinition, newDefinition));
   }
 
   /**
@@ -178,10 +178,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__STATIC_PARAMS:
-        return ((InternalEList<?>)getStaticParams()).basicRemove(otherEnd, msgs);
-      case SpecPackage.STEP__DYNAMIC_PARAMS:
-        return ((InternalEList<?>)getDynamicParams()).basicRemove(otherEnd, msgs);
+      case SpecPackage.STEP__DEFINITION:
+        return basicSetDefinition(null, msgs);
       case SpecPackage.STEP__TABLE:
         return basicSetTable(null, msgs);
     }
@@ -198,10 +196,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__STATIC_PARAMS:
-        return getStaticParams();
-      case SpecPackage.STEP__DYNAMIC_PARAMS:
-        return getDynamicParams();
+      case SpecPackage.STEP__DEFINITION:
+        return getDefinition();
       case SpecPackage.STEP__TABLE:
         return getTable();
     }
@@ -213,19 +209,13 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__STATIC_PARAMS:
-        getStaticParams().clear();
-        getStaticParams().addAll((Collection<? extends StaticParam>)newValue);
-        return;
-      case SpecPackage.STEP__DYNAMIC_PARAMS:
-        getDynamicParams().clear();
-        getDynamicParams().addAll((Collection<? extends DynamicParam>)newValue);
+      case SpecPackage.STEP__DEFINITION:
+        setDefinition((StepDefinition)newValue);
         return;
       case SpecPackage.STEP__TABLE:
         setTable((Table)newValue);
@@ -244,11 +234,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__STATIC_PARAMS:
-        getStaticParams().clear();
-        return;
-      case SpecPackage.STEP__DYNAMIC_PARAMS:
-        getDynamicParams().clear();
+      case SpecPackage.STEP__DEFINITION:
+        setDefinition((StepDefinition)null);
         return;
       case SpecPackage.STEP__TABLE:
         setTable((Table)null);
@@ -267,10 +254,8 @@ public class StepImpl extends MinimalEObjectImpl.Container implements Step
   {
     switch (featureID)
     {
-      case SpecPackage.STEP__STATIC_PARAMS:
-        return staticParams != null && !staticParams.isEmpty();
-      case SpecPackage.STEP__DYNAMIC_PARAMS:
-        return dynamicParams != null && !dynamicParams.isEmpty();
+      case SpecPackage.STEP__DEFINITION:
+        return definition != null;
       case SpecPackage.STEP__TABLE:
         return table != null;
     }

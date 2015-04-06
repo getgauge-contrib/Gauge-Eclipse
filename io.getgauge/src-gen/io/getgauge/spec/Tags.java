@@ -2,7 +2,6 @@
  */
 package io.getgauge.spec;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Tags extends EObject
+public interface Tags extends Element
 {
 } // Tags

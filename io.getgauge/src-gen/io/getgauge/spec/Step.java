@@ -2,9 +2,6 @@
  */
 package io.getgauge.spec;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,8 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link io.getgauge.spec.Step#getStaticParams <em>Static Params</em>}</li>
- *   <li>{@link io.getgauge.spec.Step#getDynamicParams <em>Dynamic Params</em>}</li>
+ *   <li>{@link io.getgauge.spec.Step#getDefinition <em>Definition</em>}</li>
  *   <li>{@link io.getgauge.spec.Step#getTable <em>Table</em>}</li>
  * </ul>
  * </p>
@@ -24,39 +20,33 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Step extends EObject
+public interface Step extends Element
 {
   /**
-   * Returns the value of the '<em><b>Static Params</b></em>' containment reference list.
-   * The list contents are of type {@link io.getgauge.spec.StaticParam}.
+   * Returns the value of the '<em><b>Definition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Static Params</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Definition</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Static Params</em>' containment reference list.
-   * @see io.getgauge.spec.SpecPackage#getStep_StaticParams()
+   * @return the value of the '<em>Definition</em>' containment reference.
+   * @see #setDefinition(StepDefinition)
+   * @see io.getgauge.spec.SpecPackage#getStep_Definition()
    * @model containment="true"
    * @generated
    */
-  EList<StaticParam> getStaticParams();
+  StepDefinition getDefinition();
 
   /**
-   * Returns the value of the '<em><b>Dynamic Params</b></em>' containment reference list.
-   * The list contents are of type {@link io.getgauge.spec.DynamicParam}.
+   * Sets the value of the '{@link io.getgauge.spec.Step#getDefinition <em>Definition</em>}' containment reference.
    * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Dynamic Params</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Dynamic Params</em>' containment reference list.
-   * @see io.getgauge.spec.SpecPackage#getStep_DynamicParams()
-   * @model containment="true"
+   * @param value the new value of the '<em>Definition</em>' containment reference.
+   * @see #getDefinition()
    * @generated
    */
-  EList<DynamicParam> getDynamicParams();
+  void setDefinition(StepDefinition value);
 
   /**
    * Returns the value of the '<em><b>Table</b></em>' containment reference.

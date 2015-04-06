@@ -2,28 +2,30 @@
  */
 package io.getgauge.spec.impl;
 
+import io.getgauge.spec.Element;
 import io.getgauge.spec.SpecPackage;
-import io.getgauge.spec.Tags;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Tags</b></em>'.
+ * An implementation of the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class TagsImpl extends ElementImpl implements Tags
+public class ElementImpl extends MinimalEObjectImpl.Container implements Element
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TagsImpl()
+  protected ElementImpl()
   {
     super();
   }
@@ -36,7 +38,7 @@ public class TagsImpl extends ElementImpl implements Tags
   @Override
   protected EClass eStaticClass()
   {
-    return SpecPackage.Literals.TAGS;
+    return SpecPackage.Literals.ELEMENT;
   }
 
-} //TagsImpl
+} //ElementImpl

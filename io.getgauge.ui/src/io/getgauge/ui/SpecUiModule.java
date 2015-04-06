@@ -4,6 +4,7 @@
 package io.getgauge.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.hyperlinking.IHyperlinkHelper;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 
@@ -15,10 +16,15 @@ public class SpecUiModule extends io.getgauge.ui.AbstractSpecUiModule {
 		super(plugin);
 	}
 
-	 public Class <?extends IHighlightingConfiguration> bindIHighlightingConfiguration () {
-	 return SpecHighlightingConfiguration.class;
-	 }
-	 public Class <?extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator(){
-	 return SpecHighlightingCalculator.class;
-	 }
+	public Class <?extends IHighlightingConfiguration> bindIHighlightingConfiguration () {
+		return SpecHighlightingConfiguration.class;
+	}
+	
+	public Class <?extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator(){
+		return SpecHighlightingCalculator.class;
+	}
+	
+	public Class<? extends IHyperlinkHelper> bindIHyperlinkHelper() {
+		return SpecHyperlinkHelper.class;
+	}
 }

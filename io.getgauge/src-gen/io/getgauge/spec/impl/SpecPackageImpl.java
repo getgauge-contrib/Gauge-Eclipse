@@ -4,6 +4,7 @@ package io.getgauge.spec.impl;
 
 import io.getgauge.spec.Comment;
 import io.getgauge.spec.DynamicParam;
+import io.getgauge.spec.Element;
 import io.getgauge.spec.Model;
 import io.getgauge.spec.Scenario;
 import io.getgauge.spec.Spec;
@@ -11,6 +12,7 @@ import io.getgauge.spec.SpecFactory;
 import io.getgauge.spec.SpecPackage;
 import io.getgauge.spec.StaticParam;
 import io.getgauge.spec.Step;
+import io.getgauge.spec.StepDefinition;
 import io.getgauge.spec.Table;
 import io.getgauge.spec.TableCell;
 import io.getgauge.spec.TableRow;
@@ -43,6 +45,13 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass elementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass specEClass = null;
 
   /**
@@ -58,6 +67,13 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * @generated
    */
   private EClass stepEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stepDefinitionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -196,6 +212,16 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getElement()
+  {
+    return elementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSpec()
   {
     return specEClass;
@@ -246,7 +272,7 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStep_StaticParams()
+  public EReference getStep_Definition()
   {
     return (EReference)stepEClass.getEStructuralFeatures().get(0);
   }
@@ -256,7 +282,7 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStep_DynamicParams()
+  public EReference getStep_Table()
   {
     return (EReference)stepEClass.getEStructuralFeatures().get(1);
   }
@@ -266,9 +292,49 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStep_Table()
+  public EClass getStepDefinition()
   {
-    return (EReference)stepEClass.getEStructuralFeatures().get(2);
+    return stepDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStepDefinition_StaticParams()
+  {
+    return (EReference)stepDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStepDefinition_DynamicParams()
+  {
+    return (EReference)stepDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStepDefinition_Text()
+  {
+    return (EAttribute)stepDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStepDefinition_Separators()
+  {
+    return (EAttribute)stepDefinitionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -444,6 +510,8 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__DEFINITIONS);
 
+    elementEClass = createEClass(ELEMENT);
+
     specEClass = createEClass(SPEC);
     createEAttribute(specEClass, SPEC__NAME);
 
@@ -451,9 +519,14 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     createEAttribute(scenarioEClass, SCENARIO__NAME);
 
     stepEClass = createEClass(STEP);
-    createEReference(stepEClass, STEP__STATIC_PARAMS);
-    createEReference(stepEClass, STEP__DYNAMIC_PARAMS);
+    createEReference(stepEClass, STEP__DEFINITION);
     createEReference(stepEClass, STEP__TABLE);
+
+    stepDefinitionEClass = createEClass(STEP_DEFINITION);
+    createEReference(stepDefinitionEClass, STEP_DEFINITION__STATIC_PARAMS);
+    createEReference(stepDefinitionEClass, STEP_DEFINITION__DYNAMIC_PARAMS);
+    createEAttribute(stepDefinitionEClass, STEP_DEFINITION__TEXT);
+    createEAttribute(stepDefinitionEClass, STEP_DEFINITION__SEPARATORS);
 
     staticParamEClass = createEClass(STATIC_PARAM);
     createEAttribute(staticParamEClass, STATIC_PARAM__NAME);
@@ -506,10 +579,17 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    specEClass.getESuperTypes().add(this.getElement());
+    scenarioEClass.getESuperTypes().add(this.getElement());
+    stepEClass.getESuperTypes().add(this.getElement());
+    tagsEClass.getESuperTypes().add(this.getElement());
+    commentEClass.getESuperTypes().add(this.getElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Definitions(), ecorePackage.getEObject(), null, "definitions", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Definitions(), this.getElement(), null, "definitions", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(specEClass, Spec.class, "Spec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSpec_Name(), ecorePackage.getEString(), "name", null, 0, -1, Spec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -518,9 +598,14 @@ public class SpecPackageImpl extends EPackageImpl implements SpecPackage
     initEAttribute(getScenario_Name(), ecorePackage.getEString(), "name", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stepEClass, Step.class, "Step", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStep_StaticParams(), this.getStaticParam(), null, "staticParams", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStep_DynamicParams(), this.getDynamicParam(), null, "dynamicParams", null, 0, -1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStep_Definition(), this.getStepDefinition(), null, "definition", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStep_Table(), this.getTable(), null, "table", null, 0, 1, Step.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stepDefinitionEClass, StepDefinition.class, "StepDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStepDefinition_StaticParams(), this.getStaticParam(), null, "staticParams", null, 0, -1, StepDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStepDefinition_DynamicParams(), this.getDynamicParam(), null, "dynamicParams", null, 0, -1, StepDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStepDefinition_Text(), ecorePackage.getEString(), "text", null, 0, -1, StepDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStepDefinition_Separators(), ecorePackage.getEString(), "separators", null, 0, -1, StepDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(staticParamEClass, StaticParam.class, "StaticParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStaticParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, StaticParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

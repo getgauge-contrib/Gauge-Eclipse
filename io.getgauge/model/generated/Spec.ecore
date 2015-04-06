@@ -3,23 +3,32 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="spec" nsURI="http://www.getgauge.io/Spec" nsPrefix="spec">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+        eType="#//Element" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Spec">
+  <eClassifiers xsi:type="ecore:EClass" name="Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Spec" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Scenario">
+  <eClassifiers xsi:type="ecore:EClass" name="Scenario" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Step">
+  <eClassifiers xsi:type="ecore:EClass" name="Step" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//StepDefinition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" eType="#//Table"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StepDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="staticParams" upperBound="-1"
         eType="#//StaticParam" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicParams" upperBound="-1"
         eType="#//DynamicParam" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="table" eType="#//Table"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="separators" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StaticParam">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -27,8 +36,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="DynamicParam">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Tags"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Comment">
+  <eClassifiers xsi:type="ecore:EClass" name="Tags" eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

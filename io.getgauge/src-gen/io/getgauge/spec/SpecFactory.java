@@ -32,6 +32,15 @@ public interface SpecFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element</em>'.
+   * @generated
+   */
+  Element createElement();
+
+  /**
    * Returns a new object of class '<em>Spec</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -57,6 +66,15 @@ public interface SpecFactory extends EFactory
    * @generated
    */
   Step createStep();
+
+  /**
+   * Returns a new object of class '<em>Step Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Step Definition</em>'.
+   * @generated
+   */
+  StepDefinition createStepDefinition();
 
   /**
    * Returns a new object of class '<em>Static Param</em>'.

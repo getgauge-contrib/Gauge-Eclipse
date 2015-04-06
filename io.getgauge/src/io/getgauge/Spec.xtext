@@ -10,7 +10,11 @@ generate spec "http://www.getgauge.io/Spec"
 Model:
 	{Model}
 	SINGLE_NL*
-	definitions+=(Spec | Scenario | Step | Comment | Tags)*
+	definitions+=Element*
+;
+
+Element:
+	Spec | Scenario | Step | Comment | Tags
 ;
 
 // Two formats of Markdown H1
@@ -27,11 +31,15 @@ Scenario:
 // Can also optionally have a Table associated
 Step:
 	{Step}
-	'* ' ((staticParams+=StaticParam | dynamicParams+=DynamicParam | WORD | '-' | '=' | WS) SEPARATORS*)+ SINGLE_NL
+	definition=StepDefinition SINGLE_NL
 	(SINGLE_NL* table=Table)?
 	SINGLE_NL*
 ;
 
+StepDefinition:
+	{StepDefinition}
+	'* ' ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | '-' | '=' | WS)) separators+=SEPARATORS*)+
+;
 StaticParam:
 	name=STATIC_PARAM
 ;

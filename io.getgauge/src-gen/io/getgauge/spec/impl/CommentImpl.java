@@ -11,8 +11,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
@@ -28,7 +26,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *
  * @generated
  */
-public class CommentImpl extends MinimalEObjectImpl.Container implements Comment
+public class CommentImpl extends ElementImpl implements Comment
 {
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' attribute list.
