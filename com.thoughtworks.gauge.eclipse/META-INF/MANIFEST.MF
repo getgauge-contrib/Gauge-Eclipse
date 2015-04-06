@@ -19,3 +19,4 @@ Bundle-ClassPath: .,
  libs/gaugert-0.0.3.jar
 Export-Package: com.thoughtworks.gauge.eclipse,
  com.thoughtworks.gauge.eclipse.project
+Import-Package: org.eclipse.emf.ecore

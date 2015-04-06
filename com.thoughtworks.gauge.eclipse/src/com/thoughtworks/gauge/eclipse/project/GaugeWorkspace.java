@@ -14,6 +14,8 @@ import com.thoughtworks.gauge.ConceptInfo;
 import com.thoughtworks.gauge.GaugeConnection;
 import com.thoughtworks.gauge.StepValue;
 import com.thoughtworks.gauge.eclipse.GaugePlugin;
+import com.thoughtworks.gauge.eclipse.exception.GaugeNotFoundException;
+import com.thoughtworks.gauge.eclipse.project.exception.GaugeRuntimeException;
 import com.thoughtworks.gauge.eclipse.service.GaugeService;
 import com.thoughtworks.gauge.eclipse.util.GaugeUtil;
 
@@ -107,4 +109,23 @@ public class GaugeWorkspace {
         return steps;
     }
 	
+    public String getParsedStep(IProject project, String stepText) {
+    	try {
+        	GaugeWorkspace workbench = GaugePlugin.getDefault().getGaugeWorkspace();
+        	
+            GaugeService gaugeService = workbench.getGaugeService(project);
+            if (gaugeService == null)
+            	throw new GaugeRuntimeException();
+            
+            GaugeConnection gaugeConnection = gaugeService.getGaugeConnection();
+            if (gaugeConnection != null) {
+            	return gaugeConnection.getStepValue(stepText).getStepText();
+            }
+            return null;
+    	} catch (Exception e){
+    		return null;
+    	}
+    	
+    }
+    
 }

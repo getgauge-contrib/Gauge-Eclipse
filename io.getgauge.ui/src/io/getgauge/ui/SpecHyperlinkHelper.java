@@ -8,9 +8,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IAnnotation;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.search.IJavaSearchConstants;
 import org.eclipse.jdt.core.search.SearchEngine;
@@ -31,6 +36,8 @@ import org.eclipse.xtext.ui.editor.hyperlinking.HyperlinkHelper;
 
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
+import com.thoughtworks.gauge.eclipse.GaugePlugin;
+import com.thoughtworks.gauge.eclipse.project.GaugeWorkspace;
 
 public class SpecHyperlinkHelper extends HyperlinkHelper {
 
@@ -53,9 +60,8 @@ public class SpecHyperlinkHelper extends HyperlinkHelper {
 				node = node.getParent();
 			}
 			String description = getStepText(node);
-			hyperlinks.addAll(findStepDefinition(description, new Region(node.getOffset(), node.getText().trim().length())));
+			hyperlinks.addAll(findStepDefinition(eObject, description, new Region(node.getOffset(), node.getText().trim().length())));
 		}
-		
 		return hyperlinks.isEmpty() ? null : Iterables.toArray(hyperlinks, IHyperlink.class);
 	}
 	
@@ -70,7 +76,7 @@ public class SpecHyperlinkHelper extends HyperlinkHelper {
 	}
 
 	private Collection<? extends IHyperlink> findStepDefinition(
-			String description, Region region) {
+			EObject eObject, String description, Region region) {
 		SearchPattern pattern = SearchPattern.createPattern(STEP, IJavaSearchConstants.ANNOTATION_TYPE,
 				IJavaSearchConstants.ANNOTATION_TYPE_REFERENCE, SearchPattern.R_EXACT_MATCH | SearchPattern.R_CASE_SENSITIVE);
 
@@ -81,7 +87,7 @@ public class SpecHyperlinkHelper extends HyperlinkHelper {
 					IMethod method = (IMethod) match.getElement();
 					IAnnotation type = method.getAnnotation(STEP);
 					String annotationValue = (String) type.getMemberValuePairs()[0].getValue();
-					if(stepTextEquals(des, annotationValue)){
+					if(stepTextEquals(eObject, des, annotationValue)){
 						JavaUI.openInEditor(method);
 					}
 				}
@@ -99,8 +105,14 @@ public class SpecHyperlinkHelper extends HyperlinkHelper {
 		return null;
 	}
 
-	private static boolean stepTextEquals(String first, String second) {
-		String stepParamRegex = "\"([^\"]*)\"|<([^>]*)>";
-		return first.replaceAll(stepParamRegex, "{}").equals(second.replaceAll(stepParamRegex, "{}"));
+	private static boolean stepTextEquals(EObject eobj, String first, String second) {
+		String platformString = eobj.eResource().getURI().toPlatformString(true);
+		IFile currentFile = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(platformString));
+		GaugeWorkspace gaugeWorkspace = GaugePlugin.getDefault().getGaugeWorkspace();
+		
+		IProject project = currentFile.getProject();
+		String step1 = gaugeWorkspace.getParsedStep(project, first);
+		String step2 = gaugeWorkspace.getParsedStep(project, second);
+		return step1.equals(step2);
 	}
 }
