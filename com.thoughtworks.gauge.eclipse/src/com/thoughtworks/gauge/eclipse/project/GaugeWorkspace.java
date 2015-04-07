@@ -3,7 +3,6 @@ package com.thoughtworks.gauge.eclipse.project;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -15,7 +14,6 @@ import com.thoughtworks.gauge.ConceptInfo;
 import com.thoughtworks.gauge.GaugeConnection;
 import com.thoughtworks.gauge.StepValue;
 import com.thoughtworks.gauge.eclipse.GaugePlugin;
-import com.thoughtworks.gauge.eclipse.exception.GaugeNotFoundException;
 import com.thoughtworks.gauge.eclipse.project.exception.GaugeRuntimeException;
 import com.thoughtworks.gauge.eclipse.service.GaugeService;
 import com.thoughtworks.gauge.eclipse.util.GaugeUtil;
@@ -148,7 +146,17 @@ public class GaugeWorkspace {
 		return null;
     }
     
-    private GaugeConnection getGaugeConnection(IProject project) throws GaugeRuntimeException {
+	public String getParsedStep(String stepText) {
+		// TODO Auto-generated method stub
+		GaugeConnection gaugeConnection = getDefaultGaugeConnection();
+		return gaugeConnection.getStepValue(stepText).getStepText();
+	}
+    private GaugeConnection getDefaultGaugeConnection() {
+		// TODO Auto-generated method stub
+		return gaugeProjectHandles.values().iterator().next().getGaugeConnection();
+	}
+
+	private GaugeConnection getGaugeConnection(IProject project) throws GaugeRuntimeException {
     	GaugeService gaugeService = getGaugeService(project);
         if (gaugeService == null)
         	throw new GaugeRuntimeException();

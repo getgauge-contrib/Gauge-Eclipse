@@ -1,8 +1,8 @@
 package io.getgauge.ui;
 
+import io.getgauge.StepUtil;
 import io.getgauge.spec.DynamicParam;
 import io.getgauge.spec.StaticParam;
-import io.getgauge.spec.Step;
 import io.getgauge.spec.StepDefinition;
 
 import java.io.File;
@@ -11,18 +11,10 @@ import java.util.HashMap;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jdt.core.IAnnotation;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.core.search.IJavaSearchConstants;
-import org.eclipse.jdt.core.search.SearchEngine;
-import org.eclipse.jdt.core.search.SearchMatch;
-import org.eclipse.jdt.core.search.SearchParticipant;
-import org.eclipse.jdt.core.search.SearchPattern;
-import org.eclipse.jdt.core.search.SearchRequestor;
 import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
@@ -49,15 +41,14 @@ import com.google.inject.Singleton;
 import com.thoughtworks.gauge.eclipse.GaugePlugin;
 import com.thoughtworks.gauge.eclipse.project.Concept;
 import com.thoughtworks.gauge.eclipse.project.GaugeWorkspace;
+import com.thoughtworks.gauge.eclipse.util.GaugeProjectUtil;
 
 @Singleton
 public class SpecHyperlinkHelper extends HyperlinkHelper {
 
-	private static final String STEP = "Step";
 	@Inject
 	private EObjectAtOffsetHelper helper;
-	private static HashMap<String, String> parsedStepTextCache = new HashMap<String, String>();
-	private static HashMap<String, IMethod> stepImplementationCache = new HashMap<String, IMethod>();
+	private static HashMap<String, IMethod> stepImplementationCache = GaugeProjectUtil.getStepImplementations();
 
 	@Override
 	public IHyperlink[] createHyperlinksByOffset(XtextResource resource,
@@ -73,23 +64,12 @@ public class SpecHyperlinkHelper extends HyperlinkHelper {
 			while (!(node instanceof CompositeNode && node.getSemanticElement() instanceof StepDefinition)) {
 				node = node.getParent();
 			}
-			String description = getStepText(node);
+			String description = StepUtil.getStepText(node);
 			if (!openConceptDefinition(eObject, description)) {
-				openStepDefinition(eObject, description);
+				openStepDefinition(description);
 			}
 		}
 		return null;
-	}
-
-	private String getStepText(INode node) {
-		String description = node.getText().replaceAll("^\\*", "").trim();
-		Step step = (Step) node.getParent().getSemanticElement();
-		if (step.getTable() != null) {
-			// If the step contains a table, the description is automatically
-			// appended with a dynamic parameter
-			return description.concat(" <table>");
-		}
-		return description;
 	}
 
 	private boolean openConceptDefinition(EObject eobj, String stepText) {
@@ -137,13 +117,8 @@ public class SpecHyperlinkHelper extends HyperlinkHelper {
 		}
 	}
 
-	private void openStepDefinition(EObject eObject, String description) {
-		SearchPattern pattern = SearchPattern.createPattern(STEP,
-				IJavaSearchConstants.ANNOTATION_TYPE,
-				IJavaSearchConstants.ANNOTATION_TYPE_REFERENCE,
-				SearchPattern.R_EXACT_MATCH | SearchPattern.R_CASE_SENSITIVE);
-
-		String parsedText = getParsedText(eObject, description);
+	private void openStepDefinition(String description) {
+		String parsedText = GaugeProjectUtil.getParsedText(description);
 		if (stepImplementationCache.containsKey(parsedText)) {
 			try {
 				JavaUI.openInEditor(stepImplementationCache.get(parsedText));
@@ -152,60 +127,12 @@ public class SpecHyperlinkHelper extends HyperlinkHelper {
 				e.printStackTrace();
 			}
 		}
-
-		SearchRequestor requestor = new SearchRequestor() {
-			public void acceptSearchMatch(SearchMatch match)
-					throws CoreException {
-				if (match.getElement() instanceof IMethod) {
-					String des = description;
-					IMethod method = (IMethod) match.getElement();
-					IAnnotation type = method.getAnnotation(STEP);
-					String annotationValue = (String) type
-							.getMemberValuePairs()[0].getValue();
-					if (stepTextEquals(eObject, des, annotationValue)) {
-						stepImplementationCache.put(parsedText, method);
-						JavaUI.openInEditor(method);
-					}
-				}
-			}
-		};
-
-		SearchEngine searchEngine = new SearchEngine();
-
-		try {
-			searchEngine.search(pattern, new SearchParticipant[] { SearchEngine
-					.getDefaultSearchParticipant() }, SearchEngine
-					.createWorkspaceScope(), requestor, null);
-		} catch (CoreException ex) {
-			ex.printStackTrace();
-		}
 	}
-
-	private boolean stepTextEquals(EObject eobj, String first, String second) {
-		String step1 = getParsedText(eobj, first);
-		String step2 = getParsedText(eobj, second);
-		return step1.equals(step2);
-	}
-
-	private String getParsedText(EObject eobj, String stepText) {
-		if (parsedStepTextCache.containsKey(stepText)) {
-			return parsedStepTextCache.get(stepText);
-		}
-		IProject project = getProjectFor(eobj);
-
-		GaugeWorkspace gaugeWorkspace = GaugePlugin.getDefault()
-				.getGaugeWorkspace();
-
-		String parsedStep = gaugeWorkspace.getParsedStep(project, stepText);
-		parsedStepTextCache.put(stepText, parsedStep);
-		return parsedStep;
-	}
-
+	
 	private IProject getProjectFor(EObject eobj) {
-		String platformString = eobj.eResource().getURI()
-				.toPlatformString(true);
+		String platformString = eobj.eResource().getURI().toPlatformString(true);
 		IFile currentFile = ResourcesPlugin.getWorkspace().getRoot()
 				.getFile(new Path(platformString));
 		return currentFile.getProject();
-	}
+	}	
 }

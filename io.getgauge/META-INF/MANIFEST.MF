@@ -19,7 +19,8 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
  org.objectweb.asm;resolution:=optional,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ com.thoughtworks.gauge.eclipse
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: io.getgauge,

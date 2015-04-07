@@ -3,6 +3,7 @@
  */
 package io.getgauge.scoping;
 
+
 /**
  * This class contains custom scoping description.
  * 

@@ -3,7 +3,13 @@
  */
 package io.getgauge.validation;
 
+import com.thoughtworks.gauge.eclipse.util.GaugeProjectUtil;
+import io.getgauge.StepUtil;
+import io.getgauge.spec.SpecPackage;
+import io.getgauge.spec.Step;
 import io.getgauge.validation.AbstractSpecValidator;
+import java.util.List;
+import org.eclipse.xtext.validation.Check;
 
 /**
  * Custom validation rules.
@@ -12,4 +18,20 @@ import io.getgauge.validation.AbstractSpecValidator;
  */
 @SuppressWarnings("all")
 public class SpecValidator extends AbstractSpecValidator {
+  public final static String STEP_IMPLEMTENTATION_NOT_FOUND = "Step implementation not found";
+  
+  @Check
+  public void checkStepImplementationExists(final Step step) {
+    final String stepText = StepUtil.getStepText(step);
+    List<String> _implementedSteps = GaugeProjectUtil.getImplementedSteps();
+    for (final String s : _implementedSteps) {
+      boolean _stepTextEquals = GaugeProjectUtil.stepTextEquals(s, stepText);
+      if (_stepTextEquals) {
+        return;
+      }
+    }
+    this.warning(SpecValidator.STEP_IMPLEMTENTATION_NOT_FOUND, 
+      SpecPackage.Literals.STEP__DEFINITION, 
+      SpecValidator.STEP_IMPLEMTENTATION_NOT_FOUND);
+  }
 }

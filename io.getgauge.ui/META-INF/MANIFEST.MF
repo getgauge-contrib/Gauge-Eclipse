@@ -24,6 +24,7 @@ Require-Bundle: io.getgauge;visibility:=reexport,
  com.google.guava
 Import-Package: com.thoughtworks.gauge.eclipse,
  com.thoughtworks.gauge.eclipse.project,
+ com.thoughtworks.gauge.eclipse.util,
  org.apache.log4j,
  org.eclipse.jdt.core,
  org.eclipse.jdt.core.search,
