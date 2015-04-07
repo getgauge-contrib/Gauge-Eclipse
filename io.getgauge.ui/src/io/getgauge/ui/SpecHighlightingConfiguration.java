@@ -2,11 +2,12 @@ package io.getgauge.ui;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.RGB;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfigurationAcceptor;
 import org.eclipse.xtext.ui.editor.utils.TextStyle;
 
-public class SpecHighlightingConfiguration implements IHighlightingConfiguration{
+public class SpecHighlightingConfiguration extends DefaultHighlightingConfiguration{
 
 	public static final String SPEC = "Spec";
 	public static final String SCENARIO = "Scenario";
@@ -18,45 +19,38 @@ public class SpecHighlightingConfiguration implements IHighlightingConfiguration
 
 	@Override
 	public void configure(IHighlightingConfigurationAcceptor acceptor) {
-		acceptor.acceptDefaultHighlighting(SPEC, SPEC , getSpecStyle());
-		acceptor.acceptDefaultHighlighting(SCENARIO, SCENARIO, getScenarioStyle());
-		acceptor.acceptDefaultHighlighting(STEP, STEP , getStepStyle());
-		acceptor.acceptDefaultHighlighting(STATIC_PARAM, STATIC_PARAM, getStaticParamStyle());
-		acceptor.acceptDefaultHighlighting(DYNAMIC_PARAM, DYNAMIC_PARAM, getDynamicParamStyle());
+		acceptor.acceptDefaultHighlighting(SPEC, SPEC , specStyle());
+		acceptor.acceptDefaultHighlighting(SCENARIO, SCENARIO, scenarioStyle());
+		acceptor.acceptDefaultHighlighting(STEP, STEP , stepStyle());
+		acceptor.acceptDefaultHighlighting(STATIC_PARAM, STATIC_PARAM, staticParamStyle());
+		acceptor.acceptDefaultHighlighting(DYNAMIC_PARAM, DYNAMIC_PARAM, dynamicParamStyle());
 		acceptor.acceptDefaultHighlighting(TAGS, TAGS, getTagsStyle());
-		acceptor.acceptDefaultHighlighting(DEFAULT, DEFAULT , getDefaultStyle());
+		acceptor.acceptDefaultHighlighting(DEFAULT, DEFAULT , defaultTextStyle());
 	}
 
-	private TextStyle getStepStyle() {
-		TextStyle textStyle = new TextStyle();
-		textStyle.setColor(new RGB(0,0,255));
-		return textStyle;
+	private TextStyle stepStyle() {
+		return stringTextStyle().copy();
 	}
 
-	private TextStyle getScenarioStyle() {
-		TextStyle textStyle = new TextStyle();
-		textStyle.setColor(new RGB(255,0,0));
+	private TextStyle scenarioStyle() {
+		TextStyle textStyle = keywordTextStyle().copy();;
 		textStyle.setStyle(SWT.BOLD);
 		return textStyle;
 	}
 
-	private TextStyle getSpecStyle() {
-		TextStyle textStyle = new TextStyle();
-		textStyle.setColor(new RGB(0, 255, 0));
+	private TextStyle specStyle() {
+		TextStyle textStyle = numberTextStyle().copy();
 		textStyle.setStyle(SWT.BOLD);
 		return textStyle;
 	}
 
-	private TextStyle getStaticParamStyle() {
-		TextStyle textStyle = new TextStyle();
-		textStyle.setColor(new RGB(0, 255, 0));
-		textStyle.setStyle(SWT.ITALIC);
+	private TextStyle staticParamStyle() {
+		TextStyle textStyle = taskTextStyle().copy();
 		return textStyle;
 	}
 
-	private TextStyle getDynamicParamStyle() {
-		TextStyle textStyle = new TextStyle();
-		textStyle.setColor(new RGB(255, 255, 0));
+	private TextStyle dynamicParamStyle() {
+		TextStyle textStyle = taskTextStyle().copy();
 		textStyle.setStyle(SWT.ITALIC);
 		return textStyle;
 	}
@@ -66,9 +60,5 @@ public class SpecHighlightingConfiguration implements IHighlightingConfiguration
 		textStyle.setColor(new RGB(255, 100, 100));
 		textStyle.setStyle(SWT.ITALIC);
 		return textStyle;
-	}
-	
-	private TextStyle getDefaultStyle() {
-		return new TextStyle();
 	}
 }

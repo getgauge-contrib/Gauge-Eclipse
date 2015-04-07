@@ -20,7 +20,7 @@ public class SpecHighlightingCalculator implements ISemanticHighlightingCalculat
 	@Override
 	public void provideHighlightingFor(XtextResource resource,
 			IHighlightedPositionAcceptor acceptor) {
-
+		
 		INode root = resource.getParseResult().getRootNode();
         BidiTreeIterator<INode> it = root.getAsTreeIterable().iterator();
         while( it.hasNext() )
