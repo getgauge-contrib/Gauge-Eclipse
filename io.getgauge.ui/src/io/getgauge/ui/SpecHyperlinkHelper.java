@@ -1,5 +1,7 @@
 package io.getgauge.ui;
 
+import io.getgauge.spec.DynamicParam;
+import io.getgauge.spec.StaticParam;
 import io.getgauge.spec.Step;
 import io.getgauge.spec.StepDefinition;
 
@@ -62,7 +64,9 @@ public class SpecHyperlinkHelper extends HyperlinkHelper {
 			int offset, boolean createMultipleHyperlinks) {
 
 		EObject eObject = helper.resolveElementAt(resource, offset);
-		if (eObject instanceof StepDefinition) {
+		if (eObject instanceof StepDefinition || 
+				eObject instanceof StaticParam || 
+				eObject instanceof DynamicParam) {
 			IParseResult parseResult = resource.getParseResult();
 			INode node = NodeModelUtils.findLeafNodeAtOffset(
 					parseResult.getRootNode(), offset);
