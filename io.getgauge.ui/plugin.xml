@@ -9,7 +9,7 @@
             class="io.getgauge.ui.SpecExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
-            extensions="spec"
+            extensions="spec,cpt"
             id="io.getgauge.Spec"
             name="Spec Editor">
         </editor>

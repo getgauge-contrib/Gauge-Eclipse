@@ -3,6 +3,7 @@ package com.thoughtworks.gauge.eclipse.project;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -111,9 +112,7 @@ public class GaugeWorkspace {
 	
     public String getParsedStep(IProject project, String stepText) {
     	try {
-        	GaugeWorkspace workbench = GaugePlugin.getDefault().getGaugeWorkspace();
-        	
-            GaugeService gaugeService = workbench.getGaugeService(project);
+    		GaugeService gaugeService = getGaugeService(project);
             if (gaugeService == null)
             	throw new GaugeRuntimeException();
             
@@ -125,7 +124,35 @@ public class GaugeWorkspace {
     	} catch (Exception e){
     		return null;
     	}
-    	
     }
     
+    public Concept searchConcept(IProject project, String stepText) {
+    	GaugeConnection gaugeConnection;
+		try {
+			gaugeConnection = getGaugeConnection(project);
+		} catch (GaugeRuntimeException e) {
+			e.printStackTrace();
+			return null;
+		}
+    	try {
+			List<ConceptInfo> allConcepts = gaugeConnection.fetchAllConcepts();
+			for (ConceptInfo conceptInfo : allConcepts) {
+				String parsedStepText = getParsedStep(project, stepText);
+				if (conceptInfo.getStepValue().getStepText().equals(parsedStepText)){
+					return new Concept(conceptInfo);
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+    }
+    
+    private GaugeConnection getGaugeConnection(IProject project) throws GaugeRuntimeException {
+    	GaugeService gaugeService = getGaugeService(project);
+        if (gaugeService == null)
+        	throw new GaugeRuntimeException();
+        
+        return gaugeService.getGaugeConnection();
+    }
 }

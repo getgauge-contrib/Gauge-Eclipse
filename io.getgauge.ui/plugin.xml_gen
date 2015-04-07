@@ -9,7 +9,7 @@
             class="io.getgauge.ui.SpecExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
-            extensions="spec"
+            extensions="spec,cpt"
             id="io.getgauge.Spec"
             name="Spec Editor">
         </editor>
@@ -223,6 +223,20 @@
         </resourceServiceProvider>
     </extension>
 
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="io.getgauge.ui.SpecExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="cpt">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="io.getgauge.ui.SpecExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="cpt">
+        </resourceServiceProvider>
+    </extension>
+
 
 	<!-- marker definitions for io.getgauge.Spec -->
 	<extension
@@ -251,7 +265,7 @@
          point="org.eclipse.xtext.builder.participant">
       <participant
             class="io.getgauge.ui.SpecExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
-            fileExtensions="spec"
+            fileExtensions="spec,cpt"
             >
       </participant>
    </extension>
@@ -379,19 +393,19 @@
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="io.getgauge.Spec.compare.contentViewers"
             class="io.getgauge.ui.SpecExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="spec">
+            extensions="spec,cpt">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="io.getgauge.Spec.compare.contentMergeViewers"
             class="io.getgauge.ui.SpecExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="spec" label="Spec Compare">
+            extensions="spec,cpt" label="Spec Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
     <provider id="io.getgauge.Spec.editors.documentProviders"
             class="io.getgauge.ui.SpecExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="spec">
+            extensions="spec,cpt">
     </provider>
   </extension>
 

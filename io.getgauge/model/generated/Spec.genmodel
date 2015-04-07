@@ -6,7 +6,7 @@
     complianceLevel="5.0" copyrightFields="false" editPluginID="io.getgauge.edit"
     editorPluginID="io.getgauge.editor" runtimeVersion="2.10">
   <genPackages prefix="Spec" basePackage="io.getgauge" disposableProviderFactory="true"
-      fileExtensions="spec" ecorePackage="Spec.ecore#/">
+      fileExtensions="spec,cpt" ecorePackage="Spec.ecore#/">
     <genClasses ecoreClass="Spec.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Spec.ecore#//Model/definitions"/>
     </genClasses>

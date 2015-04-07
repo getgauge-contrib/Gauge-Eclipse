@@ -48,6 +48,8 @@ public class SpecStandaloneSetupGenerated implements ISetup {
 		org.eclipse.xtext.resource.IResourceServiceProvider serviceProvider = injector.getInstance(org.eclipse.xtext.resource.IResourceServiceProvider.class);
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("spec", resourceFactory);
 		org.eclipse.xtext.resource.IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("spec", serviceProvider);
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("cpt", resourceFactory);
+		org.eclipse.xtext.resource.IResourceServiceProvider.Registry.INSTANCE.getExtensionToFactoryMap().put("cpt", serviceProvider);
 		
 
 
