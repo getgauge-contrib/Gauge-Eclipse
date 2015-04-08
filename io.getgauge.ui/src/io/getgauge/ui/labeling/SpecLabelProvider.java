@@ -3,6 +3,10 @@
 */
 package io.getgauge.ui.labeling;
 
+import io.getgauge.StepUtil;
+import io.getgauge.spec.Step;
+import io.getgauge.spec.Table;
+
 import com.google.inject.Inject;
 
 /**
@@ -17,7 +21,13 @@ public class SpecLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObject
 		super(delegate);
 	}
 
+	String text(Step ele) {
+		return StepUtil.getStepText(ele);
+	}
 
+	String text(Table ele) {
+		return "Table Parameter";
+	}
 	// Labels and icons can be computed like this:
 	
 //	String text(Greeting ele) {

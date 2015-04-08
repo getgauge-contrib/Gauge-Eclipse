@@ -3,11 +3,22 @@
 */
 package io.getgauge.ui.outline;
 
+import io.getgauge.spec.Step;
+import io.getgauge.spec.Table;
+
+import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
+
 /**
  * Customization of the default outline structure.
  *
  * see http://www.eclipse.org/Xtext/documentation.html#outline
  */
-public class SpecOutlineTreeProvider extends org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider {
+public class SpecOutlineTreeProvider extends DefaultOutlineTreeProvider {
+	protected boolean _isLeaf(Table modelElement) {
+		return true;
+	}
 	
+	protected boolean _isLeaf(Step modelElement) {
+		return modelElement.getTable()==null;
+	}
 }
