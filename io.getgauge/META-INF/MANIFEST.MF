@@ -21,7 +21,8 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.objectweb.asm;resolution:=optional,
  org.eclipse.core.runtime,
  com.thoughtworks.gauge.eclipse
-Import-Package: org.apache.log4j
+Import-Package: org.apache.log4j,
+ org.eclipse.core.resources
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: io.getgauge,
  io.getgauge.services,

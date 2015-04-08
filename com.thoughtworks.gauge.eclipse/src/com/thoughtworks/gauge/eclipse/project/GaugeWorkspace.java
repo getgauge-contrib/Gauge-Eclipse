@@ -14,6 +14,8 @@ import com.thoughtworks.gauge.ConceptInfo;
 import com.thoughtworks.gauge.GaugeConnection;
 import com.thoughtworks.gauge.StepValue;
 import com.thoughtworks.gauge.eclipse.GaugePlugin;
+import com.thoughtworks.gauge.eclipse.model.ConceptData;
+import com.thoughtworks.gauge.eclipse.model.StepData;
 import com.thoughtworks.gauge.eclipse.project.exception.GaugeRuntimeException;
 import com.thoughtworks.gauge.eclipse.service.GaugeService;
 import com.thoughtworks.gauge.eclipse.util.GaugeUtil;
@@ -108,6 +110,17 @@ public class GaugeWorkspace {
         return steps;
     }
 	
+    public StepData getStepData(IProject project, String stepText) {
+    	GaugeConnection gaugeConnection;
+		try {
+			gaugeConnection = getGaugeConnection(project);
+		} catch (GaugeRuntimeException e) {
+			e.printStackTrace();
+			return null;
+		}
+    	return new StepData(gaugeConnection.getStepValue(stepText));
+    }
+    
     public String getParsedStep(IProject project, String stepText) {
     	try {
     		GaugeService gaugeService = getGaugeService(project);
@@ -124,7 +137,7 @@ public class GaugeWorkspace {
     	}
     }
     
-    public Concept searchConcept(IProject project, String stepText) {
+    public ConceptData searchConcept(IProject project, String stepText) {
     	GaugeConnection gaugeConnection;
 		try {
 			gaugeConnection = getGaugeConnection(project);
@@ -137,7 +150,7 @@ public class GaugeWorkspace {
 			for (ConceptInfo conceptInfo : allConcepts) {
 				String parsedStepText = getParsedStep(project, stepText);
 				if (conceptInfo.getStepValue().getStepText().equals(parsedStepText)){
-					return new Concept(conceptInfo);
+					return new ConceptData(conceptInfo);
 				}
 			}
 		} catch (IOException e) {

@@ -20,13 +20,11 @@ public class SpecFormatter extends AbstractDeclarativeFormatter {
 	
 	@Inject
 	private SpecGrammarAccess grammarAccess; 
-	
+
 	@Override
 	protected void configureFormatting(FormattingConfig c) {
-// It's usually a good idea to activate the following three statements.
-// They will add and preserve newlines around comments
-//		c.setLinewrap(0, 1, 2).before(grammarAccess.getSL_COMMENTRule());
-//		c.setLinewrap(0, 1, 2).before(grammarAccess.getML_COMMENTRule());
-//		c.setLinewrap(0, 1, 1).after(grammarAccess.getML_COMMENTRule());
+		c.setLinewrap(0, 1, 2).after(grammarAccess.getSpecRule());
+		c.setLinewrap(0, 1, 2).after(grammarAccess.getStepRule());
+		c.setLinewrap(0, 1, 2).after(grammarAccess.getScenarioRule());
 	}
 }

@@ -18,6 +18,8 @@ Bundle-ClassPath: .,
  libs/commons-io-2.4.jar,
  libs/gaugert-0.0.3.jar
 Export-Package: com.thoughtworks.gauge.eclipse,
+ com.thoughtworks.gauge.eclipse.model,
  com.thoughtworks.gauge.eclipse.project,
+ com.thoughtworks.gauge.eclipse.service,
  com.thoughtworks.gauge.eclipse.util
 Import-Package: org.eclipse.emf.ecore

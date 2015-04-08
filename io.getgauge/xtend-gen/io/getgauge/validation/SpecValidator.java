@@ -25,8 +25,9 @@ public class SpecValidator extends AbstractSpecValidator {
     final String stepText = StepUtil.getStepText(step);
     List<String> _implementedSteps = GaugeProjectUtil.getImplementedSteps();
     for (final String s : _implementedSteps) {
-      boolean _stepTextEquals = GaugeProjectUtil.stepTextEquals(s, stepText);
-      if (_stepTextEquals) {
+      String _parsedText = GaugeProjectUtil.getParsedText(stepText);
+      boolean _equals = _parsedText.equals(s);
+      if (_equals) {
         return;
       }
     }

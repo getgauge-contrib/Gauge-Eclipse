@@ -45,9 +45,7 @@ public class GaugeProjectCreator {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (GaugeNotFoundException e) {
-			Status status = new Status(IStatus.ERROR, GaugePlugin.PLUGIN_ID, 
-					GaugeNotFoundException.GAUGE_INSTALL_MESSAGE, e);
-			StatusManager.getManager().handle(status, StatusManager.BLOCK);
+			GaugeUtil.handleGaugeNotFoundException(e, null);
 		} catch (CoreException e) {
 			e.printStackTrace();
 		}

@@ -39,7 +39,7 @@ import org.eclipse.xtext.ui.editor.hyperlinking.HyperlinkHelper;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.thoughtworks.gauge.eclipse.GaugePlugin;
-import com.thoughtworks.gauge.eclipse.project.Concept;
+import com.thoughtworks.gauge.eclipse.model.ConceptData;
 import com.thoughtworks.gauge.eclipse.project.GaugeWorkspace;
 import com.thoughtworks.gauge.eclipse.util.GaugeProjectUtil;
 
@@ -76,7 +76,7 @@ public class SpecHyperlinkHelper extends HyperlinkHelper {
 		GaugeWorkspace gaugeWorkspace = GaugePlugin.getDefault()
 				.getGaugeWorkspace();
 		IProject project = getProjectFor(eobj);
-		Concept concept = gaugeWorkspace.searchConcept(project, stepText);
+		ConceptData concept = gaugeWorkspace.searchConcept(project, stepText);
 		if (concept != null) {
 			IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench()
 					.getActiveWorkbenchWindow();

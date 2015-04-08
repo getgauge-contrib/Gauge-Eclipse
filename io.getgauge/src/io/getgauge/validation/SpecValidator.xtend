@@ -23,7 +23,7 @@ class SpecValidator extends AbstractSpecValidator {
 	def checkStepImplementationExists(Step step) {
 		val stepText = StepUtil.getStepText(step);
 		for(s : GaugeProjectUtil.getImplementedSteps()){
-			if(GaugeProjectUtil.stepTextEquals(s, stepText)) {
+			if(GaugeProjectUtil.getParsedText(stepText).equals(s)) {
 				return;
 			}
 		}

@@ -4,7 +4,12 @@ import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
 
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.ui.statushandlers.StatusManager;
+
 import com.thoughtworks.gauge.GaugeConstant;
+import com.thoughtworks.gauge.eclipse.GaugePlugin;
 import com.thoughtworks.gauge.eclipse.exception.GaugeNotFoundException;
 
 public class GaugeUtil {
@@ -19,27 +24,27 @@ public class GaugeUtil {
 
 	private static String getPath() throws GaugeNotFoundException {
 		String path = System.getenv("PATH");
-		// LOG.info("PATH => " + path);
+		System.out.println("PATH => " + path);
 		String gaugeHome = System.getenv("GAUGE_ROOT");
-		// LOG.info("GAUGE_ROOT => " + gaugeHome);
+		System.out.println("GAUGE_ROOT => " + gaugeHome);
 		if (gaugeHome != null && !gaugeHome.isEmpty()) {
 			File bin = new File(gaugeHome, "bin");
 			File gaugeExec = new File(bin, gaugeExecutable());
 			if (gaugeExec.exists()) {
-				// LOG.info("executable path: " + gaugeExec.getAbsolutePath());
+				System.out.println("executable path: " + gaugeExec.getAbsolutePath());
 				return gaugeExec.getAbsolutePath();
 			}
 		} else if (path != null && !path.isEmpty()) {
 			for (String entry : path.split(File.pathSeparator)) {
 				File gaugeExec = new File(entry, gaugeExecutable());
 				if (gaugeExec.exists()) {
-					// LOG.info("executable path: " +
-					// gaugeExec.getAbsolutePath());
+					System.out.println("executable path: " +
+							gaugeExec.getAbsolutePath());
 					return gaugeExec.getAbsolutePath();
 				}
 			}
 		}
-		// LOG.warn("Could not find executable in PATH or GAUGE_ROOT");
+		System.out.println("Could not find executable in PATH or GAUGE_ROOT");
 		throw new GaugeNotFoundException(
 				"Could not find executable in PATH or GAUGE_ROOT. Gauge is not installed.");
 	}
@@ -94,7 +99,7 @@ public class GaugeUtil {
 		} catch (IOException e) {
 			System.err.println("could not start gauge api:" + e.getMessage());
 		} catch (GaugeNotFoundException e) {
-			System.err.println("Could not start gauge api:" + e.getMessage());
+			handleGaugeNotFoundException(e, "Could not start Gauge API");
 		}
 		return null;
 	}
@@ -118,4 +123,18 @@ public class GaugeUtil {
 		return -1;
 	}
 
+	public static void handleGaugeNotFoundException(GaugeNotFoundException e, String message) {
+		String errMessage = GaugeNotFoundException.GAUGE_INSTALL_MESSAGE;
+		if (message!=null){
+			errMessage=errMessage + " : " + message;
+		}
+		
+		displayErrorMessage(errMessage, StatusManager.BLOCK, e);
+	}
+	
+	public static void displayErrorMessage(String message, int level, Exception e) {
+		Status status = new Status(IStatus.ERROR, GaugePlugin.PLUGIN_ID, 
+				message, e);
+		StatusManager.getManager().handle(status, level);
+	}
 }

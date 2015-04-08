@@ -21,13 +21,19 @@ Require-Bundle: io.getgauge;visibility:=reexport,
  org.eclipse.emf.ecore,
  org.eclipse.ui.workbench,
  org.eclipse.jdt.core,
- com.google.guava
+ com.google.guava,
+ org.eclipse.swt,
+ org.eclipse.core.resources
 Import-Package: com.thoughtworks.gauge.eclipse,
+ com.thoughtworks.gauge.eclipse.model,
  com.thoughtworks.gauge.eclipse.project,
+ com.thoughtworks.gauge.eclipse.service,
  com.thoughtworks.gauge.eclipse.util,
  org.apache.log4j,
  org.eclipse.jdt.core,
  org.eclipse.jdt.core.search,
+ org.eclipse.jdt.internal.corext.codemanipulation,
+ org.eclipse.jdt.internal.ui,
  org.eclipse.jdt.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: io.getgauge.ui.quickfix,
