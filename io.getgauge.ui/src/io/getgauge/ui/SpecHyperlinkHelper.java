@@ -119,6 +119,10 @@ public class SpecHyperlinkHelper extends HyperlinkHelper {
 
 	private void openStepDefinition(String description) {
 		String parsedText = GaugeProjectUtil.getParsedText(description);
+		if (!stepImplementationCache.containsKey(parsedText)) {
+			// try a cache refresh
+			stepImplementationCache = GaugeProjectUtil.getStepImplementations();
+		}
 		if (stepImplementationCache.containsKey(parsedText)) {
 			try {
 				JavaUI.openInEditor(stepImplementationCache.get(parsedText));

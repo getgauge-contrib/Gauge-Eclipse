@@ -6,6 +6,7 @@ package io.getgauge.ui.quickfix;
 import io.getgauge.ProjectUtil;
 import io.getgauge.StepUtil;
 import io.getgauge.spec.Step;
+import io.getgauge.ui.dialogs.GaugeTypeDialog;
 import io.getgauge.validation.SpecValidator;
 
 import org.eclipse.core.resources.IProject;
@@ -17,11 +18,14 @@ import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.search.SearchEngine;
+import org.eclipse.jdt.internal.ui.javaeditor.JavaEditor;
 import org.eclipse.jdt.ui.IJavaElementSearchConstants;
 import org.eclipse.jdt.ui.JavaUI;
+import org.eclipse.jdt.ui.actions.OrganizeImportsAction;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.SelectionDialog;
 import org.eclipse.ui.statushandlers.StatusManager;
@@ -52,19 +56,24 @@ public class SpecQuickfixProvider extends org.eclipse.xtext.ui.editor.quickfix.D
 				try {
 					
 					Step step = (Step) element;
-					Object type=getTargetType();
+					String methodText = getMethodText(element, step);
+					Object type=getTargetType(methodText);
 					
-					if (type==null || !(type instanceof IType)) {
+					if (type==null) return;
+					
+					if (!(type instanceof IType)) {
 						GaugeUtil.displayErrorMessage("Selected type is not SourceType", StatusManager.BLOCK, null);
 						return;
 					}
+					
 					IType sourceType = (IType) type;
 					ICompilationUnit unit = sourceType.getCompilationUnit();
 					IProgressMonitor monitor = new NullProgressMonitor();
-					String methodText = getMethodText(element, step);
 
-					IMethod method = unit.getTypes()[0].createMethod(methodText, null, false, monitor);
-					JavaUI.openInEditor(method);
+					IType iType = unit.getTypes()[0];
+					IMethod method = iType.createMethod(methodText, null, false, monitor);
+					JavaEditor editor = (JavaEditor) JavaUI.openInEditor(method);
+					new OrganizeImportsAction(editor).run();
 				} catch (JavaModelException e) {
 					GaugeUtil.displayErrorMessage("Unable to implement step", StatusManager.SHOW, e);
 					e.printStackTrace();
@@ -98,13 +107,13 @@ public class SpecQuickfixProvider extends org.eclipse.xtext.ui.editor.quickfix.D
 				return paramString.replaceAll("^,\\s", "");
 			}
 			
-			private Object getTargetType() throws JavaModelException {
+			@SuppressWarnings("restriction")
+			private Object getTargetType(String methodText) throws JavaModelException {
 				Shell shell=PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-				SelectionDialog dialog = JavaUI.createTypeDialog(shell,new ProgressMonitorDialog(shell),SearchEngine.createWorkspaceScope(),
-						IJavaElementSearchConstants.CONSIDER_CLASSES, false);
+				GaugeTypeDialog dialog = new GaugeTypeDialog(shell, methodText);
 				dialog.setTitle("Select type");
 				dialog.setMessage("Select type to implement Step");
-				if(dialog.open()==IDialogConstants.CANCEL_ID)
+				if(dialog.open()!=IDialogConstants.OK_ID)
 					return null;
 				return dialog.getResult()[0];
 			}

@@ -22,4 +22,7 @@ Export-Package: com.thoughtworks.gauge.eclipse,
  com.thoughtworks.gauge.eclipse.project,
  com.thoughtworks.gauge.eclipse.service,
  com.thoughtworks.gauge.eclipse.util
-Import-Package: org.eclipse.emf.ecore
+Import-Package: org.eclipse.debug.core,
+ org.eclipse.debug.core.model,
+ org.eclipse.debug.ui,
+ org.eclipse.emf.ecore

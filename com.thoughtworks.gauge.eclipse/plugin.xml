@@ -32,5 +32,19 @@
         </run>
      </runtime>
   </extension>
-
+  <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+          name="Gauge Specs"
+          delegate="com.thoughtworks.gauge.eclipse.execution.GaugeLaunchConfigurationDelegate"
+          modes="run"               
+          id="com.thoughtworks.gauge.eclipse.execution.spec">        
+      </launchConfigurationType>
+  </extension>
+  <extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+          type="com.thoughtworks.gauge.eclipse.execution.spec"
+          class="com.thoughtworks.gauge.eclipse.execution.GaugeTabGroup"
+          id="com.thoughtworks.gauge.eclipse.execution.specTabGroup">
+      </launchConfigurationTabGroup>
+  </extension>
 </plugin>
