@@ -137,4 +137,11 @@ public class GaugeUtil {
 				message, e);
 		StatusManager.getManager().handle(status, level);
 	}
+	
+	public static void displayWarningMessage(String message, int level, Exception e) {
+		Status status = new Status(IStatus.WARNING, GaugePlugin.PLUGIN_ID, 
+				message, e);
+		StatusManager.getManager().handle(status, level);
+	}
+
 }
