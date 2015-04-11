@@ -23,23 +23,23 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SINGLE_NL", "RULE_WORD", "RULE_WS", "RULE_SEPARATORS", "RULE_STATIC_PARAM", "RULE_DYNAMIC_PARAM", "RULE_TABLE_ROW_END", "'# '", "'='", "'## '", "'-'", "'* '", "'tags'", "':'", "','", "'|'"
     };
-    public static final int RULE_STATIC_PARAM=8;
-    public static final int RULE_WORD=5;
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
-    public static final int T__11=11;
-    public static final int T__12=12;
-    public static final int T__13=13;
-    public static final int T__14=14;
-    public static final int EOF=-1;
-    public static final int RULE_SEPARATORS=7;
-    public static final int RULE_TABLE_ROW_END=10;
-    public static final int RULE_SINGLE_NL=4;
-    public static final int RULE_WS=6;
     public static final int RULE_DYNAMIC_PARAM=9;
+    public static final int EOF=-1;
+    public static final int RULE_SINGLE_NL=4;
+    public static final int T__19=19;
+    public static final int RULE_SEPARATORS=7;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__12=12;
+    public static final int T__11=11;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int RULE_STATIC_PARAM=8;
+    public static final int RULE_TABLE_ROW_END=10;
+    public static final int RULE_WS=6;
+    public static final int RULE_WORD=5;
 
     // delegates
     // delegators
@@ -3351,14 +3351,14 @@ public class InternalSpecParser extends AbstractInternalAntlrParser {
     static final String[] DFA17_transitionS = {
             "\1\1\1\4\1\2\3\4\1\uffff\1\4\1\uffff\1\4\1\uffff\2\4\2\uffff\1\3",
             "\1\1\1\4\1\2\3\4\1\uffff\1\4\1\uffff\1\4\1\uffff\2\4\2\uffff\1\3",
-            "\2\4\1\5\3\4\2\uffff\1\4\1\uffff\1\4\2\uffff\2\4\1\6",
+            "\2\4\1\6\3\4\2\uffff\1\4\1\uffff\1\4\2\uffff\2\4\1\5",
             "",
             "",
-            "\2\4\1\5\3\4\2\uffff\1\4\1\uffff\1\4\2\uffff\2\4\1\6",
             "\1\4\1\7\1\11\1\10\2\4\2\uffff\1\4\1\uffff\1\4\2\uffff\3\4",
-            "\1\4\1\7\1\11\1\10\2\4\1\3\1\uffff\1\4\1\uffff\1\4\2\uffff\2\4\1\6",
-            "\1\4\1\7\1\11\1\10\2\4\1\3\1\uffff\1\4\1\uffff\1\4\2\uffff\2\4\1\6",
-            "\1\4\1\7\1\11\1\10\2\4\1\3\1\uffff\1\4\1\uffff\1\4\2\uffff\2\4\1\6"
+            "\2\4\1\6\3\4\2\uffff\1\4\1\uffff\1\4\2\uffff\2\4\1\5",
+            "\1\4\1\7\1\11\1\10\2\4\1\3\1\uffff\1\4\1\uffff\1\4\2\uffff\2\4\1\5",
+            "\1\4\1\7\1\11\1\10\2\4\1\3\1\uffff\1\4\1\uffff\1\4\2\uffff\2\4\1\5",
+            "\1\4\1\7\1\11\1\10\2\4\1\3\1\uffff\1\4\1\uffff\1\4\2\uffff\2\4\1\5"
     };
 
     static final short[] DFA17_eot = DFA.unpackEncodedString(DFA17_eotS);

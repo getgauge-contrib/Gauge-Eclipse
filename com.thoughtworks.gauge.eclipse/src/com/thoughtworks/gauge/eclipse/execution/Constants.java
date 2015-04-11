@@ -19,4 +19,5 @@ public class Constants {
 	public static final String IN_PARALLEL_TEXT = "In Parallel?";
 	
 	public static final String WORKING_DIRECTORY="WORKING_DIRECTORY";
+	public static final String LAUNCH_CONFIGURATION_TYPE_ID="com.thoughtworks.gauge.eclipse.execution.spec";
 }

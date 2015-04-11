@@ -127,7 +127,11 @@ public class SpecHyperlinkHelper extends HyperlinkHelper {
 			try {
 				JavaUI.openInEditor(stepImplementationCache.get(parsedText));
 				return;
-			} catch (PartInitException | JavaModelException e) {
+			} catch (PartInitException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JavaModelException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

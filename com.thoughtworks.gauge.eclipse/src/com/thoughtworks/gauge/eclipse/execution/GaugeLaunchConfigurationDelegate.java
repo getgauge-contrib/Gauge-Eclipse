@@ -21,7 +21,6 @@ public class GaugeLaunchConfigurationDelegate implements ILaunchConfigurationDel
 	@Override
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
-		// TODO Auto-generated method stub
 		try {
 			GaugeUtil.getGaugeExecPath(); // Throws GaugeNotFoundException when Gauge is not installed
 			String workingDirVal = configuration.getAttribute(Constants.WORKING_DIRECTORY, "");

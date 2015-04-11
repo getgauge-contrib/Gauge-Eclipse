@@ -12,23 +12,23 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalSpecLexer extends Lexer {
-    public static final int RULE_STATIC_PARAM=7;
-    public static final int RULE_WORD=4;
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
-    public static final int T__11=11;
-    public static final int T__12=12;
-    public static final int T__13=13;
-    public static final int T__14=14;
-    public static final int EOF=-1;
-    public static final int RULE_SEPARATORS=6;
-    public static final int RULE_TABLE_ROW_END=10;
-    public static final int RULE_SINGLE_NL=9;
-    public static final int RULE_WS=5;
     public static final int RULE_DYNAMIC_PARAM=8;
+    public static final int EOF=-1;
+    public static final int RULE_SINGLE_NL=9;
+    public static final int T__19=19;
+    public static final int RULE_SEPARATORS=6;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__12=12;
+    public static final int T__11=11;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int RULE_STATIC_PARAM=7;
+    public static final int RULE_TABLE_ROW_END=10;
+    public static final int RULE_WS=5;
+    public static final int RULE_WORD=4;
 
     // delegates
     // delegators
@@ -662,7 +662,7 @@ public class InternalSpecLexer extends Lexer {
     static final String DFA6_acceptS =
         "\1\uffff\1\1\1\2\1\3\1\uffff\1\5\3\uffff\1\12\1\13\2\uffff\1\17\1\20\1\1\1\2\1\3\1\16\1\4\1\5\1\6\1\7\1\10\1\uffff\1\14\1\15\2\uffff\1\11";
     static final String DFA6_specialS =
-        "\1\2\12\uffff\1\0\1\1\21\uffff}>";
+        "\1\0\12\uffff\1\1\1\2\21\uffff}>";
     static final String[] DFA6_transitionS = {
             "\11\16\1\15\1\11\2\16\1\11\22\16\1\15\1\16\1\13\1\6\6\16\1\7\1\16\1\3\1\1\2\16\12\uffff\1\5\1\16\1\14\1\2\3\16\32\12\4\16\1\12\1\16\23\12\1\10\6\12\1\16\1\4\uff83\16",
             "",
@@ -733,26 +733,6 @@ public class InternalSpecLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA6_11 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA6_11>='\u0000' && LA6_11<='\uFFFF')) ) {s = 25;}
-
-                        else s = 14;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA6_12 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA6_12>='\u0000' && LA6_12<='\uFFFF')) ) {s = 26;}
-
-                        else s = 14;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA6_0 = input.LA(1);
 
                         s = -1;
@@ -783,6 +763,26 @@ public class InternalSpecLexer extends Lexer {
                         else if ( (LA6_0=='\t'||LA6_0==' ') ) {s = 13;}
 
                         else if ( ((LA6_0>='\u0000' && LA6_0<='\b')||(LA6_0>='\u000B' && LA6_0<='\f')||(LA6_0>='\u000E' && LA6_0<='\u001F')||LA6_0=='!'||(LA6_0>='$' && LA6_0<=')')||LA6_0=='+'||(LA6_0>='.' && LA6_0<='/')||LA6_0==';'||(LA6_0>='>' && LA6_0<='@')||(LA6_0>='[' && LA6_0<='^')||LA6_0=='`'||LA6_0=='{'||(LA6_0>='}' && LA6_0<='\uFFFF')) ) {s = 14;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA6_11 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA6_11>='\u0000' && LA6_11<='\uFFFF')) ) {s = 25;}
+
+                        else s = 14;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA6_12 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA6_12>='\u0000' && LA6_12<='\uFFFF')) ) {s = 26;}
+
+                        else s = 14;
 
                         if ( s>=0 ) return s;
                         break;

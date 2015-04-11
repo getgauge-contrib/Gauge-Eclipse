@@ -24,23 +24,23 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_WORD", "RULE_WS", "RULE_SEPARATORS", "RULE_STATIC_PARAM", "RULE_DYNAMIC_PARAM", "RULE_SINGLE_NL", "RULE_TABLE_ROW_END", "'-'", "'='", "','", "'|'", "':'", "'# '", "'## '", "'* '", "'tags'"
     };
-    public static final int RULE_STATIC_PARAM=7;
-    public static final int RULE_WORD=4;
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
-    public static final int T__11=11;
-    public static final int T__12=12;
-    public static final int T__13=13;
-    public static final int T__14=14;
-    public static final int EOF=-1;
-    public static final int RULE_SEPARATORS=6;
-    public static final int RULE_TABLE_ROW_END=10;
-    public static final int RULE_SINGLE_NL=9;
-    public static final int RULE_WS=5;
     public static final int RULE_DYNAMIC_PARAM=8;
+    public static final int EOF=-1;
+    public static final int RULE_SINGLE_NL=9;
+    public static final int T__19=19;
+    public static final int RULE_SEPARATORS=6;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__12=12;
+    public static final int T__11=11;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int RULE_STATIC_PARAM=7;
+    public static final int RULE_TABLE_ROW_END=10;
+    public static final int RULE_WS=5;
+    public static final int RULE_WORD=4;
 
     // delegates
     // delegators
@@ -8064,33 +8064,33 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     static final String DFA1_eotS =
         "\21\uffff";
     static final String DFA1_eofS =
-        "\17\uffff\1\20\1\uffff";
+        "\20\uffff\1\17";
     static final String DFA1_minS =
-        "\1\4\1\uffff\5\4\3\uffff\6\4\1\uffff";
+        "\1\4\1\uffff\5\4\3\uffff\5\4\1\uffff\1\4";
     static final String DFA1_maxS =
-        "\1\23\1\uffff\5\17\3\uffff\5\17\1\23\1\uffff";
+        "\1\23\1\uffff\5\17\3\uffff\5\17\1\uffff\1\23";
     static final String DFA1_acceptS =
-        "\1\uffff\1\1\5\uffff\1\2\1\3\1\5\6\uffff\1\4";
+        "\1\uffff\1\1\5\uffff\1\2\1\3\1\5\5\uffff\1\4\1\uffff";
     static final String DFA1_specialS =
         "\21\uffff}>";
     static final String[] DFA1_transitionS = {
             "\1\2\1\6\1\3\1\4\1\5\7\uffff\1\1\1\7\1\10\1\11",
             "",
-            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
-            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
-            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
-            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
-            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
+            "\1\12\1\16\1\13\1\14\1\15\1\20\1\uffff\5\17",
+            "\1\12\1\16\1\13\1\14\1\15\1\20\1\uffff\5\17",
+            "\1\12\1\16\1\13\1\14\1\15\1\20\1\uffff\5\17",
+            "\1\12\1\16\1\13\1\14\1\15\1\20\1\uffff\5\17",
+            "\1\12\1\16\1\13\1\14\1\15\1\20\1\uffff\5\17",
             "",
             "",
             "",
-            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
-            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
-            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
-            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
-            "\1\12\1\16\1\13\1\14\1\15\1\17\1\uffff\5\20",
-            "\6\20\1\uffff\1\7\1\1\3\uffff\4\20",
-            ""
+            "\1\12\1\16\1\13\1\14\1\15\1\20\1\uffff\5\17",
+            "\1\12\1\16\1\13\1\14\1\15\1\20\1\uffff\5\17",
+            "\1\12\1\16\1\13\1\14\1\15\1\20\1\uffff\5\17",
+            "\1\12\1\16\1\13\1\14\1\15\1\20\1\uffff\5\17",
+            "\1\12\1\16\1\13\1\14\1\15\1\20\1\uffff\5\17",
+            "",
+            "\6\17\1\uffff\1\7\1\1\3\uffff\4\17"
     };
 
     static final short[] DFA1_eot = DFA.unpackEncodedString(DFA1_eotS);
@@ -8141,11 +8141,11 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     static final String[] DFA22_transitionS = {
             "\1\4\1\2\3\4\1\1\4\uffff\1\3\1\uffff\4\4",
             "\1\4\1\2\3\4\1\1\4\uffff\1\3\1\uffff\4\4",
-            "\1\4\1\5\4\4\1\uffff\3\4\1\6\1\4",
+            "\1\4\1\6\4\4\1\uffff\3\4\1\5\1\4",
             "",
             "",
-            "\1\4\1\5\4\4\1\uffff\3\4\1\6\1\4",
             "\1\7\1\11\1\10\3\4\1\uffff\5\4",
+            "\1\4\1\6\4\4\1\uffff\3\4\1\5\1\4",
             "\1\12\1\14\1\13\3\4\1\3\3\4\1\15\1\4",
             "\1\12\1\14\1\13\3\4\1\3\3\4\1\15\1\4",
             "\1\12\1\14\1\13\3\4\1\3\3\4\1\15\1\4",
@@ -8209,10 +8209,10 @@ public class InternalSpecParser extends AbstractInternalContentAssistParser {
     static final String[] DFA35_transitionS = {
             "\1\1\1\2\4\1\4\uffff\1\3\1\uffff\4\1",
             "",
-            "\1\1\1\4\4\1\1\uffff\3\1\1\5\1\1",
+            "\1\1\1\5\4\1\1\uffff\3\1\1\4\1\1",
             "",
-            "\1\1\1\4\4\1\1\uffff\3\1\1\5\1\1",
             "\1\6\1\10\1\7\3\1\1\uffff\5\1",
+            "\1\1\1\5\4\1\1\uffff\3\1\1\4\1\1",
             "\1\11\1\13\1\12\3\1\1\3\3\1\1\14\1\1",
             "\1\11\1\13\1\12\3\1\1\3\3\1\1\14\1\1",
             "\1\11\1\13\1\12\3\1\1\3\3\1\1\14\1\1",
