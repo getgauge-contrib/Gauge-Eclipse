@@ -2,7 +2,8 @@
 <feature
       id="io.getgauge.sdk"
       label="Spec SDK Feature "
-      version="1.0.0.qualifier">
+      version="0.0.1"
+      provider-name="ThoughtWorks Inc">
 
    <requires>
       <import plugin="org.eclipse.xtext"/>
