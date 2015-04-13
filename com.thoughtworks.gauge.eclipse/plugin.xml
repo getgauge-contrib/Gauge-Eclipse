@@ -54,19 +54,43 @@
         label="Gauge Specs"
         modes="run">
  		<contextualLaunch>
-        	<contextLabel mode="run" label="Run Gauge Specs" />
+        	<contextLabel mode="run" label="Gauge Specs" />
          	<enablement >
-        		<with variable="selection">
-        			<count value="1"/>
-               		<iterate>
-               			<or>
-               				<test property="org.eclipse.debug.ui.matchesPattern" value="*.spec"/>
-               				<instanceof value="org.eclipse.core.resources.IFolder"/>
-               			</or>
-	       			</iterate>
-            	</with>
+             <with variable="selection">
+                <count
+                      value="1">
+                </count>
+                <iterate>
+                   <or>
+                      <test
+                            property="org.eclipse.debug.ui.matchesPattern"
+                            value="*.spec">
+                      </test>
+                      <and>
+                         <instanceof
+                               value="org.eclipse.core.resources.IFolder">
+                         </instanceof>
+                         <test
+                               forcePluginActivation="true"
+                               property="com.thoughtworks.gauge.eclipse.execution.isGaugeSpecFolder"
+                               value="true">
+                         </test>
+                      </and>
+                   </or>
+                </iterate>
+             </with>
          	</enablement>
        	</contextualLaunch>
  	</shortcut>
+  </extension>
+  <extension
+        point="org.eclipse.core.expressions.propertyTesters">
+     <propertyTester
+           class="com.thoughtworks.gauge.eclipse.execution.GaugeFolderPropertyTester"
+           id="com.thoughtworks.gauge.eclipse.execution.GaugeFolderPropertyTester"
+           namespace="com.thoughtworks.gauge.eclipse.execution"
+           properties="isGaugeSpecFolder"
+           type="org.eclipse.core.resources.IFolder">
+     </propertyTester>
   </extension>  
 </plugin>
