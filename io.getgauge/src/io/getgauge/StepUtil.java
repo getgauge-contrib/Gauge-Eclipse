@@ -1,9 +1,10 @@
 package io.getgauge;
 
+import io.getgauge.spec.Element;
+import io.getgauge.spec.Step;
+
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
-
-import io.getgauge.spec.Step;
 
 public class StepUtil {
 
@@ -16,6 +17,11 @@ public class StepUtil {
 			return description.concat(" <table>");
 		}
 		return description;
+	}
+	
+	public static String getElementText(Element scenario) {
+		INode scenarioNode = NodeModelUtils.findActualNodeFor(scenario);
+		return scenarioNode.getText();
 	}
 
 	public static String getStepText(INode node) {
