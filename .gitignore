@@ -1,6 +1,11 @@
+.DS_Store
 *.class
 .metadata
 *.settings
 **/bin/**
 .*.swp
 io.getgauge/.antlr-generator-3.2.0-patch.jar
+com.thoughtworks.gauge.updatesite/artifacts.jar
+com.thoughtworks.gauge.updatesite/content.jar
+com.thoughtworks.gauge.updatesite/features/
+com.thoughtworks.gauge.updatesite/plugins/

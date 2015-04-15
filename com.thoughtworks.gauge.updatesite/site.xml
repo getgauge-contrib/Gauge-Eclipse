@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/io.getgauge.sdk_0.0.1.jar" id="io.getgauge.sdk" version="0.0.1"/>
+   <feature url="features/io.getgauge.sdk_0.0.1.jar" id="io.getgauge.sdk" version="0.0.1">
+      <category name="Gauge"/>
+   </feature>
+   <category-def name="Gauge" label="Gauge">
+      <description>
+         Gauge is a lightweight automation tool.
+      </description>
+   </category-def>
 </site>

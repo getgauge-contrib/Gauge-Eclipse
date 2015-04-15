@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: io.getgauge.ui
-Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: ThoughtWorks Inc
+Bundle-Version: 0.0.1
 Bundle-SymbolicName: io.getgauge.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: io.getgauge;visibility:=reexport,

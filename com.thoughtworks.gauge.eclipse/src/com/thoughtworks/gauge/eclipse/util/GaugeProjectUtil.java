@@ -20,11 +20,11 @@ import com.thoughtworks.gauge.eclipse.project.GaugeWorkspace;
 public class GaugeProjectUtil {
 
 	private static final String STEP = "Step";
-	private static HashMap<String, String> parsedStepTextCache = new HashMap<String, String>();
+	private static final HashMap<String, String> parsedStepTextCache = new HashMap<String, String>();
 	
 	public static HashMap<String, IMethod> getStepImplementations() {
 		
-		HashMap<String, IMethod> stepImpls = new HashMap<String, IMethod>();
+		final HashMap<String, IMethod> stepImpls = new HashMap<String, IMethod>();
 		SearchPattern pattern = SearchPattern.createPattern(STEP,
 				IJavaSearchConstants.ANNOTATION_TYPE,
 				IJavaSearchConstants.ANNOTATION_TYPE_REFERENCE,
