@@ -36,6 +36,7 @@ public class GaugeProjectUtil {
 				if (match.getElement() instanceof IMethod) {
 					IMethod method = (IMethod) match.getElement();
 					IAnnotation type = method.getAnnotation(STEP);
+					// TODO: need to fix multi valued steps.
 					String annotationValue = (String) type
 							.getMemberValuePairs()[0].getValue();
 					stepImpls.put(GaugeProjectUtil.getParsedText(annotationValue), method);

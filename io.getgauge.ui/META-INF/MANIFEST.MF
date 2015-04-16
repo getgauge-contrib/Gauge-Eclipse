@@ -24,8 +24,7 @@ Require-Bundle: io.getgauge;visibility:=reexport,
  com.google.guava,
  org.eclipse.swt,
  org.eclipse.core.resources,
- org.eclipse.jdt.ui,
- org.eclipse.xtend.lib.macro
+ org.eclipse.jdt.ui
 Import-Package: com.thoughtworks.gauge.eclipse,
  com.thoughtworks.gauge.eclipse.model,
  com.thoughtworks.gauge.eclipse.project,
