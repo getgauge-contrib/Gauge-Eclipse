@@ -22,11 +22,9 @@ public class NewGaugeProjectWizard extends Wizard implements INewWizard,
 		setWindowTitle("New Gauge Project");
 	}
 
-	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 	}
 
-	@Override
 	public void setInitializationData(IConfigurationElement config,
 			String propertyName, Object data) throws CoreException {
 		_configurationElement = config;

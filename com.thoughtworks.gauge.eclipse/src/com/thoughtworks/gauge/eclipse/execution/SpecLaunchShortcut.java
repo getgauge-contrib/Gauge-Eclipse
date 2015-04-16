@@ -24,7 +24,6 @@ import com.thoughtworks.gauge.eclipse.util.GaugeUtil;
 
 public class SpecLaunchShortcut implements ILaunchShortcut {
 
-	@Override
 	public void launch(ISelection selection, String mode) {
 		Object element = ((IStructuredSelection) selection).getFirstElement();
 		if (element instanceof IFile | element instanceof IFolder) {
@@ -41,7 +40,6 @@ public class SpecLaunchShortcut implements ILaunchShortcut {
 		}
 	}
 
-	@Override
 	public void launch(IEditorPart editor, String mode) {
 		try {
 			IEditorInput editorInput = editor.getEditorInput();

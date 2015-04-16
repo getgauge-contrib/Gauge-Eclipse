@@ -12,7 +12,6 @@ import org.eclipse.debug.ui.WorkingDirectoryBlock;
 
 public class GaugeTabGroup extends AbstractLaunchConfigurationTabGroup {
 
-	@Override
 	public void createTabs(ILaunchConfigurationDialog dialog, String mode) {
 		// TODO Auto-generated method stub
 		ILaunchConfigurationTab[] tabs = new ILaunchConfigurationTab[] {

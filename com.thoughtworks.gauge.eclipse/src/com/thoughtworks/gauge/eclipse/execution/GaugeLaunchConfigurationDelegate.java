@@ -18,7 +18,6 @@ import com.thoughtworks.gauge.eclipse.util.GaugeUtil;
 
 public class GaugeLaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
 
-	@Override
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
 		try {

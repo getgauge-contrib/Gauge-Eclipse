@@ -5,9 +5,8 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 
-public class GaugeFolderPropertyTester extends PropertyTester {
+public class GaugeFolderPropertyTester extends PropertyTester{
 
-	@Override
 	public boolean test(Object receiver, String property, Object[] args,
 			Object expectedValue) {
 		// TODO Auto-generated method stub

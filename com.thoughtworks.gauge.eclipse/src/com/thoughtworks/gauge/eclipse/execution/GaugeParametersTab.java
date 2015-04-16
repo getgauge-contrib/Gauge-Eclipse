@@ -23,7 +23,6 @@ public class GaugeParametersTab extends AbstractLaunchConfigurationTab {
 	private Text parallelsText;
 	private Group parallelRunGroup;
 
-	@Override
 	public void createControl(Composite parent) {
 		Composite composite = new Composite(parent, SWT.NONE);
 		composite.setLayout(new GridLayout(2, false));
@@ -49,13 +48,11 @@ public class GaugeParametersTab extends AbstractLaunchConfigurationTab {
 	    parallelRunCheckBox.setText(Constants.IN_PARALLEL_TEXT);
 	    parallelRunCheckBox.addSelectionListener(new SelectionListener() {
 			
-			@Override
 			public void widgetSelected(SelectionEvent e) {
 				// TODO Auto-generated method stub
 				parallelRunGroup.setEnabled(parallelRunCheckBox.getSelection());
 			}
 			
-			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				// TODO Auto-generated method stub
 				
@@ -78,7 +75,6 @@ public class GaugeParametersTab extends AbstractLaunchConfigurationTab {
 		return label;
 	}
 
-	@Override
 	public void setDefaults(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setAttribute(Constants.SPECS_TO_EXECUTE, Constants.SPECS_TO_EXECUTE_DEFAULT);
 		configuration.setAttribute(Constants.ENVIRONMENT, Constants.ENVIRONMENT_DEFAULT);
@@ -87,7 +83,6 @@ public class GaugeParametersTab extends AbstractLaunchConfigurationTab {
 		configuration.setAttribute(Constants.PARALLEL_NUMBER, Constants.PARALLEL_NUMBER_DEFAULT);
 	}
 
-	@Override
 	public void initializeFrom(ILaunchConfiguration configuration) {
 		try {
 			specsText.setText(configuration.getAttribute(Constants.SPECS_TO_EXECUTE, Constants.SPECS_TO_EXECUTE_DEFAULT));
@@ -101,7 +96,6 @@ public class GaugeParametersTab extends AbstractLaunchConfigurationTab {
 		}
 	}
 
-	@Override
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
 		configuration.setAttribute(Constants.SPECS_TO_EXECUTE, specsText.getText());
 		configuration.setAttribute(Constants.ENVIRONMENT, environmentText.getText());
@@ -110,7 +104,6 @@ public class GaugeParametersTab extends AbstractLaunchConfigurationTab {
 		configuration.setAttribute(Constants.PARALLEL_ENABLED, parallelRunCheckBox.getSelection());
 	}
 
-	@Override
 	public String getName() {
 		return Constants.TAB_NAME;
 	}
