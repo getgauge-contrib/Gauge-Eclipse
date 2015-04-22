@@ -2,7 +2,7 @@
 <feature
       id="io.getgauge.sdk"
       label="Gauge Eclipse"
-      version="0.0.1"
+      version="0.0.2"
       provider-name="ThoughtWorks Inc">
 
    <license url="https://www.eclipse.org/legal/epl-v10.html">
