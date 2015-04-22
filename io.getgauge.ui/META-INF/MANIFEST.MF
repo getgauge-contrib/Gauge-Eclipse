@@ -35,7 +35,8 @@ Import-Package: com.thoughtworks.gauge.eclipse,
  org.eclipse.jdt.core.search,
  org.eclipse.jdt.internal.corext.codemanipulation,
  org.eclipse.jdt.internal.ui,
- org.eclipse.jdt.ui
+ org.eclipse.jdt.ui,
+ org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: io.getgauge.ui.quickfix,
  io.getgauge.ui.contentassist,

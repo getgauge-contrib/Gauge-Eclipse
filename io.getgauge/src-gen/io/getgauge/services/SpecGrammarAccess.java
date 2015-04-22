@@ -612,54 +612,33 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	
-	private final ModelElements pModel;
-	private final ElementElements pElement;
-	private final SpecElements pSpec;
-	private final ScenarioElements pScenario;
-	private final StepElements pStep;
-	private final StepDefinitionElements pStepDefinition;
-	private final StaticParamElements pStaticParam;
-	private final DynamicParamElements pDynamicParam;
-	private final TagsElements pTags;
-	private final CommentElements pComment;
-	private final TextPartElements pTextPart;
-	private final TableElements pTable;
-	private final TableRowElements pTableRow;
-	private final TableCellElements pTableCell;
-	private final TerminalRule tSINGLE_NL;
-	private final TerminalRule tWORD;
-	private final TerminalRule tSTATIC_PARAM;
-	private final TerminalRule tDYNAMIC_PARAM;
-	private final TerminalRule tTABLE_ROW_END;
-	private final TerminalRule tWS;
-	private final TerminalRule tSEPARATORS;
+	private ModelElements pModel;
+	private ElementElements pElement;
+	private SpecElements pSpec;
+	private ScenarioElements pScenario;
+	private StepElements pStep;
+	private StepDefinitionElements pStepDefinition;
+	private StaticParamElements pStaticParam;
+	private DynamicParamElements pDynamicParam;
+	private TagsElements pTags;
+	private CommentElements pComment;
+	private TextPartElements pTextPart;
+	private TableElements pTable;
+	private TableRowElements pTableRow;
+	private TableCellElements pTableCell;
+	private TerminalRule tSINGLE_NL;
+	private TerminalRule tWORD;
+	private TerminalRule tSTATIC_PARAM;
+	private TerminalRule tDYNAMIC_PARAM;
+	private TerminalRule tTABLE_ROW_END;
+	private TerminalRule tWS;
+	private TerminalRule tSEPARATORS;
 	
 	private final Grammar grammar;
 
 	@Inject
 	public SpecGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
-		this.pModel = new ModelElements();
-		this.pElement = new ElementElements();
-		this.pSpec = new SpecElements();
-		this.pScenario = new ScenarioElements();
-		this.pStep = new StepElements();
-		this.pStepDefinition = new StepDefinitionElements();
-		this.pStaticParam = new StaticParamElements();
-		this.pDynamicParam = new DynamicParamElements();
-		this.pTags = new TagsElements();
-		this.pComment = new CommentElements();
-		this.pTextPart = new TextPartElements();
-		this.pTable = new TableElements();
-		this.pTableRow = new TableRowElements();
-		this.pTableCell = new TableCellElements();
-		this.tSINGLE_NL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SINGLE_NL");
-		this.tWORD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WORD");
-		this.tSTATIC_PARAM = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STATIC_PARAM");
-		this.tDYNAMIC_PARAM = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DYNAMIC_PARAM");
-		this.tTABLE_ROW_END = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TABLE_ROW_END");
-		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
-		this.tSEPARATORS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SEPARATORS");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -691,7 +670,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	// * / Model:
 	//	{Model} SINGLE_NL* definitions+=Element*;
 	public ModelElements getModelAccess() {
-		return pModel;
+		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
 	
 	public ParserRule getModelRule() {
@@ -701,7 +680,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//Element:
 	//	Spec | Scenario | Step | Comment | Tags;
 	public ElementElements getElementAccess() {
-		return pElement;
+		return (pElement != null) ? pElement : (pElement = new ElementElements());
 	}
 	
 	public ParserRule getElementRule() {
@@ -712,7 +691,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//Spec:
 	//	"# " name+=TextPart+ SINGLE_NL+ | name+=TextPart+ SINGLE_NL "="+ SINGLE_NL+;
 	public SpecElements getSpecAccess() {
-		return pSpec;
+		return (pSpec != null) ? pSpec : (pSpec = new SpecElements());
 	}
 	
 	public ParserRule getSpecRule() {
@@ -723,7 +702,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//Scenario:
 	//	"## " name+=TextPart+ SINGLE_NL+ | name+=TextPart+ SINGLE_NL "-"+ SINGLE_NL+;
 	public ScenarioElements getScenarioAccess() {
-		return pScenario;
+		return (pScenario != null) ? pScenario : (pScenario = new ScenarioElements());
 	}
 	
 	public ParserRule getScenarioRule() {
@@ -735,7 +714,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//Step:
 	//	{Step} definition=StepDefinition SINGLE_NL (SINGLE_NL* table=Table)? SINGLE_NL*;
 	public StepElements getStepAccess() {
-		return pStep;
+		return (pStep != null) ? pStep : (pStep = new StepElements());
 	}
 	
 	public ParserRule getStepRule() {
@@ -746,7 +725,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//	{StepDefinition} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS))
 	//	separators+=SEPARATORS*)+;
 	public StepDefinitionElements getStepDefinitionAccess() {
-		return pStepDefinition;
+		return (pStepDefinition != null) ? pStepDefinition : (pStepDefinition = new StepDefinitionElements());
 	}
 	
 	public ParserRule getStepDefinitionRule() {
@@ -756,7 +735,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//StaticParam:
 	//	name=STATIC_PARAM;
 	public StaticParamElements getStaticParamAccess() {
-		return pStaticParam;
+		return (pStaticParam != null) ? pStaticParam : (pStaticParam = new StaticParamElements());
 	}
 	
 	public ParserRule getStaticParamRule() {
@@ -766,7 +745,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//DynamicParam:
 	//	name=DYNAMIC_PARAM;
 	public DynamicParamElements getDynamicParamAccess() {
-		return pDynamicParam;
+		return (pDynamicParam != null) ? pDynamicParam : (pDynamicParam = new DynamicParamElements());
 	}
 	
 	public ParserRule getDynamicParamRule() {
@@ -776,7 +755,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//Tags:
 	//	{Tags} "tags" WS* ":" (WORD | WS | ",")+ SINGLE_NL+;
 	public TagsElements getTagsAccess() {
-		return pTags;
+		return (pTags != null) ? pTags : (pTags = new TagsElements());
 	}
 	
 	public ParserRule getTagsRule() {
@@ -787,7 +766,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//Comment:
 	//	name+=TextPart name+=(TextPart | "-" | "=" | "|" | "," | ":")* SINGLE_NL+;
 	public CommentElements getCommentAccess() {
-		return pComment;
+		return (pComment != null) ? pComment : (pComment = new CommentElements());
 	}
 	
 	public ParserRule getCommentRule() {
@@ -797,7 +776,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//TextPart:
 	//	WORD | SEPARATORS | STATIC_PARAM | DYNAMIC_PARAM | WS;
 	public TextPartElements getTextPartAccess() {
-		return pTextPart;
+		return (pTextPart != null) ? pTextPart : (pTextPart = new TextPartElements());
 	}
 	
 	public ParserRule getTextPartRule() {
@@ -807,7 +786,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//Table:
 	//	WS* heading=TableRow WS* ("|" "-"+)+ TABLE_ROW_END (WS* rows+=TableRow)+;
 	public TableElements getTableAccess() {
-		return pTable;
+		return (pTable != null) ? pTable : (pTable = new TableElements());
 	}
 	
 	public ParserRule getTableRule() {
@@ -817,7 +796,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//TableRow:
 	//	cells+=TableCell+ TABLE_ROW_END;
 	public TableRowElements getTableRowAccess() {
-		return pTableRow;
+		return (pTableRow != null) ? pTableRow : (pTableRow = new TableRowElements());
 	}
 	
 	public ParserRule getTableRowRule() {
@@ -827,7 +806,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//TableCell:
 	//	"|" name+=(WORD | SEPARATORS | WS)+;
 	public TableCellElements getTableCellAccess() {
-		return pTableCell;
+		return (pTableCell != null) ? pTableCell : (pTableCell = new TableCellElements());
 	}
 	
 	public ParserRule getTableCellRule() {
@@ -837,42 +816,42 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//terminal SINGLE_NL:
 	//	"\r"? "\n";
 	public TerminalRule getSINGLE_NLRule() {
-		return tSINGLE_NL;
+		return (tSINGLE_NL != null) ? tSINGLE_NL : (tSINGLE_NL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SINGLE_NL"));
 	} 
 
 	//terminal WORD:
 	//	("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getWORDRule() {
-		return tWORD;
+		return (tWORD != null) ? tWORD : (tWORD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WORD"));
 	} 
 
 	//terminal STATIC_PARAM:
 	//	"\""->"\"";
 	public TerminalRule getSTATIC_PARAMRule() {
-		return tSTATIC_PARAM;
+		return (tSTATIC_PARAM != null) ? tSTATIC_PARAM : (tSTATIC_PARAM = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STATIC_PARAM"));
 	} 
 
 	//terminal DYNAMIC_PARAM:
 	//	"<"->">";
 	public TerminalRule getDYNAMIC_PARAMRule() {
-		return tDYNAMIC_PARAM;
+		return (tDYNAMIC_PARAM != null) ? tDYNAMIC_PARAM : (tDYNAMIC_PARAM = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DYNAMIC_PARAM"));
 	} 
 
 	//terminal TABLE_ROW_END:
 	//	"|" (SINGLE_NL | EOF);
 	public TerminalRule getTABLE_ROW_ENDRule() {
-		return tTABLE_ROW_END;
+		return (tTABLE_ROW_END != null) ? tTABLE_ROW_END : (tTABLE_ROW_END = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TABLE_ROW_END"));
 	} 
 
 	//terminal WS:
 	//	" " | "\t";
 	public TerminalRule getWSRule() {
-		return tWS;
+		return (tWS != null) ? tWS : (tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS"));
 	} 
 
 	//terminal SEPARATORS:
 	//	!("\r" | "\n" | "a".."z" | "A".."Z" | "0".."9" | "_" | " " | "\t");
 	public TerminalRule getSEPARATORSRule() {
-		return tSEPARATORS;
+		return (tSEPARATORS != null) ? tSEPARATORS : (tSEPARATORS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SEPARATORS"));
 	} 
 }

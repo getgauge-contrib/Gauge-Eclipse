@@ -282,7 +282,7 @@ public class SpecSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     (WORD | WS | ',')+
+	 *     (',' | WS | WORD)+
 	 */
 	protected void emit_Tags___CommaKeyword_4_2_or_WORDTerminalRuleCall_4_0_or_WSTerminalRuleCall_4_1__p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

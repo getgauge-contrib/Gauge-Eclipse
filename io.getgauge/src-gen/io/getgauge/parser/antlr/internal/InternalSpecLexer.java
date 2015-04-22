@@ -652,19 +652,26 @@ public class InternalSpecLexer extends Lexer {
 
     protected DFA6 dfa6 = new DFA6(this);
     static final String DFA6_eotS =
-        "\1\uffff\1\16\2\uffff\1\16\1\12\2\uffff\1\30\2\uffff\2\16\7\uffff\1\12\6\uffff\1\12\1\35\1\uffff";
+        "\1\uffff\1\16\2\uffff\1\16\1\12\2\uffff\1\30\2\uffff\2\16\7\uffff"+
+        "\1\12\6\uffff\1\12\1\35\1\uffff";
     static final String DFA6_eofS =
         "\36\uffff";
     static final String DFA6_minS =
-        "\1\0\1\40\2\uffff\1\40\1\141\2\uffff\1\12\2\uffff\2\0\7\uffff\1\147\6\uffff\1\163\1\60\1\uffff";
+        "\1\0\1\40\2\uffff\1\40\1\141\2\uffff\1\12\2\uffff\2\0\7\uffff\1"+
+        "\147\6\uffff\1\163\1\60\1\uffff";
     static final String DFA6_maxS =
-        "\1\uffff\1\43\2\uffff\1\40\1\141\2\uffff\1\15\2\uffff\2\uffff\7\uffff\1\147\6\uffff\1\163\1\172\1\uffff";
+        "\1\uffff\1\43\2\uffff\1\40\1\141\2\uffff\1\15\2\uffff\2\uffff\7"+
+        "\uffff\1\147\6\uffff\1\163\1\172\1\uffff";
     static final String DFA6_acceptS =
-        "\2\uffff\1\2\1\4\2\uffff\1\7\1\10\1\uffff\1\12\1\13\2\uffff\1\17\1\20\1\1\1\3\1\2\1\4\1\5\1\uffff\1\7\1\10\1\16\1\11\1\14\1\15\2\uffff\1\6";
+        "\2\uffff\1\2\1\4\2\uffff\1\7\1\10\1\uffff\1\12\1\13\2\uffff\1\17"+
+        "\1\20\1\1\1\3\1\2\1\4\1\5\1\uffff\1\7\1\10\1\16\1\11\1\14\1\15\2"+
+        "\uffff\1\6";
     static final String DFA6_specialS =
         "\1\0\12\uffff\1\1\1\2\21\uffff}>";
     static final String[] DFA6_transitionS = {
-            "\11\16\1\15\1\11\2\16\1\11\22\16\1\15\1\16\1\13\1\1\6\16\1\4\1\16\1\7\1\3\2\16\12\uffff\1\6\1\16\1\14\1\2\3\16\32\12\4\16\1\12\1\16\23\12\1\5\6\12\1\16\1\10\uff83\16",
+            "\11\16\1\15\1\11\2\16\1\11\22\16\1\15\1\16\1\13\1\1\6\16\1\4"+
+            "\1\16\1\7\1\3\2\16\12\uffff\1\6\1\16\1\14\1\2\3\16\32\12\4\16"+
+            "\1\12\1\16\23\12\1\5\6\12\1\16\1\10\uff83\16",
             "\1\17\2\uffff\1\20",
             "",
             "",
