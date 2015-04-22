@@ -594,6 +594,12 @@ rule__StepDefinition__TextAlternatives_2_0_2_0
 { after(grammarAccess.getStepDefinitionAccess().getTextWSTerminalRuleCall_2_0_2_0_3()); }
 )
 
+    |(
+{ before(grammarAccess.getStepDefinitionAccess().getTextNUMBERTerminalRuleCall_2_0_2_0_4()); }
+	RULE_NUMBER
+{ after(grammarAccess.getStepDefinitionAccess().getTextNUMBERTerminalRuleCall_2_0_2_0_4()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2811,6 +2817,8 @@ finally {
 RULE_SINGLE_NL : '\r'? '\n';
 
 RULE_WORD : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+
+RULE_NUMBER : ('0'..'9')+;
 
 RULE_STATIC_PARAM : '"' ( options {greedy=false;} : . )*'"';
 

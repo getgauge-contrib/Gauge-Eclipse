@@ -261,16 +261,17 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTextHyphenMinusKeyword_2_0_2_0_1 = (Keyword)cTextAlternatives_2_0_2_0.eContents().get(1);
 		private final Keyword cTextEqualsSignKeyword_2_0_2_0_2 = (Keyword)cTextAlternatives_2_0_2_0.eContents().get(2);
 		private final RuleCall cTextWSTerminalRuleCall_2_0_2_0_3 = (RuleCall)cTextAlternatives_2_0_2_0.eContents().get(3);
+		private final RuleCall cTextNUMBERTerminalRuleCall_2_0_2_0_4 = (RuleCall)cTextAlternatives_2_0_2_0.eContents().get(4);
 		private final Assignment cSeparatorsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cSeparatorsSEPARATORSTerminalRuleCall_2_1_0 = (RuleCall)cSeparatorsAssignment_2_1.eContents().get(0);
 		
 		//StepDefinition:
-		//	{StepDefinition} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS))
-		//	separators+=SEPARATORS*)+;
+		//	{StepDefinition} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS |
+		//	NUMBER)) separators+=SEPARATORS*)+;
 		public ParserRule getRule() { return rule; }
 
-		//{StepDefinition} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS))
-		//separators+=SEPARATORS*)+
+		//{StepDefinition} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS |
+		//NUMBER)) separators+=SEPARATORS*)+
 		public Group getGroup() { return cGroup; }
 
 		//{StepDefinition}
@@ -279,10 +280,11 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		//"* "
 		public Keyword getAsteriskSpaceKeyword_1() { return cAsteriskSpaceKeyword_1; }
 
-		//((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS)) separators+=SEPARATORS*)+
+		//((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS | NUMBER))
+		//separators+=SEPARATORS*)+
 		public Group getGroup_2() { return cGroup_2; }
 
-		//staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS)
+		//staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS | NUMBER)
 		public Alternatives getAlternatives_2_0() { return cAlternatives_2_0; }
 
 		//staticParams+=StaticParam
@@ -297,10 +299,10 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 		//DynamicParam
 		public RuleCall getDynamicParamsDynamicParamParserRuleCall_2_0_1_0() { return cDynamicParamsDynamicParamParserRuleCall_2_0_1_0; }
 
-		//text+=(WORD | "-" | "=" | WS)
+		//text+=(WORD | "-" | "=" | WS | NUMBER)
 		public Assignment getTextAssignment_2_0_2() { return cTextAssignment_2_0_2; }
 
-		//WORD | "-" | "=" | WS
+		//WORD | "-" | "=" | WS | NUMBER
 		public Alternatives getTextAlternatives_2_0_2_0() { return cTextAlternatives_2_0_2_0; }
 
 		//WORD
@@ -314,6 +316,9 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 
 		//WS
 		public RuleCall getTextWSTerminalRuleCall_2_0_2_0_3() { return cTextWSTerminalRuleCall_2_0_2_0_3; }
+
+		//NUMBER
+		public RuleCall getTextNUMBERTerminalRuleCall_2_0_2_0_4() { return cTextNUMBERTerminalRuleCall_2_0_2_0_4; }
 
 		//separators+=SEPARATORS*
 		public Assignment getSeparatorsAssignment_2_1() { return cSeparatorsAssignment_2_1; }
@@ -628,6 +633,7 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	private TableCellElements pTableCell;
 	private TerminalRule tSINGLE_NL;
 	private TerminalRule tWORD;
+	private TerminalRule tNUMBER;
 	private TerminalRule tSTATIC_PARAM;
 	private TerminalRule tDYNAMIC_PARAM;
 	private TerminalRule tTABLE_ROW_END;
@@ -722,8 +728,8 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//StepDefinition:
-	//	{StepDefinition} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS))
-	//	separators+=SEPARATORS*)+;
+	//	{StepDefinition} "* " ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | "-" | "=" | WS |
+	//	NUMBER)) separators+=SEPARATORS*)+;
 	public StepDefinitionElements getStepDefinitionAccess() {
 		return (pStepDefinition != null) ? pStepDefinition : (pStepDefinition = new StepDefinitionElements());
 	}
@@ -823,6 +829,12 @@ public class SpecGrammarAccess extends AbstractGrammarElementFinder {
 	//	("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getWORDRule() {
 		return (tWORD != null) ? tWORD : (tWORD = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WORD"));
+	} 
+
+	//terminal NUMBER:
+	//	"0".."9"+;
+	public TerminalRule getNUMBERRule() {
+		return (tNUMBER != null) ? tNUMBER : (tNUMBER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NUMBER"));
 	} 
 
 	//terminal STATIC_PARAM:

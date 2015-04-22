@@ -38,7 +38,7 @@ Step:
 
 StepDefinition:
 	{StepDefinition}
-	'* ' ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | '-' | '=' | WS)) separators+=SEPARATORS*)+
+	'* ' ((staticParams+=StaticParam | dynamicParams+=DynamicParam | text+=(WORD | '-' | '=' | WS | NUMBER)) separators+=SEPARATORS*)+
 ;
 StaticParam:
 	name=STATIC_PARAM
@@ -79,6 +79,8 @@ TableCell:
 terminal SINGLE_NL: ('\r'? '\n');
 
 terminal WORD: ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+
+terminal NUMBER: '0'..'9'+;
 
 terminal STATIC_PARAM: '"' -> '"';
 

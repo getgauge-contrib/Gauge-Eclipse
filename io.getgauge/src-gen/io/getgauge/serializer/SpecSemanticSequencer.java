@@ -204,7 +204,8 @@ public class SpecSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *             text+=WORD | 
 	 *             text+='-' | 
 	 *             text+='=' | 
-	 *             text+=WS
+	 *             text+=WS | 
+	 *             text+=NUMBER
 	 *         ) 
 	 *         separators+=SEPARATORS*
 	 *     )+
