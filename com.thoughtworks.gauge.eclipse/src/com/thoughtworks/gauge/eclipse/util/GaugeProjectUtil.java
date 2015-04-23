@@ -7,6 +7,7 @@ import java.util.List;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IAnnotation;
 import org.eclipse.jdt.core.IMethod;
+import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.search.IJavaSearchConstants;
 import org.eclipse.jdt.core.search.SearchEngine;
 import org.eclipse.jdt.core.search.SearchMatch;
@@ -19,7 +20,7 @@ import com.thoughtworks.gauge.eclipse.project.GaugeWorkspace;
 
 public class GaugeProjectUtil {
 
-	private static final String STEP = "Step";
+	private static final String STEP = "*Step";
 	private static final HashMap<String, String> parsedStepTextCache = new HashMap<String, String>();
 	
 	public static HashMap<String, IMethod> getStepImplementations() {
@@ -28,18 +29,21 @@ public class GaugeProjectUtil {
 		SearchPattern pattern = SearchPattern.createPattern(STEP,
 				IJavaSearchConstants.ANNOTATION_TYPE,
 				IJavaSearchConstants.ANNOTATION_TYPE_REFERENCE,
-				SearchPattern.R_EXACT_MATCH | SearchPattern.R_CASE_SENSITIVE);
+				SearchPattern.R_PATTERN_MATCH);
 
 		SearchRequestor requestor = new SearchRequestor() {
 			public void acceptSearchMatch(SearchMatch match)
 					throws CoreException {
 				if (match.getElement() instanceof IMethod) {
 					IMethod method = (IMethod) match.getElement();
-					IAnnotation type = method.getAnnotation(STEP);
-					// TODO: need to fix multi valued steps.
-					String annotationValue = (String) type
-							.getMemberValuePairs()[0].getValue();
-					stepImpls.put(GaugeProjectUtil.getParsedText(annotationValue), method);
+					
+					IAnnotation type = getStepAnnotation(method);
+					if(type!=null){
+						// TODO: need to fix multi valued steps.
+						String annotationValue = (String) type
+								.getMemberValuePairs()[0].getValue();
+						stepImpls.put(GaugeProjectUtil.getParsedText(annotationValue), method);
+					}
 				}
 			}
 		};
@@ -81,5 +85,14 @@ public class GaugeProjectUtil {
 		String parsedStep = gaugeWorkspace.getParsedStep(stepText);
 		parsedStepTextCache.put(stepText, parsedStep);
 		return parsedStep;
+	}
+	
+	private static IAnnotation getStepAnnotation(IMethod method) throws JavaModelException {
+		for (IAnnotation a : method.getAnnotations()) {
+			if(a.getElementName().equals("Step") || a.getElementName().equals("com.thoughtworks.gauge.Step")) {
+				return a;
+			}
+		}
+		return null;
 	}
 }
