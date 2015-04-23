@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IAnnotation;
+import org.eclipse.jdt.core.IMemberValuePair;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.search.IJavaSearchConstants;
@@ -39,10 +40,17 @@ public class GaugeProjectUtil {
 					
 					IAnnotation type = getStepAnnotation(method);
 					if(type!=null){
-						// TODO: need to fix multi valued steps.
-						String annotationValue = (String) type
-								.getMemberValuePairs()[0].getValue();
-						stepImpls.put(GaugeProjectUtil.getParsedText(annotationValue), method);
+						IMemberValuePair annotation = type.getMemberValuePairs()[0];
+						Object annotationRawValue = annotation.getValue();
+						if(annotationRawValue.getClass()==String.class) {
+							String annotationValue = (String) annotation.getValue();
+							stepImpls.put(GaugeProjectUtil.getParsedText(annotationValue), method);
+						}
+						else{
+							for (Object annotationValue : (Object[])annotationRawValue) {
+								stepImpls.put(GaugeProjectUtil.getParsedText((String)annotationValue), method);
+							}
+						}
 					}
 				}
 			}
