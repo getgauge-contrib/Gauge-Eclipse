@@ -3,9 +3,13 @@
  */
 package io.getgauge;
 
+import org.eclipse.xtext.parser.antlr.ISyntaxErrorMessageProvider;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class SpecRuntimeModule extends io.getgauge.AbstractSpecRuntimeModule {
-
+	public Class<? extends ISyntaxErrorMessageProvider> bindISyntaxErrorMessageProvider() {
+	    return SpecSyntaxErrorMessageProvider.class;
+	}
 }
