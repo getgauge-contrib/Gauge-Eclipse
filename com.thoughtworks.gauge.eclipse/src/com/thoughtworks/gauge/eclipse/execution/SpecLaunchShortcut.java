@@ -1,5 +1,7 @@
 package com.thoughtworks.gauge.eclipse.execution;
 
+import java.io.File;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IResource;
@@ -72,7 +74,7 @@ public class SpecLaunchShortcut implements ILaunchShortcut {
 			ILaunchConfigurationType type, String path, IResource file)
 			throws CoreException {
 		String configname = file.getProjectRelativePath().toOSString()
-				.replace(Path.SEPARATOR, '-');
+				.replace(File.separatorChar, '-');
 		if (configname.startsWith("-")) {
 			configname = configname.substring(1);
 		}
