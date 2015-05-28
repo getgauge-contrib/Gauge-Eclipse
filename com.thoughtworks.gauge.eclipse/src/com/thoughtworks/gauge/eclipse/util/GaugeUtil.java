@@ -24,27 +24,21 @@ public class GaugeUtil {
 
 	private static String getPath() throws GaugeNotFoundException {
 		String path = System.getenv("PATH");
-		System.out.println("PATH => " + path);
 		String gaugeHome = System.getenv("GAUGE_ROOT");
-		System.out.println("GAUGE_ROOT => " + gaugeHome);
 		if (gaugeHome != null && !gaugeHome.isEmpty()) {
 			File bin = new File(gaugeHome, "bin");
 			File gaugeExec = new File(bin, gaugeExecutable());
 			if (gaugeExec.exists()) {
-				System.out.println("executable path: " + gaugeExec.getAbsolutePath());
 				return gaugeExec.getAbsolutePath();
 			}
 		} else if (path != null && !path.isEmpty()) {
 			for (String entry : path.split(File.pathSeparator)) {
 				File gaugeExec = new File(entry, gaugeExecutable());
 				if (gaugeExec.exists()) {
-					System.out.println("executable path: " +
-							gaugeExec.getAbsolutePath());
 					return gaugeExec.getAbsolutePath();
 				}
 			}
 		}
-		System.out.println("Could not find executable in PATH or GAUGE_ROOT");
 		throw new GaugeNotFoundException(
 				"Could not find executable in PATH or GAUGE_ROOT. Gauge is not installed.");
 	}
