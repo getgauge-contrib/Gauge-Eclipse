@@ -1,9 +1,12 @@
 package com.thoughtworks.gauge.eclipse.util;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IAnnotation;
 import org.eclipse.jdt.core.IMemberValuePair;
@@ -102,5 +105,22 @@ public class GaugeProjectUtil {
 			}
 		}
 		return null;
+	}
+
+	public static IWorkspaceRoot workspaceRoot() {
+		return ResourcesPlugin.getWorkspace().getRoot();
+	}
+
+	public static boolean isGaugeProject(File projectDir) {
+		return (projectDir.exists() && projectDir.isDirectory() && containsManifest(projectDir) && containsSpecsDir(projectDir));
+	}
+
+	private static boolean containsSpecsDir(File projectDir) {
+		return new File(projectDir, "manifest.json").exists();
+	}
+
+	private static boolean containsManifest(File projectDir) {
+		File specsDir = new File(projectDir, "specs");
+		return specsDir.exists() && specsDir.isDirectory();
 	}
 }

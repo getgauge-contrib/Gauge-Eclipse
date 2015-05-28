@@ -62,9 +62,8 @@ public class GaugeUtil {
 		return (System.getProperty("os.name").toLowerCase().contains("win"));
 	}
 
-	public static void initializeProject(File root, String name)
+	public static void initializeProject(File projectDir)
 			throws IOException, GaugeNotFoundException {
-		File projectDir = new File(root, name);
 		if (!FileUtil.createDirectory(projectDir)) {
 			throw new IOException(String.format(
 					"Unable to create project directory %s",

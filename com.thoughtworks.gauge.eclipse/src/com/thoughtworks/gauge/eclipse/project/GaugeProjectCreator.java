@@ -9,7 +9,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.jdt.core.IClasspathEntry;
@@ -21,21 +20,23 @@ import org.eclipse.xtext.ui.XtextProjectHelper;
 
 import com.thoughtworks.gauge.eclipse.GaugePlugin;
 import com.thoughtworks.gauge.eclipse.exception.GaugeNotFoundException;
+import com.thoughtworks.gauge.eclipse.util.GaugeProjectUtil;
 import com.thoughtworks.gauge.eclipse.util.GaugeUtil;
 
 public class GaugeProjectCreator {
 
 	private String projectName;
+	private IPath projectPath;
 
-	public GaugeProjectCreator(String name) {
+	public GaugeProjectCreator(String name, IPath projectPath) {
 		this.projectName = name;
+		this.projectPath = projectPath;
 	}
 
 	public void createProject() {
-		IWorkspaceRoot root = root();
+		IWorkspaceRoot root = GaugeProjectUtil.workspaceRoot();
 		try {
-			IPath rootLocation = root.getLocation();
-			GaugeUtil.initializeProject(rootLocation.toFile(), projectName);
+			GaugeUtil.initializeProject(projectPath.toFile());
 			IJavaProject gaugeJavaProject = createGaugeJavaProject(root);
 			GaugePlugin.getDefault().getGaugeWorkspace().createGaugeService(gaugeJavaProject.getProject());
 			setupJavaProject(gaugeJavaProject);
@@ -49,13 +50,15 @@ public class GaugeProjectCreator {
 	}
 
 	private IJavaProject createGaugeJavaProject(IWorkspaceRoot root) throws CoreException {
+		IProjectDescription description = root.getWorkspace().newProjectDescription(projectName);
+		description.setLocation(projectPath);
+		description.setNatureIds(natureIds());
+		
 		IProject project = root.getProject(projectName);
-		project.create(null);
+		project.create(description, null);
 		project.open(null);
 		project.refreshLocal(IResource.DEPTH_INFINITE, null);
-		IProjectDescription desc = project.getDescription();
-		desc.setNatureIds(natureIds());
-		project.setDescription(desc, null);
+		
 		IJavaProject javaProject = JavaCore.create(project);
 		return javaProject;
 	}
@@ -94,10 +97,6 @@ public class GaugeProjectCreator {
 		IPath binPath = binDir.getFullPath();
 		javaProject.setOutputLocation(binPath, null);
 		
-	}
-
-	private IWorkspaceRoot root() {
-		return ResourcesPlugin.getWorkspace().getRoot();
 	}
 
 }

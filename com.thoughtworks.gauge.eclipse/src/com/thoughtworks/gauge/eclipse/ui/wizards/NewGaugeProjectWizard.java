@@ -33,7 +33,12 @@ public class NewGaugeProjectWizard extends Wizard implements INewWizard,
 	@Override
 	public boolean performFinish() {
 		String name = _newProjectPage.getProjectName();
-		new GaugeProjectCreator(name).createProject();
+		
+		if (_newProjectPage.useDefaults()) {
+			new GaugeProjectCreator(name, _newProjectPage.getLocationPath().append(name)).createProject();
+		} else {
+			new GaugeProjectCreator(name, _newProjectPage.getLocationPath()).createProject();
+		}
 		BasicNewProjectResourceWizard.updatePerspective(_configurationElement);
 		return true;
 	}
