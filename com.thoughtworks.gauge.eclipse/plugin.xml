@@ -5,14 +5,27 @@
         point="org.eclipse.ui.newWizards">
      <category
            id="com.thoughtworks.gauge.eclipse.ui.category.wizards"
-           name="Gauge Project">
+           name="Gauge">
      </category>
      <wizard
            category="com.thoughtworks.gauge.eclipse.ui.category.wizards"
            class="com.thoughtworks.gauge.eclipse.ui.wizards.NewGaugeProjectWizard"
            id="com.thoughtworks.gauge.eclipse.ui.new.gaugeproject"
-           name="Gauge Spec Project"
+           name="Gauge Project"
            project="true">
+     </wizard>
+  </extension>
+  <extension
+        point="org.eclipse.ui.importWizards">
+     <category
+           id="com.thoughtworks.gauge.eclipse.ui.import.category"
+           name="Gauge">
+     </category>
+     <wizard
+           category="com.thoughtworks.gauge.eclipse.ui.import.category"
+           class="com.thoughtworks.gauge.eclipse.ui.wizards.ImportGaugeProjectWizard"
+           id="com.thoughtworks.gauge.eclipse.ui.import.gaugeproject"
+           name="Gauge Project">
      </wizard>
   </extension>
   <extension
@@ -92,5 +105,5 @@
            properties="isGaugeSpecFolder"
            type="org.eclipse.core.resources.IFolder">
      </propertyTester>
-  </extension>  
+  </extension>
 </plugin>
