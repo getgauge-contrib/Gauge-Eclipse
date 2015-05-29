@@ -86,15 +86,11 @@ public class SpecLaunchShortcut implements ILaunchShortcut {
 			}
 		}
 
-		// Is there a better way to get working directory?
-		// Path gives me /project/specs/specfile.spec . This is not proper
-		// filesystem path.
-		IPath workSpace = file.getProject().getWorkspace().getRoot()
-				.getLocation();
-		IPath projectPath = file.getProject().getFullPath();
-		String workingDir = workSpace.append(projectPath).toOSString();
+		IPath projectDir = file.getProject().getLocation();
+		String workingDir = projectDir.toFile().getAbsolutePath();
 		ILaunchConfigurationWorkingCopy workingCopy = type.newInstance(null,
 				configname);
+		
 
 		// Again, the path parameter holds incorrect path (probably EFS path),
 		// not the actual file system path.
