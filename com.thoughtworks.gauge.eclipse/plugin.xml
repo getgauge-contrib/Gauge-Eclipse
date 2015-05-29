@@ -10,6 +10,7 @@
      <wizard
            category="com.thoughtworks.gauge.eclipse.ui.category.wizards"
            class="com.thoughtworks.gauge.eclipse.ui.wizards.NewGaugeProjectWizard"
+           icon="icons/Gauge-Logo-16x16.png"
            id="com.thoughtworks.gauge.eclipse.ui.new.gaugeproject"
            name="Gauge Project"
            project="true">
@@ -24,6 +25,7 @@
      <wizard
            category="com.thoughtworks.gauge.eclipse.ui.import.category"
            class="com.thoughtworks.gauge.eclipse.ui.wizards.ImportGaugeProjectWizard"
+           icon="icons/Gauge-Logo-16x16.png"
            id="com.thoughtworks.gauge.eclipse.ui.import.gaugeproject"
            name="Gauge Project">
      </wizard>
@@ -62,10 +64,11 @@
   </extension>
   <extension point="org.eclipse.debug.ui.launchShortcuts">
     <shortcut
-        id="com.thoughtworks.gauge.eclipse.execution.specLaunchShortcut"
-        class="com.thoughtworks.gauge.eclipse.execution.SpecLaunchShortcut"
-        label="Gauge Specs"
-        modes="run">
+          class="com.thoughtworks.gauge.eclipse.execution.SpecLaunchShortcut"
+          icon="icons/Gauge-Logo-16x16.png"
+          id="com.thoughtworks.gauge.eclipse.execution.specLaunchShortcut"
+          label="Gauge Specs"
+          modes="run">
  		<contextualLaunch>
         	<contextLabel mode="run" label="Gauge Specs" />
          	<enablement >
