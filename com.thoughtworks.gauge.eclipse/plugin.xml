@@ -109,4 +109,12 @@
            type="org.eclipse.core.resources.IFolder">
      </propertyTester>
   </extension>
+  <extension
+        point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+     <launchConfigurationTypeImage
+           configTypeID="com.thoughtworks.gauge.eclipse.execution.spec"
+           icon="icons/Gauge-Logo-16x16.png"
+           id="com.thoughtworks.gauge.eclipse.spec.launchConfigurationTypeImage">
+     </launchConfigurationTypeImage>
+  </extension>
 </plugin>
