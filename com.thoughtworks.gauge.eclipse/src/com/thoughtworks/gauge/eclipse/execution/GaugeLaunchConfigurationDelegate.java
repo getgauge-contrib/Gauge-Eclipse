@@ -21,7 +21,7 @@ public class GaugeLaunchConfigurationDelegate implements ILaunchConfigurationDel
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
 		try {
-			GaugeUtil.getGaugeExecPath(); // Throws GaugeNotFoundException when Gauge is not installed
+			String gaugeExecPath = GaugeUtil.getGaugeExecPath(); // Throws GaugeNotFoundException when Gauge is not installed
 			String workingDirVal = configuration.getAttribute(Constants.WORKING_DIRECTORY, "");
 			File workingDirectory = new File(workingDirVal);
 			if(workingDirVal=="" || !workingDirectory.exists()) {
@@ -39,7 +39,7 @@ public class GaugeLaunchConfigurationDelegate implements ILaunchConfigurationDel
 			String parallelNumber = configuration.getAttribute(Constants.PARALLEL_NUMBER, Constants.PARALLEL_NUMBER_DEFAULT);
 			
 			ArrayList<String> cmdLine = new ArrayList<String>();
-			cmdLine.add("gauge");
+			cmdLine.add(gaugeExecPath);
 			cmdLine.add("--simple-console");
 			if(tags.trim()!=Constants.TAG_EXPRESSION_DEFAULT) {
 				cmdLine.add("--tags");
@@ -77,7 +77,7 @@ public class GaugeLaunchConfigurationDelegate implements ILaunchConfigurationDel
 			}
 			
 			Process process = DebugPlugin.exec(commandLine, workingDirectory, envp);
-			DebugPlugin.newProcess(launch, process, "gauge");			
+			DebugPlugin.newProcess(launch, process, "Gauge");			
 			
 		} catch (GaugeNotFoundException e) {
 			// TODO Auto-generated catch block
