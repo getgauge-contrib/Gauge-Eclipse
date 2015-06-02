@@ -5,6 +5,8 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
@@ -28,36 +30,23 @@ public class GaugeParametersTab extends AbstractLaunchConfigurationTab {
 		composite.setLayout(new GridLayout(2, false));
 		composite.setLayoutData(new GridData(GridData.FILL_BOTH));
 		setControl(composite);
-	    
 	    createLabel(composite, Constants.SPECS_TO_EXECUTE_TEXT);
 
 	    specsText = new Text(composite, SWT.SINGLE | SWT.BORDER);
 	    specsText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-	    
 	    createLabel(composite, Constants.ENVIRONMENT_TEXT);
 	    
 	    environmentText = new Text(composite, SWT.SINGLE | SWT.BORDER);
 	    environmentText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 	    
 	    createLabel(composite, Constants.TAG_EXPRESSION_TEXT);
-	    
 	    tagsText = new Text(composite, SWT.SINGLE | SWT.BORDER);
 	    tagsText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-	    
+
 	    parallelRunCheckBox = new Button(composite, SWT.CHECK);
 	    parallelRunCheckBox.setText(Constants.IN_PARALLEL_TEXT);
-	    parallelRunCheckBox.addSelectionListener(new SelectionListener() {
-			
-			public void widgetSelected(SelectionEvent e) {
-				// TODO Auto-generated method stub
-				parallelRunGroup.setEnabled(parallelRunCheckBox.getSelection());
-			}
-			
-			public void widgetDefaultSelected(SelectionEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+	    parallelRunCheckBox.setSelection(Constants.PARALLEL_ENABLED_DEFAULT);
+	    parallelRunCheckBox.setEnabled(true);
 	    
 	    parallelRunGroup = new Group(composite, SWT.NONE);
 	    parallelRunGroup.setLayout(new GridLayout(2, false));
@@ -66,6 +55,38 @@ public class GaugeParametersTab extends AbstractLaunchConfigurationTab {
 	    createLabel(parallelRunGroup, Constants.DEGREE_OF_PARALLELISM_TEXT);
 	    parallelsText = new Text(parallelRunGroup, SWT.SINGLE | SWT.BORDER);
 	    parallelsText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+	    
+	    addListeners();
+	}
+
+	private void addListeners() {
+		parallelRunCheckBox.addSelectionListener(new SelectionListener() {
+			
+			public void widgetSelected(SelectionEvent e) {
+				parallelRunGroup.setEnabled(parallelRunCheckBox.getSelection());
+				getLaunchConfigurationDialog().updateButtons();
+			}
+			
+			public void widgetDefaultSelected(SelectionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		ModifyListener modifyListener = modifyListener();
+		parallelsText.addModifyListener(modifyListener);
+		tagsText.addModifyListener(modifyListener);
+		specsText.addModifyListener(modifyListener);
+		environmentText.addModifyListener(modifyListener);
+	}
+
+	private ModifyListener modifyListener() {
+		return new ModifyListener() {
+			
+			public void modifyText(ModifyEvent e) {
+				getLaunchConfigurationDialog().updateButtons();
+				
+			}
+		};
 	}
 	
 	private Label createLabel(Composite parent, String text) {
@@ -89,7 +110,7 @@ public class GaugeParametersTab extends AbstractLaunchConfigurationTab {
 			environmentText.setText(configuration.getAttribute(Constants.ENVIRONMENT, Constants.ENVIRONMENT_DEFAULT));
 			tagsText.setText(configuration.getAttribute(Constants.TAG_EXPRESSION_DEFAULT, Constants.TAG_EXPRESSION_DEFAULT));
 			parallelsText.setText(configuration.getAttribute(Constants.PARALLEL_NUMBER, Constants.PARALLEL_NUMBER_DEFAULT));
-			parallelRunCheckBox.setEnabled(configuration.getAttribute(Constants.PARALLEL_ENABLED, Constants.PARALLEL_ENABLED_DEFAULT));
+			parallelRunCheckBox.setSelection(configuration.getAttribute(Constants.PARALLEL_ENABLED, Constants.PARALLEL_ENABLED_DEFAULT));
 		} catch (CoreException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
