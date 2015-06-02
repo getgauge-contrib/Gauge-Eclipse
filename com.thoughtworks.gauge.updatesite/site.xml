@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/io.getgauge.sdk_0.0.2.jar" id="io.getgauge.sdk" version="0.0.2">
+   <feature url="features/io.getgauge.sdk_0.0.3.jar" id="io.getgauge.sdk" version="0.0.3">
       <category name="Gauge"/>
    </feature>
    <category-def name="Gauge" label="Gauge">

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: io.getgauge
 Bundle-Vendor: ThoughtWorks Inc
-Bundle-Version: 0.0.2
+Bundle-Version: 0.0.3
 Bundle-SymbolicName: io.getgauge; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;bundle-version="2.6.0";visibility:=reexport,

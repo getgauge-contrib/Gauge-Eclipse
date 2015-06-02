@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Gauge Eclipse
 Bundle-SymbolicName: com.thoughtworks.gauge.eclipse;singleton:=true
-Bundle-Version: 0.0.2
+Bundle-Version: 0.0.3
 Bundle-Activator: com.thoughtworks.gauge.eclipse.GaugePlugin
 Bundle-Vendor: ThoughtWorks Inc
 Require-Bundle: org.eclipse.ui,
