@@ -18,6 +18,12 @@ import com.thoughtworks.gauge.eclipse.util.GaugeUtil;
 
 public class GaugeLaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
 
+	private static final String PARALLEL_EXEC_FLAG = "-p";
+	private static final String NUMBER_OF_NODES = "-n";
+	private static final String ENV_FLAG = "--env";
+	private static final String TAGS_FLAG = "--tags";
+	private static final String SIMPLE_CONSOLE_FLAG = "--simple-console";
+
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
 		try {
@@ -40,23 +46,22 @@ public class GaugeLaunchConfigurationDelegate implements ILaunchConfigurationDel
 			
 			ArrayList<String> cmdLine = new ArrayList<String>();
 			cmdLine.add(gaugeExecPath);
-			cmdLine.add("--simple-console");
+			cmdLine.add(SIMPLE_CONSOLE_FLAG);
 			if(tags.trim()!=Constants.TAG_EXPRESSION_DEFAULT) {
-				cmdLine.add("--tags");
+				cmdLine.add(TAGS_FLAG);
 				cmdLine.add("'" + tags + "'");
 			}
 			
 			if(parallelEnabled) {
-				if(parallelNumber==Constants.PARALLEL_NUMBER_DEFAULT) {
-					GaugeUtil.displayWarningMessage("Skipping parallel run, number of parallel streams not specified.", StatusManager.LOG, null);
-				} else {
-					cmdLine.add("--n");
+				cmdLine.add(PARALLEL_EXEC_FLAG);
+				if(!parallelNumber.trim().isEmpty()) {
+					cmdLine.add(NUMBER_OF_NODES);
 					cmdLine.add(parallelNumber);
 				}
 			}
 			
 			if(environment.trim() != Constants.ENVIRONMENT_DEFAULT) {
-				cmdLine.add("--env");
+				cmdLine.add(ENV_FLAG);
 				cmdLine.add(environment);
 			}
 			
@@ -80,7 +85,6 @@ public class GaugeLaunchConfigurationDelegate implements ILaunchConfigurationDel
 			DebugPlugin.newProcess(launch, process, "Gauge");			
 			
 		} catch (GaugeNotFoundException e) {
-			// TODO Auto-generated catch block
 			GaugeUtil.handleGaugeNotFoundException(e, null);
 		}
 	}
