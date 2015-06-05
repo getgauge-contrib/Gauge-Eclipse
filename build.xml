@@ -12,15 +12,15 @@
 		commands.file		What to do?
 							Default: ${projects.location}/io.getgauge.buckminster/commands.txt
 -->
-<project name="Buckminster Headless" default="buckminster">
-	<property name="WORKSPACE" location="${ant.file}/../../" />
+<project name="Gauge Eclipse" default="update-site">
+	<property name="WORKSPACE" location="${ant.file}/../" />
 	<property name="build.root" location="${WORKSPACE}/buildroot" />
 	<property name="buckminster.home" location="${user.home}/buckminster" />
 	<property name="projects.location" location="${WORKSPACE}" />
 	<property name="commands.file" location="${projects.location}/io.getgauge.buckminster/commands.txt" />
 	<property name="target.platform" value="${WORKSPACE}/../gauge.eclipse.target.platform" />
 	
-	<target name="buckminster" depends="cleanup" description="description">
+	<target name="update-site" depends="cleanup" description="Builds the Gauge Eclipse update site">
 		<echo message="IMPORTANT: Populating an empty target platform may took over 10 minutes."/>
 		<condition property="executable.file" value="buckminster.bat" else="buckminster">
 			<os family="windows"/>
@@ -43,7 +43,7 @@
 			<jvmarg line=" -Xms256m -Xmx512m" />
 		</java>
 		<echo message=" "/>
-		<echo message="Updatesite output in: ${build.root}/buckminster.output/io.getgauge.site_*-eclipse.feature/site.p2/"/>
+		<echo message="Update-site output in: ${build.root}/buckminster.output/io.getgauge.site_*-eclipse.feature/site.p2/"/>
 	</target>
 
 	<target name="cleanup">
@@ -62,5 +62,28 @@
 			<fileset dir="${target.platform}" defaultexcludes="false">
 			</fileset>
 		</delete>
+	</target>
+	
+	<target name="bump_version">
+        <fail unless="from.version">Property from.version not set. Usage example: `ant bump_version -Dfrom.version=0.0.4 -Dto.version="0.0.5"`</fail>
+        <fail unless="to.version">Property to.version not set. Usage Example. `ant bump_version -Dfrom.version=0.0.4 -Dto.version="0.0.5"`</fail>
+        <echo message="Bumping version in Manifest files.."/>
+        <replace token="Bundle-Version: ${from.version}" value="Bundle-Version: ${to.version}">
+			<fileset dir="${WORKSPACE}" defaultexcludes="false">
+					<include name="com.thoughtworks.gauge.eclipse/META-INF/MANIFEST.MF" />
+					<include name="io.getgauge.ui/META-INF/MANIFEST.MF" />
+					<include name="io.getgauge/META-INF/MANIFEST.MF" />
+			</fileset>
+        </replace>
+        <echo message="Bumping version in Feature files.."/>
+        <replace token='version="${from.version}"' value='version="${to.version}"'>
+            <fileset dir="${WORKSPACE}" defaultexcludes="false">
+                <include name="io.getgauge.sdk/feature.xml" />
+                <include name="io.getgauge.site/feature.xml" />
+                <include name="io.getgauge.site/feature.xml" />
+                <include name="com.thoughtworks.gauge.updatesite/site.xml" />
+            </fileset>
+        </replace>
+        <echo message="Version bumped from ${from.version} to ${to.version}"/>
 	</target>
 </project>
