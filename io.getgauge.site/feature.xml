@@ -2,7 +2,7 @@
 <feature
       id="io.getgauge.site"
       label="Gauge Feature"
-      version="0.0.3.qualifier">
+      version="0.0.3">
 
    <url>
       <update url="https://dl.bintray.com/gauge/Gauge"/>
