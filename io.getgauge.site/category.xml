@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="io.getgauge.sdk" version="0.0.0">
+      <category name="main"/>
+   </feature>
+   <feature id="io.getgauge.sdk.source" version="0.0.0">
+      <category name="main.source"/>
+   </feature>
+   <category-def name="main" label="Gauge">
+      <description>
+         Eclipse plugin for Gauge
+      </description>
+   </category-def>
+   <category-def name="main.source" label="Source for Gauge">
+      <description>
+         Source for the Eclipse plugin for Gauge
+      </description>
+   </category-def>
+</site>

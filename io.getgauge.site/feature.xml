@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="io.getgauge.site"
+      label="Gauge Feature"
+      version="0.0.3.qualifier">
+
+   <url>
+      <update url="https://dl.bintray.com/gauge/Gauge"/>
+   </url>
+
+   <includes
+         id="io.getgauge.sdk"
+         version="0.0.0"/>
+
+</feature>

@@ -9,3 +9,4 @@ com.thoughtworks.gauge.updatesite/artifacts.jar
 com.thoughtworks.gauge.updatesite/content.jar
 com.thoughtworks.gauge.updatesite/features/
 com.thoughtworks.gauge.updatesite/plugins/
+buildroot

@@ -1,0 +1,6 @@
+setpref targetPlatformPath="${target.platform}"
+resolve "${projects.location}/io.getgauge.buckminster/projects-platform.cquery"
+resolve "${projects.location}/io.getgauge.buckminster/project.cquery"
+build
+perform "io.getgauge.site#site.p2"
+perform "io.getgauge.site#site.p2.zip"
