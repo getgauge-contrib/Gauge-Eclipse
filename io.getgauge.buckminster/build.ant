@@ -39,7 +39,7 @@
 			<sysproperty key="buckminster.output.root" value="${build.root}/buckminster.output" />
 			<sysproperty key="buckminster.temp.root" value="${build.root}/buckminster.temp" />
 			<sysproperty key="target.platform" value="${build.root}/${target.platform}" />
-			<sysproperty key="qualifier.replacement.*" value="generator:lastRevision" />
+			<sysproperty key="qualifier.replacement.*" value="" />
 			<jvmarg line=" -Xms256m -Xmx512m" />
 		</java>
 		<echo message=" "/>
