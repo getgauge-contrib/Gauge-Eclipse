@@ -532,21 +532,6 @@ ruleStepDefinition returns [EObject current=null]
         		"WS");
 	    }
 
-    |		lv_text_4_5=RULE_NUMBER
-		{
-			newLeafNode(lv_text_4_5, grammarAccess.getStepDefinitionAccess().getTextNUMBERTerminalRuleCall_2_0_2_0_4()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getStepDefinitionRule());
-	        }
-       		addWithLastConsumed(
-       			$current, 
-       			"text",
-        		lv_text_4_5, 
-        		"NUMBER");
-	    }
-
 )
 
 )
@@ -1096,9 +1081,7 @@ ruleTableCell returns [EObject current=null]
 
 RULE_SINGLE_NL : '\r'? '\n';
 
-RULE_WORD : ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-
-RULE_NUMBER : ('0'..'9')+;
+RULE_WORD : ('a'..'z'|'A'..'Z'|'_'|'0'..'9')+;
 
 RULE_STATIC_PARAM : '"' ( options {greedy=false;} : . )*'"';
 

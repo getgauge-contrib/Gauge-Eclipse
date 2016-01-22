@@ -41,9 +41,27 @@ public class ScenarioParserTests {
   }
   
   @Test
+  public void parseScenarioHeadingWithNumbers() {
+    try {
+      final String stepText = "## This is 1st sample Scenario with 2 steps";
+      final Model parsedModel = this.model.parse(stepText);
+      EList<Element> _definitions = parsedModel.getDefinitions();
+      int _size = _definitions.size();
+      Assert.assertSame(Integer.valueOf(_size), Integer.valueOf(1));
+      EList<Element> _definitions_1 = parsedModel.getDefinitions();
+      final Element spec = _definitions_1.get(0);
+      Assert.assertTrue((spec instanceof Scenario));
+      String _elementText = StepUtil.getElementText(spec);
+      Assert.assertEquals(stepText, _elementText);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
   public void parseScenarioHeadingAlt() {
     try {
-      final String stepText = "This is a sample Scenario\n----------------------";
+      final String stepText = "This is my 1st sample Scenario\n----------------------";
       final Model parsedModel = this.model.parse(stepText);
       EList<Element> _definitions = parsedModel.getDefinitions();
       int _size = _definitions.size();

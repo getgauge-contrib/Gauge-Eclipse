@@ -15,33 +15,44 @@ import static org.junit.Assert.*
 
 @RunWith(XtextRunner)
 @InjectWith(SpecInjectorProvider)
-
 class ScenarioParserTests {
 	@Inject
-  	ParseHelper<Model> model
-  	
-  	@Test
-  	def void parseScenarioHeading() {
-  		val stepText = "## This is a sample Scenario"
-  		val parsedModel = model.parse(stepText)
-  		
-  		assertSame(parsedModel.definitions.size, 1)
-  		
-  		val spec = parsedModel.definitions.get(0)
-  		assertTrue(spec instanceof Scenario)
-  		assertEquals(stepText, StepUtil.getElementText(spec))
-  	}
+	ParseHelper<Model> model
 
-  	@Test
-  	def void parseScenarioHeadingAlt() {
-  		val stepText = "This is a sample Scenario\n----------------------"
-  		val parsedModel = model.parse(stepText)
-  		
-  		assertSame(parsedModel.definitions.size, 1)
-  		
-  		val spec = parsedModel.definitions.get(0)
-  		assertTrue(spec instanceof Scenario)
-  		assertEquals(stepText, StepUtil.getElementText(spec))
-  	}
+	@Test
+	def void parseScenarioHeading() {
+		val stepText = "## This is a sample Scenario"
+		val parsedModel = model.parse(stepText)
+
+		assertSame(parsedModel.definitions.size, 1)
+
+		val spec = parsedModel.definitions.get(0)
+		assertTrue(spec instanceof Scenario)
+		assertEquals(stepText, StepUtil.getElementText(spec))
+	}
+
+	@Test
+	def void parseScenarioHeadingWithNumbers() {
+		val stepText = "## This is 1st sample Scenario with 2 steps"
+		val parsedModel = model.parse(stepText)
+
+		assertSame(parsedModel.definitions.size, 1)
+
+		val spec = parsedModel.definitions.get(0)
+		assertTrue(spec instanceof Scenario)
+		assertEquals(stepText, StepUtil.getElementText(spec))
+	}
+
+	@Test
+	def void parseScenarioHeadingAlt() {
+		val stepText = "This is my 1st sample Scenario\n----------------------"
+		val parsedModel = model.parse(stepText)
+
+		assertSame(parsedModel.definitions.size, 1)
+
+		val spec = parsedModel.definitions.get(0)
+		assertTrue(spec instanceof Scenario)
+		assertEquals(stepText, StepUtil.getElementText(spec))
+	}
 
 }

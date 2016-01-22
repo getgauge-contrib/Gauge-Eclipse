@@ -41,9 +41,45 @@ public class SpecParserTests {
   }
   
   @Test
+  public void parseSpecHeadingWithNumbers() {
+    try {
+      final String stepText = "# This is my 1st specification 345 foo bar";
+      final Model parsedModel = this.model.parse(stepText);
+      EList<Element> _definitions = parsedModel.getDefinitions();
+      int _size = _definitions.size();
+      Assert.assertSame(Integer.valueOf(_size), Integer.valueOf(1));
+      EList<Element> _definitions_1 = parsedModel.getDefinitions();
+      final Element spec = _definitions_1.get(0);
+      Assert.assertTrue((spec instanceof Spec));
+      String _elementText = StepUtil.getElementText(spec);
+      Assert.assertEquals(stepText, _elementText);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void parseSpecHeadingWithSpecialChars() {
+    try {
+      final String stepText = "# This is spec1 @78$(blah)foo%!bar No.1";
+      final Model parsedModel = this.model.parse(stepText);
+      EList<Element> _definitions = parsedModel.getDefinitions();
+      int _size = _definitions.size();
+      Assert.assertSame(Integer.valueOf(_size), Integer.valueOf(1));
+      EList<Element> _definitions_1 = parsedModel.getDefinitions();
+      final Element spec = _definitions_1.get(0);
+      Assert.assertTrue((spec instanceof Spec));
+      String _elementText = StepUtil.getElementText(spec);
+      Assert.assertEquals(stepText, _elementText);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
   public void parseSpecHeadingAlt() {
     try {
-      final String stepText = "This is a sample Specification\n===================";
+      final String stepText = "This is my 1st sample Specification\n===================";
       final Model parsedModel = this.model.parse(stepText);
       EList<Element> _definitions = parsedModel.getDefinitions();
       int _size = _definitions.size();

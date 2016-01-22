@@ -91,7 +91,7 @@ public class SpecSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
-	 * terminal WORD: ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	 * terminal WORD: ('a'..'z'|'A'..'Z'|'_'|'0'..'9')+;
 	 */
 	protected String getWORDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
